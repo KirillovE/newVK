@@ -30,7 +30,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="nSb-cZ-71U"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -39,13 +39,16 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="uWe-uJ-SUf"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL5-Px-24P">
                                 <rect key="frame" x="87" y="560" width="200" height="30"/>
-                                <state key="normal" title="Войти"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Войти">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,8 +60,8 @@
                             <constraint firstItem="7ki-HD-pwc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="anJ-ve-vDv"/>
                             <constraint firstItem="7ki-HD-pwc" firstAttribute="top" secondItem="8xc-jY-7me" secondAttribute="bottom" constant="67" id="e7E-ts-zrG"/>
                             <constraint firstItem="8xc-jY-7me" firstAttribute="centerX" secondItem="HHU-0c-VG3" secondAttribute="centerX" id="evc-Pp-hlx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7ki-HD-pwc" secondAttribute="bottom" constant="242" id="hil-Tq-g23"/>
                             <constraint firstItem="JL5-Px-24P" firstAttribute="width" secondItem="7ki-HD-pwc" secondAttribute="width" id="jl7-Ba-f7J"/>
+                            <constraint firstItem="8xc-jY-7me" firstAttribute="top" secondItem="HHU-0c-VG3" secondAttribute="bottom" constant="100" id="tBg-0P-VsK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
