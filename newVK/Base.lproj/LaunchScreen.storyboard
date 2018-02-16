@@ -18,14 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="UIH-04-6ll">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk — без рамки" translatesAutoresizingMaskIntoConstraints="NO" id="UIH-04-6ll">
                                 <rect key="frame" x="0.0" y="293" width="375" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101" id="vmH-gJ-iEF"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UIH-04-6ll" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0NK-el-cHF"/>
                             <constraint firstItem="UIH-04-6ll" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kRu-Di-mz6"/>
@@ -41,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="1200" height="956"/>
+        <image name="vk — без рамки" width="1204" height="906"/>
     </resources>
 </document>
