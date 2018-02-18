@@ -15,12 +15,27 @@ class MainVC: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: Any) {
         if loginText.text == "admin" && passwordText.text == "1234" {
-            print("успешная авторизация")
-            keyboardHide()
+            showAlert(title: "Успех", message: "Вы авторизованы", buttonTitle: "Ура!")
         } else {
-            print("неверные данные для входа")
-            keyboardHide()
+            showAlert(title: "Ошибка", message: "Введены неверные данные", buttonTitle: "Ясно")
         }
+        //очистим поля ввода
+        loginText.text?.removeAll()
+        passwordText.text?.removeAll()
+        
+        keyboardHide()
+    }
+    
+    ///показывает красивое сообщение
+    func showAlert(title: String, message: String, buttonTitle: String) {
+        //создадим контроллер
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        //создадим кнопку
+        let alertAction = UIAlertAction(title: buttonTitle, style: .cancel, handler: nil)
+        //добавим кнопку
+        alert.addAction(alertAction)
+        //покажем контроллер
+        present(alert, animated: true, completion: nil)
     }
     
     @objc func keyboardShown(notification: NSNotification) {
