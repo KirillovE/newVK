@@ -104,6 +104,7 @@
                     <connections>
                         <outlet property="loginText" destination="8xc-jY-7me" id="lwt-Rx-oLA"/>
                         <outlet property="passwordText" destination="7ki-HD-pwc" id="F2Z-wa-EwC"/>
+                        <outlet property="scrollView" destination="JPE-9W-922" id="QYC-wj-HY0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
