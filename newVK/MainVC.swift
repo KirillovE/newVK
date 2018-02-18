@@ -12,6 +12,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var loginText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var logoImage: UIImageView!
     
     @IBAction func loginButtonPressed(_ sender: Any) {
         if loginText.text == "admin" && passwordText.text == "1234" {
@@ -24,6 +25,8 @@ class MainVC: UIViewController {
         passwordText.text?.removeAll()
         
         keyboardHide()
+//        scrollView.becomeFirstResponder()
+//        logoImage.becomeFirstResponder()
     }
     
     ///показывает красивое сообщение

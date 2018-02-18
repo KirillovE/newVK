@@ -43,7 +43,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="имя пользователя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8xc-jY-7me">
-                                        <rect key="frame" x="87" y="288" width="200" height="30"/>
+                                        <rect key="frame" x="87" y="268" width="200" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="nSb-cZ-71U"/>
                                         </constraints>
@@ -52,7 +52,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL5-Px-24P">
-                                        <rect key="frame" x="87" y="498" width="200" height="30"/>
+                                        <rect key="frame" x="87" y="448" width="200" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Войти">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,7 +62,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ki-HD-pwc">
-                                        <rect key="frame" x="87" y="368" width="200" height="30"/>
+                                        <rect key="frame" x="87" y="348" width="200" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="uWe-uJ-SUf"/>
                                         </constraints>
@@ -73,13 +73,13 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="BsT-x6-Tsd" firstAttribute="top" secondItem="JPE-9W-922" secondAttribute="top" id="1KE-MJ-cml"/>
-                                    <constraint firstItem="8xc-jY-7me" firstAttribute="top" secondItem="HHU-0c-VG3" secondAttribute="bottom" constant="120" id="6Dp-es-IYf"/>
+                                    <constraint firstItem="8xc-jY-7me" firstAttribute="top" secondItem="HHU-0c-VG3" secondAttribute="bottom" constant="100" id="6Dp-es-IYf"/>
                                     <constraint firstItem="7ki-HD-pwc" firstAttribute="top" secondItem="8xc-jY-7me" secondAttribute="bottom" constant="50" id="C02-ay-JJ4"/>
                                     <constraint firstItem="am3-GK-LNr" firstAttribute="top" secondItem="JPE-9W-922" secondAttribute="top" id="DML-w7-a4b"/>
                                     <constraint firstItem="JL5-Px-24P" firstAttribute="width" secondItem="7ki-HD-pwc" secondAttribute="width" id="HJL-8v-vR1"/>
                                     <constraint firstItem="am3-GK-LNr" firstAttribute="centerX" secondItem="JPE-9W-922" secondAttribute="centerX" id="Klw-So-Gdd"/>
                                     <constraint firstItem="BsT-x6-Tsd" firstAttribute="leading" secondItem="JPE-9W-922" secondAttribute="leading" id="KpG-5V-hAp"/>
-                                    <constraint firstItem="JL5-Px-24P" firstAttribute="top" secondItem="7ki-HD-pwc" secondAttribute="bottom" constant="100" id="LGx-1f-80d"/>
+                                    <constraint firstItem="JL5-Px-24P" firstAttribute="top" secondItem="7ki-HD-pwc" secondAttribute="bottom" constant="70" id="LGx-1f-80d"/>
                                     <constraint firstItem="7ki-HD-pwc" firstAttribute="centerX" secondItem="JPE-9W-922" secondAttribute="centerX" id="Lj2-Qq-0vJ"/>
                                     <constraint firstAttribute="bottom" secondItem="BsT-x6-Tsd" secondAttribute="bottom" id="Pgd-RU-SLA"/>
                                     <constraint firstItem="8xc-jY-7me" firstAttribute="centerX" secondItem="JPE-9W-922" secondAttribute="centerX" id="dYU-jj-vZp"/>
@@ -103,6 +103,7 @@
                     </view>
                     <connections>
                         <outlet property="loginText" destination="8xc-jY-7me" id="lwt-Rx-oLA"/>
+                        <outlet property="logoImage" destination="HHU-0c-VG3" id="IFA-Ep-HVT"/>
                         <outlet property="passwordText" destination="7ki-HD-pwc" id="F2Z-wa-EwC"/>
                         <outlet property="scrollView" destination="JPE-9W-922" id="QYC-wj-HY0"/>
                     </connections>
