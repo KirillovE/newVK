@@ -33,9 +33,10 @@ class MainVC: UIViewController {
     // MARK: - other methods
     @IBAction func loginPressed(_ sender: UIButton) {
         if loginText.text == "admin" && passwordText.text == "1234" {
-            showAlert(title: "Успех", message: "Вы авторизованы", buttonTitle: "Ура!")
-            loginText.text?.removeAll()
-            passwordText.text?.removeAll()
+            performSegue(withIdentifier: "loginSegue", sender: self)
+//            showAlert(title: "Успех", message: "Вы авторизованы", buttonTitle: "Ура!")
+//            loginText.text?.removeAll()
+//            passwordText.text?.removeAll()
         } else {
             showAlert(title: "Ошибка", message: "Введены неверные данные", buttonTitle: "Ясно")
         }
