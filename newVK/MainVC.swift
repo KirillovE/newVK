@@ -14,6 +14,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var loginText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var loginButton: UIButton!
     
     // MARK: - ViewConroller life cycle
     override func viewDidLoad() {
@@ -24,6 +25,8 @@ class MainVC: UIViewController {
         
         let hideKeayboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView.addGestureRecognizer(hideKeayboardGesture)
+        
+        loginButton.layer.cornerRadius = 5.0
     }
     
     deinit {

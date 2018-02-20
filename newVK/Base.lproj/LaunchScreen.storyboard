@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk — без рамки" translatesAutoresizingMaskIntoConstraints="NO" id="UIH-04-6ll">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk logo" translatesAutoresizingMaskIntoConstraints="NO" id="UIH-04-6ll">
                                 <rect key="frame" x="0.0" y="293" width="375" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101" id="vmH-gJ-iEF"/>
@@ -45,6 +45,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="vk — без рамки" width="1204" height="906"/>
+        <image name="vk logo" width="1204" height="906"/>
     </resources>
 </document>
