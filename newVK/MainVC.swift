@@ -22,7 +22,7 @@ class MainVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardHidden), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-        let hideKeayboardGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardHide))
+        let hideKeayboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView.addGestureRecognizer(hideKeayboardGesture)
     }
     
@@ -65,7 +65,7 @@ class MainVC: UIViewController {
     }
 
     
-    @objc func keyboardHide() {
+    @objc func hideKeyboard() {
         scrollView.endEditing(true)
     }
 }
