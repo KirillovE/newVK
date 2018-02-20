@@ -35,7 +35,7 @@
                                             <constraint firstAttribute="height" id="FDG-BH-Zuc"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk logo" translatesAutoresizingMaskIntoConstraints="NO" id="HHU-0c-VG3" userLabel="логотип">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk logo" translatesAutoresizingMaskIntoConstraints="NO" id="HHU-0c-VG3" userLabel="логотип">
                                         <rect key="frame" x="39.5" y="40" width="240" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="DUW-wn-PBK"/>
@@ -43,7 +43,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin" borderStyle="roundedRect" placeholder="имя пользователя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8xc-jY-7me">
-                                        <rect key="frame" x="59.5" y="238" width="200" height="30"/>
+                                        <rect key="frame" x="59.5" y="218" width="200" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="nSb-cZ-71U"/>
                                         </constraints>
@@ -52,7 +52,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL5-Px-24P">
-                                        <rect key="frame" x="59.5" y="398" width="200" height="30"/>
+                                        <rect key="frame" x="59.5" y="378" width="200" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Войти">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,7 +63,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" borderStyle="roundedRect" placeholder="пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ki-HD-pwc">
-                                        <rect key="frame" x="59.5" y="308" width="200" height="30"/>
+                                        <rect key="frame" x="59.5" y="288" width="200" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="uWe-uJ-SUf"/>
                                         </constraints>
@@ -74,7 +74,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="BsT-x6-Tsd" firstAttribute="top" secondItem="JPE-9W-922" secondAttribute="top" id="1KE-MJ-cml"/>
-                                    <constraint firstItem="8xc-jY-7me" firstAttribute="top" secondItem="HHU-0c-VG3" secondAttribute="bottom" constant="70" id="6Dp-es-IYf"/>
+                                    <constraint firstItem="8xc-jY-7me" firstAttribute="top" secondItem="HHU-0c-VG3" secondAttribute="bottom" constant="50" id="6Dp-es-IYf"/>
                                     <constraint firstItem="7ki-HD-pwc" firstAttribute="top" secondItem="8xc-jY-7me" secondAttribute="bottom" constant="40" id="C02-ay-JJ4"/>
                                     <constraint firstItem="am3-GK-LNr" firstAttribute="top" secondItem="JPE-9W-922" secondAttribute="top" id="DML-w7-a4b"/>
                                     <constraint firstItem="JL5-Px-24P" firstAttribute="width" secondItem="7ki-HD-pwc" secondAttribute="width" id="HJL-8v-vR1"/>
@@ -116,10 +116,11 @@
         <scene sceneID="EPZ-MO-kAw">
             <objects>
                 <tableViewController id="eqK-Jg-aYG" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="7nf-Ko-62b">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="7nf-Ko-62b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="separatorColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Section-1" id="a7v-Zu-SzL">
                                 <cells>
@@ -127,7 +128,7 @@
                                         <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KNK-m7-Fcn" id="zda-VU-FNc">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -135,7 +136,7 @@
                                         <rect key="frame" x="0.0" y="99.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="grz-eX-sOy" id="h1r-1H-GPx">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -143,7 +144,7 @@
                                         <rect key="frame" x="0.0" y="143.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YPs-cO-lYG" id="4QG-wr-Ufw">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -155,7 +156,7 @@
                                         <rect key="frame" x="0.0" y="243.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Se5-M4-vWy" id="Tsk-pp-VUn">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -163,7 +164,7 @@
                                         <rect key="frame" x="0.0" y="287.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N9g-XS-EWQ" id="IWe-Rv-UGd">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -171,7 +172,7 @@
                                         <rect key="frame" x="0.0" y="331.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sGU-da-Baa" id="K9d-SF-KvV">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -184,7 +185,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="таблица" id="UJK-uf-H7C">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0Uc-9X-VdI">
+                        <barButtonItem key="rightBarButtonItem" title="далее" id="0Uc-9X-VdI">
                             <connections>
                                 <segue destination="9b2-lI-NC9" kind="show" identifier="collectoinSegue" id="ZMR-Qb-qhR"/>
                             </connections>
@@ -203,6 +204,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Section-1" id="Sbe-hE-v89">
                                 <cells>
@@ -291,6 +293,7 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="первая таблица" id="UgM-3x-lVT">
+                        <barButtonItem key="backBarButtonItem" title="первая" id="C6P-NO-L4q"/>
                         <barButtonItem key="rightBarButtonItem" title="далее" id="O9c-gq-15Z">
                             <connections>
                                 <segue destination="PmN-Zr-pDk" kind="show" identifier="secondTableSegue" id="r1m-8V-K69"/>
@@ -310,6 +313,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="kIS-NR-faU">
                                 <cells>
@@ -341,9 +345,7 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="вторая таблица" id="xyO-Iy-nPl">
-                        <barButtonItem key="backBarButtonItem" title="первая" id="hu6-ru-lqR"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="вторая таблица" id="WnI-Jp-hnh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXi-MJ-EbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -374,7 +376,7 @@
                             </collectionViewCell>
                         </cells>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="коллекция" id="0Nx-7T-p7X"/>
+                    <navigationItem key="navigationItem" title="коллекция" id="vbI-kc-fdW"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avt-RE-oIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -410,6 +412,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="haL-xy-haD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="ruG-pm-Noc" kind="relationship" relationship="rootViewController" id="xVd-Zj-gBi"/>
                     </connections>

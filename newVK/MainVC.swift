@@ -5,6 +5,7 @@
 //  Created by Евгений Кириллов on 16.02.2018.
 //  Copyright © 2018 Триада. All rights reserved.
 //
+//  Использованы иконки с сайта: http://www.iconbeast.com
 
 import UIKit
 
