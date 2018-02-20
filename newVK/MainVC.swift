@@ -34,22 +34,17 @@ class MainVC: UIViewController {
     @IBAction func loginPressed(_ sender: UIButton) {
         if loginText.text == "admin" && passwordText.text == "1234" {
             performSegue(withIdentifier: "loginSegue", sender: self)
-//            showAlert(title: "Успех", message: "Вы авторизованы", buttonTitle: "Ура!")
-//            loginText.text?.removeAll()
-//            passwordText.text?.removeAll()
         } else {
-            showAlert(title: "Ошибка", message: "Введены неверные данные", buttonTitle: "Ясно")
+            showErrorAlert()
         }
-        
-        keyboardHide()
     }
     
     ///показывает красивое сообщение
-    func showAlert(title: String, message: String, buttonTitle: String) {
+    func showErrorAlert() {
         //создадим контроллер
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные", preferredStyle: .alert)
         //создадим кнопку
-        let alertAction = UIAlertAction(title: buttonTitle, style: .cancel, handler: nil)
+        let alertAction = UIAlertAction(title: "Ясно", style: .cancel)
         //добавим кнопку
         alert.addAction(alertAction)
         //покажем контроллер
