@@ -247,11 +247,11 @@
             </objects>
             <point key="canvasLocation" x="3351" y="615"/>
         </scene>
-        <!--история-->
+        <!--Друзья-->
         <scene sceneID="qO2-Eh-TlQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EUb-6n-yJL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="история" image="collection" id="cyc-AV-x7i"/>
+                    <tabBarItem key="tabBarItem" title="Друзья" image="друзья" id="cyc-AV-x7i"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0qJ-5m-dRs">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -266,11 +266,11 @@
             </objects>
             <point key="canvasLocation" x="1766" y="615"/>
         </scene>
-        <!--таблицы-->
+        <!--Группы-->
         <scene sceneID="x5A-jS-nqK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OJs-fd-uJx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="таблицы" image="table" id="bSX-7a-U3b"/>
+                    <tabBarItem key="tabBarItem" title="Группы" image="группы" id="bSX-7a-U3b"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pg7-FH-ena">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -309,8 +309,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="collection" width="30" height="30"/>
-        <image name="table" width="30" height="30"/>
         <image name="vk logo" width="1204" height="906"/>
+        <image name="группы" width="30" height="30"/>
+        <image name="друзья" width="30" height="30"/>
     </resources>
 </document>
