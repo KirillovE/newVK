@@ -1,5 +1,5 @@
 //
-//  MainVC.swift
+//  LoginVC.swift
 //  newVK
 //
 //  Created by Евгений Кириллов on 16.02.2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class LoginVC: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var loginText: UITextField!
