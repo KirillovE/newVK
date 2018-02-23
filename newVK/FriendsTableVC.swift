@@ -44,7 +44,7 @@ class FriendsTableVC: UITableViewController {
         
         cell.textLabel?.text = friendName
         cell.imageView?.image = UIImage.init(named: friendImage)
-        cell.imageView?.layer.cornerRadius = 21.75
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
         cell.imageView?.clipsToBounds = true
         return cell
     }
