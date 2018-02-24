@@ -22,6 +22,12 @@ class FriendCollectionVC: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendCollectionVCell
         cell.friendImage.image = UIImage(named: imageName)
 
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        cell.friendImage.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        
         return cell
     }
+    
 }
