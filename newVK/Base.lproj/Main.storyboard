@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -121,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Friends" textLabel="rJF-qM-JyB" style="IBUITableViewCellStyleDefault" id="JGP-fZ-UiI" customClass="FriendsTableVCell" customModule="newVK" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Friends" textLabel="rJF-qM-JyB" style="IBUITableViewCellStyleDefault" id="JGP-fZ-UiI">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JGP-fZ-UiI" id="jC2-Rc-CAn">
@@ -137,6 +138,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="9b2-lI-NC9" kind="show" identifier="ShowFriendImage" id="0qc-BS-gyB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -145,13 +149,7 @@
                             <outlet property="delegate" destination="eqK-Jg-aYG" id="wGl-qG-Kyi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Друзья" id="UJK-uf-H7C">
-                        <barButtonItem key="rightBarButtonItem" title="далее" id="0Uc-9X-VdI">
-                            <connections>
-                                <segue destination="9b2-lI-NC9" kind="show" identifier="collectoinSegue" id="ZMR-Qb-qhR"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Друзья" id="UJK-uf-H7C"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWf-Ek-eEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,36 +214,52 @@
             </objects>
             <point key="canvasLocation" x="3359" y="-290"/>
         </scene>
-        <!--коллекция-->
+        <!--Friend CollectionVC-->
         <scene sceneID="rHf-jr-LBz">
             <objects>
-                <collectionViewController hidesBottomBarWhenPushed="YES" id="9b2-lI-NC9" sceneMemberID="viewController">
+                <collectionViewController hidesBottomBarWhenPushed="YES" id="9b2-lI-NC9" customClass="FriendCollectionVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aKr-dL-moY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ys9-rY-kin">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="320" height="346"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionID" id="2O9-li-qen">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendImage" id="2O9-li-qen" customClass="FriendCollectionVCell" customModule="newVK" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="346"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="346"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kYy-Yd-b48">
+                                            <rect key="frame" x="8" y="8" width="304" height="330"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="kYy-Yd-b48" firstAttribute="leading" secondItem="2O9-li-qen" secondAttribute="leadingMargin" id="4bx-Ah-3XP"/>
+                                    <constraint firstItem="kYy-Yd-b48" firstAttribute="top" secondItem="2O9-li-qen" secondAttribute="topMargin" id="Vc5-MG-sIR"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="kYy-Yd-b48" secondAttribute="bottom" id="fMf-G7-slU"/>
+                                    <constraint firstItem="kYy-Yd-b48" firstAttribute="centerY" secondItem="2O9-li-qen" secondAttribute="centerY" id="kJk-Rg-cVE"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="kYy-Yd-b48" secondAttribute="trailing" id="kwN-Oy-6r5"/>
+                                    <constraint firstItem="kYy-Yd-b48" firstAttribute="centerX" secondItem="2O9-li-qen" secondAttribute="centerX" id="vAU-Zg-HUs"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="friendImage" destination="kYy-Yd-b48" id="K4R-8a-OKY"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="коллекция" id="vbI-kc-fdW"/>
+                    <navigationItem key="navigationItem" id="vbI-kc-fdW"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avt-RE-oIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3351" y="615"/>
+            <point key="canvasLocation" x="3350.625" y="615"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="qO2-Eh-TlQ">

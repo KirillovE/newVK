@@ -37,7 +37,7 @@ class FriendsTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath) as! FriendsTableVCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath)
         
         let friendName = friendsList[indexPath.row].name
         let friendImage = friendsList[indexPath.row].imageName
@@ -47,5 +47,14 @@ class FriendsTableVC: UITableViewController {
         cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
         cell.imageView?.clipsToBounds = true
         return cell
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowFriendImage" {
+            let cell = sender as! UITableViewCell
+            let imageIndex = self.tableView.indexPath(for: cell)?.row
+            let collectionVC = segue.destination as! FriendCollectionVC
+            collectionVC.imageName = friendsList[imageIndex!].imageName
+        }
     }
 }
