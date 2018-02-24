@@ -10,6 +10,8 @@ import UIKit
 
 class FriendsTableVC: UITableViewController {
 
+    // MARK: - Sorce data
+    
     struct Friend {
         let name: String
         let imageName: String
@@ -32,7 +34,6 @@ class FriendsTableVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return friendsList.count
     }
 
@@ -49,6 +50,8 @@ class FriendsTableVC: UITableViewController {
         return cell
     }
 
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowFriendImage" {
             let cell = sender as! UITableViewCell

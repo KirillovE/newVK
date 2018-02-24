@@ -221,7 +221,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aKr-dL-moY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ys9-rY-kin">
                             <size key="itemSize" width="320" height="414"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -264,7 +264,7 @@
         <!--Друзья-->
         <scene sceneID="qO2-Eh-TlQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EUb-6n-yJL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="EUb-6n-yJL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="друзья" id="cyc-AV-x7i"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0qJ-5m-dRs">

@@ -25,7 +25,7 @@ class FriendCollectionVC: UICollectionViewController {
         let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
-        cell.friendImage.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        cell.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         
         return cell
     }
