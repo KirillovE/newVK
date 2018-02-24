@@ -55,6 +55,7 @@ class FriendsTableVC: UITableViewController {
             let imageIndex = self.tableView.indexPath(for: cell)?.row
             let collectionVC = segue.destination as! FriendCollectionVC
             collectionVC.imageName = friendsList[imageIndex!].imageName
+            collectionVC.title = friendsList[imageIndex!].name
         }
     }
 }
