@@ -200,7 +200,7 @@
         <!--вторая таблица-->
         <scene sceneID="l6w-XL-eQs">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="PmN-Zr-pDk" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="PmN-Zr-pDk" customClass="AllGroupsTableVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9jN-E5-bs9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="3359" y="-290"/>
         </scene>
-        <!--Friend CollectionVC-->
+        <!--Friend CollVC-->
         <scene sceneID="rHf-jr-LBz">
             <objects>
-                <collectionViewController hidesBottomBarWhenPushed="YES" id="9b2-lI-NC9" customClass="FriendCollectionVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController hidesBottomBarWhenPushed="YES" id="9b2-lI-NC9" customClass="FriendCollVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aKr-dL-moY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,7 +238,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendImage" id="2O9-li-qen" customClass="FriendCollectionVCell" customModule="newVK" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendImage" id="2O9-li-qen" customClass="FriendCollVCell" customModule="newVK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">

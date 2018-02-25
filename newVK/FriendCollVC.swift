@@ -1,5 +1,5 @@
 //
-//  FriendCollectionVC.swift
+//  FriendCollVC.swift
 //  newVK
 //
 //  Created by Евгений Кириллов on 23.02.2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendCollectionVC: UICollectionViewController {
+class FriendCollVC: UICollectionViewController {
     
     var imageName = ""
 
@@ -19,7 +19,7 @@ class FriendCollectionVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendCollectionVCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendCollVCell
         cell.friendImage.image = UIImage(named: imageName)
 
         let screenSize: CGRect = UIScreen.main.bounds
