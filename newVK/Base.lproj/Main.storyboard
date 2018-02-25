@@ -155,7 +155,7 @@
             </objects>
             <point key="canvasLocation" x="2566" y="615"/>
         </scene>
-        <!--первая таблица-->
+        <!--Мои группы-->
         <scene sceneID="zup-ht-CHx">
             <objects>
                 <tableViewController id="ruG-pm-Noc" customClass="MyGroupsTableVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,9 +184,9 @@
                         </prototypes>
                         <sections/>
                     </tableView>
-                    <navigationItem key="navigationItem" title="первая таблица" id="UgM-3x-lVT">
-                        <barButtonItem key="backBarButtonItem" title="первая" id="C6P-NO-L4q"/>
-                        <barButtonItem key="rightBarButtonItem" title="далее" id="O9c-gq-15Z">
+                    <navigationItem key="navigationItem" title="Мои группы" id="UgM-3x-lVT">
+                        <barButtonItem key="backBarButtonItem" title=" " id="C6P-NO-L4q"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="O9c-gq-15Z">
                             <connections>
                                 <segue destination="PmN-Zr-pDk" kind="show" identifier="secondTableSegue" id="r1m-8V-K69"/>
                             </connections>
@@ -197,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="2575" y="-290"/>
         </scene>
-        <!--вторая таблица-->
+        <!--Все группы-->
         <scene sceneID="l6w-XL-eQs">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="PmN-Zr-pDk" customClass="AllGroupsTableVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
@@ -206,18 +206,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="allGroups" id="0di-a7-Nno">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="allGroups" textLabel="55W-mq-1Ht" detailTextLabel="RFr-ct-sMd" style="IBUITableViewCellStyleSubtitle" id="0di-a7-Nno">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0di-a7-Nno" id="M2m-jt-LtO">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="55W-mq-1Ht">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RFr-ct-sMd">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
                     </tableView>
-                    <navigationItem key="navigationItem" title="вторая таблица" id="WnI-Jp-hnh"/>
+                    <navigationItem key="navigationItem" title="Все группы" id="WnI-Jp-hnh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXi-MJ-EbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
