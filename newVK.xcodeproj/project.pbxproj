@@ -10,6 +10,7 @@
 		3E167696203F6C0700287BB4 /* FriendsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E167695203F6C0700287BB4 /* FriendsTableVC.swift */; };
 		3E16769A20400B5C00287BB4 /* FriendCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E16769920400B5C00287BB4 /* FriendCollectionVC.swift */; };
 		3E16769C20400F6200287BB4 /* FriendCollectionVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E16769B20400F6200287BB4 /* FriendCollectionVCell.swift */; };
+		3E2BE8BE2042E9D9002A50CF /* MyGroupsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BE8BD2042E9D9002A50CF /* MyGroupsTableVC.swift */; };
 		3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E618430203717DB00A68D16 /* AppDelegate.swift */; };
 		3E618433203717DB00A68D16 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E618432203717DB00A68D16 /* LoginVC.swift */; };
 		3E618436203717DB00A68D16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E618434203717DB00A68D16 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		3E167695203F6C0700287BB4 /* FriendsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableVC.swift; sourceTree = "<group>"; };
 		3E16769920400B5C00287BB4 /* FriendCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionVC.swift; sourceTree = "<group>"; };
 		3E16769B20400F6200287BB4 /* FriendCollectionVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionVCell.swift; sourceTree = "<group>"; };
+		3E2BE8BD2042E9D9002A50CF /* MyGroupsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsTableVC.swift; sourceTree = "<group>"; };
 		3E61842D203717DB00A68D16 /* newVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E618430203717DB00A68D16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E618432203717DB00A68D16 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				3E167695203F6C0700287BB4 /* FriendsTableVC.swift */,
 				3E16769920400B5C00287BB4 /* FriendCollectionVC.swift */,
 				3E16769B20400F6200287BB4 /* FriendCollectionVCell.swift */,
+				3E2BE8BD2042E9D9002A50CF /* MyGroupsTableVC.swift */,
 				3E61843C203717DB00A68D16 /* Info.plist */,
 			);
 			path = newVK;
@@ -148,6 +151,7 @@
 				3E167696203F6C0700287BB4 /* FriendsTableVC.swift in Sources */,
 				3E618433203717DB00A68D16 /* LoginVC.swift in Sources */,
 				3E16769C20400F6200287BB4 /* FriendCollectionVCell.swift in Sources */,
+				3E2BE8BE2042E9D9002A50CF /* MyGroupsTableVC.swift in Sources */,
 				3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */,
 				3E16769A20400B5C00287BB4 /* FriendCollectionVC.swift in Sources */,
 			);

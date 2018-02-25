@@ -47,10 +47,10 @@ class FriendsTableVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath)
         
         let friendName = friendsList[indexPath.row].name
-        let friendImage = friendsList[indexPath.row].imageName
+        let friendImageName = friendsList[indexPath.row].imageName
         
         cell.textLabel?.text = friendName
-        cell.imageView?.image = UIImage.init(named: friendImage)
+        cell.imageView?.image = UIImage.init(named: friendImageName)
         cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
         cell.imageView?.clipsToBounds = true
         return cell
