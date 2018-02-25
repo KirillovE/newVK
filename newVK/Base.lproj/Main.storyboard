@@ -322,8 +322,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="OJs-fd-uJx" kind="relationship" relationship="viewControllers" id="UsI-ml-OfS"/>
                         <segue destination="EUb-6n-yJL" kind="relationship" relationship="viewControllers" id="SML-cJ-0DO"/>
+                        <segue destination="OJs-fd-uJx" kind="relationship" relationship="viewControllers" id="UsI-ml-OfS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1g-p4-Hnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
