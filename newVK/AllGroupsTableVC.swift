@@ -69,6 +69,8 @@ class AllGroupsTableVC: UITableViewController {
     }
 }
 
+// MARK: - Extensions
+
 extension AllGroupsTableVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {

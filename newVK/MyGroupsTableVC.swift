@@ -11,12 +11,11 @@ import UIKit
 class MyGroupsTableVC: UITableViewController {
     
     // MARK: - Source data
-    
-    struct Group {
-        let name, imageName: String
-    }
-    
-    var myGroups: [Group] = [Group(name: "ГикБрейнс", imageName: "группа.гикбрейнс")]
+
+    var myGroups: [AllGroupsTableVC.Group] =
+        [AllGroupsTableVC.Group(name: "ГикБрейнс", imageName: "группа.гикбрейнс", subscriberCount: 10),
+         AllGroupsTableVC.Group(name: "Swift", imageName: "группа.свифт", subscriberCount: 77)
+        ]
 
     // MARK: - Table view data source
 
@@ -38,24 +37,11 @@ class MyGroupsTableVC: UITableViewController {
         return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            myGroups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
 }
