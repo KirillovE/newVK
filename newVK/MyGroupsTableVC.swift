@@ -43,5 +43,24 @@ class MyGroupsTableVC: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
 }
+
+// MARK: - Extensions
+
+extension MyGroupsTableVC {
+
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        if segue.identifier == "addGroupSegue" {
+            let allGroupsVC = segue.source as! AllGroupsTableVC
+            if let indexPath = allGroupsVC.tableView.indexPathForSelectedRow {
+                let selectedGroup = allGroupsVC.allGroups[indexPath.row]
+                if !myGroups.contains(selectedGroup) {
+                    myGroups.append(selectedGroup)
+                    tableView.reloadData()
+                }
+            }
+        }
+    }
+}
+
+

@@ -16,7 +16,11 @@ class AllGroupsTableVC: UITableViewController {
     
     // MARK: - Source data
     
-    struct Group {
+    struct Group: Equatable {
+        static func ==(lhs: AllGroupsTableVC.Group, rhs: AllGroupsTableVC.Group) -> Bool {
+            return lhs.name == rhs.name && lhs.imageName == rhs.imageName && lhs.subscriberCount == rhs.subscriberCount
+        }
+        
         let name, imageName: String
         let subscriberCount: Int
     }
