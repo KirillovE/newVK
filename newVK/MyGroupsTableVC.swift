@@ -52,15 +52,23 @@ extension MyGroupsTableVC {
     @IBAction func addGroup(segue: UIStoryboardSegue) {
         if segue.identifier == "addGroupSegue" {
             let allGroupsVC = segue.source as! AllGroupsTableVC
-            if let indexPath = allGroupsVC.tableView.indexPathForSelectedRow {
-                let selectedGroup = allGroupsVC.allGroups[indexPath.row]
-                if !myGroups.contains(selectedGroup) {
-                    myGroups.append(selectedGroup)
-                    tableView.reloadData()
-                }
+            addGroup(from: allGroupsVC)
+        }
+    }
+    
+    func addGroup(from tableVC: AllGroupsTableVC) {
+        if let indexPath = tableVC.tableView.indexPathForSelectedRow {
+            let groupFound = tableVC.searchResult?[indexPath.row]
+            let groupPicked = tableVC.allGroups[indexPath.row]
+            let group = groupFound ?? groupPicked
+            
+            if !myGroups.contains(group) {
+                myGroups.append(group)
+                tableView.reloadData()
             }
         }
     }
+    
 }
 
 
