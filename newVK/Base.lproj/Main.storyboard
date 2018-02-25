@@ -205,9 +205,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Поиск группы" id="o6O-Pw-7Ov">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="allGroups" textLabel="55W-mq-1Ht" detailTextLabel="RFr-ct-sMd" style="IBUITableViewCellStyleSubtitle" id="0di-a7-Nno">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0di-a7-Nno" id="M2m-jt-LtO">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -234,8 +239,20 @@
                         <sections/>
                     </tableView>
                     <navigationItem key="navigationItem" title="Все группы" id="WnI-Jp-hnh"/>
+                    <connections>
+                        <outlet property="searchBar" destination="o6O-Pw-7Ov" id="VaM-sh-syO"/>
+                        <outlet property="searchDisplayController" destination="XUW-36-qnl" id="XIy-Aa-VXe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXi-MJ-EbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="XUW-36-qnl">
+                    <connections>
+                        <outlet property="delegate" destination="PmN-Zr-pDk" id="kvP-Uu-z0q"/>
+                        <outlet property="searchContentsController" destination="PmN-Zr-pDk" id="GSg-cD-Ah6"/>
+                        <outlet property="searchResultsDataSource" destination="PmN-Zr-pDk" id="3mp-kq-gs4"/>
+                        <outlet property="searchResultsDelegate" destination="PmN-Zr-pDk" id="4ff-dU-lzT"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="3359" y="-290"/>
         </scene>

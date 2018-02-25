@@ -10,6 +10,10 @@ import UIKit
 
 class AllGroupsTableVC: UITableViewController {
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     // MARK: - Source data
     
     struct Group {
@@ -31,27 +35,54 @@ class AllGroupsTableVC: UITableViewController {
                              Group(name: "Windows", imageName: "группа.Windows", subscriberCount: 99)
     ]
     
+    var searchResult: [Group]?
+    
+    // MARK: - View Controller life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchBar.delegate = self
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allGroups.count
+        return searchResult?.count ?? allGroups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allGroups", for: indexPath)
-
-        let groupName = allGroups[indexPath.row].name
-        let groupImageName = allGroups[indexPath.row].imageName
-        let groupSubscriberCount = allGroups[indexPath.row].subscriberCount
+        let chosenGroup = searchResult ?? allGroups
+        
+        let groupName = chosenGroup[indexPath.row].name
+        let groupImageName = chosenGroup[indexPath.row].imageName
+        let groupSubscriberCount = chosenGroup[indexPath.row].subscriberCount
         
         cell.textLabel?.text = groupName
         cell.imageView?.image = UIImage(named: groupImageName)
-        cell.detailTextLabel?.text = String(groupSubscriberCount)
+        cell.detailTextLabel?.text = "Подписчиков: " + String(groupSubscriberCount)
         
         cell.imageView?.layer.cornerRadius = cell.frame.size.height / 4
         cell.imageView?.clipsToBounds = true
 
         return cell
     }
+}
 
+extension AllGroupsTableVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            searchResult = nil
+            self.tableView.reloadData()
+            return
+        }
+        
+        searchResult = allGroups.filter{$0.name.lowercased().contains(searchText.lowercased())}
+        self.tableView.reloadData()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchResult = nil
+        self.tableView.reloadData()
+    }
 }
