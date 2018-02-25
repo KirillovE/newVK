@@ -10,7 +10,7 @@ import UIKit
 
 class FriendsTableVC: UITableViewController {
 
-    // MARK: - Sorce data
+    // MARK: - Source data
     
     struct Friend {
         let name: String
@@ -30,6 +30,12 @@ class FriendsTableVC: UITableViewController {
                                  Friend(name: "Роузи Хантингтон-Уайтли", imageName: "друг.Роузи"),
                                  Friend(name: "Энакин Скайуокер", imageName: "друг.Энакин")
     ]
+    
+    // MARK: - View Controller life cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.hidesBarsOnTap = false
+    }
     
     // MARK: - Table view data source
 
@@ -60,5 +66,5 @@ class FriendsTableVC: UITableViewController {
             collectionVC.imageName = friendsList[imageIndex!].imageName
             collectionVC.title = friendsList[imageIndex!].name
         }
-    }
+    }    
 }

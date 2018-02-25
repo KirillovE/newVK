@@ -264,7 +264,7 @@
         <!--Друзья-->
         <scene sceneID="qO2-Eh-TlQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="EUb-6n-yJL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EUb-6n-yJL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="друзья" id="cyc-AV-x7i"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0qJ-5m-dRs">

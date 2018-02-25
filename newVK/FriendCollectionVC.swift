@@ -27,6 +27,8 @@ class FriendCollectionVC: UICollectionViewController {
         let screenHeight = screenSize.height
         cell.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         
+        self.navigationController?.hidesBarsOnTap = true
+        
         return cell
     }
     
