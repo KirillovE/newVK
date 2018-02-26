@@ -31,12 +31,6 @@ class FriendsVC: UITableViewController {
                                  Friend(name: "Энакин Скайуокер", imageName: "друг.Энакин")
     ]
     
-    // MARK: - View Controller life cycle
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.hidesBarsOnTap = false
-//    }
-    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

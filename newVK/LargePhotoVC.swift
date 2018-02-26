@@ -10,10 +10,14 @@ import UIKit
 
 class LargePhotoVC: UIViewController {
     @IBOutlet weak var largePhoto: UIImageView!
+    var photoName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        guard photoName != nil else { return }
+        largePhoto.image = UIImage(named: photoName!)
+        
         navigationController?.hidesBarsOnTap = true
     }
     

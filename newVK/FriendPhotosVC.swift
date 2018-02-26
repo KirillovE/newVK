@@ -10,8 +10,10 @@ import UIKit
 
 class FriendPhotosVC: UICollectionViewController {
     
+    // MARK: - Source data
+    
     var albumName = ""
-    var photoAlbum = ["друг.Адриана": ["друг.Адриана", "друг.Адриана 1", "друг.Адриана 2"],
+    var photoAlbums = ["друг.Адриана": ["друг.Адриана", "друг.Адриана 1", "друг.Адриана 2"],
                       "друг.Алессандра": ["друг.Алессандра", "друг.Алессандра 1", "друг.Алессандра 2"],
                       "друг.Бекхэм": ["друг.Бекхэм", "друг.Бекхэм 1", "друг.Бекхэм 2"],
                       "друг.В": ["друг.В", "друг.В 1", "друг.В 2", "друг.В 3"],
@@ -28,13 +30,13 @@ class FriendPhotosVC: UICollectionViewController {
     // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoAlbum[albumName]?.count ?? 1
+        return photoAlbums[albumName]?.count ?? 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendPhotosCell
         
-        if let albumToShow = photoAlbum[albumName] {
+        if let albumToShow = photoAlbums[albumName] {
             cell.friendImage.image = UIImage(named: albumToShow[indexPath.row])
         } else {
             cell.friendImage.image = UIImage(named: albumName)
@@ -46,17 +48,19 @@ class FriendPhotosVC: UICollectionViewController {
         return cell
     }
     
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showLargeImage" {
-            let selectedCell = sender as! FriendPhotosCell
-            let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
-            let largePhotoVC = segue.destination as! LargePhotoVC
-            
-//            let cell = sender as! UITableViewCell
-//            let imageIndex = self.tableView.indexPath(for: cell)?.row
-//            let collectionVC = segue.destination as! FriendCollVC
-//            collectionVC.albumName = friendsList[imageIndex!].imageName
-//            collectionVC.title = friendsList[imageIndex!].name
-        }
+        guard segue.identifier == "showLargeImage" else { return }
+        let largePhotoVC = segue.destination as! LargePhotoVC
+        largePhotoVC.photoName = getLargePhotoName(from: sender)
     }
+    
+    func getLargePhotoName(from sender: Any?) -> String? {
+        let selectedCell = sender as! FriendPhotosCell
+        let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
+        let photoName = self.photoAlbums[albumName]?[photoIndex!]
+        return photoName
+    }
+
 }
