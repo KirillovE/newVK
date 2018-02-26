@@ -40,7 +40,12 @@ class FriendCollVC: UICollectionViewController {
             cell.friendImage.image = UIImage(named: albumName)
         }
         
-        cell.bounds.size.width = cell.bounds.size.height
+        let screenSize = UIScreen.main.bounds
+        cell.frame.size.width = screenSize.width * 0.3
+        cell.frame.size.height = cell.frame.size.width
+        cell.friendImage.layer.cornerRadius = cell.frame.size.height / 10
+        cell.friendImage.clipsToBounds = true
+        
         return cell
     }
     
