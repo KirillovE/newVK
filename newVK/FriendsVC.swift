@@ -10,8 +10,8 @@ import UIKit
 
 class FriendsVC: UITableViewController {
 
-    // MARK: - Source data
-    
+// MARK: - Source data
+
     struct Friend {
         let name: String
         let imageName: String
@@ -31,7 +31,7 @@ class FriendsVC: UITableViewController {
                                  Friend(name: "Энакин Скайуокер", imageName: "друг.Энакин")
     ]
     
-    // MARK: - Table view data source
+// MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friendsList.count
@@ -50,7 +50,7 @@ class FriendsVC: UITableViewController {
         return cell
     }
 
-    // MARK: - Navigation
+// MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowFriendImage" {

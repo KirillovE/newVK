@@ -10,7 +10,7 @@ import UIKit
 
 class FriendPhotosVC: UICollectionViewController {
     
-    // MARK: - Source data
+// MARK: - Source data
     
     var albumName = ""
     var photoAlbums = ["друг.Адриана": ["друг.Адриана", "друг.Адриана 1", "друг.Адриана 2"],
@@ -27,7 +27,7 @@ class FriendPhotosVC: UICollectionViewController {
                       "друг.Энакин": ["друг.Энакин", "друг.Энакин 1", "друг.Энакин 2"]
     ]
 
-    // MARK: - UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoAlbums[albumName]?.count ?? 1
@@ -48,7 +48,7 @@ class FriendPhotosVC: UICollectionViewController {
         return cell
     }
     
-    // MARK: - Navigation
+// MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "showLargeImage" else { return }

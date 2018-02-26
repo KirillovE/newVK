@@ -17,7 +17,6 @@
 		3E618436203717DB00A68D16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E618434203717DB00A68D16 /* Main.storyboard */; };
 		3E618438203717DB00A68D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E618437203717DB00A68D16 /* Assets.xcassets */; };
 		3E61843B203717DB00A68D16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E618439203717DB00A68D16 /* LaunchScreen.storyboard */; };
-		3E78B6782043FE5B006E9397 /* PhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78B6772043FE5B006E9397 /* PhotosVC.swift */; };
 		3E78B69C20443228006E9397 /* LargePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78B69B20443228006E9397 /* LargePhotoVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		3E618437203717DB00A68D16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E61843A203717DB00A68D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E61843C203717DB00A68D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E78B6772043FE5B006E9397 /* PhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosVC.swift; sourceTree = "<group>"; };
 		3E78B69B20443228006E9397 /* LargePhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargePhotoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +69,6 @@
 				3E618430203717DB00A68D16 /* AppDelegate.swift */,
 				3E618432203717DB00A68D16 /* LoginVC.swift */,
 				3E618434203717DB00A68D16 /* Main.storyboard */,
-				3E78B6772043FE5B006E9397 /* PhotosVC.swift */,
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
 				3E618439203717DB00A68D16 /* LaunchScreen.storyboard */,
 				3E167695203F6C0700287BB4 /* FriendsVC.swift */,
@@ -165,7 +162,6 @@
 				3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */,
 				3E78B69C20443228006E9397 /* LargePhotoVC.swift in Sources */,
 				3E16769A20400B5C00287BB4 /* FriendPhotosVC.swift in Sources */,
-				3E78B6782043FE5B006E9397 /* PhotosVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

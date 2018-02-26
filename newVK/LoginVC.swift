@@ -10,21 +10,23 @@ import UIKit
 
 class LoginVC: UIViewController {
     
-    // MARK: - Outlets
+// MARK: - Outlets
+    
     @IBOutlet weak var loginText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginButton: UIButton!
     
-    // MARK: - ViewConroller life cycle
+// MARK: - ViewConroller life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardHidden), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-        let hideKeayboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        scrollView.addGestureRecognizer(hideKeayboardGesture)
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        scrollView.addGestureRecognizer(hideKeyboardGesture)
         
         loginButton.layer.cornerRadius = 5.0
     }
@@ -33,7 +35,8 @@ class LoginVC: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    // MARK: - other methods
+// MARK: - other methods
+    
     @IBAction func loginPressed(_ sender: UIButton) {
         if loginText.text == "admin" && passwordText.text == "1234" {
             performSegue(withIdentifier: "loginSegue", sender: self)
@@ -66,7 +69,6 @@ class LoginVC: UIViewController {
         scrollView.contentInset = UIEdgeInsets.zero
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
-
     
     @objc func hideKeyboard() {
         scrollView.endEditing(true)

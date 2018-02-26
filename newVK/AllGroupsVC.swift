@@ -18,13 +18,16 @@ class AllGroupsVC: UITableViewController {
     
     struct Group: Equatable {
         static func ==(lhs: AllGroupsVC.Group, rhs: AllGroupsVC.Group) -> Bool {
-            return lhs.name == rhs.name && lhs.imageName == rhs.imageName && lhs.subscriberCount == rhs.subscriberCount
+            return lhs.name == rhs.name
+                && lhs.imageName == rhs.imageName
+                && lhs.subscriberCount == rhs.subscriberCount
         }
         
         let name, imageName: String
         let subscriberCount: Int
     }
     
+    var searchResult: [Group]?
     var allGroups: [Group] = [Group(name: "ГикБрейнс", imageName: "группа.гикбрейнс", subscriberCount: 10),
                              Group(name: "Кино", imageName: "группа.кино", subscriberCount: 20),
                              Group(name: "НЛО", imageName: "группа.нло", subscriberCount: 1),
@@ -38,8 +41,6 @@ class AllGroupsVC: UITableViewController {
                              Group(name: "Objective-C", imageName: "группа.Oblective C", subscriberCount: 2),
                              Group(name: "Windows", imageName: "группа.Windows", subscriberCount: 99)
     ]
-    
-    var searchResult: [Group]?
     
     // MARK: - View Controller life cycle
     

@@ -10,14 +10,14 @@ import UIKit
 
 class MyGroupsVC: UITableViewController {
     
-    // MARK: - Source data
+// MARK: - Source data
 
     var myGroups: [AllGroupsVC.Group] =
         [AllGroupsVC.Group(name: "ГикБрейнс", imageName: "группа.гикбрейнс", subscriberCount: 10),
          AllGroupsVC.Group(name: "Swift", imageName: "группа.свифт", subscriberCount: 77)
         ]
 
-    // MARK: - Table view data source
+// MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myGroups.count
@@ -50,13 +50,12 @@ class MyGroupsVC: UITableViewController {
 extension MyGroupsVC {
 
     @IBAction func addGroup(segue: UIStoryboardSegue) {
-        if segue.identifier == "addGroupSegue" {
-            let allGroupsVC = segue.source as! AllGroupsVC
-            addGroup(from: allGroupsVC)
-        }
+        guard segue.identifier == "addGroupSegue" else { return }
+        let allGroupsVC = segue.source as! AllGroupsVC
+        addNewGroup(from: allGroupsVC)
     }
     
-    func addGroup(from tableVC: AllGroupsVC) {
+    func addNewGroup(from tableVC: AllGroupsVC) {
         if let indexPath = tableVC.tableView.indexPathForSelectedRow {
             let groupFound = tableVC.searchResult?[indexPath.row]
             let groupPicked = tableVC.allGroups[indexPath.row]
@@ -67,6 +66,7 @@ extension MyGroupsVC {
                 tableView.reloadData()
             }
         }
+        
     }
     
 }
