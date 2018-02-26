@@ -33,9 +33,9 @@ class FriendsTableVC: UITableViewController {
     
     // MARK: - View Controller life cycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.hidesBarsOnTap = false
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.hidesBarsOnTap = false
+//    }
     
     // MARK: - Table view data source
 
@@ -63,7 +63,7 @@ class FriendsTableVC: UITableViewController {
             let cell = sender as! UITableViewCell
             let imageIndex = self.tableView.indexPath(for: cell)?.row
             let collectionVC = segue.destination as! FriendCollVC
-            collectionVC.imageName = friendsList[imageIndex!].imageName
+            collectionVC.albumName = friendsList[imageIndex!].imageName
             collectionVC.title = friendsList[imageIndex!].name
         }
     }    
