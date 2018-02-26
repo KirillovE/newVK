@@ -1,5 +1,5 @@
 //
-//  AllGroupsTableVC.swift
+//  AllGroupsVC.swift
 //  newVK
 //
 //  Created by Евгений Кириллов on 25.02.2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllGroupsTableVC: UITableViewController {
+class AllGroupsVC: UITableViewController {
     
     // MARK: - Outlets
     
@@ -17,7 +17,7 @@ class AllGroupsTableVC: UITableViewController {
     // MARK: - Source data
     
     struct Group: Equatable {
-        static func ==(lhs: AllGroupsTableVC.Group, rhs: AllGroupsTableVC.Group) -> Bool {
+        static func ==(lhs: AllGroupsVC.Group, rhs: AllGroupsVC.Group) -> Bool {
             return lhs.name == rhs.name && lhs.imageName == rhs.imageName && lhs.subscriberCount == rhs.subscriberCount
         }
         
@@ -75,7 +75,7 @@ class AllGroupsTableVC: UITableViewController {
 
 // MARK: - Extensions
 
-extension AllGroupsTableVC: UISearchBarDelegate {
+extension AllGroupsVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
             searchResult = nil

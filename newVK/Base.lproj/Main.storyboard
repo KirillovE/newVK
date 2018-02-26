@@ -116,7 +116,7 @@
         <!--Друзья-->
         <scene sceneID="EPZ-MO-kAw">
             <objects>
-                <tableViewController id="eqK-Jg-aYG" customClass="FriendsTableVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="eqK-Jg-aYG" customClass="FriendsVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7nf-Ko-62b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,7 @@
         <!--Мои группы-->
         <scene sceneID="zup-ht-CHx">
             <objects>
-                <tableViewController id="ruG-pm-Noc" customClass="MyGroupsTableVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ruG-pm-Noc" customClass="MyGroupsVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LG5-uD-avK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +200,7 @@
         <!--Все группы-->
         <scene sceneID="l6w-XL-eQs">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="PmN-Zr-pDk" customClass="AllGroupsTableVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="PmN-Zr-pDk" customClass="AllGroupsVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9jN-E5-bs9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -260,10 +260,10 @@
             </objects>
             <point key="canvasLocation" x="3359" y="-290"/>
         </scene>
-        <!--Friend CollVC-->
+        <!--Friend PhotosVC-->
         <scene sceneID="rHf-jr-LBz">
             <objects>
-                <collectionViewController hidesBottomBarWhenPushed="YES" id="9b2-lI-NC9" customClass="FriendCollVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController hidesBottomBarWhenPushed="YES" id="9b2-lI-NC9" customClass="FriendPhotosVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aKr-dL-moY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -275,7 +275,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="FriendImage" id="2O9-li-qen" customClass="FriendCollVCell" customModule="newVK" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="FriendImage" id="2O9-li-qen" customClass="FriendPhotosCell" customModule="newVK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -297,23 +297,48 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="friendImage" destination="kYy-Yd-b48" id="K4R-8a-OKY"/>
+                                    <segue destination="e0k-4A-nYR" kind="show" identifier="showLargeImage" id="NRY-yA-5PT"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="vbI-kc-fdW"/>
+                    <navigationItem key="navigationItem" id="vbI-kc-fdW">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0KM-2n-GYR"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avt-RE-oIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3350.625" y="615"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="ryE-1p-y91">
+        <!--Large PhotoVC-->
+        <scene sceneID="NUx-WS-oCJ">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="PcE-Im-P0Z" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WyX-VV-tmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController hidesBottomBarWhenPushed="YES" id="e0k-4A-nYR" customClass="LargePhotoVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ubj-ei-UEt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQw-da-Crz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="width" secondItem="Ubj-ei-UEt" secondAttribute="width" id="6wd-XX-jPQ"/>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="centerX" secondItem="Ubj-ei-UEt" secondAttribute="centerX" id="ZXs-O1-IOo"/>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="height" secondItem="Ubj-ei-UEt" secondAttribute="height" id="bL3-fz-uep"/>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="centerY" secondItem="Ubj-ei-UEt" secondAttribute="centerY" id="tuZ-HI-j8u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GiI-uZ-hND"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cA4-se-IO6"/>
+                    <connections>
+                        <outlet property="largePhoto" destination="IQw-da-Crz" id="1ju-0w-acc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2aV-wK-OpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4146" y="615"/>
+            <point key="canvasLocation" x="4163" y="615"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="qO2-Eh-TlQ">

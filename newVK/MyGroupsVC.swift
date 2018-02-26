@@ -1,5 +1,5 @@
 //
-//  MyGroupsTableVC.swift
+//  MyGroupsVC.swift
 //  newVK
 //
 //  Created by Евгений Кириллов on 25.02.2018.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class MyGroupsTableVC: UITableViewController {
+class MyGroupsVC: UITableViewController {
     
     // MARK: - Source data
 
-    var myGroups: [AllGroupsTableVC.Group] =
-        [AllGroupsTableVC.Group(name: "ГикБрейнс", imageName: "группа.гикбрейнс", subscriberCount: 10),
-         AllGroupsTableVC.Group(name: "Swift", imageName: "группа.свифт", subscriberCount: 77)
+    var myGroups: [AllGroupsVC.Group] =
+        [AllGroupsVC.Group(name: "ГикБрейнс", imageName: "группа.гикбрейнс", subscriberCount: 10),
+         AllGroupsVC.Group(name: "Swift", imageName: "группа.свифт", subscriberCount: 77)
         ]
 
     // MARK: - Table view data source
@@ -47,16 +47,16 @@ class MyGroupsTableVC: UITableViewController {
 
 // MARK: - Extensions
 
-extension MyGroupsTableVC {
+extension MyGroupsVC {
 
     @IBAction func addGroup(segue: UIStoryboardSegue) {
         if segue.identifier == "addGroupSegue" {
-            let allGroupsVC = segue.source as! AllGroupsTableVC
+            let allGroupsVC = segue.source as! AllGroupsVC
             addGroup(from: allGroupsVC)
         }
     }
     
-    func addGroup(from tableVC: AllGroupsTableVC) {
+    func addGroup(from tableVC: AllGroupsVC) {
         if let indexPath = tableVC.tableView.indexPathForSelectedRow {
             let groupFound = tableVC.searchResult?[indexPath.row]
             let groupPicked = tableVC.allGroups[indexPath.row]

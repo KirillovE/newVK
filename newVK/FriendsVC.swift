@@ -1,5 +1,5 @@
 //
-//  FriendsTableVC.swift
+//  FriendsVC.swift
 //  newVK
 //
 //  Created by Евгений Кириллов on 23.02.2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendsTableVC: UITableViewController {
+class FriendsVC: UITableViewController {
 
     // MARK: - Source data
     
@@ -62,7 +62,7 @@ class FriendsTableVC: UITableViewController {
         if segue.identifier == "ShowFriendImage" {
             let cell = sender as! UITableViewCell
             let imageIndex = self.tableView.indexPath(for: cell)?.row
-            let collectionVC = segue.destination as! FriendCollVC
+            let collectionVC = segue.destination as! FriendPhotosVC
             collectionVC.albumName = friendsList[imageIndex!].imageName
             collectionVC.title = friendsList[imageIndex!].name
         }

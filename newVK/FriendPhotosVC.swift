@@ -1,5 +1,5 @@
 //
-//  FriendCollVC.swift
+//  FriendPhotosVC.swift
 //  newVK
 //
 //  Created by Евгений Кириллов on 23.02.2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendCollVC: UICollectionViewController {
+class FriendPhotosVC: UICollectionViewController {
     
     var albumName = ""
     var photoAlbum = ["друг.Адриана": ["друг.Адриана", "друг.Адриана 1", "друг.Адриана 2"],
@@ -25,14 +25,14 @@ class FriendCollVC: UICollectionViewController {
                       "друг.Энакин": ["друг.Энакин", "друг.Энакин 1", "друг.Энакин 2"]
     ]
 
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoAlbum[albumName]?.count ?? 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendCollVCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendPhotosCell
         
         if let albumToShow = photoAlbum[albumName] {
             cell.friendImage.image = UIImage(named: albumToShow[indexPath.row])
@@ -40,13 +40,23 @@ class FriendCollVC: UICollectionViewController {
             cell.friendImage.image = UIImage(named: albumName)
         }
         
-        let screenSize = UIScreen.main.bounds
-        cell.frame.size.width = screenSize.width * 0.3
-        cell.frame.size.height = cell.frame.size.width
         cell.friendImage.layer.cornerRadius = cell.frame.size.height / 10
         cell.friendImage.clipsToBounds = true
         
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showLargeImage" {
+            let selectedCell = sender as! FriendPhotosCell
+            let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
+            let largePhotoVC = segue.destination as! LargePhotoVC
+            
+//            let cell = sender as! UITableViewCell
+//            let imageIndex = self.tableView.indexPath(for: cell)?.row
+//            let collectionVC = segue.destination as! FriendCollVC
+//            collectionVC.albumName = friendsList[imageIndex!].imageName
+//            collectionVC.title = friendsList[imageIndex!].name
+        }
+    }
 }
