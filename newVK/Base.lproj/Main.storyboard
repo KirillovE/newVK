@@ -318,45 +318,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Orv-Vx-Epb">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQw-da-Crz">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="416" id="Qbr-bo-j7A"/>
-                                            <constraint firstAttribute="width" constant="320" id="sXy-SE-mUh"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="IQw-da-Crz" secondAttribute="trailing" id="FUX-Nx-d7b"/>
-                                    <constraint firstItem="IQw-da-Crz" firstAttribute="top" secondItem="Orv-Vx-Epb" secondAttribute="top" id="TM4-I0-yLx"/>
-                                    <constraint firstAttribute="bottom" secondItem="IQw-da-Crz" secondAttribute="bottom" id="WTL-Iy-d88"/>
-                                    <constraint firstItem="IQw-da-Crz" firstAttribute="leading" secondItem="Orv-Vx-Epb" secondAttribute="leading" id="zKU-9o-y37"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="e0k-4A-nYR" id="fqY-H9-9FQ"/>
-                                </connections>
-                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQw-da-Crz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GiI-uZ-hND" firstAttribute="bottom" secondItem="Orv-Vx-Epb" secondAttribute="bottom" id="FOV-dU-bgk"/>
-                            <constraint firstItem="Orv-Vx-Epb" firstAttribute="leading" secondItem="GiI-uZ-hND" secondAttribute="leading" id="hvt-T4-1NP"/>
-                            <constraint firstItem="GiI-uZ-hND" firstAttribute="trailing" secondItem="Orv-Vx-Epb" secondAttribute="trailing" id="yD3-9a-CS9"/>
-                            <constraint firstItem="Orv-Vx-Epb" firstAttribute="top" secondItem="GiI-uZ-hND" secondAttribute="top" id="ykh-60-thd"/>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="width" secondItem="Ubj-ei-UEt" secondAttribute="width" id="6wd-XX-jPQ"/>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="centerX" secondItem="Ubj-ei-UEt" secondAttribute="centerX" id="ZXs-O1-IOo"/>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="height" secondItem="Ubj-ei-UEt" secondAttribute="height" id="bL3-fz-uep"/>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="centerY" secondItem="Ubj-ei-UEt" secondAttribute="centerY" id="tuZ-HI-j8u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GiI-uZ-hND"/>
                     </view>
                     <navigationItem key="navigationItem" id="cA4-se-IO6"/>
                     <connections>
-                        <outlet property="imageViewBottomConstraint" destination="WTL-Iy-d88" id="3kJ-I1-z2y"/>
-                        <outlet property="imageViewLeadingConstraint" destination="zKU-9o-y37" id="LKB-Bx-124"/>
-                        <outlet property="imageViewTopConstraint" destination="TM4-I0-yLx" id="hIH-Hu-eMK"/>
-                        <outlet property="imageViewTrailingConstraint" destination="FUX-Nx-d7b" id="U25-dS-BuE"/>
                         <outlet property="largePhoto" destination="IQw-da-Crz" id="1ju-0w-acc"/>
-                        <outlet property="scrollView" destination="Orv-Vx-Epb" id="uGQ-sl-WXH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aV-wK-OpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
