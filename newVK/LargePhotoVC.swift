@@ -23,46 +23,30 @@ class LargePhotoVC: UIViewController {
         guard photoName != nil else { return }
         largePhoto.image = UIImage(named: photoName!)
         
-//        let switchColorGesture = UITapGestureRecognizer(target: self, action: #selector(switchBackgroundColor))
-//        let switchNavBarVisibleGesture = UITapGestureRecognizer(target: self, action: #selector(switchNavBarVisible))
-//        view.addGestureRecognizer(switchColorGesture)
-//        view.addGestureRecognizer(switchNavBarVisibleGesture)
-        
-        let switchColorAndNavGesture = UITapGestureRecognizer(target: self, action: #selector(switchBackgroundAndNavBar))
-        view.addGestureRecognizer(switchColorAndNavGesture)
+        let viewTapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap))
+        view.addGestureRecognizer(viewTapGesture)
     }
     
 // MARK: - Other methods
     
-//    @IBAction func switchBackgroundColor() {
-//        guard view.backgroundColor != nil else { return }
-//
-//        switch view.backgroundColor! {
-//        case UIColor.white:
-//            view.backgroundColor = UIColor.black
-//        default:
-//            view.backgroundColor = UIColor.white
-//        }
-//    }
-//
-//    @IBAction func switchNavBarVisible() {
-//        switch navigationController?.isNavigationBarHidden {
-//        case true?:
-//            navigationController?.setNavigationBarHidden(false, animated: true)
-//        default:
-//            navigationController?.setNavigationBarHidden(true, animated: true)
-//        }
-//    }
+    /// переключет отображение панели навигации и цвет
+    @IBAction func onTap() {
+        switchBackgroundColor()
+        switchNavBarVisible()
+    }
     
-    @IBAction func switchBackgroundAndNavBar() {
+    func switchBackgroundColor() {
         guard view.backgroundColor != nil else { return }
+
         switch view.backgroundColor! {
         case UIColor.white:
             view.backgroundColor = UIColor.black
         default:
             view.backgroundColor = UIColor.white
         }
+    }
 
+    func switchNavBarVisible() {
         switch navigationController?.isNavigationBarHidden {
         case true?:
             navigationController?.setNavigationBarHidden(false, animated: true)
