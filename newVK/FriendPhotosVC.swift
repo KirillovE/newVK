@@ -51,16 +51,16 @@ class FriendPhotosVC: UICollectionViewController {
 // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "showLargeImage" else { return }
-        let largePhotoVC = segue.destination as! LargePhotoVC
-        largePhotoVC.photoName = getLargePhotoName(from: sender)
+        guard segue.identifier == "ShowPageView" else { return }
+        let photoPages = segue.destination as! ManagePageVC
+        photoPages.photoAlbum = photoAlbums[albumName]
+        photoPages.photoIndex = getLargePhotoIndex(from: sender)
     }
     
-    func getLargePhotoName(from sender: Any?) -> String? {
+    func getLargePhotoIndex(from sender: Any?) -> Int {
         let selectedCell = sender as! FriendPhotosCell
         let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
-        let photoName = self.photoAlbums[albumName]?[photoIndex!]
-        return photoName
+        return photoIndex!
     }
 
 }

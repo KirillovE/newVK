@@ -14,6 +14,7 @@ class LargePhotoVC: UIViewController {
     
     @IBOutlet weak var largePhoto: UIImageView!
     var photoName: String?
+    var photoIndex: Int!
     
 // MARK: - View Controller life cycle
     

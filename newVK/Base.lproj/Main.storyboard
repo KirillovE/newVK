@@ -297,7 +297,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="friendImage" destination="kYy-Yd-b48" id="K4R-8a-OKY"/>
-                                    <segue destination="e0k-4A-nYR" kind="show" identifier="showLargeImage" id="NRY-yA-5PT"/>
+                                    <segue destination="hNb-dO-aCw" kind="show" identifier="ShowPageView" id="JaQ-t0-Mz0"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -310,10 +310,18 @@
             </objects>
             <point key="canvasLocation" x="3350.625" y="615"/>
         </scene>
+        <!--Manage PageVC-->
+        <scene sceneID="shH-d5-HsU">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" pageSpacing="8" navigationOrientation="horizontal" spineLocation="none" id="hNb-dO-aCw" customClass="ManagePageVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nur-nE-MO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4140" y="615"/>
+        </scene>
         <!--Large PhotoVC-->
         <scene sceneID="NUx-WS-oCJ">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="e0k-4A-nYR" customClass="LargePhotoVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LargePhotoVC" hidesBottomBarWhenPushed="YES" id="e0k-4A-nYR" customClass="LargePhotoVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ubj-ei-UEt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -338,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aV-wK-OpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4163" y="615"/>
+            <point key="canvasLocation" x="4929" y="615"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="qO2-Eh-TlQ">

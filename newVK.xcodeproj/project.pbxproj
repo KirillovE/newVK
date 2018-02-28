@@ -18,6 +18,7 @@
 		3E618438203717DB00A68D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E618437203717DB00A68D16 /* Assets.xcassets */; };
 		3E61843B203717DB00A68D16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E618439203717DB00A68D16 /* LaunchScreen.storyboard */; };
 		3E78B69C20443228006E9397 /* LargePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78B69B20443228006E9397 /* LargePhotoVC.swift */; };
+		3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87349204728930049C4F2 /* ManagePageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3E61843A203717DB00A68D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E61843C203717DB00A68D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E78B69B20443228006E9397 /* LargePhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargePhotoVC.swift; sourceTree = "<group>"; };
+		3EA87349204728930049C4F2 /* ManagePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				3E618430203717DB00A68D16 /* AppDelegate.swift */,
 				3E618432203717DB00A68D16 /* LoginVC.swift */,
 				3E618434203717DB00A68D16 /* Main.storyboard */,
+				3EA87349204728930049C4F2 /* ManagePageVC.swift */,
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
 				3E618439203717DB00A68D16 /* LaunchScreen.storyboard */,
 				3E167695203F6C0700287BB4 /* FriendsVC.swift */,
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */,
 				3E167696203F6C0700287BB4 /* FriendsVC.swift in Sources */,
 				3E2BE8C02042EE36002A50CF /* AllGroupsVC.swift in Sources */,
 				3E618433203717DB00A68D16 /* LoginVC.swift in Sources */,
