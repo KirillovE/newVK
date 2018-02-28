@@ -330,7 +330,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IQw-da-Crz" firstAttribute="width" secondItem="Ubj-ei-UEt" secondAttribute="width" id="6wd-XX-jPQ"/>
                             <constraint firstItem="IQw-da-Crz" firstAttribute="centerX" secondItem="Ubj-ei-UEt" secondAttribute="centerX" id="ZXs-O1-IOo"/>
