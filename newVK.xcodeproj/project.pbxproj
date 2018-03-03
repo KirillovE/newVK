@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1FA21557131B2520CDE60508 /* Pods_newVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F53533A50A997494316304F /* Pods_newVK.framework */; };
 		3E0FEF7E204ABE4C006DE640 /* VKservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FEF7D204ABE4C006DE640 /* VKservice.swift */; };
+		3E0FEF80204ACD0D006DE640 /* VKloginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FEF7F204ACD0D006DE640 /* VKloginVC.swift */; };
 		3E167696203F6C0700287BB4 /* FriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E167695203F6C0700287BB4 /* FriendsVC.swift */; };
 		3E16769A20400B5C00287BB4 /* FriendPhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E16769920400B5C00287BB4 /* FriendPhotosVC.swift */; };
 		3E16769C20400F6200287BB4 /* FriendPhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E16769B20400F6200287BB4 /* FriendPhotosCell.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		3E0FEF7D204ABE4C006DE640 /* VKservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKservice.swift; sourceTree = "<group>"; };
+		3E0FEF7F204ACD0D006DE640 /* VKloginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKloginVC.swift; sourceTree = "<group>"; };
 		3E167695203F6C0700287BB4 /* FriendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsVC.swift; sourceTree = "<group>"; };
 		3E16769920400B5C00287BB4 /* FriendPhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotosVC.swift; sourceTree = "<group>"; };
 		3E16769B20400F6200287BB4 /* FriendPhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotosCell.swift; sourceTree = "<group>"; };
@@ -56,6 +58,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E0FEF82204ACD2D006DE640 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E618432203717DB00A68D16 /* LoginVC.swift */,
+				3E0FEF7F204ACD0D006DE640 /* VKloginVC.swift */,
+				3EA87349204728930049C4F2 /* ManagePageVC.swift */,
+				3E167695203F6C0700287BB4 /* FriendsVC.swift */,
+				3E78B69B20443228006E9397 /* LargePhotoVC.swift */,
+				3E16769920400B5C00287BB4 /* FriendPhotosVC.swift */,
+				3E2BE8BD2042E9D9002A50CF /* MyGroupsVC.swift */,
+				3E2BE8BF2042EE36002A50CF /* AllGroupsVC.swift */,
+			);
+			path = "View controllers";
+			sourceTree = "<group>";
+		};
+		3E0FEF83204ACD41006DE640 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3E0FEF7D204ABE4C006DE640 /* VKservice.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3E0FEF84204ACD4B006DE640 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3E16769B20400F6200287BB4 /* FriendPhotosCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		3E618424203717DB00A68D16 = {
 			isa = PBXGroup;
 			children = (
@@ -78,18 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				3E618430203717DB00A68D16 /* AppDelegate.swift */,
-				3E618432203717DB00A68D16 /* LoginVC.swift */,
+				3E0FEF82204ACD2D006DE640 /* View controllers */,
 				3E618434203717DB00A68D16 /* Main.storyboard */,
-				3E0FEF7D204ABE4C006DE640 /* VKservice.swift */,
-				3EA87349204728930049C4F2 /* ManagePageVC.swift */,
+				3E0FEF83204ACD41006DE640 /* Services */,
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
 				3E618439203717DB00A68D16 /* LaunchScreen.storyboard */,
-				3E167695203F6C0700287BB4 /* FriendsVC.swift */,
-				3E78B69B20443228006E9397 /* LargePhotoVC.swift */,
-				3E16769920400B5C00287BB4 /* FriendPhotosVC.swift */,
-				3E16769B20400F6200287BB4 /* FriendPhotosCell.swift */,
-				3E2BE8BD2042E9D9002A50CF /* MyGroupsVC.swift */,
-				3E2BE8BF2042EE36002A50CF /* AllGroupsVC.swift */,
+				3E0FEF84204ACD4B006DE640 /* Cells */,
 				3E61843C203717DB00A68D16 /* Info.plist */,
 			);
 			path = newVK;
@@ -242,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E0FEF7E204ABE4C006DE640 /* VKservice.swift in Sources */,
+				3E0FEF80204ACD0D006DE640 /* VKloginVC.swift in Sources */,
 				3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */,
 				3E167696203F6C0700287BB4 /* FriendsVC.swift in Sources */,
 				3E2BE8C02042EE36002A50CF /* AllGroupsVC.swift in Sources */,
