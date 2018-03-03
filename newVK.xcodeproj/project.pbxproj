@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		3E0FEF7D204ABE4C006DE640 /* VKservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKservice.swift; sourceTree = "<group>"; };
 		3E0FEF7F204ACD0D006DE640 /* VKloginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKloginVC.swift; sourceTree = "<group>"; };
-		3E0FEF85204AD47B006DE640 /* WebKitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebKitVC.swift; path = "View controllers/WebKitVC.swift"; sourceTree = "<group>"; };
+		3E0FEF85204AD47B006DE640 /* WebKitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitVC.swift; sourceTree = "<group>"; };
 		3E167695203F6C0700287BB4 /* FriendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsVC.swift; sourceTree = "<group>"; };
 		3E16769920400B5C00287BB4 /* FriendPhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotosVC.swift; sourceTree = "<group>"; };
 		3E16769B20400F6200287BB4 /* FriendPhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPhotosCell.swift; sourceTree = "<group>"; };
@@ -65,6 +65,7 @@
 			children = (
 				3E618432203717DB00A68D16 /* LoginVC.swift */,
 				3E0FEF7F204ACD0D006DE640 /* VKloginVC.swift */,
+				3E0FEF85204AD47B006DE640 /* WebKitVC.swift */,
 				3EA87349204728930049C4F2 /* ManagePageVC.swift */,
 				3E167695203F6C0700287BB4 /* FriendsVC.swift */,
 				3E78B69B20443228006E9397 /* LargePhotoVC.swift */,
@@ -114,7 +115,6 @@
 			children = (
 				3E618430203717DB00A68D16 /* AppDelegate.swift */,
 				3E618434203717DB00A68D16 /* Main.storyboard */,
-				3E0FEF85204AD47B006DE640 /* WebKitVC.swift */,
 				3E618439203717DB00A68D16 /* LaunchScreen.storyboard */,
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
 				3E61843C203717DB00A68D16 /* Info.plist */,

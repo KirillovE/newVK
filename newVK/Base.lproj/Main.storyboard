@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tke-9i-Pwd">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="960" y="-720"/>
         </scene>
-        <!--View Controller-->
+        <!--KloginVC-->
         <scene sceneID="gBa-Et-vM7">
             <objects>
-                <viewController id="tke-9i-Pwd" sceneMemberID="viewController">
+                <viewController id="tke-9i-Pwd" customClass="VKloginVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="htt-LA-lhH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="-542" y="125"/>
         </scene>
-        <!--View Controller-->
+        <!--Web KitVC-->
         <scene sceneID="LHL-Cd-pkl">
             <objects>
-                <viewController id="qiJ-x6-NxP" sceneMemberID="viewController">
+                <viewController id="qiJ-x6-NxP" customClass="WebKitVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AhY-aF-R2y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,6 +187,7 @@
                         <viewLayoutGuide key="safeArea" id="Uhg-PC-jKs"/>
                     </view>
                     <connections>
+                        <outlet property="webView" destination="HFV-pk-7nP" id="nXs-ma-0a8"/>
                         <segue destination="Qn5-SM-v2N" kind="show" identifier="startWork" id="7F4-79-OLj"/>
                     </connections>
                 </viewController>

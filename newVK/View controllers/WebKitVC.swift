@@ -7,29 +7,34 @@
 //
 
 import WebKit
+import Alamofire
 
 class WebKitVC: UIViewController {
 
+    @IBOutlet weak var webView: WKWebView!
+    var sessionManager: SessionManager?
+    let url = "https://oauth.vk.com/authorize"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        showVKloginScreen()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func showVKloginScreen() {
+        let config = URLSessionConfiguration.default
+        config.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
+        sessionManager = SessionManager(configuration: config)
+        let parameters: Parameters = ["client_id": 6356387,
+                                      "display": "mobile",
+                                      "redirect_uri": "https://oauth.vk.com/blank.html",
+                                      "scope": "262150",
+                                      "response_type": "token",
+                                      "v": 5.73]
+        
+        sessionManager?.request(url, parameters: parameters).responseJSON {response in
+            print(response.value ?? "No answer")
+            self.webView.load(response.request!)
+        }
     }
-    */
-
+    
 }
