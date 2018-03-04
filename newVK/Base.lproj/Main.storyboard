@@ -211,16 +211,81 @@
             </objects>
             <point key="canvasLocation" x="1358" y="1496"/>
         </scene>
-        <!--ImethodsVC-->
+        <!--APImethodsVC-->
         <scene sceneID="fZg-PB-XYq">
             <objects>
-                <viewController id="gbk-Cf-UTu" customClass="APImethodsVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gbk-Cf-UTu" userLabel="APImethodsVC" customClass="APImethodsVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nhq-dI-gg6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcb-Ox-QKz">
+                                <rect key="frame" x="35" y="106" width="250" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="UEQ-MZ-3Hx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Вывести список друзей">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="friendsPressed:" destination="gbk-Cf-UTu" eventType="touchUpInside" id="b8e-cN-fSE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD6-Mn-Wcn">
+                                <rect key="frame" x="35" y="172" width="250" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Вывести фотографии">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="photosPressed:" destination="gbk-Cf-UTu" eventType="touchUpInside" id="Ak5-xZ-7hH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8T-rA-wHr">
+                                <rect key="frame" x="35" y="238" width="250" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Вывести группы">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="groupsPressed:" destination="gbk-Cf-UTu" eventType="touchUpInside" id="oi3-2n-paQ"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Найти группу" translatesAutoresizingMaskIntoConstraints="NO" id="hio-O3-rCc">
+                                <rect key="frame" x="0.0" y="20" width="320" height="56"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Xcb-Ox-QKz" firstAttribute="centerX" secondItem="nhq-dI-gg6" secondAttribute="centerX" id="5oi-Cj-XZv"/>
+                            <constraint firstItem="KD6-Mn-Wcn" firstAttribute="width" secondItem="Xcb-Ox-QKz" secondAttribute="width" id="AUL-07-WuN"/>
+                            <constraint firstItem="hio-O3-rCc" firstAttribute="top" secondItem="Z13-L6-T6b" secondAttribute="top" id="Nwm-du-iy3"/>
+                            <constraint firstItem="k8T-rA-wHr" firstAttribute="width" secondItem="Xcb-Ox-QKz" secondAttribute="width" id="Och-cg-ucQ"/>
+                            <constraint firstItem="KD6-Mn-Wcn" firstAttribute="top" secondItem="Xcb-Ox-QKz" secondAttribute="bottom" constant="30" id="PbT-Hj-ryx"/>
+                            <constraint firstItem="Xcb-Ox-QKz" firstAttribute="top" secondItem="hio-O3-rCc" secondAttribute="bottom" constant="30" id="cI2-1d-C8g"/>
+                            <constraint firstItem="k8T-rA-wHr" firstAttribute="top" secondItem="KD6-Mn-Wcn" secondAttribute="bottom" constant="30" id="fFp-pa-tnU"/>
+                            <constraint firstItem="hio-O3-rCc" firstAttribute="centerX" secondItem="Xcb-Ox-QKz" secondAttribute="centerX" id="hg9-Le-HNH"/>
+                            <constraint firstItem="hio-O3-rCc" firstAttribute="leading" secondItem="nhq-dI-gg6" secondAttribute="leading" id="ljk-sZ-5z9"/>
+                            <constraint firstItem="k8T-rA-wHr" firstAttribute="centerX" secondItem="nhq-dI-gg6" secondAttribute="centerX" id="mYb-c8-oZI"/>
+                            <constraint firstItem="KD6-Mn-Wcn" firstAttribute="centerX" secondItem="nhq-dI-gg6" secondAttribute="centerX" id="yHz-fv-n2Z"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Z13-L6-T6b"/>
                     </view>
+                    <connections>
+                        <outlet property="friendsButton" destination="Xcb-Ox-QKz" id="hea-ut-BX5"/>
+                        <outlet property="groupsButton" destination="k8T-rA-wHr" id="zc9-BJ-q7F"/>
+                        <outlet property="photosButton" destination="KD6-Mn-Wcn" id="euI-BK-jgW"/>
+                        <outlet property="searchBar" destination="hio-O3-rCc" id="lpj-cb-eGb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozv-ZJ-R0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

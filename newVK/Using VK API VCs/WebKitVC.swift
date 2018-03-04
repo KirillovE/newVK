@@ -45,8 +45,17 @@ class WebKitVC: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showLoginScreen", let loginScreen = segue.destination as? VKloginVC {
-            loginScreen.authorizationFailureLabel.isHidden = false
+        switch segue.identifier {
+        case "showLoginScreen"?:
+            if let loginScreen = segue.destination as? VKloginVC {
+                loginScreen.authorizationFailureLabel.isHidden = false
+            }
+        case "startWork"?:
+            if let apiMethods = segue.destination as? APImethodsVC {
+                apiMethods.accessToken = token
+            }
+        default:
+            break
         }
     }
     

@@ -9,27 +9,42 @@
 import UIKit
 
 class APImethodsVC: UIViewController {
-
+    // MARK: - Outlets
+    
+    @IBOutlet weak var friendsButton: UIButton!
+    @IBOutlet weak var photosButton: UIButton!
+    @IBOutlet weak var groupsButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    // MARK: - Source data
+    
+    var accessToken: String!
+    
+    // MARK: - View controller life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        friendsButton.layer.cornerRadius = 5
+        photosButton.layer.cornerRadius = 5
+        groupsButton.layer.cornerRadius = 5
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Methods
+    
+    @IBAction func friendsPressed(_ sender: UIButton) {
+        let vkServices = VKservice(token: accessToken)
+        vkServices.getFriends()
     }
-    */
-
+    
+    @IBAction func photosPressed(_ sender: UIButton) {
+        let vkServices = VKservice(token: accessToken)
+        vkServices.getPhotos()
+    }
+    
+    @IBAction func groupsPressed(_ sender: UIButton) {
+        let vkServices = VKservice(token: accessToken)
+        vkServices.getGroups()
+    }
+    
 }

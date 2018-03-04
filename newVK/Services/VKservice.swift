@@ -14,12 +14,12 @@ class VKservice {
     
     let url = "https://api.vk.com/method"
     let version = 5.73
-    let accessToken: Int!
+    let accessToken: String!
     var sessionManager: SessionManager?
     
     // MARK: - base methods
     
-    init(token: Int) {
+    init(token: String) {
         accessToken = token
     }
     
