@@ -19,6 +19,7 @@ class APImethodsVC: UIViewController {
     // MARK: - Source data
     
     var accessToken: String!
+    var userID: String!
     
     // MARK: - View controller life cycle
     
@@ -33,17 +34,17 @@ class APImethodsVC: UIViewController {
     // MARK: - Methods
     
     @IBAction func friendsPressed(_ sender: UIButton) {
-        let vkServices = VKservice(token: accessToken)
+        let vkServices = VKservice(token: accessToken, ID: userID)
         vkServices.getFriends()
     }
     
     @IBAction func photosPressed(_ sender: UIButton) {
-        let vkServices = VKservice(token: accessToken)
+        let vkServices = VKservice(token: accessToken, ID: userID)
         vkServices.getPhotos()
     }
     
     @IBAction func groupsPressed(_ sender: UIButton) {
-        let vkServices = VKservice(token: accessToken)
+        let vkServices = VKservice(token: accessToken, ID: userID)
         vkServices.getGroups()
     }
     

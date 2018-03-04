@@ -53,6 +53,7 @@ class WebKitVC: UIViewController {
         case "startWork"?:
             if let apiMethods = segue.destination as? APImethodsVC {
                 apiMethods.accessToken = token
+                apiMethods.userID = user
             }
         default:
             break

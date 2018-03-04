@@ -15,12 +15,14 @@ class VKservice {
     let url = "https://api.vk.com/method"
     let version = 5.73
     let accessToken: String!
+    let userId: String!
     var sessionManager: SessionManager?
     
     // MARK: - base methods
     
-    init(token: String) {
+    init(token: String, ID: String) {
         accessToken = token
+        userId = ID
     }
     
     func makeRequest(method: String, parameters: Parameters) {
@@ -29,7 +31,8 @@ class VKservice {
         sessionManager = SessionManager(configuration: config)
         
         sessionManager?.request(url, parameters: parameters).responseJSON {response in
-            print(response.value ?? "No answer")
+            print("Response is ", response.value ?? "No answer")
+            print("Debug description", response.debugDescription)
         }
     }
     
@@ -47,7 +50,7 @@ class VKservice {
     
     ///печатает JSON с перечнем фотографий
     func getPhotos() {
-        let parameters: Parameters = ["owner_id": 470347283,
+        let parameters: Parameters = ["owner_id": userId,
                                       "access_token": accessToken,
                                       "v": 5.73
         ]
@@ -57,7 +60,7 @@ class VKservice {
     
     ///печатает JSON с перечнем групп текущего пользователя
     func getGroups() {
-        let parameters: Parameters = ["user_id": 470347283,
+        let parameters: Parameters = ["user_id": userId,
                                       "extended": 1,
                                       "access_token": accessToken,
                                       "v": 5.73
