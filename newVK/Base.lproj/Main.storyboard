@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byr-qu-Txv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="519" y="1206"/>
+            <point key="canvasLocation" x="518" y="1496"/>
         </scene>
         <!--Web KitVC-->
         <scene sceneID="LHL-Cd-pkl">
@@ -203,12 +203,28 @@
                     <connections>
                         <outlet property="webView" destination="HFV-pk-7nP" id="nXs-ma-0a8"/>
                         <segue destination="g4O-l7-yGG" kind="unwind" identifier="showLoginScreen" unwindAction="athorizationFailureWithSegue:" id="MR8-Md-YBL"/>
+                        <segue destination="gbk-Cf-UTu" kind="show" identifier="startWork" id="byn-bo-b9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Jb-gp-WcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="g4O-l7-yGG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1358" y="1206"/>
+            <point key="canvasLocation" x="1358" y="1496"/>
+        </scene>
+        <!--ImethodsVC-->
+        <scene sceneID="fZg-PB-XYq">
+            <objects>
+                <viewController id="gbk-Cf-UTu" customClass="APImethodsVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nhq-dI-gg6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Z13-L6-T6b"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ozv-ZJ-R0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2169" y="1496"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="EPZ-MO-kAw">
@@ -443,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aV-wK-OpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4140" y="1286"/>
+            <point key="canvasLocation" x="4538" y="-80"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="qO2-Eh-TlQ">
@@ -521,7 +537,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucT-DY-Jk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354" y="634"/>
+            <point key="canvasLocation" x="-293" y="940"/>
         </scene>
     </scenes>
     <resources>
