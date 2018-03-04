@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="960" y="-720"/>
         </scene>
-        <!--KloginVC-->
+        <!--VKloginVC-->
         <scene sceneID="gBa-Et-vM7">
             <objects>
-                <viewController id="tke-9i-Pwd" customClass="VKloginVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tke-9i-Pwd" userLabel="VKloginVC" customClass="VKloginVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="htt-LA-lhH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,17 +140,28 @@
                                     <segue destination="qiJ-x6-NxP" kind="presentation" id="dmL-lv-3L6"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не удалось войти" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do1-mb-mmk">
+                                <rect key="frame" x="89" y="380" width="142.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Do1-mb-mmk" firstAttribute="centerX" secondItem="htt-LA-lhH" secondAttribute="centerX" id="9KI-Vn-CiM"/>
                             <constraint firstItem="d92-Oq-8w8" firstAttribute="width" secondItem="ei8-M1-iqZ" secondAttribute="width" id="X2Y-va-Fuf"/>
                             <constraint firstItem="ei8-M1-iqZ" firstAttribute="centerX" secondItem="htt-LA-lhH" secondAttribute="centerX" id="b1m-0v-Uf5"/>
                             <constraint firstItem="d92-Oq-8w8" firstAttribute="top" secondItem="ei8-M1-iqZ" secondAttribute="bottom" constant="90" id="gzc-Yo-ofO"/>
+                            <constraint firstItem="Do1-mb-mmk" firstAttribute="top" secondItem="d92-Oq-8w8" secondAttribute="bottom" constant="30" id="k3r-F9-yiL"/>
                             <constraint firstItem="d92-Oq-8w8" firstAttribute="centerX" secondItem="htt-LA-lhH" secondAttribute="centerX" id="y4c-2o-NWK"/>
                             <constraint firstItem="ei8-M1-iqZ" firstAttribute="top" secondItem="Odk-Yz-bGV" secondAttribute="top" constant="70" id="yt3-tM-vqM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Odk-Yz-bGV"/>
                     </view>
+                    <connections>
+                        <outlet property="authorizationFailureLabel" destination="Do1-mb-mmk" id="pAZ-HD-Rsi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byr-qu-Txv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

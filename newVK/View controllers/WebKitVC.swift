@@ -42,6 +42,14 @@ class WebKitVC: UIViewController {
         }
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showLoginScreen", let loginScreen = segue.destination as? VKloginVC {
+            loginScreen.authorizationFailureLabel.isHidden = false
+        }
+    }
+    
 }
 
 // MARK: - Extensions

@@ -10,6 +10,8 @@ import UIKit
 
 class VKloginVC: UIViewController {
 
+    @IBOutlet weak var authorizationFailureLabel: UILabel!
+    
     @IBAction func athorizationFailure(segue: UIStoryboardSegue) {
         
     }
