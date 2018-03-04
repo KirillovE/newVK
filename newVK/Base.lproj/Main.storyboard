@@ -189,9 +189,11 @@
                     <connections>
                         <outlet property="webView" destination="HFV-pk-7nP" id="nXs-ma-0a8"/>
                         <segue destination="Qn5-SM-v2N" kind="show" identifier="startWork" id="7F4-79-OLj"/>
+                        <segue destination="g4O-l7-yGG" kind="unwind" identifier="showLoginScreen" unwindAction="athorizationFailureWithSegue:" id="MR8-Md-YBL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Jb-gp-WcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="g4O-l7-yGG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="208" y="125"/>
         </scene>

@@ -72,5 +72,11 @@ extension WebKitVC: WKNavigationDelegate {
         print("Access token is ", token)
         print("User ID is ", user)
         decisionHandler(.allow)
+        
+        if token != nil {
+            performSegue(withIdentifier: "startWork", sender: self)
+        } else {
+            performSegue(withIdentifier: "showLoginScreen", sender: self)
+        }
     }
 }
