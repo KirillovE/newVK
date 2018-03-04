@@ -11,9 +11,14 @@ import UIKit
 class VKloginVC: UIViewController {
 
     @IBOutlet weak var authorizationFailureLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func athorizationFailure(segue: UIStoryboardSegue) {
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loginButton.layer.cornerRadius = 5
     }
 
 }
