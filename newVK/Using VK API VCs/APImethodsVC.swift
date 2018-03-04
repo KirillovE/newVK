@@ -29,6 +29,8 @@ class APImethodsVC: UIViewController {
         friendsButton.layer.cornerRadius = 5
         photosButton.layer.cornerRadius = 5
         groupsButton.layer.cornerRadius = 5
+        
+        searchBar.delegate = self
     }
     
     // MARK: - Methods
@@ -50,4 +52,15 @@ class APImethodsVC: UIViewController {
     
 }
 
+// MARK: - Extensions
 
+extension APImethodsVC: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard searchBar.text != nil else {
+            return
+        }
+        
+        let sevices = VKservice(token: accessToken, ID: userID)
+        sevices.getSearchedGroups(groupToFind: searchBar.text!, numberOfResults: 3)
+    }
+}

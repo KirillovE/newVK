@@ -70,7 +70,7 @@ class VKservice {
     }
     
     ///печатает JSON с перечнем групп в соответствии с поисковым запросом
-    func getSearchedGroups(_ q: String, numberOfResults: Int) {
+    func getSearchedGroups(groupToFind q: String, numberOfResults: Int) {
         let parameters: Parameters = ["q": q,
                                       "type": "group",
                                       "count": numberOfResults,
