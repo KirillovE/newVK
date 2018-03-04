@@ -13,7 +13,7 @@ class VKservice {
     // MARK: - Source data
     
     let url = "https://api.vk.com/method/"
-    let version = "5.73"
+    let version = 5.73
     let accessToken: String!
     let userId: String!
     var sessionManager: SessionManager?
@@ -41,7 +41,7 @@ class VKservice {
     ///печатает JSON с перечнем друзей
     func getFriends() {
         let parameters: Parameters = ["fields": "nickName",
-                                      "access_token": accessToken!,
+                                      "access_token": accessToken,
                                       "v": version
         ]
         
@@ -50,8 +50,8 @@ class VKservice {
     
     ///печатает JSON с перечнем фотографий
     func getPhotos() {
-        let parameters: Parameters = ["owner_id": userId!,
-                                      "access_token": accessToken!,
+        let parameters: Parameters = ["owner_id": userId,
+                                      "access_token": accessToken,
                                       "v": version
         ]
         
@@ -60,9 +60,9 @@ class VKservice {
     
     ///печатает JSON с перечнем групп текущего пользователя
     func getGroups() {
-        let parameters: Parameters = ["user_id": userId!,
+        let parameters: Parameters = ["user_id": userId,
                                       "extended": 1,
-                                      "access_token": accessToken!,
+                                      "access_token": accessToken,
                                       "v": version
         ]
         
@@ -74,7 +74,7 @@ class VKservice {
         let parameters: Parameters = ["q": q,
                                       "type": "group",
                                       "count": numberOfResults,
-                                      "access_token": accessToken!,
+                                      "access_token": accessToken,
                                       "v": version
         ]
         
