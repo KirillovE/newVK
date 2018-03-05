@@ -32,6 +32,9 @@ class APImethodsVC: UIViewController {
         groupsButton.layer.cornerRadius = 5
         
         searchBar.delegate = self
+        
+        let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(hideKeyboardGesture)
     }
     
     // MARK: - Methods
@@ -63,5 +66,9 @@ extension APImethodsVC: UISearchBarDelegate {
         
         vkServices = VKservice(token: accessToken, ID: userID)
         vkServices.getSearchedGroups(groupToFind: searchBar.text!, numberOfResults: 3)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
 }
