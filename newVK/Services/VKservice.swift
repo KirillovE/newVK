@@ -32,7 +32,6 @@ class VKservice {
         
         sessionManager?.request(url + method, parameters: parameters).responseJSON {response in
             print("\n--- Response for method '\(method)' is ---\n", response.value ?? "No answer")
-            self.sessionManager = nil
         }
     }
     

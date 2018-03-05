@@ -20,6 +20,7 @@ class APImethodsVC: UIViewController {
     
     var accessToken: String!
     var userID: String!
+    var vkServices: VKservice!
     
     // MARK: - View controller life cycle
     
@@ -36,17 +37,17 @@ class APImethodsVC: UIViewController {
     // MARK: - Methods
     
     @IBAction func friendsPressed(_ sender: UIButton) {
-        let vkServices = VKservice(token: accessToken, ID: userID)
+        vkServices = VKservice(token: accessToken, ID: userID)
         vkServices.getFriends()
     }
     
     @IBAction func photosPressed(_ sender: UIButton) {
-        let vkServices = VKservice(token: accessToken, ID: userID)
+        vkServices = VKservice(token: accessToken, ID: userID)
         vkServices.getPhotos()
     }
     
     @IBAction func groupsPressed(_ sender: UIButton) {
-        let vkServices = VKservice(token: accessToken, ID: userID)
+        vkServices = VKservice(token: accessToken, ID: userID)
         vkServices.getGroups()
     }
     
@@ -60,7 +61,7 @@ extension APImethodsVC: UISearchBarDelegate {
             return
         }
         
-        let sevices = VKservice(token: accessToken, ID: userID)
-        sevices.getSearchedGroups(groupToFind: searchBar.text!, numberOfResults: 3)
+        vkServices = VKservice(token: accessToken, ID: userID)
+        vkServices.getSearchedGroups(groupToFind: searchBar.text!, numberOfResults: 3)
     }
 }
