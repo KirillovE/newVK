@@ -23,6 +23,9 @@
 		3E618438203717DB00A68D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E618437203717DB00A68D16 /* Assets.xcassets */; };
 		3E61843B203717DB00A68D16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E618439203717DB00A68D16 /* LaunchScreen.storyboard */; };
 		3E78B69C20443228006E9397 /* LargePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E78B69B20443228006E9397 /* LargePhotoVC.swift */; };
+		3E7D1212204ECF44001E4D9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1211204ECF44001E4D9C /* User.swift */; };
+		3E7D1214204ED077001E4D9C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1213204ED077001E4D9C /* Photo.swift */; };
+		3E7D1216204ED147001E4D9C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1215204ED147001E4D9C /* Group.swift */; };
 		3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87349204728930049C4F2 /* ManagePageVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,9 @@
 		3E61843A203717DB00A68D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E61843C203717DB00A68D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E78B69B20443228006E9397 /* LargePhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargePhotoVC.swift; sourceTree = "<group>"; };
+		3E7D1211204ECF44001E4D9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3E7D1213204ED077001E4D9C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		3E7D1215204ED147001E4D9C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		3EA87349204728930049C4F2 /* ManagePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePageVC.swift; sourceTree = "<group>"; };
 		5F53533A50A997494316304F /* Pods_newVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C94D3D006DBA0B60806BE9 /* Pods-newVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,10 +136,21 @@
 				3E61843C203717DB00A68D16 /* Info.plist */,
 				3E48210B204BFD11009639FC /* Using VK API VCs */,
 				3E0FEF83204ACD41006DE640 /* Services */,
+				3E7D1217204ED1BE001E4D9C /* Data from VK */,
 				3E0FEF82204ACD2D006DE640 /* Demo data VCs */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
 			);
 			path = newVK;
+			sourceTree = "<group>";
+		};
+		3E7D1217204ED1BE001E4D9C /* Data from VK */ = {
+			isa = PBXGroup;
+			children = (
+				3E7D1211204ECF44001E4D9C /* User.swift */,
+				3E7D1213204ED077001E4D9C /* Photo.swift */,
+				3E7D1215204ED147001E4D9C /* Group.swift */,
+			);
+			path = "Data from VK";
 			sourceTree = "<group>";
 		};
 		60CBD30DAFE58B1DF1A08ED8 /* Frameworks */ = {
@@ -285,11 +302,14 @@
 				3E0FEF86204AD47B006DE640 /* WebKitVC.swift in Sources */,
 				3E0FEF7E204ABE4C006DE640 /* VKservice.swift in Sources */,
 				3E0FEF80204ACD0D006DE640 /* VKloginVC.swift in Sources */,
+				3E7D1216204ED147001E4D9C /* Group.swift in Sources */,
 				3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */,
 				3E167696203F6C0700287BB4 /* FriendsVC.swift in Sources */,
 				3E48210A204BFD06009639FC /* APImethodsVC.swift in Sources */,
+				3E7D1212204ECF44001E4D9C /* User.swift in Sources */,
 				3E2BE8C02042EE36002A50CF /* AllGroupsVC.swift in Sources */,
 				3E618433203717DB00A68D16 /* LoginVC.swift in Sources */,
+				3E7D1214204ED077001E4D9C /* Photo.swift in Sources */,
 				3E16769C20400F6200287BB4 /* FriendPhotosCell.swift in Sources */,
 				3E2BE8BE2042E9D9002A50CF /* MyGroupsVC.swift in Sources */,
 				3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */,
