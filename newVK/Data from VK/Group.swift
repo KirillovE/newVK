@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class Group {
     var id = 0
     var name = ""
     var photoURL = ""
+    
+    init(json: JSON) {
+        self.id = json["id"].intValue
+        self.name = json["name"].stringValue
+        self.photoURL = json["photo_50"].stringValue
+    }
 }
