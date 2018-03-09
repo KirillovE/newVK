@@ -36,15 +36,9 @@ class VKservice {
             let json = JSON(data)
             
             switch method {
-            case "friends.get":
-                let usersArray = self.appendUsers(from: json)
-                print(usersArray)
-            case "photos.getAll":
-                let photosArray = self.appendPhotos(from: json)
-                print(photosArray)
-            case "groups.get", "groups.search":
-                let groupsArray = self.appendGroups(from: json)
-                print(groupsArray)
+            case "friends.get": let usersArray = self.appendUsers(from: json)
+            case "photos.getAll": let photosArray = self.appendPhotos(from: json)
+            case "groups.get", "groups.search": let groupsArray = self.appendGroups(from: json)
             default: break
             }
         }
