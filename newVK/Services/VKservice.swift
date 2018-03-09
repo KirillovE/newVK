@@ -42,7 +42,7 @@ class VKservice {
             case "photos.getAll":
                 let photosArray = self.appendPhotos(from: json)
                 print(photosArray)
-            case "groups.get":
+            case "groups.get", "groups.search":
                 let groupsArray = self.appendGroups(from: json)
                 print(groupsArray)
             default: break
