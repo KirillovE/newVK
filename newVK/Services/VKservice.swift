@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class VKservice {
     // MARK: - Source data
@@ -31,8 +32,60 @@ class VKservice {
         sessionManager = SessionManager(configuration: config)
         
         sessionManager?.request(url + method, parameters: parameters).responseJSON {response in
-            print("\n--- Response for method '\(method)' is ---\n", response.value ?? "No answer")
+            guard let data = response.value else {return}
+            let json = JSON(data)
+            
+            switch method {
+            case "friends.get":
+                let usersArray = self.appendUsers(from: json)
+                print(usersArray)
+            case "photos.getAll":
+                let photosArray = self.appendPhotos(from: json)
+                print(photosArray)
+            case "groups.get":
+                let groupsArray = self.appendGroups(from: json)
+                print(groupsArray)
+            default: break
+            }
         }
+    }
+    
+    // MARK: - Appending arrays from JSON
+    
+    func appendUsers(from json: JSON) -> [User] {
+        let itemsArray = json["response", "items"]
+        var usersArray = [User]()
+        
+        for (_, item) in itemsArray {
+            let user = User(json: item)
+            usersArray.append(user)
+        }
+        
+        return usersArray
+    }
+    
+    func appendPhotos(from json: JSON) -> [Photo] {
+        let itemsArray = json["response", "items"]
+        var photosArray = [Photo]()
+        
+        for (_, item) in itemsArray {
+            let photo = Photo(json: item)
+            photosArray.append(photo)
+        }
+        
+        return photosArray
+    }
+    
+    func appendGroups(from json: JSON) -> [Group] {
+        let itemsArray = json["response", "items"]
+        var groupsArray = [Group]()
+        
+        for (_, item) in itemsArray {
+            let group = Group(json: item)
+            groupsArray.append(group)
+        }
+        
+        return groupsArray
     }
     
     // MARK: - VK API methods
