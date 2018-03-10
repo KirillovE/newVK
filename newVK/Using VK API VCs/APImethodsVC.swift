@@ -20,7 +20,9 @@ class APImethodsVC: UIViewController {
     
     var accessToken: String!
     var userID: String!
-    var vkServices: VKservice!
+    var userService: UsersService!
+    var photoService: PhotosService!
+    var groupService: GroupsService!
     
     // MARK: - View controller life cycle
     
@@ -40,18 +42,18 @@ class APImethodsVC: UIViewController {
     // MARK: - Methods
     
     @IBAction func friendsPressed(_ sender: UIButton) {
-        vkServices = VKservice(token: accessToken, ID: userID)
-        vkServices.getFriends()
+        userService = UsersService(token: accessToken)
+        userService.getFriends()
     }
     
     @IBAction func photosPressed(_ sender: UIButton) {
-        vkServices = VKservice(token: accessToken, ID: userID)
-        vkServices.getPhotos()
+        photoService = PhotosService(token: accessToken, ID: userID)
+        photoService.getPhotos()
     }
     
     @IBAction func groupsPressed(_ sender: UIButton) {
-        vkServices = VKservice(token: accessToken, ID: userID)
-        vkServices.getGroups()
+        groupService = GroupsService(token: accessToken, ID: userID)
+        groupService.getGroups()
     }
     
 }
@@ -64,8 +66,8 @@ extension APImethodsVC: UISearchBarDelegate {
             return
         }
         
-        vkServices = VKservice(token: accessToken, ID: userID)
-        vkServices.getSearchedGroups(groupToFind: searchBar.text!, numberOfResults: 3)
+        groupService = GroupsService(token: accessToken, ID: userID)
+        groupService.getSearchedGroups(groupToFind: searchBar.text!, numberOfResults: 3)
     }
     
     @objc func hideKeyboard() {
