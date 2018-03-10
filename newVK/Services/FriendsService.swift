@@ -10,7 +10,9 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class UsersService {
+class FriendsService {
+    // MARK: - Settings
+    
     let version = 5.73
     let accessToken: String!
     var friends = [User]()
@@ -19,6 +21,8 @@ class UsersService {
     init(token: String) {
         accessToken = token
     }
+    
+    // MARK: - Methods
     
     func getFriends() -> [User] {
         let parameters: Parameters = ["fields": "nickName",
@@ -33,7 +37,7 @@ class UsersService {
         return friends
     }
     
-    func appendUsers(from json: JSON) -> [User] {
+    func appendFriends(from json: JSON) -> [User] {
         let itemsArray = json["response", "items"]
         var usersArray = [User]()
         

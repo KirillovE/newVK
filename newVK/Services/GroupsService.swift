@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class GroupsService {
+    // MARK: - Settings
+    
     let version = 5.73
     let accessToken: String!
     let userId: String!
@@ -20,6 +22,8 @@ class GroupsService {
         accessToken = token
         userId = ID
     }
+    
+    // MARK: - Methods
     
     func getGroups() {
         let parameters: Parameters = ["user_id": userId,

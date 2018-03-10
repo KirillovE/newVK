@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class PhotosService {
+    // MARK: - Settings
+    
     let version = 5.73
     let accessToken: String!
     let userId: String!
@@ -20,6 +22,8 @@ class PhotosService {
         accessToken = token
         userId = ID
     }
+    
+    // MARK: - Methods
     
     func getPhotos() {
         let parameters: Parameters = ["owner_id": userId,

@@ -20,7 +20,7 @@ class APImethodsVC: UIViewController {
     
     var accessToken: String!
     var userID: String!
-    var userService: UsersService!
+    var userService: FriendsService!
     var photoService: PhotosService!
     var groupService: GroupsService!
     
@@ -42,7 +42,7 @@ class APImethodsVC: UIViewController {
     // MARK: - Methods
     
     @IBAction func friendsPressed(_ sender: UIButton) {
-        userService = UsersService(token: accessToken)
+        userService = FriendsService(token: accessToken)
         userService.getFriends()
     }
     
