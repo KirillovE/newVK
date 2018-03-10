@@ -9,16 +9,15 @@
 import Foundation
 import SwiftyJSON
 
-class Photo {
-    var id = 0
+class Photo: VKItem {
     var ownerId = 0
     var smallPhotoURL = ""
     var largePhotoURL = ""
     
-    init(json: JSON) {
-        self.id = json["id"].intValue
-        self.ownerId = json["owner_id"].intValue
-        self.smallPhotoURL = json["photo_75"].stringValue
-        self.largePhotoURL = json["photo_604"].stringValue
+    override init(json: JSON) {
+        super.init(json: json)
+        ownerId = json["owner_id"].intValue
+        smallPhotoURL = json["photo_75"].stringValue
+        largePhotoURL = json["photo_604"].stringValue
     }
 }

@@ -9,14 +9,13 @@
 import Foundation
 import SwiftyJSON
 
-class Group {
-    var id = 0
+class Group: VKItem {
     var name = ""
     var photoURL = ""
     
-    init(json: JSON) {
-        self.id = json["id"].intValue
-        self.name = json["name"].stringValue
-        self.photoURL = json["photo_50"].stringValue
+    override init(json: JSON) {
+        super.init(json: json)
+        name = json["name"].stringValue
+        photoURL = json["photo_50"].stringValue
     }
 }
