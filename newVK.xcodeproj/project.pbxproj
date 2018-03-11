@@ -26,7 +26,6 @@
 		3E7D1216204ED147001E4D9C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1215204ED147001E4D9C /* Group.swift */; };
 		3E7D12192053CEB1001E4D9C /* FriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D12182053CEB1001E4D9C /* FriendsService.swift */; };
 		3E7D121B2053D0B6001E4D9C /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D121A2053D0B6001E4D9C /* PhotosService.swift */; };
-		3E7D121D2053D117001E4D9C /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D121C2053D117001E4D9C /* GroupsService.swift */; };
 		3E7D122320557A75001E4D9C /* SettingsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D122220557A75001E4D9C /* SettingsStorage.swift */; };
 		3E7D12252055B751001E4D9C /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D12242055B751001E4D9C /* TabBarVC.swift */; };
 		3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87349204728930049C4F2 /* ManagePageVC.swift */; };
@@ -53,7 +52,6 @@
 		3E7D1215204ED147001E4D9C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		3E7D12182053CEB1001E4D9C /* FriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsService.swift; path = newVK/Services/FriendsService.swift; sourceTree = SOURCE_ROOT; };
 		3E7D121A2053D0B6001E4D9C /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
-		3E7D121C2053D117001E4D9C /* GroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
 		3E7D122220557A75001E4D9C /* SettingsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStorage.swift; sourceTree = "<group>"; };
 		3E7D12242055B751001E4D9C /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		3EA87349204728930049C4F2 /* ManagePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePageVC.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 			children = (
 				3E7D12182053CEB1001E4D9C /* FriendsService.swift */,
 				3E7D121A2053D0B6001E4D9C /* PhotosService.swift */,
-				3E7D121C2053D117001E4D9C /* GroupsService.swift */,
 				3E0FEF7D204ABE4C006DE640 /* VKRequestService.swift */,
 				3E7D122220557A75001E4D9C /* SettingsStorage.swift */,
 			);
@@ -326,7 +323,6 @@
 				3E2BE8BE2042E9D9002A50CF /* MyGroupsVC.swift in Sources */,
 				3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */,
 				3E7D12192053CEB1001E4D9C /* FriendsService.swift in Sources */,
-				3E7D121D2053D117001E4D9C /* GroupsService.swift in Sources */,
 				3E78B69C20443228006E9397 /* LargePhotoVC.swift in Sources */,
 				3E16769A20400B5C00287BB4 /* FriendPhotosVC.swift in Sources */,
 			);

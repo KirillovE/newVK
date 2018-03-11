@@ -182,7 +182,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="C6P-NO-L4q"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="O9c-gq-15Z">
                             <connections>
-                                <segue destination="PmN-Zr-pDk" kind="show" identifier="secondTableSegue" id="r1m-8V-K69"/>
+                                <segue destination="PmN-Zr-pDk" kind="show" identifier="showAllGroups" id="r1m-8V-K69"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

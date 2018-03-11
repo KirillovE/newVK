@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class MyGroupsVC: UITableViewController {
     
-// MARK: - Source data
+    // MARK: - Source data
     
     var settings: SettingsStorage!
     let vkRequest = VKRequestService()
@@ -23,11 +23,6 @@ class MyGroupsVC: UITableViewController {
             self.tableView.reloadData()
         }
     }
-
-    var myGroups: [AllGroupsVC.Group] =
-        [AllGroupsVC.Group(name: "ГикБрейнс", imageName: "группа.гикбрейнс", subscriberCount: 10),
-         AllGroupsVC.Group(name: "Swift", imageName: "группа.свифт", subscriberCount: 77)
-        ]
     
     // MARK: - View Controller life cycle
     
@@ -35,8 +30,16 @@ class MyGroupsVC: UITableViewController {
         super.viewDidLoad()
         getGroups()
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let allGroupsVC = segue.destination as? AllGroupsVC {
+            allGroupsVC.settings = settings
+        }
+    }
 
-// MARK: - Table view data source
+    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.count
@@ -45,52 +48,29 @@ class MyGroupsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myGroups", for: indexPath)
         let groupName = groups[indexPath.row].name
-//        let groupImageName = myGroups[indexPath.row].imageName
-        
         cell.textLabel?.text = groupName
-//        cell.imageView?.image = UIImage(named: groupImageName)
         
+//        пока получен лишь адрес изображения, нужно его как-то скачать и отобразить
+//        let groupImageName = myGroups[indexPath.row].imageName
+//        cell.imageView?.image = UIImage(named: groupImageName)
 //        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 4
 //        cell.imageView?.clipsToBounds = true
 
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            myGroups.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
+//    удаление группы пока недоступно, для удаления нужно реализовывать отдельный запрос
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            myGroups.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        }
+//    }
 }
 
-// MARK: - Extensions
+// MARK: - Requesting groups from server
 
 extension MyGroupsVC {
-
-    // MARK: - Adding a group
-    
-    @IBAction func addGroup(segue: UIStoryboardSegue) {
-        guard segue.identifier == "addGroupSegue" else { return }
-        let allGroupsVC = segue.source as! AllGroupsVC
-        addNewGroup(from: allGroupsVC)
-    }
-    
-    func addNewGroup(from tableVC: AllGroupsVC) {
-        if let indexPath = tableVC.tableView.indexPathForSelectedRow {
-            let groupFound = tableVC.searchResult?[indexPath.row]
-            let groupPicked = tableVC.allGroups[indexPath.row]
-            let group = groupFound ?? groupPicked
-            
-            if !myGroups.contains(group) {
-                myGroups.append(group)
-                tableView.reloadData()
-            }
-        }
-        
-    }
-    
-    // MARK: - Requesting groups from server
     
     func getGroups() {
         let parameters: Parameters = ["user_id": settings.userID,
@@ -100,19 +80,6 @@ extension MyGroupsVC {
         ]
         
         vkRequest.makeRequest(method: "groups.get", parameters: parameters) { [weak self] json in
-            self?.groupsJSON = json
-        }
-    }
-    
-    func getSearchedGroups(groupToFind q: String, numberOfResults: Int) {
-        let parameters: Parameters = ["q": q,
-                                      "type": "group",
-                                      "count": numberOfResults,
-                                      "access_token": settings.accessToken,
-                                      "v": settings.apiVersion
-        ]
-        
-        vkRequest.makeRequest(method: "groups.search", parameters: parameters) { [weak self] json in
             self?.groupsJSON = json
         }
     }
@@ -128,7 +95,31 @@ extension MyGroupsVC {
         
         return groupsArray
     }
-    
 }
 
+// MARK: - Adding a group
 
+//extension MyGroupsVC {
+
+//    для добавления группы также нужен отдельный запрос
+//    @IBAction func addGroup(segue: UIStoryboardSegue) {
+//        guard segue.identifier == "addGroupSegue" else { return }
+//        let allGroupsVC = segue.source as! AllGroupsVC
+//        addNewGroup(from: allGroupsVC)
+//    }
+//
+//    func addNewGroup(from tableVC: AllGroupsVC) {
+//        if let indexPath = tableVC.tableView.indexPathForSelectedRow {
+//            let groupFound = tableVC.searchResult?[indexPath.row]
+//            let groupPicked = tableVC.allGroups[indexPath.row]
+//            let group = groupFound ?? groupPicked
+//
+//            if !myGroups.contains(group) {
+//                myGroups.append(group)
+//                tableView.reloadData()
+//            }
+//        }
+//
+//    }
+//
+//}

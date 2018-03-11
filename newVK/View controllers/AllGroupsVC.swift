@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class AllGroupsVC: UITableViewController {
     
@@ -16,31 +18,15 @@ class AllGroupsVC: UITableViewController {
     
     // MARK: - Source data
     
-    struct Group: Equatable {
-        static func ==(lhs: AllGroupsVC.Group, rhs: AllGroupsVC.Group) -> Bool {
-            return lhs.name == rhs.name
-                && lhs.imageName == rhs.imageName
-                && lhs.subscriberCount == rhs.subscriberCount
+    var settings: SettingsStorage!
+    let vkRequest = VKRequestService()
+    var groups = [Group]()
+    var groupsJSON: JSON? {
+        didSet {
+            groups = appendGroups(from: groupsJSON)
+            self.tableView.reloadData()
         }
-        
-        let name, imageName: String
-        let subscriberCount: Int
     }
-    
-    var searchResult: [Group]?
-    var allGroups: [Group] = [Group(name: "ГикБрейнс", imageName: "группа.гикбрейнс", subscriberCount: 10),
-                             Group(name: "Кино", imageName: "группа.кино", subscriberCount: 20),
-                             Group(name: "НЛО", imageName: "группа.нло", subscriberCount: 1),
-                             Group(name: "Swift", imageName: "группа.свифт", subscriberCount: 77),
-                             Group(name: "Тёмная сторона", imageName: "группа.тёмная сторона", subscriberCount: 2),
-                             Group(name: "Tesla", imageName: "группа.тесла", subscriberCount: 300),
-                             Group(name: "Формула-1", imageName: "группа.формула 1", subscriberCount: 100),
-                             Group(name: "Формула-E", imageName: "группа.формула е", subscriberCount: 50),
-                             Group(name: "Apple", imageName: "группа.эпл", subscriberCount: 700),
-                             Group(name: "Linux", imageName: "группа.Linux", subscriberCount: 15),
-                             Group(name: "Objective-C", imageName: "группа.Oblective C", subscriberCount: 2),
-                             Group(name: "Windows", imageName: "группа.Windows", subscriberCount: 99)
-    ]
     
     // MARK: - View Controller life cycle
     
@@ -52,44 +38,91 @@ class AllGroupsVC: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResult?.count ?? allGroups.count
+        return groups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allGroups", for: indexPath)
-        let chosenGroup = searchResult ?? allGroups
         
-        let groupName = chosenGroup[indexPath.row].name
-        let groupImageName = chosenGroup[indexPath.row].imageName
-        let groupSubscriberCount = chosenGroup[indexPath.row].subscriberCount
-        
+        let groupName = groups[indexPath.row].name
         cell.textLabel?.text = groupName
-        cell.imageView?.image = UIImage(named: groupImageName)
-        cell.detailTextLabel?.text = "Подписчиков: " + String(groupSubscriberCount)
         
-        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 4
-        cell.imageView?.clipsToBounds = true
+//        для получения количества подписчиков нужно реализовать отдельный запрос
+//        let groupSubscriberCount = chosenGroup[indexPath.row].subscriberCount
+        
+//        фотография пока не получена, есть только её адрес
+//        let groupImageName = chosenGroup[indexPath.row].imageName
+        
+//        cell.imageView?.image = UIImage(named: groupImageName)
+//        cell.detailTextLabel?.text = "Подписчиков: " + String(groupSubscriberCount)
+//
+//        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 4
+//        cell.imageView?.clipsToBounds = true
 
         return cell
     }
 }
 
-// MARK: - Extensions
+// MARK: - Searching groups
 
 extension AllGroupsVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
-            searchResult = nil
+            groups.removeAll(keepingCapacity: false)
             self.tableView.reloadData()
             return
         }
         
-        searchResult = allGroups.filter{$0.name.lowercased().contains(searchText.lowercased())}
+        getSearchedGroups(groupToFind: searchText, numberOfResults: 20)
         self.tableView.reloadData()
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchResult = nil
+        groups.removeAll(keepingCapacity: false)
         self.tableView.reloadData()
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard searchBar.text != nil else {
+            groups.removeAll(keepingCapacity: false)
+            self.tableView.reloadData()
+            return
+        }
+        
+        getSearchedGroups(groupToFind: searchBar.text!, numberOfResults: 20)
+        self.tableView.reloadData()
+        searchBar.resignFirstResponder()
+    }
+    
+}
+
+// MARK: - Requesting groups from server
+
+extension AllGroupsVC {
+    
+    func getSearchedGroups(groupToFind q: String, numberOfResults: Int) {
+        let parameters: Parameters = ["q": q,
+                                      "type": "group",
+                                      "count": numberOfResults,
+                                      "access_token": settings.accessToken,
+                                      "v": settings.apiVersion
+        ]
+        
+        vkRequest.makeRequest(method: "groups.search", parameters: parameters) { [weak self] json in
+            self?.groupsJSON = json
+        }
+    }
+    
+    func appendGroups(from json: JSON?) -> [Group] {
+        let itemsArray = json!["response", "items"]
+        var groupsArray = [Group]()
+        
+        for (_, item) in itemsArray {
+            let group = Group(json: item)
+            groupsArray.append(group)
+        }
+        
+        return groupsArray
+    }
+    
 }
