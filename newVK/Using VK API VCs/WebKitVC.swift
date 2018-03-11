@@ -53,9 +53,16 @@ class WebKitVC: UIViewController {
                 loginScreen.authorizationFailureLabel.isHidden = false
             }
         case "startWork"?:
-            if let tabBar = segue.destination as? TabBarVC {
-                tabBar.accessToken = token
-                tabBar.userID = user
+            // передаём настройки в FriendsVC и MyGroupsVC
+            if let tabBar = segue.destination as? TabBarVC,
+                let friendsNavController = tabBar.viewControllers?.first as? UINavigationController,
+                let friendsVC = friendsNavController.viewControllers.first as? FriendsVC,
+                let groupsNavController = tabBar.viewControllers?.last as? UINavigationController,
+                let groupsVC = groupsNavController.viewControllers.first as? MyGroupsVC {
+                
+                let settings = SettingsStorage(token: token, id: user, version: apiVersion)
+                friendsVC.settings = settings
+                groupsVC.settings = settings
             }
         default:
             break

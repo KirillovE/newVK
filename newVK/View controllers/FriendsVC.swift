@@ -12,6 +12,8 @@ class FriendsVC: UITableViewController {
 
 // MARK: - Source data
 
+    var settings: SettingsStorage!
+    
     struct Friend {
         let name: String
         let imageName: String
@@ -30,6 +32,12 @@ class FriendsVC: UITableViewController {
                                  Friend(name: "Роузи Хантингтон-Уайтли", imageName: "друг.Роузи"),
                                  Friend(name: "Энакин Скайуокер", imageName: "друг.Энакин")
     ]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print(settings.accessToken, settings.userID, settings.apiVersion)
+    }
     
 // MARK: - Table view data source
 

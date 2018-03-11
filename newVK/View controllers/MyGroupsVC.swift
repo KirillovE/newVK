@@ -13,11 +13,19 @@ import SwiftyJSON
 class MyGroupsVC: UITableViewController {
     
 // MARK: - Source data
+    
+    var settings: SettingsStorage!
 
     var myGroups: [AllGroupsVC.Group] =
         [AllGroupsVC.Group(name: "ГикБрейнс", imageName: "группа.гикбрейнс", subscriberCount: 10),
          AllGroupsVC.Group(name: "Swift", imageName: "группа.свифт", subscriberCount: 77)
         ]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print(settings.accessToken, settings.userID, settings.apiVersion)
+    }
 
 // MARK: - Table view data source
 

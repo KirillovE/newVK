@@ -9,8 +9,7 @@
 import UIKit
 
 class TabBarVC: UITabBarController {
-
-    var accessToken: String!
-    var userID: String!
+    
+    var settings: SettingsStorage!
 
 }
