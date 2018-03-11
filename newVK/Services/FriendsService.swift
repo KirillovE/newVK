@@ -1,5 +1,5 @@
 //
-//  UsersService.swift
+//  FriendsService.swift
 //  newVK
 //
 //  Created by Евгений Кириллов on 10.03.2018.
@@ -16,7 +16,11 @@ class FriendsService {
     let version = 5.73
     let accessToken: String!
     let vkRequest = VKRequestService()
-    var friendsJSON: JSON?
+    var friendsJSON: JSON? {
+        didSet {
+            print("результат такой", friendsJSON ?? "хрен там!")
+        }
+    }
     
     init(token: String) {
         accessToken = token
@@ -33,7 +37,6 @@ class FriendsService {
         vkRequest.makeRequest(method: "friends.get", parameters: parameters) { [weak self] json in
             self?.friendsJSON = json
         }
-        print(friendsJSON ?? "нет результата")
     }
     
     func appendFriends(from json: JSON) -> [User] {

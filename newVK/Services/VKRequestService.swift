@@ -1,5 +1,5 @@
 //
-//  VKservice.swift
+//  VKRequestService.swift
 //  newVK
 //
 //  Created by Евгений Кириллов on 03.03.2018.
@@ -20,10 +20,7 @@ class VKRequestService {
         
         sessionManager?.request(url + method, parameters: parameters).responseJSON {response in
             guard let data = response.value else {return}
-            
-            let json = JSON(data)
-            print(json)
-            completion(json)
+            completion(JSON(data))
         }
     }
     

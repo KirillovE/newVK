@@ -9,13 +9,14 @@
 import Foundation
 import SwiftyJSON
 
-class User: VKItem {
+class User {
+    var id = 0
     var firstName = ""
     var lastName = ""
     var nick = ""
     
-    override init(json: JSON) {
-        super.init(json: json)
+    init(json: JSON) {
+        id = json["id"].intValue
         self.firstName = json["first_name"].stringValue
         self.lastName = json["last_name"].stringValue
         self.nick = json["nickname"].stringValue
