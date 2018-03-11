@@ -9,7 +9,5 @@
 import UIKit
 
 class TabBarVC: UITabBarController {
-    
-    var settings: SettingsStorage!
-
+//    пришлось создать этот клас для переноса настроек (SettingsStorage) от WebKitVC к таблицам друзей и групп
 }
