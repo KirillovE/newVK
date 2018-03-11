@@ -16,9 +16,13 @@ class FriendsService {
     let version = 5.73
     let accessToken: String!
     let vkRequest = VKRequestService()
+    var friends = [User]()
     var friendsJSON: JSON? {
         didSet {
-            print("результат такой", friendsJSON ?? "хрен там!")
+            friends = appendFriends(from: friendsJSON)
+            for friend in friends {
+                print(friend.firstName, friend.lastName)
+            }
         }
     }
     
@@ -39,15 +43,17 @@ class FriendsService {
         }
     }
     
-    func appendFriends(from json: JSON) -> [User] {
-        let itemsArray = json["response", "items"]
-        var usersArray = [User]()
+    func appendFriends(from json: JSON?) -> [User] {
+        guard json != nil else { return [User]() }
+        
+        let itemsArray = json!["response", "items"]
+        var friendsArray = [User]()
         
         for (_, item) in itemsArray {
             let user = User(json: item)
-            usersArray.append(user)
+            friendsArray.append(user)
         }
         
-        return usersArray
+        return friendsArray
     }
 }
