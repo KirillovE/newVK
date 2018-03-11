@@ -15,8 +15,8 @@ class FriendsService {
     
     let version = 5.73
     let accessToken: String!
-    var friends = [User]()
     let vkRequest = VKRequestService()
+    var friendsJSON: JSON?
     
     init(token: String) {
         accessToken = token
@@ -24,17 +24,16 @@ class FriendsService {
     
     // MARK: - Methods
     
-    func getFriends() -> [User] {
+    func getFriends() {
         let parameters: Parameters = ["fields": "nickName",
                                       "access_token": accessToken,
                                       "v": version
         ]
         
-        vkRequest.makeRequest(method: "friends.get", parameters: parameters)/* { [weak self] friendsArray in
-            self?.friends = friendsArray
-        }*/
-        
-        return friends
+        vkRequest.makeRequest(method: "friends.get", parameters: parameters) { [weak self] json in
+            self?.friendsJSON = json
+        }
+        print(friendsJSON ?? "нет результата")
     }
     
     func appendFriends(from json: JSON) -> [User] {

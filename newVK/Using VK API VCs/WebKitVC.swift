@@ -87,8 +87,6 @@ extension WebKitVC: WKNavigationDelegate {
         
         token = params["access_token"]
         user = params["user_id"]
-        print("Access token is ", token)
-        print("User ID is ", user)
         decisionHandler(.allow)
         
         if token != nil {

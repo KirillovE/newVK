@@ -15,29 +15,24 @@ class VKRequestService {
     let url = "https://api.vk.com/method/"
     var sessionManager: SessionManager?
     
-    func makeRequest(method: String, parameters: Parameters/*, complition: @escaping ([User]) -> Void*/) {
+    func makeRequest(method: String, parameters: Parameters, completion: @escaping (_ users: JSON) -> Void) {
+        sessionManager = configureDefaultSession()
+        
+        sessionManager?.request(url + method, parameters: parameters).responseJSON {response in
+            guard let data = response.value else {return}
+            
+            let json = JSON(data)
+            print(json)
+            completion(json)
+        }
+    }
+    
+    func configureDefaultSession() -> SessionManager? {
         let config = URLSessionConfiguration.default
         config.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         sessionManager = SessionManager(configuration: config)
         
-        sessionManager?.request(url + method, parameters: parameters).responseJSON {response in
-            guard let data = response.value else {
-//                complition([])
-                return
-            }
-            
-            let json = JSON(data)
-            print(json)
-            
-//            switch method {
-//            case "friends.get":
-//                let usersArray = self.appendUsers(from: json)
-//                complition(usersArray)
-//            case "photos.getAll": let photosArray = self.appendPhotos(from: json)
-//            case "groups.get", "groups.search": let groupsArray = self.appendGroups(from: json)
-//            default: break
-//            }
-        }
+        return sessionManager
     }
 
 }

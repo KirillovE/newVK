@@ -26,24 +26,24 @@ class GroupsService {
     // MARK: - Methods
     
     func getGroups() {
-        let parameters: Parameters = ["user_id": userId,
-                                      "extended": 1,
-                                      "access_token": accessToken,
-                                      "v": version
-        ]
+//        let parameters: Parameters = ["user_id": userId,
+//                                      "extended": 1,
+//                                      "access_token": accessToken,
+//                                      "v": version
+//        ]
         
-        vkRequest.makeRequest(method: "groups.get", parameters: parameters)
+//        let groupsJSON = vkRequest.makeRequest(method: "groups.get", parameters: parameters)
     }
     
     func getSearchedGroups(groupToFind q: String, numberOfResults: Int) {
-        let parameters: Parameters = ["q": q,
-                                      "type": "group",
-                                      "count": numberOfResults,
-                                      "access_token": accessToken,
-                                      "v": version
-        ]
+//        let parameters: Parameters = ["q": q,
+//                                      "type": "group",
+//                                      "count": numberOfResults,
+//                                      "access_token": accessToken,
+//                                      "v": version
+//        ]
         
-        vkRequest.makeRequest(method: "groups.search", parameters: parameters)
+//        let groupsJSON = vkRequest.makeRequest(method: "groups.search", parameters: parameters)
     }
     
     func appendGroups(from json: JSON) -> [Group] {

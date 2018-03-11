@@ -26,12 +26,12 @@ class PhotosService {
     // MARK: - Methods
     
     func getPhotos() {
-        let parameters: Parameters = ["owner_id": userId,
-                                      "access_token": accessToken,
-                                      "v": version
-        ]
+//        let parameters: Parameters = ["owner_id": userId,
+//                                      "access_token": accessToken,
+//                                      "v": version
+//        ]
         
-        vkRequest.makeRequest(method: "photos.getAll", parameters: parameters)
+//        let photosJSON = vkRequest.makeRequest(method: "photos.getAll", parameters: parameters)
     }
     
     func appendPhotos(from json: JSON) -> [Photo] {
