@@ -51,9 +51,9 @@ class WebKitVC: UIViewController {
                 loginScreen.authorizationFailureLabel.isHidden = false
             }
         case "startWork"?:
-            if let apiMethods = segue.destination as? APImethodsVC {
-                apiMethods.accessToken = token
-                apiMethods.userID = user
+            if let tabBar = segue.destination as? TabBarVC {
+                tabBar.accessToken = token
+                tabBar.userID = user
             }
         default:
             break
