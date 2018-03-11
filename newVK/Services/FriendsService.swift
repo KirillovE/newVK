@@ -6,7 +6,6 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 import SwiftyJSON
 
@@ -20,9 +19,6 @@ class FriendsService {
     var friendsJSON: JSON? {
         didSet {
             friends = appendFriends(from: friendsJSON)
-            for friend in friends {
-                print(friend.firstName, friend.lastName)
-            }
         }
     }
     

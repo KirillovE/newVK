@@ -263,9 +263,16 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNx-jw-dX1">
+                                <rect key="frame" x="139" y="319" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="FNx-jw-dX1" firstAttribute="top" secondItem="k8T-rA-wHr" secondAttribute="bottom" constant="45" id="2bQ-qu-NJj"/>
                             <constraint firstItem="Xcb-Ox-QKz" firstAttribute="centerX" secondItem="nhq-dI-gg6" secondAttribute="centerX" id="5oi-Cj-XZv"/>
                             <constraint firstItem="KD6-Mn-Wcn" firstAttribute="width" secondItem="Xcb-Ox-QKz" secondAttribute="width" id="AUL-07-WuN"/>
                             <constraint firstItem="hio-O3-rCc" firstAttribute="top" secondItem="Z13-L6-T6b" secondAttribute="top" id="Nwm-du-iy3"/>
@@ -273,6 +280,7 @@
                             <constraint firstItem="KD6-Mn-Wcn" firstAttribute="top" secondItem="Xcb-Ox-QKz" secondAttribute="bottom" constant="30" id="PbT-Hj-ryx"/>
                             <constraint firstItem="Xcb-Ox-QKz" firstAttribute="top" secondItem="hio-O3-rCc" secondAttribute="bottom" constant="30" id="cI2-1d-C8g"/>
                             <constraint firstItem="k8T-rA-wHr" firstAttribute="top" secondItem="KD6-Mn-Wcn" secondAttribute="bottom" constant="30" id="fFp-pa-tnU"/>
+                            <constraint firstItem="FNx-jw-dX1" firstAttribute="centerX" secondItem="nhq-dI-gg6" secondAttribute="centerX" id="hfL-2L-MG3"/>
                             <constraint firstItem="hio-O3-rCc" firstAttribute="centerX" secondItem="Xcb-Ox-QKz" secondAttribute="centerX" id="hg9-Le-HNH"/>
                             <constraint firstItem="hio-O3-rCc" firstAttribute="leading" secondItem="nhq-dI-gg6" secondAttribute="leading" id="ljk-sZ-5z9"/>
                             <constraint firstItem="k8T-rA-wHr" firstAttribute="centerX" secondItem="nhq-dI-gg6" secondAttribute="centerX" id="mYb-c8-oZI"/>
@@ -284,6 +292,7 @@
                         <outlet property="friendsButton" destination="Xcb-Ox-QKz" id="hea-ut-BX5"/>
                         <outlet property="groupsButton" destination="k8T-rA-wHr" id="zc9-BJ-q7F"/>
                         <outlet property="photosButton" destination="KD6-Mn-Wcn" id="euI-BK-jgW"/>
+                        <outlet property="results" destination="FNx-jw-dX1" id="nCq-Zb-LIJ"/>
                         <outlet property="searchBar" destination="hio-O3-rCc" id="lpj-cb-eGb"/>
                     </connections>
                 </viewController>

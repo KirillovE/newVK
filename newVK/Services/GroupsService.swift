@@ -17,6 +17,12 @@ class GroupsService {
     let accessToken: String!
     let userId: String!
     let vkRequest = VKRequestService()
+    var groups = [Group]()
+    var groupsJSON: JSON? {
+        didSet {
+            groups = appendGroups(from: groupsJSON)
+        }
+    }
     
     init(token: String, ID: String) {
         accessToken = token
@@ -26,28 +32,32 @@ class GroupsService {
     // MARK: - Methods
     
     func getGroups() {
-//        let parameters: Parameters = ["user_id": userId,
-//                                      "extended": 1,
-//                                      "access_token": accessToken,
-//                                      "v": version
-//        ]
+        let parameters: Parameters = ["user_id": userId,
+                                      "extended": 1,
+                                      "access_token": accessToken,
+                                      "v": version
+        ]
         
-//        let groupsJSON = vkRequest.makeRequest(method: "groups.get", parameters: parameters)
+        vkRequest.makeRequest(method: "groups.get", parameters: parameters) { [weak self] json in
+            self?.groupsJSON = json
+        }
     }
     
     func getSearchedGroups(groupToFind q: String, numberOfResults: Int) {
-//        let parameters: Parameters = ["q": q,
-//                                      "type": "group",
-//                                      "count": numberOfResults,
-//                                      "access_token": accessToken,
-//                                      "v": version
-//        ]
+        let parameters: Parameters = ["q": q,
+                                      "type": "group",
+                                      "count": numberOfResults,
+                                      "access_token": accessToken,
+                                      "v": version
+        ]
         
-//        let groupsJSON = vkRequest.makeRequest(method: "groups.search", parameters: parameters)
+        vkRequest.makeRequest(method: "groups.search", parameters: parameters) { [weak self] json in
+            self?.groupsJSON = json
+        }
     }
     
-    func appendGroups(from json: JSON) -> [Group] {
-        let itemsArray = json["response", "items"]
+    func appendGroups(from json: JSON?) -> [Group] {
+        let itemsArray = json!["response", "items"]
         var groupsArray = [Group]()
         
         for (_, item) in itemsArray {

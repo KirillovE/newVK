@@ -15,6 +15,7 @@ class APImethodsVC: UIViewController {
     @IBOutlet weak var photosButton: UIButton!
     @IBOutlet weak var groupsButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var results: UILabel!
     
     // MARK: - Source data
     

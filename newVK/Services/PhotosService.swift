@@ -17,6 +17,12 @@ class PhotosService {
     let accessToken: String!
     let userId: String!
     let vkRequest = VKRequestService()
+    var photos = [Photo]()
+    var photosJSON: JSON? {
+        didSet {
+            photos = appendPhotos(from: photosJSON)
+        }
+    }
     
     init(token: String, ID: String) {
         accessToken = token
@@ -26,16 +32,18 @@ class PhotosService {
     // MARK: - Methods
     
     func getPhotos() {
-//        let parameters: Parameters = ["owner_id": userId,
-//                                      "access_token": accessToken,
-//                                      "v": version
-//        ]
+        let parameters: Parameters = ["owner_id": userId,
+                                      "access_token": accessToken,
+                                      "v": version
+        ]
         
-//        let photosJSON = vkRequest.makeRequest(method: "photos.getAll", parameters: parameters)
+        vkRequest.makeRequest(method: "photos.getAll", parameters: parameters)  { [weak self] json in
+            self?.photosJSON = json
+        }
     }
     
-    func appendPhotos(from json: JSON) -> [Photo] {
-        let itemsArray = json["response", "items"]
+    func appendPhotos(from json: JSON?) -> [Photo] {
+        let itemsArray = json!["response", "items"]
         var photosArray = [Photo]()
         
         for (_, item) in itemsArray {
