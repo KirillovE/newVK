@@ -17,6 +17,8 @@ class WebKitVC: UIViewController {
     let url = "https://oauth.vk.com/authorize"
     var token: String! = nil
     var user: String! = nil
+    let apiVersion = 5.73
+    let clientID = 6356387
     
     // MARK: - Methods
     
@@ -30,12 +32,12 @@ class WebKitVC: UIViewController {
         let config = URLSessionConfiguration.default
         config.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         sessionManager = SessionManager(configuration: config)
-        let parameters: Parameters = ["client_id": 6356387,
+        let parameters: Parameters = ["client_id": clientID,
                                       "display": "mobile",
                                       "redirect_uri": "https://oauth.vk.com/blank.html",
                                       "scope": "262150",
                                       "response_type": "token",
-                                      "v": 5.73]
+                                      "v": apiVersion]
         
         sessionManager?.request(url, parameters: parameters).responseJSON {response in
             self.webView.load(response.request!)
