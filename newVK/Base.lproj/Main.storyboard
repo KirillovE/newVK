@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Up0-qc-7C4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tke-9i-Pwd">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,109 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Демонстрация-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPE-9W-922">
-                                <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BsT-x6-Tsd" userLabel="левая распорка">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="647"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" id="mbB-Ok-vdC"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="am3-GK-LNr" userLabel="верхняя распорка">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="0.0"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" id="FDG-BH-Zuc"/>
-                                        </constraints>
-                                    </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk logo" translatesAutoresizingMaskIntoConstraints="NO" id="HHU-0c-VG3" userLabel="логотип">
-                                        <rect key="frame" x="39.5" y="10" width="240" height="128"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="240" id="DUW-wn-PBK"/>
-                                            <constraint firstAttribute="height" constant="128" id="KoR-eu-t99"/>
-                                        </constraints>
-                                    </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin" borderStyle="roundedRect" placeholder="имя пользователя" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8xc-jY-7me">
-                                        <rect key="frame" x="35.5" y="188" width="250" height="34"/>
-                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL5-Px-24P">
-                                        <rect key="frame" x="35" y="356" width="250" height="42"/>
-                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="25"/>
-                                        <state key="normal" title="Войти">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RRx-l5-QtT"/>
-                                            <segue destination="Qn5-SM-v2N" kind="show" identifier="loginSegue" id="aBr-ck-NFY"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" borderStyle="roundedRect" placeholder="пароль" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7ki-HD-pwc">
-                                        <rect key="frame" x="35" y="262" width="250" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="uWe-uJ-SUf"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="BsT-x6-Tsd" firstAttribute="top" secondItem="JPE-9W-922" secondAttribute="top" id="1KE-MJ-cml"/>
-                                    <constraint firstItem="8xc-jY-7me" firstAttribute="top" secondItem="HHU-0c-VG3" secondAttribute="bottom" constant="50" id="6Dp-es-IYf"/>
-                                    <constraint firstItem="7ki-HD-pwc" firstAttribute="top" secondItem="8xc-jY-7me" secondAttribute="bottom" constant="40" id="C02-ay-JJ4"/>
-                                    <constraint firstItem="am3-GK-LNr" firstAttribute="top" secondItem="JPE-9W-922" secondAttribute="top" id="DML-w7-a4b"/>
-                                    <constraint firstItem="JL5-Px-24P" firstAttribute="width" secondItem="7ki-HD-pwc" secondAttribute="width" id="HJL-8v-vR1"/>
-                                    <constraint firstItem="7ki-HD-pwc" firstAttribute="width" secondItem="8xc-jY-7me" secondAttribute="width" id="KiV-BA-NHm"/>
-                                    <constraint firstItem="am3-GK-LNr" firstAttribute="centerX" secondItem="JPE-9W-922" secondAttribute="centerX" id="Klw-So-Gdd"/>
-                                    <constraint firstItem="BsT-x6-Tsd" firstAttribute="leading" secondItem="JPE-9W-922" secondAttribute="leading" id="KpG-5V-hAp"/>
-                                    <constraint firstItem="JL5-Px-24P" firstAttribute="top" secondItem="7ki-HD-pwc" secondAttribute="bottom" constant="60" id="LGx-1f-80d"/>
-                                    <constraint firstItem="7ki-HD-pwc" firstAttribute="centerX" secondItem="JPE-9W-922" secondAttribute="centerX" id="Lj2-Qq-0vJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="BsT-x6-Tsd" secondAttribute="bottom" id="Pgd-RU-SLA"/>
-                                    <constraint firstItem="8xc-jY-7me" firstAttribute="centerX" secondItem="JPE-9W-922" secondAttribute="centerX" id="dYU-jj-vZp"/>
-                                    <constraint firstItem="JL5-Px-24P" firstAttribute="centerX" secondItem="JPE-9W-922" secondAttribute="centerX" id="m04-0J-4qx"/>
-                                    <constraint firstItem="am3-GK-LNr" firstAttribute="leading" secondItem="JPE-9W-922" secondAttribute="leading" id="nWk-cZ-Qq8"/>
-                                    <constraint firstItem="HHU-0c-VG3" firstAttribute="top" secondItem="am3-GK-LNr" secondAttribute="bottom" constant="10" id="rYS-ZA-4vC"/>
-                                    <constraint firstAttribute="trailing" secondItem="am3-GK-LNr" secondAttribute="trailing" id="rhp-fi-zoT"/>
-                                    <constraint firstAttribute="bottom" secondItem="am3-GK-LNr" secondAttribute="bottom" constant="647" id="upm-a1-Mo4"/>
-                                    <constraint firstItem="HHU-0c-VG3" firstAttribute="centerX" secondItem="JPE-9W-922" secondAttribute="centerX" id="wA0-XU-Q3X"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JPE-9W-922" secondAttribute="bottom" id="s1e-Iu-THL"/>
-                            <constraint firstItem="JPE-9W-922" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ued-fO-sp4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JPE-9W-922" secondAttribute="trailing" id="xhI-HR-FKH"/>
-                            <constraint firstItem="JPE-9W-922" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xx2-tw-LiW"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Демонстрация" image="демонстрация" id="Ga8-VB-MYH"/>
-                    <connections>
-                        <outlet property="loginButton" destination="JL5-Px-24P" id="xQE-AJ-crH"/>
-                        <outlet property="loginText" destination="8xc-jY-7me" id="lwt-Rx-oLA"/>
-                        <outlet property="passwordText" destination="7ki-HD-pwc" id="F2Z-wa-EwC"/>
-                        <outlet property="scrollView" destination="JPE-9W-922" id="QYC-wj-HY0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="521" y="125"/>
-        </scene>
         <!--VKloginVC-->
         <scene sceneID="gBa-Et-vM7">
             <objects>
@@ -137,7 +34,6 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iEB-ic-k8m"/>
                                     <segue destination="qiJ-x6-NxP" kind="presentation" id="dmL-lv-3L6"/>
                                 </connections>
                             </button>
@@ -168,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byr-qu-Txv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518" y="1496"/>
+            <point key="canvasLocation" x="-330" y="125"/>
         </scene>
         <!--Web KitVC-->
         <scene sceneID="LHL-Cd-pkl">
@@ -203,102 +99,13 @@
                     <connections>
                         <outlet property="webView" destination="HFV-pk-7nP" id="nXs-ma-0a8"/>
                         <segue destination="g4O-l7-yGG" kind="unwind" identifier="showLoginScreen" unwindAction="athorizationFailureWithSegue:" id="MR8-Md-YBL"/>
-                        <segue destination="gbk-Cf-UTu" kind="show" identifier="startWork" id="byn-bo-b9b"/>
+                        <segue destination="Qn5-SM-v2N" kind="show" identifier="startWork" id="GS0-Tm-C0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Jb-gp-WcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="g4O-l7-yGG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1358" y="1496"/>
-        </scene>
-        <!--APImethodsVC-->
-        <scene sceneID="fZg-PB-XYq">
-            <objects>
-                <viewController id="gbk-Cf-UTu" userLabel="APImethodsVC" customClass="APImethodsVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nhq-dI-gg6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcb-Ox-QKz">
-                                <rect key="frame" x="35" y="106" width="250" height="36"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="UEQ-MZ-3Hx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Вывести список друзей">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="friendsPressed:" destination="gbk-Cf-UTu" eventType="touchUpInside" id="b8e-cN-fSE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD6-Mn-Wcn">
-                                <rect key="frame" x="35" y="172" width="250" height="36"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Вывести фотографии">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="photosPressed:" destination="gbk-Cf-UTu" eventType="touchUpInside" id="Ak5-xZ-7hH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8T-rA-wHr">
-                                <rect key="frame" x="35" y="238" width="250" height="36"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Вывести группы">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="groupsPressed:" destination="gbk-Cf-UTu" eventType="touchUpInside" id="oi3-2n-paQ"/>
-                                </connections>
-                            </button>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Найти группу" translatesAutoresizingMaskIntoConstraints="NO" id="hio-O3-rCc">
-                                <rect key="frame" x="0.0" y="20" width="320" height="56"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNx-jw-dX1">
-                                <rect key="frame" x="139" y="319" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="FNx-jw-dX1" firstAttribute="top" secondItem="k8T-rA-wHr" secondAttribute="bottom" constant="45" id="2bQ-qu-NJj"/>
-                            <constraint firstItem="Xcb-Ox-QKz" firstAttribute="centerX" secondItem="nhq-dI-gg6" secondAttribute="centerX" id="5oi-Cj-XZv"/>
-                            <constraint firstItem="KD6-Mn-Wcn" firstAttribute="width" secondItem="Xcb-Ox-QKz" secondAttribute="width" id="AUL-07-WuN"/>
-                            <constraint firstItem="hio-O3-rCc" firstAttribute="top" secondItem="Z13-L6-T6b" secondAttribute="top" id="Nwm-du-iy3"/>
-                            <constraint firstItem="k8T-rA-wHr" firstAttribute="width" secondItem="Xcb-Ox-QKz" secondAttribute="width" id="Och-cg-ucQ"/>
-                            <constraint firstItem="KD6-Mn-Wcn" firstAttribute="top" secondItem="Xcb-Ox-QKz" secondAttribute="bottom" constant="30" id="PbT-Hj-ryx"/>
-                            <constraint firstItem="Xcb-Ox-QKz" firstAttribute="top" secondItem="hio-O3-rCc" secondAttribute="bottom" constant="30" id="cI2-1d-C8g"/>
-                            <constraint firstItem="k8T-rA-wHr" firstAttribute="top" secondItem="KD6-Mn-Wcn" secondAttribute="bottom" constant="30" id="fFp-pa-tnU"/>
-                            <constraint firstItem="FNx-jw-dX1" firstAttribute="centerX" secondItem="nhq-dI-gg6" secondAttribute="centerX" id="hfL-2L-MG3"/>
-                            <constraint firstItem="hio-O3-rCc" firstAttribute="centerX" secondItem="Xcb-Ox-QKz" secondAttribute="centerX" id="hg9-Le-HNH"/>
-                            <constraint firstItem="hio-O3-rCc" firstAttribute="leading" secondItem="nhq-dI-gg6" secondAttribute="leading" id="ljk-sZ-5z9"/>
-                            <constraint firstItem="k8T-rA-wHr" firstAttribute="centerX" secondItem="nhq-dI-gg6" secondAttribute="centerX" id="mYb-c8-oZI"/>
-                            <constraint firstItem="KD6-Mn-Wcn" firstAttribute="centerX" secondItem="nhq-dI-gg6" secondAttribute="centerX" id="yHz-fv-n2Z"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Z13-L6-T6b"/>
-                    </view>
-                    <connections>
-                        <outlet property="friendsButton" destination="Xcb-Ox-QKz" id="hea-ut-BX5"/>
-                        <outlet property="groupsButton" destination="k8T-rA-wHr" id="zc9-BJ-q7F"/>
-                        <outlet property="photosButton" destination="KD6-Mn-Wcn" id="euI-BK-jgW"/>
-                        <outlet property="results" destination="FNx-jw-dX1" id="nCq-Zb-LIJ"/>
-                        <outlet property="searchBar" destination="hio-O3-rCc" id="lpj-cb-eGb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ozv-ZJ-R0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2169" y="1496"/>
+            <point key="canvasLocation" x="510" y="125"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="EPZ-MO-kAw">
@@ -595,30 +402,10 @@
             </objects>
             <point key="canvasLocation" x="1357.5" y="125"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="CL4-DF-T61">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Up0-qc-7C4" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eRZ-2j-SRk">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="tke-9i-Pwd" kind="relationship" relationship="viewControllers" id="eg8-1D-iTc"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="2Nb-XB-iJx"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ucT-DY-Jk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-293" y="940"/>
-        </scene>
     </scenes>
     <resources>
         <image name="vk logo" width="1204" height="906"/>
         <image name="группы" width="30" height="30"/>
-        <image name="демонстрация" width="30" height="30"/>
         <image name="друзья" width="30" height="30"/>
         <image name="факт" width="30" height="30"/>
     </resources>
