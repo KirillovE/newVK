@@ -17,12 +17,12 @@ class Group {
         id = json["id"].intValue
         name = json["name"].stringValue
         photoURL = json["photo_100"].stringValue
-        loadPhotoAsync(from: photoURL)
+        loadPhoto(from: photoURL)
     }
 }
 
 extension Group {
-    func loadPhotoAsync(from urlString: String) {
+    func loadPhoto(from urlString: String) {
         let url = URL(string: photoURL)
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!)
