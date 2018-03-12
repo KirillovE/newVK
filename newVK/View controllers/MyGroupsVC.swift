@@ -19,6 +19,7 @@ class MyGroupsVC: UITableViewController {
     var groupsJSON: JSON? {
         didSet {
             groups = appendGroups(from: groupsJSON)
+            vkRequest.getPhoto(from: (groups.first?.photoURL)!)
             self.tableView.reloadData()
         }
     }
@@ -47,13 +48,13 @@ class MyGroupsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myGroups", for: indexPath)
         let groupName = groups[indexPath.row].name
+        let groupImage = groups[indexPath.row].photo
+
         cell.textLabel?.text = groupName
+        cell.imageView?.image = groupImage
         
-//        пока получен лишь адрес изображения, нужно его как-то скачать и отобразить
-//        let groupImageName = myGroups[indexPath.row].imageName
-//        cell.imageView?.image = UIImage(named: groupImageName)
-//        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 4
-//        cell.imageView?.clipsToBounds = true
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 4
+        cell.imageView?.clipsToBounds = true
 
         return cell
     }

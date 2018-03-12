@@ -9,13 +9,37 @@
 import SwiftyJSON
 
 class Group {
-    var id = 0
-    var name = ""
-    var photoURL = ""
+    let id: Int
+    let name, photoURL: String
+    var photo: UIImage?
     
     init(json: JSON) {
         id = json["id"].intValue
         name = json["name"].stringValue
         photoURL = json["photo_50"].stringValue
+        loadPhotoAsync(from: photoURL)
     }
+}
+
+extension Group {
+    func loadPhotoAsync(from urlString: String) {
+        let url = URL(string: photoURL)
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                if let image = UIImage(data: data!) {
+                    self.photo = image
+                }
+            }
+        }
+    }
+    
+    func loadPhotoSync(from urlString: String) {
+        let url = URL(string: photoURL)
+        let data = try? Data(contentsOf: url!)
+        if let image = UIImage(data: data!) {
+            photo = image
+        }
+    }
+    
 }

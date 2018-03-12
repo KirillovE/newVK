@@ -44,16 +44,15 @@ class AllGroupsVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allGroups", for: indexPath)
         
         let groupName = groups[indexPath.row].name
+        let groupImage = groups[indexPath.row].photo
+        let membersCount = "пока неизвестно"
+        
         cell.textLabel?.text = groupName
+        cell.imageView?.image = groupImage
+        cell.detailTextLabel?.text = "Подписчиков: " + membersCount
         
-//        фотография пока не получена, есть только её адрес
-//        let groupImageName = chosenGroup[indexPath.row].imageName
-        
-//        cell.imageView?.image = UIImage(named: groupImageName)
-//        cell.detailTextLabel?.text = "Подписчиков: " + String(groupSubscriberCount)
-//
-//        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 4
-//        cell.imageView?.clipsToBounds = true
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 4
+        cell.imageView?.clipsToBounds = true
 
         return cell
     }

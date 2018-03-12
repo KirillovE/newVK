@@ -30,5 +30,16 @@ class VKRequestService {
         
         return sessionManager
     }
+    
+    func getPhoto(from url: String) {
+        sessionManager = configureDefaultSession()
+        
+        let answer = sessionManager?.request(url).responseData {response in
+            print("Результат запроса по адресу изображения с использованием .responseData")
+            print(response.value ?? "похоже, ответа нет")
+        }
+        print("Результат запроса по адресу изображения")
+        print(answer ?? "похоже, ответа нет")
+    }
 
 }
