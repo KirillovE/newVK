@@ -39,33 +39,34 @@ class FriendsVC: UITableViewController {
         
         let firstName = friends[indexPath.row].firstName
         let lastName = friends[indexPath.row].lastName
+        
         cell.textLabel?.text = firstName
         cell.detailTextLabel?.text = lastName
         
-//        пока есть только адрес фотографии, сам файл предстоит получить
-//        let friendImageName = friendsList[indexPath.row].imageName
-//        cell.imageView?.image = UIImage.init(named: friendImageName)
-//        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
-//        cell.imageView?.clipsToBounds = true
+        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
+        cell.imageView?.clipsToBounds = true
         return cell
     }
 
 // MARK: - Navigation
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ShowFriendImage" {
-//            let cell = sender as! UITableViewCell
-//            let imageIndex = self.tableView.indexPath(for: cell)?.row
-//            let collectionVC = segue.destination as! FriendPhotosVC
-//            collectionVC.albumName = friendsList[imageIndex!].imageName
-//            collectionVC.title = friendsList[imageIndex!].name
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowFriendImage" {
+            let cell = sender as! UITableViewCell
+            let imageIndex = self.tableView.indexPath(for: cell)?.row
+            let collectionVC = segue.destination as! FriendPhotosVC
+            collectionVC.ownerID = friends[imageIndex!].id
+            collectionVC.title = friends[imageIndex!].firstName
+            collectionVC.settings = settings
+        }
+    }
+
 }
 
 // MARK: - Requesting friends from server
 
 extension FriendsVC {
+    
     func getFriends() {
         let parameters: Parameters = ["fields": "nickName",
                                       "access_token": settings.accessToken,
@@ -91,3 +92,4 @@ extension FriendsVC {
         return friendsArray
     }
 }
+

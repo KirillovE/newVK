@@ -19,7 +19,6 @@ class MyGroupsVC: UITableViewController {
     var groupsJSON: JSON? {
         didSet {
             groups = appendGroups(from: groupsJSON)
-            vkRequest.getPhoto(from: (groups.first?.photoURL)!)
             self.tableView.reloadData()
         }
     }

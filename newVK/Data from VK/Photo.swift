@@ -10,7 +10,7 @@ import SwiftyJSON
 
 class Photo {
     let id, ownerId: Int
-    let smallPhotoURL, largePhotoURL: String
+    private let smallPhotoURL, largePhotoURL: String
     var smallPhoto, largePhoto: UIImage?
     
     init(json: JSON) {
@@ -28,7 +28,7 @@ class Photo {
 
 extension Photo {
     
-    func loadLargePhoto(from urlString: String) {
+    private func loadLargePhoto(from urlString: String) {
         let url = URL(string: urlString)
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!)
@@ -39,7 +39,7 @@ extension Photo {
         }
     }
     
-    func loadSmallPhoto(from urlString: String) {
+    private func loadSmallPhoto(from urlString: String) {
         let url = URL(string: urlString)
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!)

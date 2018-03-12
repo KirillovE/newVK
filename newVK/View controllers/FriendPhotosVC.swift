@@ -6,41 +6,42 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-import UIKit
+import Alamofire
+import SwiftyJSON
 
 class FriendPhotosVC: UICollectionViewController {
     
-// MARK: - Source data
+    // MARK: - Source data
     
-    var albumName = ""
-    var photoAlbums = ["друг.Адриана": ["друг.Адриана", "друг.Адриана 1", "друг.Адриана 2"],
-                      "друг.Алессандра": ["друг.Алессандра", "друг.Алессандра 1", "друг.Алессандра 2"],
-                      "друг.Бекхэм": ["друг.Бекхэм", "друг.Бекхэм 1", "друг.Бекхэм 2"],
-                      "друг.В": ["друг.В", "друг.В 1", "друг.В 2", "друг.В 3"],
-                      "друг.Ди Каприо": ["друг.Ди Каприо", "друг.Ди Каприо 1", "друг.Ди Каприо 2"],
-                      "друг.Дуров": ["друг.Дуров", "друг.Дуров 1", "друг.Дуров 2"],
-                      "друг.Маск": ["друг.Маск", "друг.Маск 1", "друг.Маск 2"],
-                      "друг.Меган": ["друг.Меган", "друг.Меган 1", "друг.Меган 2", "друг.Меган 3"],
-                      "друг.Нео": ["друг.Нео", "друг.Нео 1", "друг.Нео 2"],
-                      "друг.Роналду": ["друг.Роналду", "друг.Роналду 1", "друг.Роналду 2"],
-                      "друг.Роузи": ["друг.Роузи", "друг.Роузи 1", "друг.Роузи 2", "друг.Роузи 3", "друг.Роузи 4", "друг.Роузи 5"],
-                      "друг.Энакин": ["друг.Энакин", "друг.Энакин 1", "друг.Энакин 2"]
-    ]
+    var ownerID: Int!
+    var settings: SettingsStorage!
+    let vkRequest = VKRequestService()
+    var photos = [Photo]()
+    var photosJSON: JSON? {
+        didSet {
+            photos = appendPhotos(from: photosJSON)
+            self.collectionView?.reloadData()
+        }
+    }
 
-// MARK: - UICollectionViewDataSource
+    // MARK: - View Controller life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getPhotos()
+    }
+    
+    // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photoAlbums[albumName]?.count ?? 1
+        return photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendPhotosCell
         
-        if let albumToShow = photoAlbums[albumName] {
-            cell.friendImage.image = UIImage(named: albumToShow[indexPath.row])
-        } else {
-            cell.friendImage.image = UIImage(named: albumName)
-        }
+        let photo = photos[indexPath.row].largePhoto
+        cell.friendImage.image = photo
         
         cell.friendImage.layer.cornerRadius = cell.frame.size.height / 10
         cell.friendImage.clipsToBounds = true
@@ -48,19 +49,48 @@ class FriendPhotosVC: UICollectionViewController {
         return cell
     }
     
-// MARK: - Navigation
+    // MARK: - Navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "ShowPageView" else { return }
-        let photoPages = segue.destination as! ManagePageVC
-        photoPages.photoAlbum = photoAlbums[albumName]
-        photoPages.photoIndex = getLargePhotoIndex(from: sender)
-    }
-    
-    func getLargePhotoIndex(from sender: Any?) -> Int {
-        let selectedCell = sender as! FriendPhotosCell
-        let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
-        return photoIndex!
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard segue.identifier == "ShowPageView" else { return }
+//        let photoPages = segue.destination as! ManagePageVC
+//        photoPages.photoAlbum = photoAlbums[albumName]
+//        photoPages.photoIndex = getLargePhotoIndex(from: sender)
+//    }
+//
+//    func getLargePhotoIndex(from sender: Any?) -> Int {
+//        let selectedCell = sender as! FriendPhotosCell
+//        let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
+//        return photoIndex!
+//    }
 
+}
+
+// MARK: - Requesting photos from server
+
+extension FriendPhotosVC {
+    
+    func getPhotos() {
+        let parameters: Parameters = ["owner_id": ownerID,
+                                      "access_token": settings.accessToken,
+                                      "v": settings.apiVersion
+        ]
+        
+        vkRequest.makeRequest(method: "photos.getAll", parameters: parameters)  { [weak self] json in
+            self?.photosJSON = json
+        }
+    }
+    
+    func appendPhotos(from json: JSON?) -> [Photo] {
+        let itemsArray = json!["response", "items"]
+        var photosArray = [Photo]()
+        
+        for (_, item) in itemsArray {
+            let photo = Photo(json: item)
+            photosArray.append(photo)
+        }
+        
+        return photosArray
+    }
+    
 }
