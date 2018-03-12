@@ -16,7 +16,7 @@ class Group {
     init(json: JSON) {
         id = json["id"].intValue
         name = json["name"].stringValue
-        photoURL = json["photo_50"].stringValue
+        photoURL = json["photo_100"].stringValue
         loadPhotoAsync(from: photoURL)
     }
 }
