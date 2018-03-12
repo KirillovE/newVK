@@ -58,13 +58,6 @@ class MyGroupsVC: UITableViewController {
         return cell
     }
 
-//    удаление группы пока недоступно, для удаления нужно реализовывать отдельный запрос
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            myGroups.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
-//    }
 }
 
 // MARK: - Requesting groups from server
@@ -95,30 +88,3 @@ extension MyGroupsVC {
         return groupsArray
     }
 }
-
-// MARK: - Adding a group
-
-//extension MyGroupsVC {
-
-//    для добавления группы также нужен отдельный запрос
-//    @IBAction func addGroup(segue: UIStoryboardSegue) {
-//        guard segue.identifier == "addGroupSegue" else { return }
-//        let allGroupsVC = segue.source as! AllGroupsVC
-//        addNewGroup(from: allGroupsVC)
-//    }
-//
-//    func addNewGroup(from tableVC: AllGroupsVC) {
-//        if let indexPath = tableVC.tableView.indexPathForSelectedRow {
-//            let groupFound = tableVC.searchResult?[indexPath.row]
-//            let groupPicked = tableVC.allGroups[indexPath.row]
-//            let group = groupFound ?? groupPicked
-//
-//            if !myGroups.contains(group) {
-//                myGroups.append(group)
-//                tableView.reloadData()
-//            }
-//        }
-//
-//    }
-//
-//}

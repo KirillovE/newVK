@@ -46,9 +46,6 @@ class AllGroupsVC: UITableViewController {
         let groupName = groups[indexPath.row].name
         cell.textLabel?.text = groupName
         
-//        для получения количества подписчиков нужно реализовать отдельный запрос
-//        let groupSubscriberCount = chosenGroup[indexPath.row].subscriberCount
-        
 //        фотография пока не получена, есть только её адрес
 //        let groupImageName = chosenGroup[indexPath.row].imageName
         
