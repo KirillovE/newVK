@@ -34,12 +34,4 @@ extension Group {
         }
     }
     
-    func loadPhotoSync(from urlString: String) {
-        let url = URL(string: photoURL)
-        let data = try? Data(contentsOf: url!)
-        if let image = UIImage(data: data!) {
-            photo = image
-        }
-    }
-    
 }
