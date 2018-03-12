@@ -51,18 +51,18 @@ class FriendPhotosVC: UICollectionViewController {
     
     // MARK: - Navigation
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard segue.identifier == "ShowPageView" else { return }
-//        let photoPages = segue.destination as! ManagePageVC
-//        photoPages.photoAlbum = photoAlbums[albumName]
-//        photoPages.photoIndex = getLargePhotoIndex(from: sender)
-//    }
-//
-//    func getLargePhotoIndex(from sender: Any?) -> Int {
-//        let selectedCell = sender as! FriendPhotosCell
-//        let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
-//        return photoIndex!
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ShowPageView" else { return }
+        let photoPages = segue.destination as! ManagePageVC
+        photoPages.photoAlbum = photos
+        photoPages.photoIndex = getLargePhotoIndex(from: sender)
+    }
+
+    func getLargePhotoIndex(from sender: Any?) -> Int {
+        let selectedCell = sender as! FriendPhotosCell
+        let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
+        return photoIndex!
+    }
 
 }
 

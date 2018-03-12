@@ -9,7 +9,7 @@
 import UIKit
 
 class ManagePageVC: UIPageViewController {
-    var photoAlbum: [String]!
+    var photoAlbum: [Photo]!
     var photoIndex: Int!
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class ManagePageVC: UIPageViewController {
                 return nil
         }
         page.photoIndex = index
-        page.photoName = photoAlbum[index]
+        page.photo = photoAlbum![index].largePhoto
         return page
     }
 }
