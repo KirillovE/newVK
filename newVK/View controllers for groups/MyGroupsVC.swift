@@ -8,6 +8,7 @@
 
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class MyGroupsVC: UITableViewController {
     
@@ -81,6 +82,24 @@ extension MyGroupsVC {
             groupsArray.append(group)
         }
         
+        saveMyGroups(groupsArray)
         return groupsArray
     }
+}
+
+// MARK: - Saving data to Realm data base
+
+extension MyGroupsVC {
+    
+    func saveMyGroups(_ groups: [Group]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(groups)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
 }

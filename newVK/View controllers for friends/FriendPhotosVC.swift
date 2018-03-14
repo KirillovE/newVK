@@ -8,6 +8,7 @@
 
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class FriendPhotosVC: UICollectionViewController {
     
@@ -94,6 +95,23 @@ extension FriendPhotosVC {
         }
         
         return photosArray
+    }
+    
+}
+
+// MARK: - Saving data to Realm data base
+
+extension FriendPhotosVC {
+    
+    func savePhotos(photos: [Group]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(photos)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
     }
     
 }

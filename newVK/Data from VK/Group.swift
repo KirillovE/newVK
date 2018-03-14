@@ -7,12 +7,13 @@
 //
 
 import SwiftyJSON
+import RealmSwift
 
-class Group {
+class Group: Object {
     @objc dynamic var id = 0
     @objc dynamic var name = ""
     @objc dynamic var photoURL = ""
-    @objc dynamic var photo: UIImage?
+    var photo: UIImage?
     
     convenience init(json: JSON) {
         self.init()

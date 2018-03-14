@@ -7,13 +7,14 @@
 //
 
 import SwiftyJSON
+import RealmSwift
 
-class Photo {
+class Photo: Object {
     @objc dynamic var id = 0
     @objc dynamic var ownerId = 0
     @objc dynamic private var smallPhotoURL = ""
     @objc dynamic private var largePhotoURL = ""
-    @objc dynamic var smallPhoto, largePhoto: UIImage?
+    var smallPhoto, largePhoto: UIImage?
     
     convenience init(json: JSON) {
         self.init()

@@ -8,6 +8,7 @@
 
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class FriendsVC: UITableViewController {
 
@@ -91,7 +92,24 @@ extension FriendsVC {
             friendsArray.append(user)
         }
         
+        saveFriends(friendsArray)
         return friendsArray
     }
 }
 
+// MARK: - Saving data to Realm data base
+
+extension FriendsVC {
+    
+    func saveFriends(_ friends: [User]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(friends)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
+}
