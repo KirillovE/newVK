@@ -43,22 +43,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qug-Uf-5l3">
-                                <rect key="frame" x="137" y="225" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="tke-9i-Pwd" eventType="touchUpInside" id="bND-p3-cGf"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Do1-mb-mmk" firstAttribute="centerX" secondItem="htt-LA-lhH" secondAttribute="centerX" id="9KI-Vn-CiM"/>
-                            <constraint firstItem="qug-Uf-5l3" firstAttribute="centerX" secondItem="htt-LA-lhH" secondAttribute="centerX" id="EFa-qa-jta"/>
                             <constraint firstItem="d92-Oq-8w8" firstAttribute="width" secondItem="ei8-M1-iqZ" secondAttribute="width" id="X2Y-va-Fuf"/>
                             <constraint firstItem="ei8-M1-iqZ" firstAttribute="centerX" secondItem="htt-LA-lhH" secondAttribute="centerX" id="b1m-0v-Uf5"/>
                             <constraint firstItem="Odk-Yz-bGV" firstAttribute="bottom" secondItem="d92-Oq-8w8" secondAttribute="bottom" constant="70" id="cSU-Td-eEu"/>
-                            <constraint firstItem="qug-Uf-5l3" firstAttribute="centerY" secondItem="htt-LA-lhH" secondAttribute="centerY" id="lTt-ty-cpw"/>
                             <constraint firstItem="d92-Oq-8w8" firstAttribute="centerX" secondItem="htt-LA-lhH" secondAttribute="centerX" id="y4c-2o-NWK"/>
                             <constraint firstItem="d92-Oq-8w8" firstAttribute="top" secondItem="Do1-mb-mmk" secondAttribute="bottom" constant="70" id="yXN-0I-VDg"/>
                             <constraint firstItem="ei8-M1-iqZ" firstAttribute="top" secondItem="Odk-Yz-bGV" secondAttribute="top" constant="50" id="yt3-tM-vqM"/>
