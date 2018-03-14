@@ -18,7 +18,21 @@ class VKloginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let userDefaults = UserDefaults.standard
+        let isAthorized = userDefaults.bool(forKey: "isAuthorized")
+        if isAthorized {
+            performSegue(withIdentifier: "quickStart", sender: self)
+        }
+        
         loginButton.layer.cornerRadius = 5
     }
 
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        let userDefaults = UserDefaults.standard
+        let isAthorized = userDefaults.bool(forKey: "isAuthorized")
+        if isAthorized {
+            performSegue(withIdentifier: "quickStart", sender: self)
+        }
+    }
 }
