@@ -70,18 +70,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3E0FEF82204ACD2D006DE640 /* View controllers */ = {
+		3E0137C62059199500B47735 /* View controllers for groups */ = {
 			isa = PBXGroup;
 			children = (
-				3E7D12242055B751001E4D9C /* TabBarVC.swift */,
+				3E2BE8BD2042E9D9002A50CF /* MyGroupsVC.swift */,
+				3E2BE8BF2042EE36002A50CF /* AllGroupsVC.swift */,
+			);
+			path = "View controllers for groups";
+			sourceTree = "<group>";
+		};
+		3E0FEF82204ACD2D006DE640 /* View controllers for friends */ = {
+			isa = PBXGroup;
+			children = (
 				3EA87349204728930049C4F2 /* ManagePageVC.swift */,
 				3E167695203F6C0700287BB4 /* FriendsVC.swift */,
 				3E78B69B20443228006E9397 /* LargePhotoVC.swift */,
 				3E16769920400B5C00287BB4 /* FriendPhotosVC.swift */,
-				3E2BE8BD2042E9D9002A50CF /* MyGroupsVC.swift */,
-				3E2BE8BF2042EE36002A50CF /* AllGroupsVC.swift */,
 			);
-			path = "View controllers";
+			path = "View controllers for friends";
 			sourceTree = "<group>";
 		};
 		3E0FEF83204ACD41006DE640 /* Services */ = {
@@ -102,13 +108,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		3E48210B204BFD11009639FC /* Using VK API VCs */ = {
+		3E48210B204BFD11009639FC /* Login View controllers */ = {
 			isa = PBXGroup;
 			children = (
 				3E0FEF7F204ACD0D006DE640 /* VKloginVC.swift */,
 				3E0FEF85204AD47B006DE640 /* WebKitVC.swift */,
 			);
-			path = "Using VK API VCs";
+			path = "Login View controllers";
 			sourceTree = "<group>";
 		};
 		3E618424203717DB00A68D16 = {
@@ -137,10 +143,12 @@
 				3E618434203717DB00A68D16 /* Main.storyboard */,
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
 				3E61843C203717DB00A68D16 /* Info.plist */,
-				3E48210B204BFD11009639FC /* Using VK API VCs */,
+				3E7D12242055B751001E4D9C /* TabBarVC.swift */,
+				3E48210B204BFD11009639FC /* Login View controllers */,
 				3E0FEF83204ACD41006DE640 /* Services */,
 				3E7D1217204ED1BE001E4D9C /* Data from VK */,
-				3E0FEF82204ACD2D006DE640 /* View controllers */,
+				3E0137C62059199500B47735 /* View controllers for groups */,
+				3E0FEF82204ACD2D006DE640 /* View controllers for friends */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
 			);
 			path = newVK;
@@ -252,11 +260,17 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-newVK/Pods-newVK-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

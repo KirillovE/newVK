@@ -59,6 +59,7 @@
                     <connections>
                         <outlet property="authorizationFailureLabel" destination="Do1-mb-mmk" id="pAZ-HD-Rsi"/>
                         <outlet property="loginButton" destination="d92-Oq-8w8" id="8Zm-Q7-Zii"/>
+                        <segue destination="Qn5-SM-v2N" kind="show" identifier="shortStart" id="Qwf-ta-mzI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byr-qu-Txv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -104,7 +105,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Jb-gp-WcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="g4O-l7-yGG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="510" y="125"/>
+            <point key="canvasLocation" x="536" y="615"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="EPZ-MO-kAw">
@@ -414,4 +415,7 @@
         <image name="группы" width="30" height="30"/>
         <image name="друзья" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qwf-ta-mzI"/>
+    </inferredMetricsTieBreakers>
 </document>
