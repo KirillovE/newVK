@@ -94,6 +94,7 @@ extension FriendPhotosVC {
             photosArray.append(photo)
         }
         
+        savePhotos(photosArray)
         return photosArray
     }
     
@@ -103,7 +104,7 @@ extension FriendPhotosVC {
 
 extension FriendPhotosVC {
     
-    func savePhotos(photos: [Group]) {
+    func savePhotos(_ photos: [Photo]) {
         do {
             let realm = try Realm()
             realm.beginWrite()
