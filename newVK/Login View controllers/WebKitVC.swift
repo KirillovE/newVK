@@ -15,8 +15,6 @@ class WebKitVC: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     var sessionManager: SessionManager?
     let url = "https://oauth.vk.com/authorize"
-    var token: String! = nil
-    var user: String! = nil
     let apiVersion = 5.73
     let clientID = 6356387
     let userDefaults = UserDefaults.standard
