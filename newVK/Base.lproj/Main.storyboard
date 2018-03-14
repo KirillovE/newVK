@@ -390,10 +390,10 @@
             </objects>
             <point key="canvasLocation" x="2169.375" y="-290"/>
         </scene>
-        <!--Tab BarVC-->
+        <!--Tab Bar Controller-->
         <scene sceneID="k21-8a-WqP">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Qn5-SM-v2N" customClass="TabBarVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Qn5-SM-v2N" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4KP-ti-uVk">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

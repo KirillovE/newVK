@@ -9,11 +9,15 @@
 import SwiftyJSON
 
 class Photo {
-    let id, ownerId: Int
-    private let smallPhotoURL, largePhotoURL: String
-    var smallPhoto, largePhoto: UIImage?
+    @objc dynamic var id = 0
+    @objc dynamic var ownerId = 0
+    @objc dynamic private var smallPhotoURL = ""
+    @objc dynamic private var largePhotoURL = ""
+    @objc dynamic var smallPhoto, largePhoto: UIImage?
     
-    init(json: JSON) {
+    convenience init(json: JSON) {
+        self.init()
+        
         id = json["id"].intValue
         ownerId = json["owner_id"].intValue
         smallPhotoURL = json["photo_130"].stringValue

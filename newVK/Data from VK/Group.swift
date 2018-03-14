@@ -9,11 +9,14 @@
 import SwiftyJSON
 
 class Group {
-    let id: Int
-    let name, photoURL: String
-    var photo: UIImage?
+    @objc dynamic var id = 0
+    @objc dynamic var name = ""
+    @objc dynamic var photoURL = ""
+    @objc dynamic var photo: UIImage?
     
-    init(json: JSON) {
+    convenience init(json: JSON) {
+        self.init()
+        
         id = json["id"].intValue
         name = json["name"].stringValue
         photoURL = json["photo_100"].stringValue
@@ -21,15 +24,16 @@ class Group {
     }
 }
 
+// MARK: -
+
 extension Group {
     func loadPhoto(from urlString: String) {
         let url = URL(string: photoURL)
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async {
-                if let image = UIImage(data: data!) {
-                    self.photo = image
-                }
+                guard let image = UIImage(data: data!) else { return }
+                self.photo = image
             }
         }
     }
