@@ -9,6 +9,7 @@
 import Alamofire
 import SwiftyJSON
 import RealmSwift
+import SwiftKeychainWrapper
 
 class MyGroupsVC: UITableViewController {
     
@@ -59,7 +60,7 @@ extension MyGroupsVC {
     func getGroups() {
         let userDefaults = UserDefaults.standard
         let userID = userDefaults.string(forKey: "user_id")!
-        let accessToken = userDefaults.string(forKey: "access_token")!
+        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
         let apiVersion = userDefaults.double(forKey: "v")
         
         let parameters: Parameters = ["user_id": userID,

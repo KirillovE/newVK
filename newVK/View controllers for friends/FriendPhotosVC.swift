@@ -9,6 +9,7 @@
 import Alamofire
 import SwiftyJSON
 import RealmSwift
+import SwiftKeychainWrapper
 
 class FriendPhotosVC: UICollectionViewController {
     
@@ -72,7 +73,7 @@ extension FriendPhotosVC {
     
     func getPhotos() {
         let userDefaults = UserDefaults.standard
-        let accessToken = userDefaults.string(forKey: "access_token")!
+        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
         let apiVersion = userDefaults.double(forKey: "v")
         
         let parameters: Parameters = ["owner_id": ownerID,

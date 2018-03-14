@@ -9,6 +9,7 @@
 import Alamofire
 import SwiftyJSON
 import RealmSwift
+import SwiftKeychainWrapper
 
 class AllGroupsVC: UITableViewController {
     
@@ -97,7 +98,7 @@ extension AllGroupsVC {
     
     func getSearchedGroups(groupToFind groupName: String, numberOfResults: Int) {
         let userDefaults = UserDefaults.standard
-        let accessToken = userDefaults.string(forKey: "access_token")!
+        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
         let apiVersion = userDefaults.double(forKey: "v")
         
         let parameters: Parameters = ["q": groupName,

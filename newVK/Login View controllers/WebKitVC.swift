@@ -8,6 +8,7 @@
 
 import WebKit
 import Alamofire
+import SwiftKeychainWrapper
 
 class WebKitVC: UIViewController {
     // MARK: - Source data
@@ -78,12 +79,13 @@ extension WebKitVC: WKNavigationDelegate {
         
         if params["access_token"] != nil {
             userDefaults.set(true, forKey: "isAuthorized")
+            userDefaults.set(params["user_id"], forKey: "user_id")
+            userDefaults.set(apiVersion, forKey: "v")
+            KeychainWrapper.standard.set(params["access_token"]!, forKey: "access_token")
         } else {
             userDefaults.set(false, forKey: "isAuthorized")
         }
-        userDefaults.set(params["access_token"], forKey: "access_token")
-        userDefaults.set(params["user_id"], forKey: "user_id")
-        userDefaults.set(apiVersion, forKey: "v")
+        
         decisionHandler(.allow)
         
         if userDefaults.bool(forKey: "isAuthorized") {

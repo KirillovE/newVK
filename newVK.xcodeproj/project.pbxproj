@@ -135,12 +135,12 @@
 				3E618434203717DB00A68D16 /* Main.storyboard */,
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
 				3E61843C203717DB00A68D16 /* Info.plist */,
-				3E48210B204BFD11009639FC /* Login View controllers */,
-				3E0FEF83204ACD41006DE640 /* Services */,
 				3E7D1217204ED1BE001E4D9C /* Data from VK */,
-				3E0137C62059199500B47735 /* View controllers for groups */,
+				3E0FEF83204ACD41006DE640 /* Services */,
+				3E48210B204BFD11009639FC /* Login View controllers */,
 				3E0FEF82204ACD2D006DE640 /* View controllers for friends */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
+				3E0137C62059199500B47735 /* View controllers for groups */,
 			);
 			path = newVK;
 			sourceTree = "<group>";
