@@ -13,7 +13,6 @@ class MyGroupsVC: UITableViewController {
     
     // MARK: - Source data
     
-    var settings: SettingsStorage!
     let vkRequest = VKRequestService()
     var groups = [Group]()
     var groupsJSON: JSON? {
@@ -28,14 +27,6 @@ class MyGroupsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getGroups()
-    }
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let allGroupsVC = segue.destination as? AllGroupsVC {
-            allGroupsVC.settings = settings
-        }
     }
 
     // MARK: - Table view data source
@@ -65,10 +56,15 @@ class MyGroupsVC: UITableViewController {
 extension MyGroupsVC {
     
     func getGroups() {
-        let parameters: Parameters = ["user_id": settings.userID,
+        let userDefaults = UserDefaults.standard
+        let userID = userDefaults.string(forKey: "user_id")!
+        let accessToken = userDefaults.string(forKey: "access_token")!
+        let apiVersion = userDefaults.double(forKey: "v")
+        
+        let parameters: Parameters = ["user_id": userID,
                                       "extended": 1,
-                                      "access_token": settings.accessToken,
-                                      "v": settings.apiVersion
+                                      "access_token": accessToken,
+                                      "v": apiVersion
         ]
         
         vkRequest.makeRequest(method: "groups.get", parameters: parameters) { [weak self] json in

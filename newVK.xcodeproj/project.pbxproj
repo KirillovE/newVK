@@ -25,8 +25,6 @@
 		3E7D1214204ED077001E4D9C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1213204ED077001E4D9C /* Photo.swift */; };
 		3E7D1216204ED147001E4D9C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1215204ED147001E4D9C /* Group.swift */; };
 		3E7D121B2053D0B6001E4D9C /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D121A2053D0B6001E4D9C /* PhotosService.swift */; };
-		3E7D122320557A75001E4D9C /* SettingsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D122220557A75001E4D9C /* SettingsStorage.swift */; };
-		3E7D12252055B751001E4D9C /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D12242055B751001E4D9C /* TabBarVC.swift */; };
 		3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87349204728930049C4F2 /* ManagePageVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +48,6 @@
 		3E7D1213204ED077001E4D9C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3E7D1215204ED147001E4D9C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		3E7D121A2053D0B6001E4D9C /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
-		3E7D122220557A75001E4D9C /* SettingsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStorage.swift; sourceTree = "<group>"; };
-		3E7D12242055B751001E4D9C /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		3EA87349204728930049C4F2 /* ManagePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePageVC.swift; sourceTree = "<group>"; };
 		5F53533A50A997494316304F /* Pods_newVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C94D3D006DBA0B60806BE9 /* Pods-newVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,7 +91,6 @@
 			children = (
 				3E7D121A2053D0B6001E4D9C /* PhotosService.swift */,
 				3E0FEF7D204ABE4C006DE640 /* VKRequestService.swift */,
-				3E7D122220557A75001E4D9C /* SettingsStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -143,7 +138,6 @@
 				3E618434203717DB00A68D16 /* Main.storyboard */,
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
 				3E61843C203717DB00A68D16 /* Info.plist */,
-				3E7D12242055B751001E4D9C /* TabBarVC.swift */,
 				3E48210B204BFD11009639FC /* Login View controllers */,
 				3E0FEF83204ACD41006DE640 /* Services */,
 				3E7D1217204ED1BE001E4D9C /* Data from VK */,
@@ -323,11 +317,9 @@
 				3E0FEF80204ACD0D006DE640 /* VKloginVC.swift in Sources */,
 				3E7D1216204ED147001E4D9C /* Group.swift in Sources */,
 				3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */,
-				3E7D122320557A75001E4D9C /* SettingsStorage.swift in Sources */,
 				3E167696203F6C0700287BB4 /* FriendsVC.swift in Sources */,
 				3E7D1212204ECF44001E4D9C /* User.swift in Sources */,
 				3E2BE8C02042EE36002A50CF /* AllGroupsVC.swift in Sources */,
-				3E7D12252055B751001E4D9C /* TabBarVC.swift in Sources */,
 				3E7D121B2053D0B6001E4D9C /* PhotosService.swift in Sources */,
 				3E7D1214204ED077001E4D9C /* Photo.swift in Sources */,
 				3E16769C20400F6200287BB4 /* FriendPhotosCell.swift in Sources */,

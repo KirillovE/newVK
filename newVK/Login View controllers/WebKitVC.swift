@@ -19,6 +19,7 @@ class WebKitVC: UIViewController {
     var user: String! = nil
     let apiVersion = 5.73
     let clientID = 6356387
+    let userDefaults = UserDefaults.standard
     
     // MARK: - Methods
     
@@ -47,25 +48,8 @@ class WebKitVC: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "showLoginScreen"?:
-            if let loginScreen = segue.destination as? VKloginVC {
-                loginScreen.authorizationFailureLabel.isHidden = false
-            }
-        case "startWork"?:
-            // передаём настройки в FriendsVC и MyGroupsVC
-            if let tabBar = segue.destination as? TabBarVC,
-                let friendsNavController = tabBar.viewControllers?.first as? UINavigationController,
-                let friendsVC = friendsNavController.viewControllers.first as? FriendsVC,
-                let groupsNavController = tabBar.viewControllers?.last as? UINavigationController,
-                let groupsVC = groupsNavController.viewControllers.first as? MyGroupsVC {
-                
-                let settings = SettingsStorage(token: token, id: user, version: apiVersion)
-                friendsVC.settings = settings
-                groupsVC.settings = settings
-            }
-        default:
-            break
+        if let loginScreen = segue.destination as? VKloginVC {
+            loginScreen.authorizationFailureLabel.isHidden = false
         }
     }
     
@@ -94,11 +78,13 @@ extension WebKitVC: WKNavigationDelegate {
                 return dict
         }
         
-        token = params["access_token"]
-        user = params["user_id"]
+        userDefaults.set(params["access_token"], forKey: "access_token")
+        userDefaults.set(params["user_id"], forKey: "user_id")
+        userDefaults.set(apiVersion, forKey: "v")
+        userDefaults.set(true, forKey: "isAuthorized")
         decisionHandler(.allow)
         
-        if token != nil {
+        if userDefaults.bool(forKey: "isAuthorized") {
             performSegue(withIdentifier: "startWork", sender: self)
         } else {
             performSegue(withIdentifier: "showLoginScreen", sender: self)

@@ -14,7 +14,6 @@ class FriendPhotosVC: UICollectionViewController {
     // MARK: - Source data
     
     var ownerID: Int!
-    var settings: SettingsStorage!
     let vkRequest = VKRequestService()
     var photos = [Photo]()
     var photosJSON: JSON? {
@@ -71,9 +70,13 @@ class FriendPhotosVC: UICollectionViewController {
 extension FriendPhotosVC {
     
     func getPhotos() {
+        let userDefaults = UserDefaults.standard
+        let accessToken = userDefaults.string(forKey: "access_token")!
+        let apiVersion = userDefaults.double(forKey: "v")
+        
         let parameters: Parameters = ["owner_id": ownerID,
-                                      "access_token": settings.accessToken,
-                                      "v": settings.apiVersion
+                                      "access_token": accessToken,
+                                      "v": apiVersion
         ]
         
         vkRequest.makeRequest(method: "photos.getAll", parameters: parameters)  { [weak self] json in

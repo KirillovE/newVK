@@ -17,7 +17,6 @@ class AllGroupsVC: UITableViewController {
     
     // MARK: - Source data
     
-    var settings: SettingsStorage!
     let vkRequest = VKRequestService()
     var groups = [Group]()
     var groupsJSON: JSON? {
@@ -95,12 +94,17 @@ extension AllGroupsVC: UISearchBarDelegate {
 
 extension AllGroupsVC {
     
-    func getSearchedGroups(groupToFind q: String, numberOfResults: Int) {
-        let parameters: Parameters = ["q": q,
+    func getSearchedGroups(groupToFind groupName: String, numberOfResults: Int) {
+        let userDefaults = UserDefaults.standard
+        let accessToken = userDefaults.string(forKey: "access_token")!
+        let apiVersion = userDefaults.double(forKey: "v")
+        
+        let parameters: Parameters = ["q": groupName,
                                       "type": "group",
                                       "count": numberOfResults,
-                                      "access_token": settings.accessToken,
-                                      "v": settings.apiVersion
+                                      "extended": 1,
+                                      "access_token": accessToken,
+                                      "v": apiVersion
         ]
         
         vkRequest.makeRequest(method: "groups.search", parameters: parameters) { [weak self] json in

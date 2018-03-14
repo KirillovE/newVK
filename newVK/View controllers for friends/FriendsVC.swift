@@ -13,7 +13,6 @@ class FriendsVC: UITableViewController {
 
 // MARK: - Source data
 
-    var settings: SettingsStorage!
     let vkRequest = VKRequestService()
     var friends = [User]()
     var friendsJSON: JSON? {
@@ -57,7 +56,6 @@ class FriendsVC: UITableViewController {
             let collectionVC = segue.destination as! FriendPhotosVC
             collectionVC.ownerID = friends[imageIndex!].id
             collectionVC.title = friends[imageIndex!].firstName
-            collectionVC.settings = settings
         }
     }
 
@@ -68,9 +66,13 @@ class FriendsVC: UITableViewController {
 extension FriendsVC {
     
     func getFriends() {
+        let userDefaults = UserDefaults.standard
+        let accessToken = userDefaults.string(forKey: "access_token")!
+        let apiVersion = userDefaults.double(forKey: "v")
+        
         let parameters: Parameters = ["fields": "nickName",
-                                      "access_token": settings.accessToken,
-                                      "v": settings.apiVersion
+                                      "access_token": accessToken,
+                                      "v": apiVersion
         ]
         
         vkRequest.makeRequest(method: "friends.get", parameters: parameters) { [weak self] json in
