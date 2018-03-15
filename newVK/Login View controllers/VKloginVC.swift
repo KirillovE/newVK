@@ -26,8 +26,7 @@ class VKloginVC: UIViewController {
         super.viewDidAppear(true)
         
         let userDefaults = UserDefaults.standard
-        let isAthorized = userDefaults.bool(forKey: "isAuthorized")
-        if isAthorized {
+        if userDefaults.bool(forKey: "isAuthorized") {
             performSegue(withIdentifier: "quickStart", sender: self)
         }
     }

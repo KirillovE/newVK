@@ -17,9 +17,21 @@ class VKRequestService {
     func makeRequest(method: String, parameters: Parameters, completion: @escaping (_ users: JSON) -> Void) {
         sessionManager = configureDefaultSession()
         
+//        var newParams = parameters
+//        newParams["access_token"] = "123"
+        
         sessionManager?.request(url + method, parameters: parameters).responseJSON {response in
             guard let data = response.value else {return}
-            completion(JSON(data))
+            let json = JSON(data)
+            
+            if json["error", "error_code"] == 5 {
+                print("не подошёл access_token", json["error", "error_msg"])
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(false, forKey: "isAuthorized")
+//                показать экран входа как-то
+            } else {
+                completion(json)
+            }
         }
     }
     
@@ -29,17 +41,6 @@ class VKRequestService {
         sessionManager = SessionManager(configuration: config)
         
         return sessionManager
-    }
-    
-    func getPhoto(from url: String) {
-        sessionManager = configureDefaultSession()
-        
-        let answer = sessionManager?.request(url).responseData {response in
-            print("Результат запроса по адресу изображения с использованием .responseData")
-            print(response.value ?? "похоже, ответа нет")
-        }
-        print("Результат запроса по адресу изображения")
-        print(answer ?? "похоже, ответа нет")
     }
 
 }
