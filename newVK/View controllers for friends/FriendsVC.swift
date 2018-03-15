@@ -38,19 +38,9 @@ class FriendsVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath) as! FriendsCell
+        cell.configure(for: friends[indexPath.row])
         
-        let firstName = friends[indexPath.row].firstName
-        let lastName = friends[indexPath.row].lastName
-        let nick = friends[indexPath.row].nick
-        let avatar = friends[indexPath.row].avatar
-        
-        cell.textLabel?.text = firstName + " " + lastName
-        cell.detailTextLabel?.text = nick
-        cell.imageView?.image = avatar
-        
-        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
-        cell.imageView?.clipsToBounds = true
         return cell
     }
 
