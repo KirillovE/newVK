@@ -42,18 +42,8 @@ class AllGroupsVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "allGroups", for: indexPath)
-        
-        let groupName = groups[indexPath.row].name
-        let groupImage = groups[indexPath.row].photo
-        let membersCount = groups[indexPath.row].membersCount
-        
-        cell.textLabel?.text = groupName
-        cell.imageView?.image = groupImage
-        cell.detailTextLabel?.text = "Подписчиков: " + String(membersCount)
-        
-        cell.imageView?.layer.cornerRadius = cell.frame.size.height / 4
-        cell.imageView?.clipsToBounds = true
+        let cell = tableView.dequeueReusableCell(withIdentifier: "allGroups", for: indexPath) as! AllGroupsCell
+        cell.configure(for: groups[indexPath.row])
 
         return cell
     }
