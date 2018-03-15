@@ -17,9 +17,6 @@ class VKRequestService {
     func makeRequest(method: String, parameters: Parameters, completion: @escaping (_ users: JSON) -> Void) {
         sessionManager = configureDefaultSession()
         
-//        var newParams = parameters
-//        newParams["access_token"] = "123"
-        
         sessionManager?.request(url + method, parameters: parameters).responseJSON {response in
             guard let data = response.value else {return}
             let json = JSON(data)

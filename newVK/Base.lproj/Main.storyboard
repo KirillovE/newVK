@@ -235,6 +235,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="8IG-A7-jJh" kind="unwind" identifier="addGroup" unwindAction="addGroupWithSegue:" id="N0j-mp-AZ7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -246,6 +249,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXi-MJ-EbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8IG-A7-jJh" userLabel="Exit" sceneMemberID="exit"/>
                 <searchDisplayController id="XUW-36-qnl">
                     <connections>
                         <outlet property="delegate" destination="PmN-Zr-pDk" id="kvP-Uu-z0q"/>

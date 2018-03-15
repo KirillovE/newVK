@@ -25,9 +25,9 @@ class MyGroupsVC: UITableViewController {
     }
     
     // MARK: - View Controller life cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+ 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         getGroups()
     }
 
@@ -50,6 +50,18 @@ class MyGroupsVC: UITableViewController {
             leaveGroup(groupID: groupToLeaveID)
             groups.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    // MARK: - Navigation
+    
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        if segue.identifier == "addGroup" {
+            let allGroupsVC = segue.source as! AllGroupsVC
+            if let indexPath = allGroupsVC.tableView.indexPathForSelectedRow {
+                let groupID = allGroupsVC.groups[indexPath.row].id
+                joinGroup(groupID: groupID)
+            }
         }
     }
 
@@ -85,7 +97,7 @@ extension MyGroupsVC {
             groupsArray.append(group)
         }
         
-        saveMyGroups(groupsArray)
+//        saveMyGroups(groupsArray)
         return groupsArray
     }
 }
@@ -99,8 +111,7 @@ extension MyGroupsVC {
         let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
         let apiVersion = userDefaults.double(forKey: "v")
         
-        let parameters: Parameters = [/*"user_id": userID,*/
-                                      "group_id": groupID,
+        let parameters: Parameters = ["group_id": groupID,
                                       "access_token": accessToken,
                                       "v": apiVersion
         ]
@@ -124,6 +135,27 @@ extension MyGroupsVC {
             try realm.commitWrite()
         } catch {
             print(error)
+        }
+    }
+    
+}
+
+// MARK: - Requesting server to join selected group
+
+extension MyGroupsVC {
+    
+    func joinGroup(groupID: Int) {
+        let userDefaults = UserDefaults.standard
+        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
+        let apiVersion = userDefaults.double(forKey: "v")
+        
+        let parameters: Parameters = ["group_id": groupID,
+                                      "access_token": accessToken,
+                                      "v": apiVersion
+        ]
+        
+        vkRequest.makeRequest(method: "groups.join", parameters: parameters) { [weak self] json in
+            self?.tableView.reloadData()
         }
     }
     

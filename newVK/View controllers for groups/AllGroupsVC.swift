@@ -59,7 +59,7 @@ extension AllGroupsVC: UISearchBarDelegate {
             return
         }
         
-        getSearchedGroups(groupToFind: searchText, numberOfResults: 20)
+        getSearchedGroups(groupToFind: searchText, numberOfResults: 50)
         self.tableView.reloadData()
     }
     
@@ -75,7 +75,7 @@ extension AllGroupsVC: UISearchBarDelegate {
             return
         }
         
-        getSearchedGroups(groupToFind: searchBar.text!, numberOfResults: 20)
+        getSearchedGroups(groupToFind: searchBar.text!, numberOfResults: 50)
         self.tableView.reloadData()
         searchBar.resignFirstResponder()
     }
@@ -92,10 +92,11 @@ extension AllGroupsVC {
         let apiVersion = userDefaults.double(forKey: "v")
         
         let parameters: Parameters = ["q": groupName,
-                                      "type": "group",
+//                                      "type": "group",
                                       "count": numberOfResults,
                                       "extended": 1,
                                       "fields": "members_count",
+                                      "sort": 0,
                                       "access_token": accessToken,
                                       "v": apiVersion
         ]

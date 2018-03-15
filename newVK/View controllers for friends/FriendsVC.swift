@@ -88,7 +88,7 @@ extension FriendsVC {
             friendsArray.append(user)
         }
         
-        saveFriends(friendsArray)
+//        saveFriends(friendsArray)
         return friendsArray
     }
 }
