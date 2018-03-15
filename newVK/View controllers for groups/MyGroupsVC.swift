@@ -97,7 +97,7 @@ extension MyGroupsVC {
             groupsArray.append(group)
         }
         
-//        saveMyGroups(groupsArray)
+        saveMyGroups(groupsArray)
         return groupsArray
     }
 }
