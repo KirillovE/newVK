@@ -33,9 +33,9 @@ extension Group {
     func loadPhoto(from urlString: String) {
         let url = URL(string: photoURL)
         DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!)
+            guard let data = try? Data(contentsOf: url!) else { return }
             DispatchQueue.main.async {
-                guard let image = UIImage(data: data!) else { return }
+                guard let image = UIImage(data: data) else { return }
                 self.photo = image
             }
         }
