@@ -43,9 +43,11 @@ class FriendsVC: UITableViewController {
         let firstName = friends[indexPath.row].firstName
         let lastName = friends[indexPath.row].lastName
         let nick = friends[indexPath.row].nick
+        let avatar = friends[indexPath.row].avatar
         
         cell.textLabel?.text = firstName + " " + lastName
         cell.detailTextLabel?.text = nick
+        cell.imageView?.image = avatar
         
         cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
         cell.imageView?.clipsToBounds = true
@@ -75,7 +77,7 @@ extension FriendsVC {
         let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
         let apiVersion = userDefaults.double(forKey: "v")
         
-        let parameters: Parameters = ["fields": "nickName",
+        let parameters: Parameters = ["fields": "nickName,photo_100",
                                       "access_token": accessToken,
                                       "v": apiVersion
         ]
