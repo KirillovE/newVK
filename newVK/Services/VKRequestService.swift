@@ -29,6 +29,7 @@ class VKRequestService {
                 let userDefaults = UserDefaults.standard
                 userDefaults.set(false, forKey: "isAuthorized")
 //                показать экран входа как-то
+//                без этого перехода ошибка исправится при повторном запуске приложения
             } else {
                 completion(json)
             }
