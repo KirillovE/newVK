@@ -46,11 +46,11 @@ class AllGroupsVC: UITableViewController {
         
         let groupName = groups[indexPath.row].name
         let groupImage = groups[indexPath.row].photo
-        let membersCount = "пока неизвестно"
+        let membersCount = groups[indexPath.row].membersCount
         
         cell.textLabel?.text = groupName
         cell.imageView?.image = groupImage
-        cell.detailTextLabel?.text = "Подписчиков: " + membersCount
+        cell.detailTextLabel?.text = "Подписчиков: " + String(membersCount)
         
         cell.imageView?.layer.cornerRadius = cell.frame.size.height / 4
         cell.imageView?.clipsToBounds = true
@@ -105,6 +105,7 @@ extension AllGroupsVC {
                                       "type": "group",
                                       "count": numberOfResults,
                                       "extended": 1,
+                                      "fields": "members_count",
                                       "access_token": accessToken,
                                       "v": apiVersion
         ]

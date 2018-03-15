@@ -13,6 +13,7 @@ class Group: Object {
     @objc dynamic var id = 0
     @objc dynamic var name = ""
     @objc dynamic var photoURL = ""
+    @objc dynamic var membersCount = 0
     var photo: UIImage?
     
     convenience init(json: JSON) {
@@ -21,6 +22,7 @@ class Group: Object {
         id = json["id"].intValue
         name = json["name"].stringValue
         photoURL = json["photo_100"].stringValue
+        membersCount = json["members_count"].intValue
         loadPhoto(from: photoURL)
     }
 }
