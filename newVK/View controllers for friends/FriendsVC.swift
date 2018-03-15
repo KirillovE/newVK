@@ -12,9 +12,9 @@ import RealmSwift
 import SwiftKeychainWrapper
 
 class FriendsVC: UITableViewController {
-
-// MARK: - Source data
-
+    
+    // MARK: - Source data
+    
     let vkRequest = VKRequestService()
     var friends = [User]()
     var friendsJSON: JSON? {
@@ -24,12 +24,14 @@ class FriendsVC: UITableViewController {
         }
     }
     
+    // MARK: - View controller life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getFriends()
     }
     
-// MARK: - Table view data source
+    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
@@ -40,9 +42,10 @@ class FriendsVC: UITableViewController {
         
         let firstName = friends[indexPath.row].firstName
         let lastName = friends[indexPath.row].lastName
+        let nick = friends[indexPath.row].nick
         
-        cell.textLabel?.text = firstName
-        cell.detailTextLabel?.text = lastName
+        cell.textLabel?.text = firstName + " " + lastName
+        cell.detailTextLabel?.text = nick
         
         cell.imageView?.layer.cornerRadius = cell.frame.size.height / 2
         cell.imageView?.clipsToBounds = true
