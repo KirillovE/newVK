@@ -103,7 +103,6 @@ extension FriendsVC {
             realm.beginWrite()
             realm.add(friends)
             try realm.commitWrite()
-            print(realm.configuration.fileURL ?? "файла нет")
         } catch {
             print(error)
         }

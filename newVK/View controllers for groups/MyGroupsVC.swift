@@ -43,6 +43,15 @@ class MyGroupsVC: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let groupToLeaveID = groups[indexPath.row].id
+            leaveGroup(groupID: groupToLeaveID)
+            groups.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 
 }
 
@@ -79,6 +88,28 @@ extension MyGroupsVC {
         saveMyGroups(groupsArray)
         return groupsArray
     }
+}
+
+// MARK: - Requesting server to leave selected group
+
+extension MyGroupsVC {
+    
+    func leaveGroup(groupID: Int) {
+        let userDefaults = UserDefaults.standard
+        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
+        let apiVersion = userDefaults.double(forKey: "v")
+        
+        let parameters: Parameters = [/*"user_id": userID,*/
+                                      "group_id": groupID,
+                                      "access_token": accessToken,
+                                      "v": apiVersion
+        ]
+        
+        vkRequest.makeRequest(method: "groups.leave", parameters: parameters) { [weak self] json in
+            self?.tableView.reloadData()
+        }
+    }
+    
 }
 
 // MARK: - Saving data to Realm data base
