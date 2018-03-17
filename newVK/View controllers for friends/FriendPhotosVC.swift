@@ -20,7 +20,7 @@ class FriendPhotosVC: UICollectionViewController {
     var photos = [Photo]()
     var photosJSON: JSON? {
         didSet {
-            photos = appendPhotos(from: photosJSON)
+            appendPhotos(from: photosJSON)
             self.collectionView?.reloadData()
         }
     }
@@ -86,7 +86,7 @@ extension FriendPhotosVC {
         }
     }
     
-    func appendPhotos(from json: JSON?) -> [Photo] {
+    func appendPhotos(from json: JSON?) {
         let itemsArray = json!["response", "items"]
         var photosArray = [Photo]()
         
@@ -96,7 +96,7 @@ extension FriendPhotosVC {
         }
         
         savePhotos(photosArray)
-        return photosArray
+        loadPhotos()
     }
     
 }
@@ -105,12 +105,24 @@ extension FriendPhotosVC {
 
 extension FriendPhotosVC {
     
+    /// сохранить фотографии в базу данных
     func savePhotos(_ photos: [Photo]) {
         do {
             let realm = try Realm()
             realm.beginWrite()
             realm.add(photos, update: true)
             try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
+    /// загрузить фотографии из базы данных Realm
+    func loadPhotos() {
+        do {
+            let realm = try Realm()
+            let photos = realm.objects(Photo.self)
+            self.photos = Array(photos)
         } catch {
             print(error)
         }
