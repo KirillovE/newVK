@@ -25,6 +25,9 @@ class Group: Object {
         membersCount = json["members_count"].intValue
         loadPhoto(from: photoURL)
     }
+    
+    @objc open override class func primaryKey() -> String? { return "id" }
+    
 }
 
 // MARK: -

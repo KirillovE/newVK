@@ -27,6 +27,8 @@ class User: Object {
         avatarURL = json["photo_100"].stringValue
         loadPhoto(from: avatarURL)
     }
+    
+    @objc open override class func primaryKey() -> String? { return "id" }
 }
 
 // MARK: -

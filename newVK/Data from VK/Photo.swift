@@ -27,6 +27,8 @@ class Photo: Object {
         loadLargePhoto(from: largePhotoURL)
     }
     
+    @objc open override class func primaryKey() -> String? { return "id" }
+    
 }
 
 // MARK: -
