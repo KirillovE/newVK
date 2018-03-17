@@ -19,7 +19,7 @@ class MyGroupsVC: UITableViewController {
     var groups = [Group]()
     var groupsJSON: JSON? {
         didSet {
-            groups = appendGroups(from: groupsJSON)
+            appendGroups(from: groupsJSON)
             self.tableView.reloadData()
         }
     }
@@ -72,6 +72,8 @@ class MyGroupsVC: UITableViewController {
 extension MyGroupsVC {
     
     func getGroups() {
+        loadMyGroups()
+        
         let userDefaults = UserDefaults.standard
         let userID = userDefaults.string(forKey: "user_id")!
         let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
@@ -89,7 +91,7 @@ extension MyGroupsVC {
         }
     }
     
-    func appendGroups(from json: JSON?) -> [Group] {
+    func appendGroups(from json: JSON?) {
         let itemsArray = json!["response", "items"]
         var groupsArray = [Group]()
         
@@ -99,7 +101,7 @@ extension MyGroupsVC {
         }
         
         saveMyGroups(groupsArray)
-        return groupsArray
+        loadMyGroups()
     }
 }
 
@@ -124,16 +126,28 @@ extension MyGroupsVC {
     
 }
 
-// MARK: - Saving data to Realm data base
+// MARK: - Working with Realm data base
 
 extension MyGroupsVC {
     
+    /// сохранить группы в базу данных Realm
     func saveMyGroups(_ groups: [Group]) {
         do {
             let realm = try Realm()
             realm.beginWrite()
             realm.add(groups, update: true)
             try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
+    /// загрузить группы из базы данных Realm
+    func loadMyGroups() {
+        do {
+            let realm = try Realm()
+            let groups = realm.objects(Group.self)
+            self.groups = Array(groups)
         } catch {
             print(error)
         }
