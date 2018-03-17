@@ -16,7 +16,13 @@ class FriendsVC: UITableViewController {
     // MARK: - Source data
     
     let vkRequest = VKRequestService()
-    var friends = [User]()
+    var friends = [User]() {
+        didSet {
+            for friend in friends {
+                friend.loadPhoto(from: friend.avatarURL)
+            }
+        }
+    }
     var friendsJSON: JSON? {
         didSet {
             appendFriends(from: friendsJSON)

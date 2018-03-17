@@ -35,7 +35,7 @@ class User: Object {
 
 extension User {
 
-    private func loadPhoto(from urlString: String) {
+    func loadPhoto(from urlString: String) {
         let url = URL(string: urlString)
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!)
