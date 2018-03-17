@@ -131,7 +131,7 @@ extension MyGroupsVC {
         do {
             let realm = try Realm()
             realm.beginWrite()
-            realm.add(groups)
+            realm.add(groups, update: true)
             try realm.commitWrite()
         } catch {
             print(error)

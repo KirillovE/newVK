@@ -101,7 +101,7 @@ extension FriendsVC {
         do {
             let realm = try Realm()
             realm.beginWrite()
-            realm.add(friends)
+            realm.add(friends, update: true)
             try realm.commitWrite()
         } catch {
             print(error)

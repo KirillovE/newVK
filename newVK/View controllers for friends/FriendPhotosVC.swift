@@ -109,7 +109,7 @@ extension FriendPhotosVC {
         do {
             let realm = try Realm()
             realm.beginWrite()
-            realm.add(photos)
+            realm.add(photos, update: true)
             try realm.commitWrite()
         } catch {
             print(error)
