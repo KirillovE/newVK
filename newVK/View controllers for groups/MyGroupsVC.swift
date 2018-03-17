@@ -79,6 +79,7 @@ extension MyGroupsVC {
         
         let parameters: Parameters = ["user_id": userID,
                                       "extended": 1,
+                                      "fields": "members_count",
                                       "access_token": accessToken,
                                       "v": apiVersion
         ]
