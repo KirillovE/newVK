@@ -16,7 +16,13 @@ class MyGroupsVC: UITableViewController {
     // MARK: - Source data
     
     let vkRequest = VKRequestService()
-    var groups = [Group]()
+    var groups = [Group]() {
+        didSet {
+            for group in groups {
+                group.loadPhoto(from: group.photoURL)
+            }
+        }
+    }
     var groupsJSON: JSON? {
         didSet {
             appendGroups(from: groupsJSON)
