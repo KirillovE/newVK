@@ -19,7 +19,7 @@ class FriendsVC: UITableViewController {
     var friends = [User]()
     var friendsJSON: JSON? {
         didSet {
-            friends = appendFriends(from: friendsJSON)
+            appendFriends(from: friendsJSON)
             self.tableView.reloadData()
         }
     }
@@ -63,6 +63,8 @@ class FriendsVC: UITableViewController {
 extension FriendsVC {
     
     func getFriends() {
+        loadFriends()
+        
         let userDefaults = UserDefaults.standard
         let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
         let apiVersion = userDefaults.double(forKey: "v")
@@ -77,8 +79,8 @@ extension FriendsVC {
         }
     }
     
-    func appendFriends(from json: JSON?) -> [User] {
-        guard json != nil else { return [User]() }
+    func appendFriends(from json: JSON?) {
+        guard json != nil else { return }
         
         let itemsArray = json!["response", "items"]
         var friendsArray = [User]()
@@ -89,7 +91,7 @@ extension FriendsVC {
         }
         
         saveFriends(friendsArray)
-        return friendsArray
+        loadFriends()
     }
 }
 
@@ -97,12 +99,24 @@ extension FriendsVC {
 
 extension FriendsVC {
     
+    /// сохранить друзей в базу данных Realm
     func saveFriends(_ friends: [User]) {
         do {
             let realm = try Realm()
             realm.beginWrite()
             realm.add(friends, update: true)
             try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
+    /// загрузить друзей из базы данных Realm
+    func loadFriends() {
+        do {
+            let realm = try Realm()
+            let friends = realm.objects(User.self)
+            self.friends = Array(friends)
         } catch {
             print(error)
         }
