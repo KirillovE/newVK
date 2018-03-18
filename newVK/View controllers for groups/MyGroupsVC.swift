@@ -32,6 +32,11 @@ class MyGroupsVC: UITableViewController {
     
     // MARK: - View Controller life cycle
  
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadMyGroups()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         getGroups()
