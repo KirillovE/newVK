@@ -69,8 +69,6 @@ class FriendsVC: UITableViewController {
 extension FriendsVC {
     
     func getFriends() {
-        loadFriends()
-        
         let userDefaults = UserDefaults.standard
         let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
         let apiVersion = userDefaults.double(forKey: "v")
@@ -85,9 +83,7 @@ extension FriendsVC {
         }
     }
     
-    func appendFriends(from json: JSON?) {
-        guard json != nil else { return }
-        
+    func appendFriends(from json: JSON?) {        
         let itemsArray = json!["response", "items"]
         var friendsArray = [User]()
         
@@ -109,7 +105,9 @@ extension FriendsVC {
     func saveFriends(_ friends: [User]) {
         do {
             let realm = try Realm()
+            let oldFriends = realm.objects(User.self)       // сначала нужно удалить старые данные
             realm.beginWrite()
+            realm.delete(oldFriends)
             realm.add(friends, update: true)
             try realm.commitWrite()
         } catch {

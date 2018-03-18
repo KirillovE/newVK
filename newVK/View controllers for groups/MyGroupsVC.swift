@@ -77,9 +77,7 @@ class MyGroupsVC: UITableViewController {
 
 extension MyGroupsVC {
     
-    func getGroups() {
-        loadMyGroups()
-        
+    func getGroups() {        
         let userDefaults = UserDefaults.standard
         let userID = userDefaults.string(forKey: "user_id")!
         let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
@@ -140,7 +138,9 @@ extension MyGroupsVC {
     func saveMyGroups(_ groups: [Group]) {
         do {
             let realm = try Realm()
+            let oldGroups = realm.objects(Group.self)       //сначала нужно удалить старые данные
             realm.beginWrite()
+            realm.delete(oldGroups)
             realm.add(groups, update: true)
             try realm.commitWrite()
         } catch {

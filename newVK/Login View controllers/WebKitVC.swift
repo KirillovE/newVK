@@ -35,7 +35,7 @@ class WebKitVC: UIViewController {
         let parameters: Parameters = ["client_id": clientID,
                                       "display": "mobile",
                                       "redirect_uri": "https://oauth.vk.com/blank.html",
-                                      "scope": "262150",
+                                      "scope": "offline",
                                       "response_type": "token",
                                       "v": apiVersion]
         

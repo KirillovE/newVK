@@ -12,4 +12,13 @@ class FriendPhotosCell: UICollectionViewCell {
     
     @IBOutlet weak var friendImage: UIImageView!
     
+    func configure(for photo: Photo) {
+        
+        let photo = photo.largePhoto
+        friendImage.image = photo
+        
+        friendImage.layer.cornerRadius = frame.size.height / 10
+        friendImage.clipsToBounds = true
+    }
+    
 }

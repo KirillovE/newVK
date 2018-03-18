@@ -40,12 +40,7 @@ class FriendPhotosVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendPhotosCell
-        
-        let photo = photos[indexPath.row].largePhoto
-        cell.friendImage.image = photo
-        
-        cell.friendImage.layer.cornerRadius = cell.frame.size.height / 10
-        cell.friendImage.clipsToBounds = true
+        cell.configure(for: photos[indexPath.row])
         
         return cell
     }
@@ -109,7 +104,9 @@ extension FriendPhotosVC {
     func savePhotos(_ photos: [Photo]) {
         do {
             let realm = try Realm()
+            let oldPhotos = realm.objects(Photo.self)
             realm.beginWrite()
+            realm.delete(oldPhotos)
             realm.add(photos, update: true)
             try realm.commitWrite()
         } catch {

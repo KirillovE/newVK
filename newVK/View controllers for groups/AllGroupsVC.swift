@@ -92,7 +92,6 @@ extension AllGroupsVC {
         let apiVersion = userDefaults.double(forKey: "v")
         
         let parameters: Parameters = ["q": groupName,
-//                                      "type": "group",
                                       "count": numberOfResults,
                                       "extended": 1,
                                       "fields": "members_count",
