@@ -34,6 +34,7 @@ class FriendsVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadFriends()
         getFriends()
     }
     
