@@ -81,6 +81,7 @@ extension WebKitVC: WKNavigationDelegate {
             userDefaults.set(true, forKey: "isAuthorized")
             userDefaults.set(params["user_id"], forKey: "user_id")
             userDefaults.set(apiVersion, forKey: "v")
+            userDefaults.set("https://api.vk.com/method/", forKey: "apiURL")
             KeychainWrapper.standard.set(params["access_token"]!, forKey: "access_token")
         } else {
             userDefaults.set(false, forKey: "isAuthorized")
