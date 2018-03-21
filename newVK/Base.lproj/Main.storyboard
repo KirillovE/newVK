@@ -150,7 +150,13 @@
                             <outlet property="delegate" destination="eqK-Jg-aYG" id="wGl-qG-Kyi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Друзья" id="UJK-uf-H7C"/>
+                    <navigationItem key="navigationItem" title="Друзья" id="UJK-uf-H7C">
+                        <barButtonItem key="leftBarButtonItem" title="Выйти" id="BDk-PY-zMX">
+                            <connections>
+                                <action selector="exitPressed:" destination="eqK-Jg-aYG" id="Hqd-lr-PcN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWf-Ek-eEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

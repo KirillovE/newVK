@@ -15,6 +15,7 @@ class FriendsVC: UITableViewController {
     let friendsRequest = FriendsRequest()
     var friends: Results<User>!
     var token: NotificationToken?
+    let leaveRequest = LeaveAccount()
     
     // MARK: -
     
@@ -50,6 +51,10 @@ class FriendsVC: UITableViewController {
         }
     }
 
+    @IBAction func exitPressed(_ sender: UIBarButtonItem) {
+        leaveRequest.logOut()
+        self.tabBarController?.dismiss(animated: true)
+    }
 }
 
 // MARK: -
