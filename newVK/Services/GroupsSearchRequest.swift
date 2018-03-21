@@ -12,11 +12,15 @@ import SwiftyJSON
 
 class GroupsSearchRequest {
     
+    // MARK: - Source data
+    
     private var sessionManager: SessionManager?
     private let method = "groups.search"
     private let requestExtended = 1
     private let requestFields = "members_count"
     private let requestSort = 0
+    
+    // MARK: - Methods
     
     func makeRequest(groupToFind groupName: String, numberOfResults: Int, completion: @escaping ([Group]) -> Void) {
         let (accessToken, apiVersion, url) = configureRequest()
@@ -51,7 +55,7 @@ class GroupsSearchRequest {
         return (accessToken, apiVersion, url ?? "")
     }
     
-    func appendGroups(from json: JSON?) -> [Group] {
+    private func appendGroups(from json: JSON?) -> [Group] {
         let itemsArray = json!["response", "items"]
         var groupsArray = [Group]()
         
