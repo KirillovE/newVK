@@ -30,4 +30,9 @@ class VKloginVC: UIViewController {
             performSegue(withIdentifier: "quickStart", sender: self)
         }
     }
+    
+    @IBAction func leaveAccount(segue: UIStoryboardSegue) {
+        let leaveRequest = LeaveAccount()
+        leaveRequest.logOut()
+    }
 }
