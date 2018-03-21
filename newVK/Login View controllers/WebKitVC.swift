@@ -19,6 +19,7 @@ class WebKitVC: UIViewController {
     let apiVersion = 5.73
     let clientID = 6356387
     let userDefaults = UserDefaults.standard
+    let scope = "offline, photos, groups"
     
     // MARK: - Methods
     
@@ -35,7 +36,7 @@ class WebKitVC: UIViewController {
         let parameters: Parameters = ["client_id": clientID,
                                       "display": "mobile",
                                       "redirect_uri": "https://oauth.vk.com/blank.html",
-                                      "scope": "offline, photos, groups",
+                                      "scope": scope,
                                       "response_type": "token",
                                       "v": apiVersion]
         
