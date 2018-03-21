@@ -12,8 +12,8 @@ import RealmSwift
 class Photo: Object {
     @objc dynamic var id = 0
     @objc dynamic var ownerId = 0
-    @objc dynamic private var smallPhotoURL = ""
-    @objc dynamic private var largePhotoURL = ""
+    @objc dynamic var smallPhotoURL = ""
+    @objc dynamic var largePhotoURL = ""
     var smallPhoto, largePhoto: UIImage?
     
     convenience init(json: JSON) {
