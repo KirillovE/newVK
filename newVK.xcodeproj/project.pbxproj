@@ -32,6 +32,7 @@
 		3EAC58DD20624B2300A2DE4A /* PhotosRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58DB20624B2300A2DE4A /* PhotosRequest.swift */; };
 		3EAC58DE20624B2300A2DE4A /* GroupsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */; };
 		3EAC58E0206258A300A2DE4A /* GroupsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */; };
+		3EAC58E22062D22100A2DE4A /* LeaveAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58E12062D22100A2DE4A /* LeaveAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		3EAC58DB20624B2300A2DE4A /* PhotosRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosRequest.swift; sourceTree = "<group>"; };
 		3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsRequest.swift; sourceTree = "<group>"; };
 		3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsSearchRequest.swift; sourceTree = "<group>"; };
+		3EAC58E12062D22100A2DE4A /* LeaveAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveAccount.swift; sourceTree = "<group>"; };
 		5F53533A50A997494316304F /* Pods_newVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C94D3D006DBA0B60806BE9 /* Pods-newVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.release.xcconfig"; sourceTree = "<group>"; };
 		CA4BC402A95B54E8DF352A78 /* Pods-newVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */,
 				3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */,
 				3EAC58D920619DF800A2DE4A /* SavingObjects.swift */,
+				3EAC58E12062D22100A2DE4A /* LeaveAccount.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */,
 				3E78B69C20443228006E9397 /* LargePhotoVC.swift in Sources */,
 				3E16769A20400B5C00287BB4 /* FriendPhotosVC.swift in Sources */,
+				3EAC58E22062D22100A2DE4A /* LeaveAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
