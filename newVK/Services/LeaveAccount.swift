@@ -6,17 +6,43 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-import Foundation
+import SwiftKeychainWrapper
+import RealmSwift
 
 class LeaveAccount {
     
     func logOut() {
+        clearCookies()
+        clearDefaults()
+        clearDataBase()
+    }
+    
+    private func clearCookies() {
         let storage = HTTPCookieStorage.shared
         for cookie in storage.cookies! {
             let domainName = cookie.domain
-            let domainRange = domainName.range(of: "vk.com")
-            guard !(domainRange?.isEmpty)! else { return }
+            guard let _ = domainName.range(of: "vk.com") else { return }
             storage.deleteCookie(cookie)
+        }
+    }
+    
+    private func clearDefaults() {
+        KeychainWrapper.standard.removeObject(forKey: "access_token")
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey: "isAuthorized")
+        userDefaults.removeObject(forKey: "user_id")
+        userDefaults.removeObject(forKey: "v")
+        userDefaults.removeObject(forKey: "apiURL")
+    }
+    
+    private func clearDataBase() {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch {
+            print(error)
         }
     }
     
