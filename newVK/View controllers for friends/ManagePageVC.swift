@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ManagePageVC: UIPageViewController {
-    var photoAlbum: [Photo]!
+    
+    // MARK: - Source data
+    
+    var photoAlbum: Results<Photo>!
     var photoIndex: Int!
+    
+    // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +34,21 @@ class ManagePageVC: UIPageViewController {
             let page = storyboard.instantiateViewController(withIdentifier: "LargePhotoVC") as? LargePhotoVC else {
                 return nil
         }
+        
+        do {
+            let realm = try Realm()
+            photoAlbum = realm.objects(Photo.self)
+        } catch {
+            print(error)
+        }
+        
+        page.photoURL = photoAlbum![index].largePhotoURL
         page.photoIndex = index
-        page.photo = photoAlbum![index].largePhoto
         return page
     }
 }
+
+// MARK: -
 
 extension ManagePageVC: UIPageViewControllerDataSource {
     

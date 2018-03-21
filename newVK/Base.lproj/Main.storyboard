@@ -140,7 +140,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="9b2-lI-NC9" kind="show" identifier="ShowFriendImage" id="0qc-BS-gyB"/>
+                                    <segue destination="9b2-lI-NC9" kind="show" identifier="ShowFriendImages" id="0qc-BS-gyB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

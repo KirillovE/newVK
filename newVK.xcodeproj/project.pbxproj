@@ -92,8 +92,8 @@
 			children = (
 				3E167695203F6C0700287BB4 /* FriendsVC.swift */,
 				3E16769920400B5C00287BB4 /* FriendPhotosVC.swift */,
-				3E78B69B20443228006E9397 /* LargePhotoVC.swift */,
 				3EA87349204728930049C4F2 /* ManagePageVC.swift */,
+				3E78B69B20443228006E9397 /* LargePhotoVC.swift */,
 			);
 			path = "View controllers for friends";
 			sourceTree = "<group>";

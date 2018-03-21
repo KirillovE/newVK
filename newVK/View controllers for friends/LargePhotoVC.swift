@@ -13,19 +13,29 @@ class LargePhotoVC: UIViewController {
 // MARK: - Variables
     
     @IBOutlet weak var largePhoto: UIImageView!
-    var photo: UIImage?
     var photoIndex: Int!
+    var photoURL = ""
     
-// MARK: - View Controller life cycle
+// MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard photo != nil else { return }
-        largePhoto.image = photo
+        loadLargePhoto(from: photoURL)
         
-        let viewTapGesture = UITapGestureRecognizer(target: self, action: #selector(switchNavBarVisible))
-        view.addGestureRecognizer(viewTapGesture)
+        let hideNavBar = UITapGestureRecognizer(target: self, action: #selector(switchNavBarVisible))
+        view.addGestureRecognizer(hideNavBar)
+    }
+    
+    func loadLargePhoto(from urlString: String) {
+        let url = URL(string: urlString)
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: url!) else { return }
+            DispatchQueue.main.async {
+                guard let image = UIImage(data: data) else { return }
+                self.largePhoto.image = image
+            }
+        }
     }
     
 }
