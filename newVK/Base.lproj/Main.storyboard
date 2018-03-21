@@ -75,24 +75,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFV-pk-7nP">
-                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="410"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gL-uh-Wlp">
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Выйти">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitPressed:" destination="qiJ-x6-NxP" eventType="touchUpInside" id="0Sa-ZT-rFR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HFV-pk-7nP" firstAttribute="top" secondItem="Uhg-PC-jKs" secondAttribute="top" id="Lg2-aL-nNM"/>
+                            <constraint firstItem="Uhg-PC-jKs" firstAttribute="trailing" secondItem="1gL-uh-Wlp" secondAttribute="trailing" id="C0n-7j-pus"/>
+                            <constraint firstItem="Uhg-PC-jKs" firstAttribute="bottom" secondItem="1gL-uh-Wlp" secondAttribute="bottom" id="FfL-WL-IT2"/>
                             <constraint firstItem="Uhg-PC-jKs" firstAttribute="trailing" secondItem="HFV-pk-7nP" secondAttribute="trailing" id="Nzn-Lt-Guj"/>
-                            <constraint firstItem="Uhg-PC-jKs" firstAttribute="trailing" secondItem="HFV-pk-7nP" secondAttribute="trailing" id="Rmm-cF-Zpt"/>
-                            <constraint firstItem="Uhg-PC-jKs" firstAttribute="bottom" secondItem="HFV-pk-7nP" secondAttribute="bottom" id="Tdo-jo-zd0"/>
-                            <constraint firstItem="Uhg-PC-jKs" firstAttribute="bottom" secondItem="HFV-pk-7nP" secondAttribute="bottom" id="bxH-0U-7yg"/>
+                            <constraint firstItem="1gL-uh-Wlp" firstAttribute="top" secondItem="HFV-pk-7nP" secondAttribute="bottom" id="be5-QA-ywk"/>
                             <constraint firstItem="HFV-pk-7nP" firstAttribute="leading" secondItem="Uhg-PC-jKs" secondAttribute="leading" id="c9y-fK-rRq"/>
                             <constraint firstItem="HFV-pk-7nP" firstAttribute="top" secondItem="Uhg-PC-jKs" secondAttribute="top" id="doe-NO-qqZ"/>
-                            <constraint firstItem="HFV-pk-7nP" firstAttribute="leading" secondItem="Uhg-PC-jKs" secondAttribute="leading" id="uIu-qm-Wwp"/>
+                            <constraint firstItem="1gL-uh-Wlp" firstAttribute="leading" secondItem="Uhg-PC-jKs" secondAttribute="leading" id="gFS-DU-gaB"/>
+                            <constraint firstItem="Uhg-PC-jKs" firstAttribute="bottom" secondItem="HFV-pk-7nP" secondAttribute="bottom" constant="50" id="kLS-hY-6mn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Uhg-PC-jKs"/>
                     </view>
@@ -105,7 +116,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Jb-gp-WcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="g4O-l7-yGG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="536" y="615"/>
+            <point key="canvasLocation" x="534.375" y="615"/>
         </scene>
         <!--Title-->
         <scene sceneID="uFd-bg-iLu">
