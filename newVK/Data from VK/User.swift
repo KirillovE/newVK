@@ -15,7 +15,6 @@ class User: Object {
     @objc dynamic var lastName = ""
     @objc dynamic var nick = ""
     @objc dynamic var avatarURL = ""
-    var avatar: UIImage?
     
     convenience init(json: JSON) {
         self.init()
@@ -25,25 +24,7 @@ class User: Object {
         lastName = json["last_name"].stringValue
         nick = json["nickname"].stringValue
         avatarURL = json["photo_100"].stringValue
-        loadPhoto(from: avatarURL)
     }
     
     @objc open override class func primaryKey() -> String? { return "id" }
-}
-
-// MARK: -
-
-extension User {
-
-    func loadPhoto(from urlString: String) {
-        let url = URL(string: urlString)
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url!) else { return }
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else { return }
-                self.avatar = image
-            }
-        }
-    }
-    
 }

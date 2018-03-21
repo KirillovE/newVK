@@ -14,7 +14,6 @@ class Photo: Object {
     @objc dynamic var ownerId = 0
     @objc dynamic var smallPhotoURL = ""
     @objc dynamic var largePhotoURL = ""
-    var smallPhoto, largePhoto: UIImage?
     
     convenience init(json: JSON) {
         self.init()
@@ -23,38 +22,8 @@ class Photo: Object {
         ownerId = json["owner_id"].intValue
         smallPhotoURL = json["photo_130"].stringValue
         largePhotoURL = json["photo_604"].stringValue
-        loadSmallPhoto(from: smallPhotoURL)
-        loadLargePhoto(from: largePhotoURL)
     }
     
     @objc open override class func primaryKey() -> String? { return "id" }
     
-}
-
-// MARK: -
-
-extension Photo {
-    
-    private func loadLargePhoto(from urlString: String) {
-        let url = URL(string: urlString)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data!) else { return }
-                self.largePhoto = image
-            }
-        }
-    }
-    
-    private func loadSmallPhoto(from urlString: String) {
-        let url = URL(string: urlString)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data!) else { return }
-                self.smallPhoto = image
-            }
-        }
-    }
-
 }
