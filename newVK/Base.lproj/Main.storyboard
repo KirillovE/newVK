@@ -207,7 +207,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Друзья" id="UJK-uf-H7C">
-                        <barButtonItem key="leftBarButtonItem" title="владелец" id="BDk-PY-zMX">
+                        <barButtonItem key="leftBarButtonItem" image="хозяин" id="BDk-PY-zMX">
                             <connections>
                                 <action selector="exitPressed:" destination="eqK-Jg-aYG" id="Hqd-lr-PcN"/>
                                 <segue destination="B9B-Mg-7AP" kind="show" identifier="showOwnerAccount" id="zaM-pT-YjB"/>
@@ -478,6 +478,7 @@
         <image name="vk logo" width="1204" height="906"/>
         <image name="группы" width="30" height="30"/>
         <image name="друзья" width="30" height="30"/>
+        <image name="хозяин" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GS0-Tm-C0d"/>
