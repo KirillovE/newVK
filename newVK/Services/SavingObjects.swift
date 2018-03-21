@@ -14,7 +14,6 @@ class SavingObjects {
     func save<T: Object>(objectsArray: [T]) {
         do {
             let realm = try Realm()
-            print(realm.configuration.fileURL ?? "нет файла")
             let oldObjects = realm.objects(T.self)
             try realm.write {
                 realm.delete(oldObjects)
