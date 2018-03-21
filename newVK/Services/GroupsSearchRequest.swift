@@ -9,7 +9,6 @@
 import SwiftKeychainWrapper
 import Alamofire
 import SwiftyJSON
-import RealmSwift
 
 class GroupsSearchRequest {
     
