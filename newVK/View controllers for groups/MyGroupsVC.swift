@@ -23,12 +23,9 @@ class MyGroupsVC: UITableViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         pairTableAndRealm()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        groupsRequest.makeRequest()
+        groupsRequest.getGroups()
     }
 
     // MARK: - Table view data source
@@ -44,26 +41,42 @@ class MyGroupsVC: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            let groupToLeaveID = groups[indexPath.row].id
-//            leaveGroup(groupID: groupToLeaveID)
-//            groups.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let groupToLeave = groups[indexPath.row]
+        if editingStyle == .delete {
+            groupsRequest.leaveGroup(groupID: groupToLeave.id)
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.delete(groupToLeave)
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
+
     
     // MARK: - Navigation
     
-//    @IBAction func addGroup(segue: UIStoryboardSegue) {
-//        if segue.identifier == "addGroup" {
-//            let allGroupsVC = segue.source as! AllGroupsVC
-//            if let indexPath = allGroupsVC.tableView.indexPathForSelectedRow {
-//                let groupID = allGroupsVC.groups[indexPath.row].id
-//                joinGroup(groupID: groupID)
-//            }
-//        }
-//    }
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        if segue.identifier == "addGroup" {
+            let allGroupsVC = segue.source as! AllGroupsVC
+            if let indexPath = allGroupsVC.tableView.indexPathForSelectedRow {
+                let groupToJoin = allGroupsVC.groups[indexPath.row]
+                
+                groupsRequest.joinGroup(groupID: groupToJoin.id)
+                do {
+                    let realm = try Realm()
+                    try realm.write {
+                        realm.add(groupToJoin)
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    }
 
 }
 
@@ -92,42 +105,3 @@ extension MyGroupsVC {
     }
     
 }
-
-//extension MyGroupsVC {
-//
-//    func leaveGroup(groupID: Int) {
-//        let userDefaults = UserDefaults.standard
-//        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
-//        let apiVersion = userDefaults.double(forKey: "v")
-//
-//        let parameters: Parameters = ["group_id": groupID,
-//                                      "access_token": accessToken,
-//                                      "v": apiVersion
-//        ]
-//
-//        vkRequest.makeRequest(method: "groups.leave", parameters: parameters) { [weak self] json in
-//            self?.tableView.reloadData()
-//        }
-//    }
-//
-//}
-
-//extension MyGroupsVC {
-//
-//    func joinGroup(groupID: Int) {
-//        let userDefaults = UserDefaults.standard
-//        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
-//        let apiVersion = userDefaults.double(forKey: "v")
-//
-//        let parameters: Parameters = ["group_id": groupID,
-//                                      "access_token": accessToken,
-//                                      "v": apiVersion
-//        ]
-//
-//        vkRequest.makeRequest(method: "groups.join", parameters: parameters) { [weak self] json in
-//            self?.tableView.reloadData()
-//        }
-//    }
-//
-//}
-
