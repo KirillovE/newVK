@@ -16,20 +16,17 @@ class FriendPhotosVC: UICollectionViewController {
     // MARK: - Source data
     
     var ownerID: Int!
-    let vkRequest = VKRequestService()
-    var photos = [Photo]()
-    var photosJSON: JSON? {
-        didSet {
-            appendPhotos(from: photosJSON)
-            self.collectionView?.reloadData()
-        }
-    }
+    let photosRequest = PhotosRequest()
+    var photos: Results<Photo>!
+    var token: NotificationToken?
 
     // MARK: - View Controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPhotos()
+        
+        photosRequest.makeRequest(for: ownerID)
+        pairCollectionAndRealm()
     }
     
     // MARK: - UICollectionViewDataSource
@@ -47,81 +44,42 @@ class FriendPhotosVC: UICollectionViewController {
     
     // MARK: - Navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "ShowPageView" else { return }
-        let photoPages = segue.destination as! ManagePageVC
-        photoPages.photoAlbum = photos
-        photoPages.photoIndex = getLargePhotoIndex(from: sender)
-    }
-
-    func getLargePhotoIndex(from sender: Any?) -> Int {
-        let selectedCell = sender as! FriendPhotosCell
-        let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
-        return photoIndex!
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard segue.identifier == "ShowPageView" else { return }
+//        let photoPages = segue.destination as! ManagePageVC
+//        photoPages.photoAlbum = photos
+//        photoPages.photoIndex = getLargePhotoIndex(from: sender)
+//    }
+//
+//    func getLargePhotoIndex(from sender: Any?) -> Int {
+//        let selectedCell = sender as! FriendPhotosCell
+//        let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
+//        return photoIndex!
+//    }
 
 }
 
-// MARK: - Requesting photos from server
+// MARK: -
 
 extension FriendPhotosVC {
     
-    func getPhotos() {
-        let userDefaults = UserDefaults.standard
-        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
-        let apiVersion = userDefaults.double(forKey: "v")
-        
-        let parameters: Parameters = ["owner_id": ownerID,
-                                      "access_token": accessToken,
-                                      "v": apiVersion
-        ]
-        
-        vkRequest.makeRequest(method: "photos.getAll", parameters: parameters)  { [weak self] json in
-            self?.photosJSON = json
-        }
-    }
-    
-    func appendPhotos(from json: JSON?) {
-        let itemsArray = json!["response", "items"]
-        var photosArray = [Photo]()
-        
-        for (_, item) in itemsArray {
-            let photo = Photo(json: item)
-            photosArray.append(photo)
-        }
-        
-        savePhotos(photosArray)
-        loadPhotos()
-    }
-    
-}
-
-// MARK: - Saving data to Realm data base
-
-extension FriendPhotosVC {
-    
-    /// сохранить фотографии в базу данных
-    func savePhotos(_ photos: [Photo]) {
-        do {
-            let realm = try Realm()
-            let oldPhotos = realm.objects(Photo.self)
-            realm.beginWrite()
-            realm.delete(oldPhotos)
-            realm.add(photos, update: true)
-            try realm.commitWrite()
-        } catch {
-            print(error)
-        }
-    }
-    
-    /// загрузить фотографии из базы данных Realm
-    func loadPhotos() {
-        do {
-            let realm = try Realm()
-            let photos = realm.objects(Photo.self)
-            self.photos = Array(photos)
-        } catch {
-            print(error)
+    func pairCollectionAndRealm() {
+        guard let realm = try? Realm() else { return }
+        photos = realm.objects(Photo.self)
+        token = photos.observe { [weak self] changes in
+            guard let collectionView = self?.collectionView else { return }
+            switch changes {
+            case .initial:
+                collectionView.reloadData()
+            case .update(_,  let deletions, let insertions, let modifications):
+                collectionView.performBatchUpdates({
+                    collectionView.insertItems(at: insertions.map(    { IndexPath(row: $0, section: 0)}))
+                    collectionView.deleteItems(at: deletions.map(     { IndexPath(row: $0, section: 0)}))
+                    collectionView.reloadItems(at: modifications.map( { IndexPath(row: $0, section: 0)}))
+                })
+            case .error(let error):
+                print(error.localizedDescription)
+            }
         }
     }
     
