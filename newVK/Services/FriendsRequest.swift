@@ -12,9 +12,9 @@ import SwiftKeychainWrapper
 
 class FriendsRequest {
     
-    var sessionManager: SessionManager?
-    let method = "friends.get"
-    let requestFields = "nickName,photo_100"
+    private var sessionManager: SessionManager?
+    private let method = "friends.get"
+    private let requestFields = "nickName,photo_100"
     
     func makeRequest() {
         let (accessToken, apiVersion, url) = configureRequest()
@@ -34,7 +34,7 @@ class FriendsRequest {
     }
     
     /// подготавливает настройки для запроса
-    func configureRequest() -> (String, Double, String?) {
+    private func configureRequest() -> (String, Double, String?) {
         let config = URLSessionConfiguration.default
         config.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         sessionManager = SessionManager(configuration: config)
@@ -48,7 +48,7 @@ class FriendsRequest {
     }
     
     /// выдаёт массив друзей
-    func appendFriends(json: JSON) -> [User] {
+    private func appendFriends(json: JSON) -> [User] {
         guard json["error", "error_code"] != 5 else {
             print("не подошёл access_token ", json["error", "error_msg"])
             let userDefaults = UserDefaults.standard
