@@ -98,11 +98,7 @@ extension GroupsRequest {
                                       "v": apiVersion
         ]
 
-        sessionManager?.request(url! + method, parameters: parameters).responseJSON {response in
-            print("Запрос: ", response.request ?? "пусто")
-            print("Результат: ", response.result)
-            print("Ответ: ", response.value ?? "пусто")
-        }
+        sessionManager?.request(url! + method, parameters: parameters)
     }
 
 }
