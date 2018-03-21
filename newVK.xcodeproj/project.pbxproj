@@ -33,6 +33,8 @@
 		3EAC58DE20624B2300A2DE4A /* GroupsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */; };
 		3EAC58E0206258A300A2DE4A /* GroupsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */; };
 		3EAC58E22062D22100A2DE4A /* LeaveAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58E12062D22100A2DE4A /* LeaveAccount.swift */; };
+		3EAC58E42062DAF700A2DE4A /* OwnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58E32062DAF700A2DE4A /* OwnerVC.swift */; };
+		3EAC58E62062DD2500A2DE4A /* OwnerPhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58E52062DD2500A2DE4A /* OwnerPhotosCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsRequest.swift; sourceTree = "<group>"; };
 		3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsSearchRequest.swift; sourceTree = "<group>"; };
 		3EAC58E12062D22100A2DE4A /* LeaveAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveAccount.swift; sourceTree = "<group>"; };
+		3EAC58E32062DAF700A2DE4A /* OwnerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerVC.swift; sourceTree = "<group>"; };
+		3EAC58E52062DD2500A2DE4A /* OwnerPhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerPhotosCell.swift; sourceTree = "<group>"; };
 		5F53533A50A997494316304F /* Pods_newVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C94D3D006DBA0B60806BE9 /* Pods-newVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.release.xcconfig"; sourceTree = "<group>"; };
 		CA4BC402A95B54E8DF352A78 /* Pods-newVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,15 +93,16 @@
 			path = "View controllers for groups";
 			sourceTree = "<group>";
 		};
-		3E0FEF82204ACD2D006DE640 /* View controllers for friends */ = {
+		3E0FEF82204ACD2D006DE640 /* View controllers for users */ = {
 			isa = PBXGroup;
 			children = (
 				3E167695203F6C0700287BB4 /* FriendsVC.swift */,
 				3E16769920400B5C00287BB4 /* FriendPhotosVC.swift */,
 				3EA87349204728930049C4F2 /* ManagePageVC.swift */,
 				3E78B69B20443228006E9397 /* LargePhotoVC.swift */,
+				3EAC58E32062DAF700A2DE4A /* OwnerVC.swift */,
 			);
-			path = "View controllers for friends";
+			path = "View controllers for users";
 			sourceTree = "<group>";
 		};
 		3E0FEF83204ACD41006DE640 /* Services */ = {
@@ -116,8 +121,9 @@
 		3E0FEF84204ACD4B006DE640 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3E16769B20400F6200287BB4 /* FriendPhotosCell.swift */,
 				3E0137C7205A6BAB00B47735 /* FriendsCell.swift */,
+				3E16769B20400F6200287BB4 /* FriendPhotosCell.swift */,
+				3EAC58E52062DD2500A2DE4A /* OwnerPhotosCell.swift */,
 				3E0137CB205A701A00B47735 /* MyGroupsCell.swift */,
 				3E0137C9205A6EAE00B47735 /* AllGroupsCell.swift */,
 			);
@@ -162,7 +168,7 @@
 				3E7D1217204ED1BE001E4D9C /* Data from VK */,
 				3E0FEF83204ACD41006DE640 /* Services */,
 				3E48210B204BFD11009639FC /* Login View controllers */,
-				3E0FEF82204ACD2D006DE640 /* View controllers for friends */,
+				3E0FEF82204ACD2D006DE640 /* View controllers for users */,
 				3E0137C62059199500B47735 /* View controllers for groups */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
 			);
@@ -333,8 +339,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EAC58E62062DD2500A2DE4A /* OwnerPhotosCell.swift in Sources */,
 				3E0FEF86204AD47B006DE640 /* WebKitVC.swift in Sources */,
 				3E0FEF7E204ABE4C006DE640 /* FriendsRequest.swift in Sources */,
+				3EAC58E42062DAF700A2DE4A /* OwnerVC.swift in Sources */,
 				3E0FEF80204ACD0D006DE640 /* VKloginVC.swift in Sources */,
 				3E7D1216204ED147001E4D9C /* Group.swift in Sources */,
 				3E0137CC205A701A00B47735 /* MyGroupsCell.swift in Sources */,
