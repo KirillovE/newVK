@@ -50,10 +50,7 @@ class FriendsVC: UITableViewController {
             collectionVC.title = friends[imageIndex!].firstName
         }
     }
-    @IBAction func exitPressed(_ sender: UIBarButtonItem) {
-        leaveRequest.logOut()
-        self.tabBarController?.dismiss(animated: true)
-    }
+    
 }
 
 // MARK: -
