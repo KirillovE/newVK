@@ -53,9 +53,6 @@ class WebKitVC: UIViewController {
         }
     }
     
-    @IBAction func exitPressed(_ sender: UIButton) {
-        self.dismiss(animated: true)
-    }
 }
 
 // MARK: - Extensions
