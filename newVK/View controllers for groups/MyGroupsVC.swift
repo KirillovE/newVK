@@ -6,10 +6,7 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-import Alamofire
-import SwiftyJSON
 import RealmSwift
-import SwiftKeychainWrapper
 
 class MyGroupsVC: UITableViewController {
     
