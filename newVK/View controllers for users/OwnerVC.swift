@@ -42,10 +42,6 @@ class OwnerVC: UICollectionViewController {
         return cell
     }
 
-    @IBAction func leavePressed(_ sender: UIBarButtonItem) {
-        leaveRequest.logOut()
-        self.tabBarController?.dismiss(animated: true)
-    }
 }
 
 // MARK: -
