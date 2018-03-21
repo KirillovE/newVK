@@ -44,8 +44,8 @@ class FriendsVC: UITableViewController {
 // MARK: - 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowFriendImage" {
-            let cell = sender as! UITableViewCell
+        if segue.identifier == "ShowFriendImages" {
+            let cell = sender as! FriendsCell
             let imageIndex = self.tableView.indexPath(for: cell)?.row
             let collectionVC = segue.destination as! FriendPhotosVC
             collectionVC.ownerID = friends[imageIndex!].id
