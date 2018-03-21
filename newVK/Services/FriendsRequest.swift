@@ -33,7 +33,6 @@ class FriendsRequest {
         }
     }
     
-    /// подготавливает настройки для запроса
     private func configureRequest() -> (String, Double, String?) {
         let config = URLSessionConfiguration.default
         config.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
@@ -47,7 +46,6 @@ class FriendsRequest {
         return (accessToken, apiVersion, url ?? "")
     }
     
-    /// выдаёт массив друзей
     private func appendFriends(json: JSON) -> [User] {
         guard json["error", "error_code"] != 5 else {
             print("не подошёл access_token ", json["error", "error_msg"])
