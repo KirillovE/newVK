@@ -13,11 +13,12 @@ import SwiftKeychainWrapper
 class GroupsRequest {
     
     private var sessionManager: SessionManager?
-    private let method = "groups.get"
-    private let requestExtended = 1
-    private let requestFields = "members_count"
     
-    func makeRequest() {
+    func getGroups() {
+        let method = "groups.get"
+        let requestExtended = 1
+        let requestFields = "members_count"
+        
         let (accessToken, userID, apiVersion, url) = configureRequest()
         
         let parameters: Parameters = ["user_id": userID,
@@ -68,4 +69,20 @@ class GroupsRequest {
         return groupsArray
     }
 
+}
+
+extension GroupsRequest {
+    
+    func leaveGroup(groupID: Int) {
+        let method = "groups.leave"
+        let (accessToken, _, apiVersion, url) = configureRequest()
+        
+        let parameters: Parameters = ["group_id": groupID,
+                                      "access_token": accessToken,
+                                      "v": apiVersion
+        ]
+        
+        sessionManager?.request(url! + method, parameters: parameters)
+    }
+    
 }
