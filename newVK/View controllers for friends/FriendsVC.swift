@@ -19,7 +19,7 @@ class FriendsVC: UITableViewController {
     var friends: Results<User>!
     var token: NotificationToken?
     
-    // MARK: - View controller life cycle
+    // MARK: -
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class FriendsVC: UITableViewController {
         return cell
     }
 
-// MARK: - Navigation
+// MARK: - 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowFriendImage" {
@@ -54,6 +54,8 @@ class FriendsVC: UITableViewController {
     }
 
 }
+
+// MARK: -
 
 extension FriendsVC {
     
