@@ -19,7 +19,7 @@ class MyGroupsVC: UITableViewController {
     var groups: Results<Group>!
     var token: NotificationToken?
     
-    // MARK: - View Controller life cycle
+    // MARK: -
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +80,7 @@ class MyGroupsVC: UITableViewController {
 
 }
 
-// MARK: - Extensions
+// MARK: -
 
 extension MyGroupsVC {
     
