@@ -15,27 +15,17 @@ class FriendsVC: UITableViewController {
     
     // MARK: - Source data
     
-    let vkRequest = VKRequestService()
-    var friends = [User]() {
-        didSet {
-            for friend in friends {
-                friend.loadPhoto(from: friend.avatarURL)
-            }
-        }
-    }
-    var friendsJSON: JSON? {
-        didSet {
-            appendFriends(from: friendsJSON)
-            self.tableView.reloadData()
-        }
-    }
+    let friendsRequest = FriendsRequest()
+    var friends: Results<User>!
+    var token: NotificationToken?
     
     // MARK: - View controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFriends()
-        getFriends()
+        
+        friendsRequest.makeRequest()
+        pairTableAndRealm()
     }
     
     // MARK: - Table view data source
@@ -65,65 +55,25 @@ class FriendsVC: UITableViewController {
 
 }
 
-// MARK: - Requesting friends from server
-
 extension FriendsVC {
     
-    func getFriends() {
-        let userDefaults = UserDefaults.standard
-        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
-        let apiVersion = userDefaults.double(forKey: "v")
-        
-        let parameters: Parameters = ["fields": "nickName,photo_100",
-                                      "access_token": accessToken,
-                                      "v": apiVersion
-        ]
-        
-        vkRequest.makeRequest(method: "friends.get", parameters: parameters) { [weak self] json in
-            self?.friendsJSON = json
-        }
-    }
-    
-    func appendFriends(from json: JSON?) {        
-        let itemsArray = json!["response", "items"]
-        var friendsArray = [User]()
-        
-        for (_, item) in itemsArray {
-            let user = User(json: item)
-            friendsArray.append(user)
-        }
-        
-        saveFriends(friendsArray)
-        loadFriends()
-    }
-}
-
-// MARK: - Saving data to Realm data base
-
-extension FriendsVC {
-    
-    /// сохранить друзей в базу данных Realm
-    func saveFriends(_ friends: [User]) {
-        do {
-            let realm = try Realm()
-            let oldFriends = realm.objects(User.self)       // сначала нужно удалить старые данные
-            realm.beginWrite()
-            realm.delete(oldFriends)
-            realm.add(friends, update: true)
-            try realm.commitWrite()
-        } catch {
-            print(error)
-        }
-    }
-    
-    /// загрузить друзей из базы данных Realm
-    func loadFriends() {
-        do {
-            let realm = try Realm()
-            let friends = realm.objects(User.self)
-            self.friends = Array(friends)
-        } catch {
-            print(error)
+    func pairTableAndRealm() {
+        guard let realm = try? Realm() else { return }
+        friends = realm.objects(User.self)
+        token = friends.observe { [weak self] changes in
+            guard let tableView = self?.tableView else { return }
+            switch changes {
+            case .initial:
+                tableView.reloadData()
+            case .update(_,  let deletions, let insertions, let modifications):
+                tableView.beginUpdates()
+                tableView.insertRows(at: insertions.map(    { IndexPath(row: $0, section: 0)}), with: .automatic)
+                tableView.deleteRows(at: deletions.map(     { IndexPath(row: $0, section: 0)}), with: .automatic)
+                tableView.reloadRows(at: modifications.map( { IndexPath(row: $0, section: 0)}), with: .automatic)
+                tableView.endUpdates()
+            case .error(let error):
+                print(error.localizedDescription)
+            }
         }
     }
     
