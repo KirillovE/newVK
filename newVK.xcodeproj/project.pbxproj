@@ -11,7 +11,7 @@
 		3E0137C8205A6BAB00B47735 /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0137C7205A6BAB00B47735 /* FriendsCell.swift */; };
 		3E0137CA205A6EAE00B47735 /* AllGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0137C9205A6EAE00B47735 /* AllGroupsCell.swift */; };
 		3E0137CC205A701A00B47735 /* MyGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0137CB205A701A00B47735 /* MyGroupsCell.swift */; };
-		3E0FEF7E204ABE4C006DE640 /* VKRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FEF7D204ABE4C006DE640 /* VKRequestService.swift */; };
+		3E0FEF7E204ABE4C006DE640 /* FriendsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FEF7D204ABE4C006DE640 /* FriendsRequest.swift */; };
 		3E0FEF80204ACD0D006DE640 /* VKloginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FEF7F204ACD0D006DE640 /* VKloginVC.swift */; };
 		3E0FEF86204AD47B006DE640 /* WebKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FEF85204AD47B006DE640 /* WebKitVC.swift */; };
 		3E167696203F6C0700287BB4 /* FriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E167695203F6C0700287BB4 /* FriendsVC.swift */; };
@@ -28,13 +28,17 @@
 		3E7D1214204ED077001E4D9C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1213204ED077001E4D9C /* Photo.swift */; };
 		3E7D1216204ED147001E4D9C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1215204ED147001E4D9C /* Group.swift */; };
 		3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87349204728930049C4F2 /* ManagePageVC.swift */; };
+		3EAC58DA20619DF800A2DE4A /* SavingObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58D920619DF800A2DE4A /* SavingObjects.swift */; };
+		3EAC58DD20624B2300A2DE4A /* PhotosRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58DB20624B2300A2DE4A /* PhotosRequest.swift */; };
+		3EAC58DE20624B2300A2DE4A /* GroupsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */; };
+		3EAC58E0206258A300A2DE4A /* GroupsSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E0137C7205A6BAB00B47735 /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		3E0137C9205A6EAE00B47735 /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
 		3E0137CB205A701A00B47735 /* MyGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsCell.swift; sourceTree = "<group>"; };
-		3E0FEF7D204ABE4C006DE640 /* VKRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKRequestService.swift; sourceTree = "<group>"; };
+		3E0FEF7D204ABE4C006DE640 /* FriendsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsRequest.swift; sourceTree = "<group>"; };
 		3E0FEF7F204ACD0D006DE640 /* VKloginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKloginVC.swift; sourceTree = "<group>"; };
 		3E0FEF85204AD47B006DE640 /* WebKitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitVC.swift; sourceTree = "<group>"; };
 		3E167695203F6C0700287BB4 /* FriendsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsVC.swift; sourceTree = "<group>"; };
@@ -53,6 +57,10 @@
 		3E7D1213204ED077001E4D9C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3E7D1215204ED147001E4D9C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		3EA87349204728930049C4F2 /* ManagePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePageVC.swift; sourceTree = "<group>"; };
+		3EAC58D920619DF800A2DE4A /* SavingObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingObjects.swift; sourceTree = "<group>"; };
+		3EAC58DB20624B2300A2DE4A /* PhotosRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosRequest.swift; sourceTree = "<group>"; };
+		3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsRequest.swift; sourceTree = "<group>"; };
+		3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsSearchRequest.swift; sourceTree = "<group>"; };
 		5F53533A50A997494316304F /* Pods_newVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C94D3D006DBA0B60806BE9 /* Pods-newVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.release.xcconfig"; sourceTree = "<group>"; };
 		CA4BC402A95B54E8DF352A78 /* Pods-newVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +101,11 @@
 		3E0FEF83204ACD41006DE640 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				3E0FEF7D204ABE4C006DE640 /* VKRequestService.swift */,
+				3E0FEF7D204ABE4C006DE640 /* FriendsRequest.swift */,
+				3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */,
+				3EAC58DB20624B2300A2DE4A /* PhotosRequest.swift */,
+				3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */,
+				3EAC58D920619DF800A2DE4A /* SavingObjects.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -319,17 +331,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E0FEF86204AD47B006DE640 /* WebKitVC.swift in Sources */,
-				3E0FEF7E204ABE4C006DE640 /* VKRequestService.swift in Sources */,
+				3E0FEF7E204ABE4C006DE640 /* FriendsRequest.swift in Sources */,
 				3E0FEF80204ACD0D006DE640 /* VKloginVC.swift in Sources */,
 				3E7D1216204ED147001E4D9C /* Group.swift in Sources */,
 				3E0137CC205A701A00B47735 /* MyGroupsCell.swift in Sources */,
 				3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */,
 				3E167696203F6C0700287BB4 /* FriendsVC.swift in Sources */,
+				3EAC58DE20624B2300A2DE4A /* GroupsRequest.swift in Sources */,
 				3E7D1212204ECF44001E4D9C /* User.swift in Sources */,
+				3EAC58DA20619DF800A2DE4A /* SavingObjects.swift in Sources */,
 				3E0137CA205A6EAE00B47735 /* AllGroupsCell.swift in Sources */,
 				3E2BE8C02042EE36002A50CF /* AllGroupsVC.swift in Sources */,
+				3EAC58DD20624B2300A2DE4A /* PhotosRequest.swift in Sources */,
 				3E0137C8205A6BAB00B47735 /* FriendsCell.swift in Sources */,
 				3E7D1214204ED077001E4D9C /* Photo.swift in Sources */,
+				3EAC58E0206258A300A2DE4A /* GroupsSearchRequest.swift in Sources */,
 				3E16769C20400F6200287BB4 /* FriendPhotosCell.swift in Sources */,
 				3E2BE8BE2042E9D9002A50CF /* MyGroupsVC.swift in Sources */,
 				3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */,

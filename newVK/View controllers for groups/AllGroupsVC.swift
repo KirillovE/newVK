@@ -13,22 +13,14 @@ import SwiftKeychainWrapper
 
 class AllGroupsVC: UITableViewController {
     
-    // MARK: - Outlets
-    
-    @IBOutlet weak var searchBar: UISearchBar!
-    
     // MARK: - Source data
     
-    let vkRequest = VKRequestService()
+    @IBOutlet weak var searchBar: UISearchBar!
+    let searchRequest = GroupsSearchRequest()
     var groups = [Group]()
-    var groupsJSON: JSON? {
-        didSet {
-            groups = appendGroups(from: groupsJSON)
-            self.tableView.reloadData()
-        }
-    }
+    let numberOfResultsToShow = 50
     
-    // MARK: - View Controller life cycle
+    // MARK: -
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +41,7 @@ class AllGroupsVC: UITableViewController {
     }
 }
 
-// MARK: - Searching groups
+// MARK: -
 
 extension AllGroupsVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -59,62 +51,15 @@ extension AllGroupsVC: UISearchBarDelegate {
             return
         }
         
-        getSearchedGroups(groupToFind: searchText, numberOfResults: 50)
+        searchRequest.makeRequest(groupToFind: searchText, numberOfResults: numberOfResultsToShow) { [weak self] groups in
+            self?.groups = groups
+        }
         self.tableView.reloadData()
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         groups.removeAll(keepingCapacity: false)
         self.tableView.reloadData()
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard searchBar.text != nil else {
-            groups.removeAll(keepingCapacity: false)
-            self.tableView.reloadData()
-            return
-        }
-        
-        getSearchedGroups(groupToFind: searchBar.text!, numberOfResults: 50)
-        self.tableView.reloadData()
-        searchBar.resignFirstResponder()
-    }
-    
-}
-
-// MARK: - Requesting groups from server
-
-extension AllGroupsVC {
-    
-    func getSearchedGroups(groupToFind groupName: String, numberOfResults: Int) {
-        let userDefaults = UserDefaults.standard
-        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
-        let apiVersion = userDefaults.double(forKey: "v")
-        
-        let parameters: Parameters = ["q": groupName,
-                                      "count": numberOfResults,
-                                      "extended": 1,
-                                      "fields": "members_count",
-                                      "sort": 0,
-                                      "access_token": accessToken,
-                                      "v": apiVersion
-        ]
-        
-        vkRequest.makeRequest(method: "groups.search", parameters: parameters) { [weak self] json in
-            self?.groupsJSON = json
-        }
-    }
-    
-    func appendGroups(from json: JSON?) -> [Group] {
-        let itemsArray = json!["response", "items"]
-        var groupsArray = [Group]()
-        
-        for (_, item) in itemsArray {
-            let group = Group(json: item)
-            groupsArray.append(group)
-        }
-        
-        return groupsArray
     }
     
 }
