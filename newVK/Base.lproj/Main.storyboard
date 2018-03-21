@@ -103,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="534.375" y="615"/>
         </scene>
-        <!--Title-->
+        <!--Фотоальбом-->
         <scene sceneID="uFd-bg-iLu">
             <objects>
                 <collectionViewController hidesBottomBarWhenPushed="YES" id="B9B-Mg-7AP" customClass="OwnerVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,6 +141,7 @@
                                 <size key="customSize" width="154" height="151"/>
                                 <connections>
                                     <outlet property="ownerPhoto" destination="LJM-lm-FiR" id="aCF-Lc-9KI"/>
+                                    <segue destination="hNb-dO-aCw" kind="show" identifier="showOwnerPages" id="uqI-iU-T0X"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -149,7 +150,7 @@
                             <outlet property="delegate" destination="B9B-Mg-7AP" id="1H7-yV-7xG"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Title" id="Fux-cc-07Z">
+                    <navigationItem key="navigationItem" title="Фотоальбом" id="Fux-cc-07Z">
                         <barButtonItem key="rightBarButtonItem" title="Выйти" id="RG2-br-ZkD">
                             <connections>
                                 <action selector="leavePressed:" destination="B9B-Mg-7AP" id="ENn-g9-80e"/>
@@ -324,7 +325,7 @@
             </objects>
             <point key="canvasLocation" x="3754" y="615"/>
         </scene>
-        <!--Friend PhotosVC-->
+        <!--Фотоальбом-->
         <scene sceneID="rHf-jr-LBz">
             <objects>
                 <collectionViewController hidesBottomBarWhenPushed="YES" id="9b2-lI-NC9" customClass="FriendPhotosVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
@@ -367,7 +368,7 @@
                             </collectionViewCell>
                         </cells>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="vbI-kc-fdW">
+                    <navigationItem key="navigationItem" title="Фотоальбом" id="vbI-kc-fdW">
                         <barButtonItem key="backBarButtonItem" title=" " id="0KM-2n-GYR"/>
                     </navigationItem>
                 </collectionViewController>
@@ -381,7 +382,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="hNb-dO-aCw" customClass="ManagePageVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nur-nE-MO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4543" y="-365"/>
+            <point key="canvasLocation" x="4569" y="-716"/>
         </scene>
         <!--Large PhotoVC-->
         <scene sceneID="NUx-WS-oCJ">
@@ -411,7 +412,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aV-wK-OpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4543" y="-1060"/>
+            <point key="canvasLocation" x="4568" y="44"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="qO2-Eh-TlQ">
@@ -482,5 +483,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GS0-Tm-C0d"/>
+        <segue reference="JaQ-t0-Mz0"/>
     </inferredMetricsTieBreakers>
 </document>

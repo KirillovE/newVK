@@ -41,6 +41,20 @@ class OwnerVC: UICollectionViewController {
         
         return cell
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "showOwnerPages" else { return }
+        let photoPages = segue.destination as! ManagePageVC
+        photoPages.photoIndex = getLargePhotoIndex(from: sender)
+    }
+    
+    func getLargePhotoIndex(from sender: Any?) -> Int {
+        let selectedCell = sender as! OwnerPhotosCell
+        let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
+        return photoIndex!
+    }
 
 }
 
