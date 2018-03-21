@@ -103,12 +103,12 @@
 		3E0FEF83204ACD41006DE640 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3EAC58E12062D22100A2DE4A /* LeaveAccount.swift */,
 				3E0FEF7D204ABE4C006DE640 /* FriendsRequest.swift */,
 				3EAC58DB20624B2300A2DE4A /* PhotosRequest.swift */,
 				3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */,
 				3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */,
 				3EAC58D920619DF800A2DE4A /* SavingObjects.swift */,
-				3EAC58E12062D22100A2DE4A /* LeaveAccount.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
