@@ -86,3 +86,24 @@ extension GroupsRequest {
     }
     
 }
+
+extension GroupsRequest {
+
+    func joinGroup(groupID: Int) {
+        let method = "groups.join"
+        let (accessToken, _, apiVersion, url) = configureRequest()
+
+        let parameters: Parameters = ["group_id": groupID,
+                                      "access_token": accessToken,
+                                      "v": apiVersion
+        ]
+
+        sessionManager?.request(url! + method, parameters: parameters).responseJSON {response in
+            print("Запрос: ", response.request ?? "пусто")
+            print("Результат: ", response.result)
+            print("Ответ: ", response.value ?? "пусто")
+        }
+    }
+
+}
+
