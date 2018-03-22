@@ -34,5 +34,6 @@ class VKloginVC: UIViewController {
     @IBAction func leaveAccount(segue: UIStoryboardSegue) {
         let leaveRequest = LeaveAccount()
         leaveRequest.logOut()
+        authorizationFailureLabel.isHidden = true
     }
 }
