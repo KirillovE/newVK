@@ -6,6 +6,7 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
+import WebKit
 import SwiftKeychainWrapper
 import RealmSwift
 
@@ -18,11 +19,15 @@ class LeaveAccount {
     }
     
     private func clearCookies() {
-        let storage = HTTPCookieStorage.shared
-        for cookie in storage.cookies! {
-            let domainName = cookie.domain
-            guard let _ = domainName.range(of: "vk.com") else { return }
-            storage.deleteCookie(cookie)
+        let dataStore = WKWebsiteDataStore.default()
+        dataStore.fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { (records) in
+            for record in records {
+                if record.displayName == "vk.com" {
+                    dataStore.removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), for: [record], completionHandler: {
+                        print("Deleted: " + record.displayName)
+                    })
+                }
+            }
         }
     }
     
