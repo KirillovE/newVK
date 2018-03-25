@@ -137,7 +137,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-bf-tKe" userLabel="News">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-bf-tKe" userLabel="News">
                                             <rect key="frame" x="48" y="16" width="251" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
@@ -246,6 +246,15 @@
                                         <constraint firstItem="ZJh-Dd-tCK" firstAttribute="top" secondItem="8ao-AL-AC2" secondAttribute="top" id="y1A-qr-f1f"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="authorName" destination="UIS-tt-Ssj" id="0i2-gs-dw2"/>
+                                    <outlet property="avatar" destination="eP6-qo-vSX" id="tIT-HX-EuH"/>
+                                    <outlet property="newsText" destination="Mbu-bf-tKe" id="c02-Ra-T2Q"/>
+                                    <outlet property="numberOfComments" destination="pgh-Le-Shf" id="blH-ul-LrU"/>
+                                    <outlet property="numberOfLikes" destination="fsM-qN-WLU" id="B38-CJ-sDE"/>
+                                    <outlet property="numberOfReposts" destination="ZjP-Zu-0Hl" id="3Ee-J4-sF1"/>
+                                    <outlet property="numberOfViews" destination="XCg-I8-OPT" id="Qk1-TP-Qeo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
