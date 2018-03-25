@@ -37,6 +37,8 @@ class NewsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         newsFeed = [blockTelegram, answerOfTelegram]
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
     }
 
     // MARK: - Table view data source
