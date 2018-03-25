@@ -32,13 +32,20 @@ class NewsVC: UITableViewController {
                                 reposts: 15,
                                 comments: 572,
                                 likes: 1_000)
+    let viberEngaged = News(avatar: #imageLiteral(resourceName: "новости"),
+                            name: "Популярная механика",
+                            text: "​​Вслед за Telegram в Viber сообщили о невозможности предоставления ФСБ ключей шифрования",
+                            views: 325,
+                            reposts: 7,
+                            comments: 330,
+                            likes: 540)
     var newsFeed = [News]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsFeed = [blockTelegram, answerOfTelegram]
+        newsFeed = [blockTelegram, answerOfTelegram, viberEngaged]
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 200
+        tableView.estimatedRowHeight = 50
     }
 
     // MARK: - Table view data source
