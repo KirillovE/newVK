@@ -12,7 +12,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-UltraLight</string>
+            <string>HelveticaNeue-Thin</string>
         </array>
     </customFonts>
     <scenes>
@@ -144,68 +144,68 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCg-I8-OPT" userLabel="Number of views">
-                                            <rect key="frame" x="293.5" y="47.5" width="21.5" height="10"/>
+                                            <rect key="frame" x="292.5" y="47.5" width="22.5" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="QYB-cp-CaF"/>
                                                 <constraint firstAttribute="height" constant="10" id="ch8-xo-C0p"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="просмотры" translatesAutoresizingMaskIntoConstraints="NO" id="Zdo-SI-GtG" userLabel="Views">
-                                            <rect key="frame" x="281.5" y="47.5" width="10" height="10"/>
+                                            <rect key="frame" x="280.5" y="47.5" width="10" height="10"/>
                                             <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="10" id="Tmm-uw-mXX"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjP-Zu-0Hl" userLabel="Number of reposts">
-                                            <rect key="frame" x="250" y="47" width="21.5" height="10"/>
+                                            <rect key="frame" x="248" y="47" width="22.5" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="7eu-1c-0hz"/>
                                                 <constraint firstAttribute="height" constant="10" id="KZB-Xt-3vu"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="цитаты" translatesAutoresizingMaskIntoConstraints="NO" id="ZJh-Dd-tCK" userLabel="Reposts">
-                                            <rect key="frame" x="238" y="47" width="10" height="10"/>
+                                            <rect key="frame" x="236" y="47" width="10" height="10"/>
                                             <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="10" id="NyX-Dd-Jcg"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="комментарии" translatesAutoresizingMaskIntoConstraints="NO" id="xpY-RF-rxV" userLabel="Comments">
-                                            <rect key="frame" x="194.5" y="47" width="10" height="10"/>
+                                            <rect key="frame" x="191.5" y="47" width="10" height="10"/>
                                             <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="10" id="ZBr-XP-z23"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-qN-WLU" userLabel="Number of likes">
-                                            <rect key="frame" x="163" y="47" width="21.5" height="10"/>
+                                            <rect key="frame" x="159" y="47" width="22.5" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="2YK-ax-HVx"/>
                                                 <constraint firstAttribute="height" constant="10" id="raN-CI-peG"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgh-Le-Shf" userLabel="Number of comments">
-                                            <rect key="frame" x="206.5" y="47" width="21.5" height="10"/>
+                                            <rect key="frame" x="203.5" y="47" width="22.5" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="brP-Wj-tNk"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="tTW-XW-cSz"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="нравится" translatesAutoresizingMaskIntoConstraints="NO" id="8ao-AL-AC2" userLabel="Likes">
-                                            <rect key="frame" x="151" y="47" width="10" height="10"/>
+                                            <rect key="frame" x="147" y="47" width="10" height="10"/>
                                             <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="10" id="KgD-IT-q8Y"/>
@@ -654,7 +654,7 @@
         <image name="цитаты" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GS0-Tm-C0d"/>
+        <segue reference="iZ1-Ls-q3T"/>
         <segue reference="uqI-iU-T0X"/>
     </inferredMetricsTieBreakers>
 </document>
