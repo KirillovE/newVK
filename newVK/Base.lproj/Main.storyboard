@@ -584,7 +584,7 @@
         <scene sceneID="nfC-lp-qVb">
             <objects>
                 <tableViewController id="jth-UR-ieb" customClass="MessagesVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iAB-Oc-RqL">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iAB-Oc-RqL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -593,7 +593,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dVP-aP-dsg" id="s8x-gA-RVj">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X8f-pW-gGT" userLabel="Avatar">
@@ -613,7 +613,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnt-fd-SWx" userLabel="MessageText">
-                                            <rect key="frame" x="53" y="30" width="257" height="38.5"/>
+                                            <rect key="frame" x="53" y="30" width="257" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -625,7 +625,7 @@
                                         <constraint firstItem="Cnt-fd-SWx" firstAttribute="top" secondItem="7Eb-BU-vEz" secondAttribute="bottom" constant="5" id="XSI-23-Oka"/>
                                         <constraint firstItem="Cnt-fd-SWx" firstAttribute="leading" secondItem="X8f-pW-gGT" secondAttribute="trailing" constant="10" id="ccX-53-sir"/>
                                         <constraint firstItem="7Eb-BU-vEz" firstAttribute="leading" secondItem="X8f-pW-gGT" secondAttribute="trailing" constant="10" id="ibP-XE-aAs"/>
-                                        <constraint firstAttribute="bottom" secondItem="Cnt-fd-SWx" secondAttribute="bottom" constant="5" id="mae-xX-Xtt"/>
+                                        <constraint firstAttribute="bottom" secondItem="Cnt-fd-SWx" secondAttribute="bottom" constant="20" id="mae-xX-Xtt"/>
                                         <constraint firstItem="X8f-pW-gGT" firstAttribute="top" secondItem="s8x-gA-RVj" secondAttribute="top" constant="5" id="nMw-Wh-orV"/>
                                         <constraint firstItem="7Eb-BU-vEz" firstAttribute="top" secondItem="s8x-gA-RVj" secondAttribute="top" constant="5" id="xbZ-Mp-6lC"/>
                                         <constraint firstItem="X8f-pW-gGT" firstAttribute="leading" secondItem="s8x-gA-RVj" secondAttribute="leading" id="zAY-KA-gvG"/>
