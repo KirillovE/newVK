@@ -16,13 +16,17 @@ class MyGroupsVC: UITableViewController {
     var groups: Results<Group>!
     var token: NotificationToken?
     
-    // MARK: -
+    // MARK: - View controller life cycle
  
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pairTableAndRealm()
         groupsRequest.getGroups()
+    }
+    
+    deinit {
+        token?.invalidate()
     }
 
     // MARK: - Table view data source
