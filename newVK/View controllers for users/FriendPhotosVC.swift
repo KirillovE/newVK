@@ -26,6 +26,10 @@ class FriendPhotosVC: UICollectionViewController {
         pairCollectionAndRealm()
     }
     
+    deinit {
+        token?.invalidate()
+    }
+    
     // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

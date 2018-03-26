@@ -28,6 +28,10 @@ class OwnerVC: UICollectionViewController {
         photosRequest.makeRequest(for: ownerID)
         pairCollectionAndRealm()
     }
+    
+    deinit {
+        token?.invalidate()
+    }
 
     // MARK: UICollectionViewDataSource
 

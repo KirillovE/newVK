@@ -17,13 +17,17 @@ class FriendsVC: UITableViewController {
     var token: NotificationToken?
     let leaveRequest = LeaveAccount()
     
-    // MARK: -
+    // MARK: - View controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         friendsRequest.makeRequest()
         pairTableAndRealm()
+    }
+    
+    deinit {
+        token?.invalidate()
     }
     
     // MARK: - Table view data source
