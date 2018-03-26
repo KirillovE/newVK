@@ -132,83 +132,83 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIS-tt-Ssj" userLabel="Name">
-                                            <rect key="frame" x="48" y="0.0" width="251" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                            <rect key="frame" x="48" y="0.0" width="251" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-bf-tKe" userLabel="News">
-                                            <rect key="frame" x="48" y="21" width="251" height="24.5"/>
+                                            <rect key="frame" x="48" y="21" width="251" height="16.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCg-I8-OPT" userLabel="Number of views">
-                                            <rect key="frame" x="292.5" y="47.5" width="22.5" height="10"/>
+                                            <rect key="frame" x="283.5" y="42.5" width="31.5" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="QYB-cp-CaF"/>
-                                                <constraint firstAttribute="height" constant="10" id="ch8-xo-C0p"/>
+                                                <constraint firstAttribute="height" constant="15" id="ch8-xo-C0p"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="просмотры" translatesAutoresizingMaskIntoConstraints="NO" id="Zdo-SI-GtG" userLabel="Views">
-                                            <rect key="frame" x="280.5" y="47.5" width="10" height="10"/>
+                                            <rect key="frame" x="266.5" y="42.5" width="15" height="15"/>
                                             <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="10" id="Tmm-uw-mXX"/>
+                                                <constraint firstAttribute="width" constant="15" id="Tmm-uw-mXX"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjP-Zu-0Hl" userLabel="Number of reposts">
-                                            <rect key="frame" x="248" y="47" width="22.5" height="10"/>
+                                            <rect key="frame" x="229.5" y="42" width="27" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="7eu-1c-0hz"/>
-                                                <constraint firstAttribute="height" constant="10" id="KZB-Xt-3vu"/>
+                                                <constraint firstAttribute="height" constant="15" id="KZB-Xt-3vu"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="цитаты" translatesAutoresizingMaskIntoConstraints="NO" id="ZJh-Dd-tCK" userLabel="Reposts">
-                                            <rect key="frame" x="236" y="47" width="10" height="10"/>
+                                            <rect key="frame" x="212.5" y="42" width="15" height="15"/>
                                             <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="10" id="NyX-Dd-Jcg"/>
+                                                <constraint firstAttribute="width" constant="15" id="O92-c9-9xk"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="комментарии" translatesAutoresizingMaskIntoConstraints="NO" id="xpY-RF-rxV" userLabel="Comments">
-                                            <rect key="frame" x="191.5" y="47" width="10" height="10"/>
+                                            <rect key="frame" x="158.5" y="42" width="15" height="15"/>
                                             <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="10" id="ZBr-XP-z23"/>
+                                                <constraint firstAttribute="width" constant="15" id="Pgh-4X-6n1"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-qN-WLU" userLabel="Number of likes">
-                                            <rect key="frame" x="159" y="47" width="22.5" height="10"/>
+                                            <rect key="frame" x="121.5" y="42" width="27" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="2YK-ax-HVx"/>
-                                                <constraint firstAttribute="height" constant="10" id="raN-CI-peG"/>
+                                                <constraint firstAttribute="height" constant="15" id="raN-CI-peG"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgh-Le-Shf" userLabel="Number of comments">
-                                            <rect key="frame" x="203.5" y="47" width="22.5" height="10"/>
+                                            <rect key="frame" x="175.5" y="42" width="27" height="15"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="10" id="brP-Wj-tNk"/>
+                                                <constraint firstAttribute="height" constant="15" id="brP-Wj-tNk"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="tTW-XW-cSz"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="нравится" translatesAutoresizingMaskIntoConstraints="NO" id="8ao-AL-AC2" userLabel="Likes">
-                                            <rect key="frame" x="147" y="47" width="10" height="10"/>
+                                            <rect key="frame" x="104.5" y="42" width="15" height="15"/>
                                             <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="10" id="KgD-IT-q8Y"/>
+                                                <constraint firstAttribute="width" constant="15" id="UEA-Wi-DjI"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -243,7 +243,7 @@
                                         <constraint firstItem="XCg-I8-OPT" firstAttribute="top" secondItem="Zdo-SI-GtG" secondAttribute="top" id="q6W-xD-4ZZ"/>
                                         <constraint firstItem="pgh-Le-Shf" firstAttribute="leading" secondItem="xpY-RF-rxV" secondAttribute="trailing" constant="2" id="qWC-yv-Pjv"/>
                                         <constraint firstItem="Zdo-SI-GtG" firstAttribute="top" secondItem="ZjP-Zu-0Hl" secondAttribute="top" id="uQE-dw-XK2"/>
-                                        <constraint firstAttribute="bottom" secondItem="Mbu-bf-tKe" secondAttribute="bottom" constant="12" id="wEu-xu-bPF"/>
+                                        <constraint firstAttribute="bottom" secondItem="Mbu-bf-tKe" secondAttribute="bottom" constant="20" id="wEu-xu-bPF"/>
                                         <constraint firstItem="ZJh-Dd-tCK" firstAttribute="top" secondItem="8ao-AL-AC2" secondAttribute="top" id="y1A-qr-f1f"/>
                                     </constraints>
                                 </tableViewCellContentView>
