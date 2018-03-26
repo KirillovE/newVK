@@ -37,6 +37,8 @@
 		3EAC58E62062DD2500A2DE4A /* OwnerPhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58E52062DD2500A2DE4A /* OwnerPhotosCell.swift */; };
 		3EC6D59220679811009F92A2 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59120679811009F92A2 /* NewsVC.swift */; };
 		3EC6D5942067988F009F92A2 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D5932067988F009F92A2 /* NewsCell.swift */; };
+		3EC6D59720692C84009F92A2 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59620692C84009F92A2 /* MessagesVC.swift */; };
+		3EC6D59A20692D2E009F92A2 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59920692D2E009F92A2 /* MessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		3EAC58E52062DD2500A2DE4A /* OwnerPhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerPhotosCell.swift; sourceTree = "<group>"; };
 		3EC6D59120679811009F92A2 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		3EC6D5932067988F009F92A2 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		3EC6D59620692C84009F92A2 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
+		3EC6D59920692D2E009F92A2 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		5F53533A50A997494316304F /* Pods_newVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C94D3D006DBA0B60806BE9 /* Pods-newVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.release.xcconfig"; sourceTree = "<group>"; };
 		CA4BC402A95B54E8DF352A78 /* Pods-newVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3EC6D5932067988F009F92A2 /* NewsCell.swift */,
+				3EC6D59920692D2E009F92A2 /* MessageCell.swift */,
 				3E0137C7205A6BAB00B47735 /* FriendsCell.swift */,
 				3E16769B20400F6200287BB4 /* FriendPhotosCell.swift */,
 				3EAC58E52062DD2500A2DE4A /* OwnerPhotosCell.swift */,
@@ -174,6 +179,7 @@
 				3E0FEF83204ACD41006DE640 /* Services */,
 				3E48210B204BFD11009639FC /* Login View controllers */,
 				3EC6D595206798A5009F92A2 /* View controllers for news */,
+				3EC6D59820692C90009F92A2 /* View controllers fo messages */,
 				3E0FEF82204ACD2D006DE640 /* View controllers for users */,
 				3E0137C62059199500B47735 /* View controllers for groups */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
@@ -197,6 +203,14 @@
 				3EC6D59120679811009F92A2 /* NewsVC.swift */,
 			);
 			path = "View controllers for news";
+			sourceTree = "<group>";
+		};
+		3EC6D59820692C90009F92A2 /* View controllers fo messages */ = {
+			isa = PBXGroup;
+			children = (
+				3EC6D59620692C84009F92A2 /* MessagesVC.swift */,
+			);
+			path = "View controllers fo messages";
 			sourceTree = "<group>";
 		};
 		60CBD30DAFE58B1DF1A08ED8 /* Frameworks */ = {
@@ -366,11 +380,13 @@
 				3E7D1212204ECF44001E4D9C /* User.swift in Sources */,
 				3EAC58DA20619DF800A2DE4A /* SavingObjects.swift in Sources */,
 				3E0137CA205A6EAE00B47735 /* AllGroupsCell.swift in Sources */,
+				3EC6D59A20692D2E009F92A2 /* MessageCell.swift in Sources */,
 				3E2BE8C02042EE36002A50CF /* AllGroupsVC.swift in Sources */,
 				3EAC58DD20624B2300A2DE4A /* PhotosRequest.swift in Sources */,
 				3E0137C8205A6BAB00B47735 /* FriendsCell.swift in Sources */,
 				3E7D1214204ED077001E4D9C /* Photo.swift in Sources */,
 				3EAC58E0206258A300A2DE4A /* GroupsSearchRequest.swift in Sources */,
+				3EC6D59720692C84009F92A2 /* MessagesVC.swift in Sources */,
 				3E16769C20400F6200287BB4 /* FriendPhotosCell.swift in Sources */,
 				3EC6D59220679811009F92A2 /* NewsVC.swift in Sources */,
 				3E2BE8BE2042E9D9002A50CF /* MyGroupsVC.swift in Sources */,

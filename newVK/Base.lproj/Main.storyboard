@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byr-qu-Txv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-279" y="125"/>
+            <point key="canvasLocation" x="-264" y="-215"/>
         </scene>
         <!--Web KitVC-->
         <scene sceneID="LHL-Cd-pkl">
@@ -106,7 +106,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Jb-gp-WcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="g4O-l7-yGG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="534.375" y="615"/>
+            <point key="canvasLocation" x="563" y="344"/>
         </scene>
         <!--Новости-->
         <scene sceneID="HB6-I8-fC7">
@@ -267,7 +267,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzt-zi-GNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2167.5" y="-740"/>
+            <point key="canvasLocation" x="2333" y="-1694"/>
         </scene>
         <!--Фотоальбом-->
         <scene sceneID="uFd-bg-iLu">
@@ -328,7 +328,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYz-xQ-s5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NXG-Xk-eJU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3754" y="-740"/>
+            <point key="canvasLocation" x="3919" y="-839"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="EPZ-MO-kAw">
@@ -384,7 +384,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWf-Ek-eEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2966" y="125"/>
+            <point key="canvasLocation" x="3129" y="26"/>
         </scene>
         <!--Мои группы-->
         <scene sceneID="zup-ht-CHx">
@@ -426,7 +426,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbr-ln-W8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2966" y="985"/>
+            <point key="canvasLocation" x="3129" y="886"/>
         </scene>
         <!--Все группы-->
         <scene sceneID="l6w-XL-eQs">
@@ -489,7 +489,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3758" y="985"/>
+            <point key="canvasLocation" x="3923" y="886"/>
         </scene>
         <!--Фотоальбом-->
         <scene sceneID="rHf-jr-LBz">
@@ -540,7 +540,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avt-RE-oIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3754" y="125"/>
+            <point key="canvasLocation" x="3919" y="26"/>
         </scene>
         <!--Manage PageVC-->
         <scene sceneID="shH-d5-HsU">
@@ -548,7 +548,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="hNb-dO-aCw" customClass="ManagePageVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nur-nE-MO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4568" y="-214"/>
+            <point key="canvasLocation" x="4733" y="-314"/>
         </scene>
         <!--Large PhotoVC-->
         <scene sceneID="NUx-WS-oCJ">
@@ -578,7 +578,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aV-wK-OpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4568" y="546"/>
+            <point key="canvasLocation" x="4733" y="446"/>
+        </scene>
+        <!--Сообщения-->
+        <scene sceneID="nfC-lp-qVb">
+            <objects>
+                <tableViewController id="jth-UR-ieb" customClass="MessagesVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iAB-Oc-RqL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" rowHeight="74" id="dVP-aP-dsg" customClass="MessageCell" customModule="newVK" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="74"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dVP-aP-dsg" id="s8x-gA-RVj">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X8f-pW-gGT" userLabel="Avatar">
+                                            <rect key="frame" x="0.0" y="5" width="43" height="43.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="Mzg-TH-5Ek"/>
+                                                <constraint firstAttribute="height" constant="43" id="Vlv-JG-F3N"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Eb-BU-vEz" userLabel="Name">
+                                            <rect key="frame" x="53" y="5" width="257" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Jwz-gK-Cpu"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnt-fd-SWx" userLabel="MessageText">
+                                            <rect key="frame" x="53" y="30" width="257" height="38.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Cnt-fd-SWx" secondAttribute="trailing" constant="10" id="O7U-A8-19y"/>
+                                        <constraint firstAttribute="trailing" secondItem="7Eb-BU-vEz" secondAttribute="trailing" constant="10" id="OEX-n0-8YE"/>
+                                        <constraint firstItem="Cnt-fd-SWx" firstAttribute="top" secondItem="7Eb-BU-vEz" secondAttribute="bottom" constant="5" id="XSI-23-Oka"/>
+                                        <constraint firstItem="Cnt-fd-SWx" firstAttribute="leading" secondItem="X8f-pW-gGT" secondAttribute="trailing" constant="10" id="ccX-53-sir"/>
+                                        <constraint firstItem="7Eb-BU-vEz" firstAttribute="leading" secondItem="X8f-pW-gGT" secondAttribute="trailing" constant="10" id="ibP-XE-aAs"/>
+                                        <constraint firstAttribute="bottom" secondItem="Cnt-fd-SWx" secondAttribute="bottom" constant="5" id="mae-xX-Xtt"/>
+                                        <constraint firstItem="X8f-pW-gGT" firstAttribute="top" secondItem="s8x-gA-RVj" secondAttribute="top" constant="5" id="nMw-Wh-orV"/>
+                                        <constraint firstItem="7Eb-BU-vEz" firstAttribute="top" secondItem="s8x-gA-RVj" secondAttribute="top" constant="5" id="xbZ-Mp-6lC"/>
+                                        <constraint firstItem="X8f-pW-gGT" firstAttribute="leading" secondItem="s8x-gA-RVj" secondAttribute="leading" id="zAY-KA-gvG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatar" destination="X8f-pW-gGT" id="vie-rM-u76"/>
+                                    <outlet property="messageText" destination="Cnt-fd-SWx" id="daU-xb-Kph"/>
+                                    <outlet property="name" destination="7Eb-BU-vEz" id="l0f-d0-now"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jth-UR-ieb" id="9Ar-hL-N2c"/>
+                            <outlet property="delegate" destination="jth-UR-ieb" id="WEq-my-MnH"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Сообщения" image="сообщения" id="ZHd-mJ-oMd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="so4-KG-NX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2332.5" y="-840"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="qO2-Eh-TlQ">
@@ -597,7 +666,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Acb-wi-k2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2168" y="125"/>
+            <point key="canvasLocation" x="2333" y="26"/>
         </scene>
         <!--Группы-->
         <scene sceneID="x5A-jS-nqK">
@@ -619,7 +688,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cko-vc-XeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2168" y="985"/>
+            <point key="canvasLocation" x="2333" y="886"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="k21-8a-WqP">
@@ -633,13 +702,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="VJq-Vk-WX3" kind="relationship" relationship="viewControllers" id="iDb-4r-w7x"/>
+                        <segue destination="jth-UR-ieb" kind="relationship" relationship="viewControllers" id="aBS-6c-bnv"/>
                         <segue destination="EUb-6n-yJL" kind="relationship" relationship="viewControllers" id="SML-cJ-0DO"/>
                         <segue destination="OJs-fd-uJx" kind="relationship" relationship="viewControllers" id="UsI-ml-OfS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1g-p4-Hnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1357.5" y="125"/>
+            <point key="canvasLocation" x="1373" y="-215"/>
         </scene>
     </scenes>
     <resources>
@@ -650,11 +720,12 @@
         <image name="новости" width="30" height="30"/>
         <image name="нравится" width="30" height="30"/>
         <image name="просмотры" width="30" height="30"/>
+        <image name="сообщения" width="30" height="30"/>
         <image name="хозяин" width="30" height="30"/>
         <image name="цитаты" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iZ1-Ls-q3T"/>
-        <segue reference="uqI-iU-T0X"/>
+        <segue reference="GS0-Tm-C0d"/>
+        <segue reference="JaQ-t0-Mz0"/>
     </inferredMetricsTieBreakers>
 </document>
