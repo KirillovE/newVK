@@ -27,6 +27,7 @@
 		3E7D1212204ECF44001E4D9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1211204ECF44001E4D9C /* User.swift */; };
 		3E7D1214204ED077001E4D9C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1213204ED077001E4D9C /* Photo.swift */; };
 		3E7D1216204ED147001E4D9C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1215204ED147001E4D9C /* Group.swift */; };
+		3E9987E2206D04C5003DF364 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9987E1206D04C5003DF364 /* News.swift */; };
 		3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA87349204728930049C4F2 /* ManagePageVC.swift */; };
 		3EAC58DA20619DF800A2DE4A /* SavingObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58D920619DF800A2DE4A /* SavingObjects.swift */; };
 		3EAC58DD20624B2300A2DE4A /* PhotosRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58DB20624B2300A2DE4A /* PhotosRequest.swift */; };
@@ -63,6 +64,7 @@
 		3E7D1211204ECF44001E4D9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E7D1213204ED077001E4D9C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3E7D1215204ED147001E4D9C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		3E9987E1206D04C5003DF364 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		3EA87349204728930049C4F2 /* ManagePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePageVC.swift; sourceTree = "<group>"; };
 		3EAC58D920619DF800A2DE4A /* SavingObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingObjects.swift; sourceTree = "<group>"; };
 		3EAC58DB20624B2300A2DE4A /* PhotosRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosRequest.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		3E7D1217204ED1BE001E4D9C /* Data from VK */ = {
 			isa = PBXGroup;
 			children = (
+				3E9987E1206D04C5003DF364 /* News.swift */,
 				3E7D1211204ECF44001E4D9C /* User.swift */,
 				3E7D1213204ED077001E4D9C /* Photo.swift */,
 				3E7D1215204ED147001E4D9C /* Group.swift */,
@@ -388,6 +391,7 @@
 				3EAC58E0206258A300A2DE4A /* GroupsSearchRequest.swift in Sources */,
 				3EC6D59720692C84009F92A2 /* MessagesVC.swift in Sources */,
 				3E16769C20400F6200287BB4 /* FriendPhotosCell.swift in Sources */,
+				3E9987E2206D04C5003DF364 /* News.swift in Sources */,
 				3EC6D59220679811009F92A2 /* NewsVC.swift in Sources */,
 				3E2BE8BE2042E9D9002A50CF /* MyGroupsVC.swift in Sources */,
 				3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */,
