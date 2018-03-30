@@ -22,14 +22,13 @@ class NewsCell: UITableViewCell {
     
     // MARK:
     
-    func configure(for news: NewsVC.News) {
-        avatar.image = news.avatar
-        authorName.text = news.name
+    func configure(for news: News) {
+//        avatar.image = news.avatar
+//        authorName.text = news.name
         newsText.text = news.text
-        numberOfViews.text = String(news.views)
-        numberOfReposts.text = String(news.reposts)
-        numberOfComments.text = String(news.comments)
-        numberOfLikes.text = String(news.likes)
+        numberOfReposts.text = String(news.reposts.count)
+        numberOfComments.text = String(news.comments.count)
+        numberOfLikes.text = String(news.likes.count)
         
         avatar.layer.cornerRadius = avatar.frame.size.height / 2
         avatar.clipsToBounds = true
