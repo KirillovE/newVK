@@ -26,6 +26,7 @@ class NewsCell: UITableViewCell {
 //        avatar.image = news.avatar
 //        authorName.text = news.name
         newsText.text = news.text
+        numberOfViews.text = String(news.viewsCount)
         numberOfReposts.text = String(news.reposts.count)
         numberOfComments.text = String(news.comments.count)
         numberOfLikes.text = String(news.likes.count)

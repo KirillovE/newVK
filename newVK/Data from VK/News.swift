@@ -34,6 +34,7 @@ class News {
     var comments = Comments()
     var likes = Likes()
     var reposts = Reposts()
+    var viewsCount: Int
     
     init(json: JSON) {
         newsType = json["type"].stringValue
@@ -56,5 +57,7 @@ class News {
         
         reposts.count = json["reposts", "count"].intValue
         reposts.userReposted = json["reposts", "user_reposted"].boolValue
+        
+        viewsCount = json["views", "count"].intValue
     }
 }
