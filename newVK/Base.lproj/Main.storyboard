@@ -133,7 +133,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-bf-tKe" userLabel="News">
-                                            <rect key="frame" x="48" y="21" width="306" height="28.5"/>
+                                            <rect key="frame" x="48" y="26" width="306" height="23.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -240,7 +240,7 @@
                                         <constraint firstItem="fsM-qN-WLU" firstAttribute="leading" secondItem="8ao-AL-AC2" secondAttribute="trailing" constant="2" id="YXf-Dr-i4w"/>
                                         <constraint firstItem="Mbu-bf-tKe" firstAttribute="trailing" secondItem="UIS-tt-Ssj" secondAttribute="trailing" id="YcQ-y9-BdI"/>
                                         <constraint firstItem="XCg-I8-OPT" firstAttribute="bottom" secondItem="Zdo-SI-GtG" secondAttribute="bottom" id="ZxA-wv-dxd"/>
-                                        <constraint firstItem="Mbu-bf-tKe" firstAttribute="top" secondItem="weK-GR-UvQ" secondAttribute="topMargin" constant="10" id="adj-yW-MBu"/>
+                                        <constraint firstItem="Mbu-bf-tKe" firstAttribute="top" secondItem="weK-GR-UvQ" secondAttribute="topMargin" constant="15" id="adj-yW-MBu"/>
                                         <constraint firstItem="8ao-AL-AC2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fxa-CU-GIf" secondAttribute="trailing" constant="20" id="bak-e8-1Vt"/>
                                         <constraint firstItem="XCg-I8-OPT" firstAttribute="leading" secondItem="Zdo-SI-GtG" secondAttribute="trailing" constant="2" id="hCB-Qx-ZMb"/>
                                         <constraint firstItem="Mbu-bf-tKe" firstAttribute="leading" secondItem="UIS-tt-Ssj" secondAttribute="leading" id="jrf-Yv-OHh"/>
