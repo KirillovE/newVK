@@ -39,6 +39,7 @@ class News {
     // свойства, неизвестные в момент инициализации
     var name = ""
     var photoURL = ""
+    var imageURLs = [String]()
     
     init(json: JSON) {
         newsType = json["type"].stringValue

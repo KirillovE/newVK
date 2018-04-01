@@ -54,14 +54,14 @@ class NewsRequest {
         var newsArray = [News]()
         
         for (_, item) in itemsArray {
-            let news = News(json: item)
-            
-            if news.sourceID >= 0 {
-                addProfileInfo(from: json, to: news)
+            let singlenews = News(json: item)
+            manageAtachments(from: item, to: singlenews)
+            if singlenews.sourceID >= 0 {
+                addProfileInfo(from: json, to: singlenews)
             } else {
-                addGroupInfo(from: json, to: news)
+                addGroupInfo(from: json, to: singlenews)
             }
-            newsArray.append(news)
+            newsArray.append(singlenews)
         }
         
         return newsArray
@@ -85,6 +85,28 @@ class NewsRequest {
             if item["id"].intValue == -news.sourceID {
                 news.name = item["name"].stringValue
                 news.photoURL = item["photo_50"].stringValue
+            }
+        }
+    }
+    
+    private func manageAtachments(from array: JSON, to news: News) {
+        let attachments = array["attachments"]
+        for (_, item) in attachments {
+            switch item["type"].stringValue {
+            case "photo":
+                let photoURL = item["photo", "photo_130"].stringValue
+                news.imageURLs.append(photoURL)
+            case "posted_photo":
+                let photoURL = item["posted_photo", "photo_130"].stringValue
+                news.imageURLs.append(photoURL)
+            case "video":
+                let photoURL = item["video", "photo_130"].stringValue
+                news.imageURLs.append(photoURL)
+            case "graffiti":
+                let photoURL = item["graffiti", "photo_130"].stringValue
+                news.imageURLs.append(photoURL)
+            default:
+                break
             }
         }
     }
