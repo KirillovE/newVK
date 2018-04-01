@@ -21,8 +21,9 @@ class NewsVC: UITableViewController {
         super.viewDidLoad()
         newsRequest.makeRequest() { [weak self] news in
             self?.news = news
+            self?.tableView.reloadData()
         }
-        
+    
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 50
     }

@@ -32,6 +32,7 @@ class NewsRequest {
             guard let data = response.value else {return}
             let json = JSON(data)
             guard let news = self?.appendNews(from: json) else { return }
+            print(data)
             completion(news)
         }
     }
