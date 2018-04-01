@@ -16,10 +16,24 @@ class AllGroupsCell: UITableViewCell {
         let membersCount = group.membersCount
         
         textLabel?.text = groupName
-        detailTextLabel?.text = "Подписчиков: " + String(membersCount)
+        detailTextLabel?.text = "Подписчиков: " + formatInt(membersCount)
         
         imageView?.layer.cornerRadius = frame.size.height / 4
         imageView?.clipsToBounds = true
+    }
+    
+    func formatInt(_ number: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = " "
+        formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .decimal
+        let niceNumber = formatter.string(from: NSNumber(integerLiteral: number))
+        
+        if let niceString = niceNumber {
+            return niceString
+        } else {
+            return "нет данных"
+        }
     }
     
     func loadPhoto(from urlString: String) {
