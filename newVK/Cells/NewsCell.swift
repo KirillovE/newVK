@@ -19,6 +19,7 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var numberOfReposts: UILabel!
     @IBOutlet weak var numberOfComments: UILabel!
     @IBOutlet weak var numberOfLikes: UILabel!
+    @IBOutlet weak var date: UILabel!
     
     // MARK:
     
@@ -30,6 +31,7 @@ class NewsCell: UITableViewCell {
         numberOfReposts.text = String(news.reposts.count)
         numberOfComments.text = String(news.comments.count)
         numberOfLikes.text = String(news.likes.count)
+        date.text = news.date
         
         avatar.layer.cornerRadius = avatar.frame.size.height / 2
         avatar.clipsToBounds = true

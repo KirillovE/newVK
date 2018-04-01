@@ -29,7 +29,7 @@ struct Reposts {
 class News {
     let newsType: String
     let sourceID: Int
-    let date: Date
+    let date: String
     let text: String
     var comments = Comments()
     var likes = Likes()
@@ -42,8 +42,9 @@ class News {
         
         let doubleDate = json["date"].doubleValue
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy HH.mm"
-        date = Date(timeIntervalSince1970: doubleDate)
+        dateFormatter.dateFormat = "HH.mm dd.MM.yyyy"
+        let numberDate = Date(timeIntervalSince1970: doubleDate)
+        date = dateFormatter.string(from: numberDate)
         
         text = json["text"].stringValue
         
