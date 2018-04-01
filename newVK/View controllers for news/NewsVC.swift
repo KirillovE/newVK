@@ -19,9 +19,14 @@ class NewsVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsRequest.makeRequest() { [weak self] news in
-            self?.news = news
-            self?.tableView.reloadData()
+        
+        DispatchQueue.global().async {
+            self.newsRequest.makeRequest() { [weak self] news in
+                self?.news = news
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            }
         }
     }
 
