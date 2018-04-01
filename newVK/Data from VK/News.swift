@@ -36,6 +36,10 @@ class News {
     var reposts = Reposts()
     var viewsCount: Int
     
+    // свойства, неизвестные в момент инициализации
+    var name = ""
+    var photoURL = ""
+    
     init(json: JSON) {
         newsType = json["type"].stringValue
         sourceID = json["source_id"].intValue

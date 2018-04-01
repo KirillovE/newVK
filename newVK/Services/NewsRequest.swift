@@ -55,10 +55,38 @@ class NewsRequest {
         
         for (_, item) in itemsArray {
             let news = News(json: item)
+            
+            if news.sourceID >= 0 {
+                addProfileInfo(from: json, to: news)
+            } else {
+                addGroupInfo(from: json, to: news)
+            }
             newsArray.append(news)
         }
         
         return newsArray
+    }
+    
+    private func addProfileInfo(from json: JSON?, to news: News) {
+        let profilesArray = json!["response", "profiles"]
+        
+        for (_, item) in profilesArray {
+            if item["id"].intValue == news.sourceID {
+                news.name = item["first_name"].stringValue + " " + item["last_name"].stringValue
+                news.photoURL = item["photo_50"].stringValue
+            }
+        }
+    }
+    
+    private func addGroupInfo(from json: JSON?, to news: News) {
+        let groupsArray = json!["response", "groups"]
+        
+        for (_, item) in groupsArray {
+            if item["id"].intValue == -news.sourceID {
+                news.name = item["name"].stringValue
+                news.photoURL = item["photo_50"].stringValue
+            }
+        }
     }
     
 }

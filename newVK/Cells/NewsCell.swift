@@ -24,8 +24,7 @@ class NewsCell: UITableViewCell {
     // MARK:
     
     func configure(for news: News) {
-//        avatar.image = news.avatar
-//        authorName.text = news.name
+        authorName.text = news.name
         newsText.text = news.text
         numberOfViews.text = String(news.viewsCount)
         numberOfReposts.text = String(news.reposts.count)
@@ -33,7 +32,19 @@ class NewsCell: UITableViewCell {
         numberOfLikes.text = String(news.likes.count)
         date.text = news.date
         
+        loadPhoto(from: news.photoURL)
         avatar.layer.cornerRadius = avatar.frame.size.height / 2
         avatar.clipsToBounds = true
+    }
+    
+    func loadPhoto(from urlString: String) {
+        let url = URL(string: urlString)
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: url!) else { return }
+            DispatchQueue.main.async {
+                guard let image = UIImage(data: data) else { return }
+                self.avatar?.image = image
+            }
+        }
     }
 }
