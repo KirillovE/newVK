@@ -24,7 +24,6 @@ class AllGroupsCell: UITableViewCell {
     
     func formatInt(_ number: Int) -> String {
         let formatter = NumberFormatter()
-        formatter.groupingSeparator = " "
         formatter.usesGroupingSeparator = true
         formatter.numberStyle = .decimal
         let niceNumber = formatter.string(from: NSNumber(integerLiteral: number))
