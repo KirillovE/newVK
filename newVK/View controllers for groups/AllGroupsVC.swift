@@ -6,7 +6,7 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-import RealmSwift
+import UIKit
 
 class AllGroupsVC: UITableViewController {
     
@@ -38,7 +38,7 @@ class AllGroupsVC: UITableViewController {
     }
 }
 
-// MARK: -
+// MARK: - Searching extension
 
 extension AllGroupsVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
