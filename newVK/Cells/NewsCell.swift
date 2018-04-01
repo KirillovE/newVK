@@ -21,7 +21,7 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var numberOfLikes: UILabel!
     @IBOutlet weak var date: UILabel!
     
-    // MARK:
+    // MARK: - Methods
     
     func configure(for news: News) {
         authorName.text = news.name
