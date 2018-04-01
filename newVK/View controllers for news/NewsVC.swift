@@ -23,9 +23,6 @@ class NewsVC: UITableViewController {
             self?.news = news
             self?.tableView.reloadData()
         }
-    
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 50
     }
 
     // MARK: - Table view data source
