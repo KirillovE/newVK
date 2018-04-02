@@ -42,6 +42,7 @@
 		3EC6D59720692C84009F92A2 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59620692C84009F92A2 /* MessagesVC.swift */; };
 		3EC6D59A20692D2E009F92A2 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59920692D2E009F92A2 /* MessageCell.swift */; };
 		3EFC054F207261F900262F6D /* NewsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC054E207261F900262F6D /* NewsExtensions.swift */; };
+		3EFC0551207262E100262F6D /* ExtendedNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC0550207262E100262F6D /* ExtendedNewsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		3EC6D59620692C84009F92A2 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		3EC6D59920692D2E009F92A2 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		3EFC054E207261F900262F6D /* NewsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsExtensions.swift; sourceTree = "<group>"; };
+		3EFC0550207262E100262F6D /* ExtendedNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedNewsVC.swift; sourceTree = "<group>"; };
 		5F53533A50A997494316304F /* Pods_newVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C94D3D006DBA0B60806BE9 /* Pods-newVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.release.xcconfig"; sourceTree = "<group>"; };
 		CA4BC402A95B54E8DF352A78 /* Pods-newVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				3EC6D59120679811009F92A2 /* NewsVC.swift */,
+				3EFC0550207262E100262F6D /* ExtendedNewsVC.swift */,
 			);
 			path = "View controllers for news";
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				3E7D1214204ED077001E4D9C /* Photo.swift in Sources */,
 				3EAC58E0206258A300A2DE4A /* GroupsSearchRequest.swift in Sources */,
 				3EC6D59720692C84009F92A2 /* MessagesVC.swift in Sources */,
+				3EFC0551207262E100262F6D /* ExtendedNewsVC.swift in Sources */,
 				3E16769C20400F6200287BB4 /* FriendPhotosCell.swift in Sources */,
 				3E9987E2206D04C5003DF364 /* News.swift in Sources */,
 				3EC6D59220679811009F92A2 /* NewsVC.swift in Sources */,
