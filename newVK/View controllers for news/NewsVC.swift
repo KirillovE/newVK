@@ -13,6 +13,7 @@ class NewsVC: UITableViewController {
     // MARK: - Source data
     
     let newsRequest = NewsRequest()
+    let requestFilter = "post"
     var news = [News]()
     
     // MARK: -
@@ -21,7 +22,7 @@ class NewsVC: UITableViewController {
         super.viewDidLoad()
         
         DispatchQueue.global().async {
-            self.newsRequest.makeRequest() { [weak self] news in
+            self.newsRequest.makeRequest(filter: self.requestFilter) { [weak self] news in
                 self?.news = news
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
