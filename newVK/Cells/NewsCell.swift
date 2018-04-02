@@ -20,9 +20,7 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var numberOfComments: UILabel!
     @IBOutlet weak var numberOfLikes: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var image1: UIImageView!
-    @IBOutlet weak var image2: UIImageView!
-    @IBOutlet weak var image3: UIImageView!
+    @IBOutlet weak var attachedImage: UIImageView!
     
     // MARK: - Methods
     
@@ -38,19 +36,9 @@ class NewsCell: UITableViewCell {
         loadPhoto(from: news.photoURL)
         avatar.layer.cornerRadius = avatar.frame.size.height / 2
         avatar.clipsToBounds = true
-    
-        switch news.imageURLs.count {
-        case 1:
-            loadImage1(from: news.imageURLs.first!)
-        case 2:
-            loadImage1(from: news.imageURLs[0])
-            loadImage2(from: news.imageURLs[1])
-        case 3:
-            loadImage1(from: news.imageURLs[0])
-            loadImage2(from: news.imageURLs[1])
-            loadImage3(from: news.imageURLs[2])
-        default:
-            break
+        
+        if let attachedImage = news.imageURLs.first {
+            loadAttachedImage(from: attachedImage)
         }
     }
     
@@ -65,35 +53,13 @@ class NewsCell: UITableViewCell {
         }
     }
     
-    private func loadImage1(from urlString: String) {
+    private func loadAttachedImage(from urlString: String) {
         let url = URL(string: urlString)
         DispatchQueue.global().async {
             guard let data = try? Data(contentsOf: url!) else { return }
             DispatchQueue.main.async {
                 guard let image = UIImage(data: data) else { return }
-                self.image1?.image = image
-            }
-        }
-    }
-    
-    private func loadImage2(from urlString: String) {
-        let url = URL(string: urlString)
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url!) else { return }
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else { return }
-                self.image2?.image = image
-            }
-        }
-    }
-    
-    private func loadImage3(from urlString: String) {
-        let url = URL(string: urlString)
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url!) else { return }
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else { return }
-                self.image3?.image = image
+                self.attachedImage?.image = image
             }
         }
     }
