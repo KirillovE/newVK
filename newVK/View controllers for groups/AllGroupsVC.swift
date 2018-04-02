@@ -48,10 +48,15 @@ extension AllGroupsVC: UISearchBarDelegate {
             return
         }
         
-        searchRequest.makeRequest(groupToFind: searchText, numberOfResults: numberOfResultsToShow) { [weak self] groups in
-            self?.groups = groups
+        DispatchQueue.global().async {
+            self.searchRequest.makeRequest(groupToFind: searchText, numberOfResults: self.numberOfResultsToShow) { [weak self] groups in
+                self?.groups = groups
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
-        self.tableView.reloadData()
+        
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {

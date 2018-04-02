@@ -25,7 +25,9 @@ class OwnerVC: UICollectionViewController {
         
         let userDefaults = UserDefaults.standard
         let ownerID = userDefaults.integer(forKey: "user_id")
-        photosRequest.makeRequest(for: ownerID)
+        DispatchQueue.global().async {
+            self.photosRequest.makeRequest(for: ownerID)
+        }
         pairCollectionAndRealm()
     }
     
