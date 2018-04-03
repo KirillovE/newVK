@@ -43,9 +43,9 @@ class NewsCell: UITableViewCell {
     }
     
     private func loadPhoto(from urlString: String) {
-        let url = URL(string: urlString)
+        guard let url = URL(string: urlString) else { return }
         DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url!) else { return }
+            guard let data = try? Data(contentsOf: url) else { return }
             DispatchQueue.main.async {
                 guard let image = UIImage(data: data) else { return }
                 self.avatar?.image = image
@@ -54,9 +54,9 @@ class NewsCell: UITableViewCell {
     }
     
     private func loadAttachedImage(from urlString: String) {
-        let url = URL(string: urlString)
+        guard let url = URL(string: urlString) else { return }
         DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url!) else { return }
+            guard let data = try? Data(contentsOf: url) else { return }
             DispatchQueue.main.async {
                 guard let image = UIImage(data: data) else { return }
                 self.attachedImage?.image = image
