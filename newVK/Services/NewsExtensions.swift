@@ -34,7 +34,7 @@ extension NewsRequest {
         for (_, item) in profilesArray {
             if item["id"].intValue == news.sourceID {
                 news.name = item["first_name"].stringValue + " " + item["last_name"].stringValue
-                news.photoURL = item["photo_50"].stringValue
+                news.photoURL = item["photo_medium_rec"].stringValue
             }
         }
     }
@@ -45,7 +45,7 @@ extension NewsRequest {
         for (_, item) in groupsArray {
             if item["id"].intValue == -news.sourceID {
                 news.name = item["name"].stringValue
-                news.photoURL = item["photo_50"].stringValue
+                news.photoURL = item["photo_100"].stringValue
             }
         }
     }
@@ -55,16 +55,16 @@ extension NewsRequest {
         for (_, item) in attachments {
             switch item["type"].stringValue {
             case "photo":
-                let photoURL = item["photo", "photo_130"].stringValue
+                let photoURL = item["photo", "photo_604"].stringValue
                 news.imageURLs.append(photoURL)
             case "posted_photo":
-                let photoURL = item["posted_photo", "photo_130"].stringValue
+                let photoURL = item["posted_photo", "photo_604"].stringValue
                 news.imageURLs.append(photoURL)
             case "video":
-                let photoURL = item["video", "photo_130"].stringValue
+                let photoURL = item["video", "photo_640"].stringValue
                 news.imageURLs.append(photoURL)
             case "graffiti":
-                let photoURL = item["graffiti", "photo_130"].stringValue
+                let photoURL = item["graffiti", "photo_604"].stringValue
                 news.imageURLs.append(photoURL)
             default:
                 break
