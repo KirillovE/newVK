@@ -31,7 +31,7 @@ class NewsCell: UITableViewCell {
         numberOfReposts.text = String(news.reposts.count)
         numberOfComments.text = String(news.comments.count)
         numberOfLikes.text = String(news.likes.count)
-        date.text = news.date
+        date.text = "\(news.time) \(news.day)"
         
         loadPhoto(from: news.photoURL)
         avatar.layer.cornerRadius = avatar.frame.size.height / 2

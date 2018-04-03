@@ -18,7 +18,6 @@ class ExtendedNewsVC: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var authorName: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var newsText: UILabel!
     @IBOutlet weak var numberOfLikes: UILabel!
@@ -36,8 +35,8 @@ class ExtendedNewsVC: UIViewController {
     }
 
     func setAllOutlets() {
-        authorName.text = news.name
-        dateLabel.text = news.date
+        navigationItem.title = news.name
+        dateLabel.text = "\(news.time)\n\(news.day)"
         newsText.text = news.text
         numberOfLikes.text = String(news.likes.count)
         numberOfComments.text = String(news.comments.count)

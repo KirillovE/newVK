@@ -287,14 +287,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxF-01-wBq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="636"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата публикации" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yr-6F-JzF" userLabel="Date">
-                                        <rect key="frame" x="136" y="85" width="104" height="17"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <stackView opaque="NO" contentMode="left" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="4Ic-yJ-zCf" userLabel="Attributes">
-                                        <rect key="frame" x="38.5" y="604" width="299.5" height="15"/>
+                                        <rect key="frame" x="38.5" y="548" width="299.5" height="15"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="нравится" translatesAutoresizingMaskIntoConstraints="NO" id="71k-nG-7VG" userLabel="Likes">
                                                 <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
@@ -373,50 +367,52 @@
                                         </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jtg-he-Yds" userLabel="Attached image">
-                                        <rect key="frame" x="0.0" y="156" width="376.5" height="400"/>
+                                        <rect key="frame" x="0.0" y="100" width="376.5" height="400"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="400" id="m2y-Cl-p8T"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="etU-m4-DOj" userLabel="Avatar">
-                                        <rect key="frame" x="152" y="0.0" width="70" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="Kh5-Uf-Is4"/>
-                                            <constraint firstAttribute="height" constant="70" id="wSE-3S-8TH"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст новости" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ace-vQ-3HX" userLabel="News">
-                                        <rect key="frame" x="15" y="571" width="345.5" height="18"/>
+                                        <rect key="frame" x="15" y="515" width="345.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя автора" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f65-VG-sn6" userLabel="Name">
-                                        <rect key="frame" x="15" y="117" width="346.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="78E-oz-45m">
+                                        <rect key="frame" x="113" y="15" width="150" height="70"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="etU-m4-DOj" userLabel="Avatar">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="Kh5-Uf-Is4"/>
+                                                    <constraint firstAttribute="height" constant="70" id="wSE-3S-8TH"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата публикации" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yr-6F-JzF" userLabel="Day">
+                                                <rect key="frame" x="80" y="18.5" width="70" height="33.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="6yr-6F-JzF" firstAttribute="leading" secondItem="etU-m4-DOj" secondAttribute="trailing" constant="10" id="aTY-dK-Oc8"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="6yr-6F-JzF" firstAttribute="top" secondItem="etU-m4-DOj" secondAttribute="bottom" constant="15" id="2ss-WU-DFD"/>
-                                    <constraint firstItem="f65-VG-sn6" firstAttribute="leading" secondItem="cxF-01-wBq" secondAttribute="leading" constant="15" id="38z-7Z-5e8"/>
-                                    <constraint firstItem="f65-VG-sn6" firstAttribute="centerX" secondItem="cxF-01-wBq" secondAttribute="centerX" id="8hY-zB-Qik"/>
+                                    <constraint firstItem="Jtg-he-Yds" firstAttribute="top" secondItem="78E-oz-45m" secondAttribute="bottom" constant="15" id="Be7-vc-mlE"/>
                                     <constraint firstAttribute="trailing" secondItem="Jtg-he-Yds" secondAttribute="trailing" id="GmU-Rv-yGe"/>
-                                    <constraint firstItem="Jtg-he-Yds" firstAttribute="top" secondItem="f65-VG-sn6" secondAttribute="bottom" constant="15" id="N8C-37-98q"/>
-                                    <constraint firstItem="etU-m4-DOj" firstAttribute="centerX" secondItem="cxF-01-wBq" secondAttribute="centerX" id="QSq-am-rTZ"/>
                                     <constraint firstAttribute="bottom" secondItem="Jtg-he-Yds" secondAttribute="bottom" constant="247" id="QsC-Y2-eMx"/>
                                     <constraint firstItem="ace-vQ-3HX" firstAttribute="centerX" secondItem="cxF-01-wBq" secondAttribute="centerX" id="SfQ-Gd-Jak"/>
                                     <constraint firstItem="ace-vQ-3HX" firstAttribute="top" secondItem="Jtg-he-Yds" secondAttribute="bottom" constant="15" id="Uz9-TW-YnL"/>
-                                    <constraint firstItem="6yr-6F-JzF" firstAttribute="top" secondItem="etU-m4-DOj" secondAttribute="bottom" constant="15" id="WU0-iq-Hzr"/>
+                                    <constraint firstItem="78E-oz-45m" firstAttribute="top" secondItem="cxF-01-wBq" secondAttribute="top" constant="15" id="bKb-RI-bLW"/>
                                     <constraint firstItem="4Ic-yJ-zCf" firstAttribute="top" secondItem="ace-vQ-3HX" secondAttribute="bottom" constant="15" id="d7k-dM-9QI"/>
                                     <constraint firstItem="Jtg-he-Yds" firstAttribute="centerX" secondItem="cxF-01-wBq" secondAttribute="centerX" id="dbr-TE-jN5"/>
-                                    <constraint firstItem="etU-m4-DOj" firstAttribute="top" secondItem="cxF-01-wBq" secondAttribute="top" id="dqh-zV-Obk"/>
                                     <constraint firstItem="Jtg-he-Yds" firstAttribute="leading" secondItem="cxF-01-wBq" secondAttribute="leading" id="f3p-S3-4Ye"/>
                                     <constraint firstItem="ace-vQ-3HX" firstAttribute="leading" secondItem="cxF-01-wBq" secondAttribute="leading" constant="15" id="fNX-Fe-Rr2"/>
+                                    <constraint firstItem="78E-oz-45m" firstAttribute="centerX" secondItem="cxF-01-wBq" secondAttribute="centerX" id="iQJ-bH-Roq"/>
                                     <constraint firstItem="4Ic-yJ-zCf" firstAttribute="centerX" secondItem="cxF-01-wBq" secondAttribute="centerX" id="lEo-yh-Ox0"/>
-                                    <constraint firstItem="6yr-6F-JzF" firstAttribute="centerX" secondItem="cxF-01-wBq" secondAttribute="centerX" id="o1v-qM-DN7"/>
-                                    <constraint firstItem="f65-VG-sn6" firstAttribute="top" secondItem="6yr-6F-JzF" secondAttribute="bottom" constant="15" id="tau-cc-1De"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -432,7 +428,6 @@
                     <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="attachedImage" destination="Jtg-he-Yds" id="ruf-qX-2f1"/>
-                        <outlet property="authorName" destination="f65-VG-sn6" id="4Qz-uS-30F"/>
                         <outlet property="avatar" destination="etU-m4-DOj" id="18G-VN-9q2"/>
                         <outlet property="dateLabel" destination="6yr-6F-JzF" id="aeU-Qw-2PL"/>
                         <outlet property="newsText" destination="ace-vQ-3HX" id="OQQ-Wu-alR"/>
