@@ -10,13 +10,14 @@ import UIKit
 
 class ExtendedNewsVC: UIViewController {
 
-    // MARK: -
+    // MARK: - Source data
     
     var news: News!
     var imageForAvatar: UIImage!
     var imageToShow: UIImage?
     
     // MARK: - Outlets
+    
     @IBOutlet weak var authorName: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var newsText: UILabel!
@@ -27,11 +28,14 @@ class ExtendedNewsVC: UIViewController {
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var attachedImage: UIImageView!
     
-    // MARK: -
+    // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setAllOutlets()
+    }
 
+    func setAllOutlets() {
         authorName.text = news.name
         dateLabel.text = news.date
         newsText.text = news.text
@@ -45,5 +49,4 @@ class ExtendedNewsVC: UIViewController {
         avatar.clipsToBounds = true
         attachedImage.image = imageToShow
     }
-
 }
