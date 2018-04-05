@@ -15,7 +15,7 @@ class FriendsCell: UITableViewCell {
         let firstName = friend.firstName
         let lastName = friend.lastName
         let nick = friend.nick
-        loadPhoto(from: friend.avatarURL)
+//        loadPhoto(from: friend.avatarURL)
         
         textLabel?.text = firstName + " " + lastName
         detailTextLabel?.text = nick
@@ -24,15 +24,15 @@ class FriendsCell: UITableViewCell {
         imageView?.clipsToBounds = true
     }
     
-    func loadPhoto(from urlString: String) {
-        let url = URL(string: urlString)
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url!) else { return }
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else { return }
-                self.imageView?.image = image
-            }
-        }
-    }
+//    func loadPhoto(from urlString: String) {
+//        let url = URL(string: urlString)
+//        DispatchQueue.global().async {
+//            guard let data = try? Data(contentsOf: url!) else { return }
+//            DispatchQueue.main.async {
+//                guard let image = UIImage(data: data) else { return }
+//                self.imageView?.image = image
+//            }
+//        }
+//    }
 
 }

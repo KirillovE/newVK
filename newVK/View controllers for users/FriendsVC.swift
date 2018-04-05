@@ -16,6 +16,11 @@ class FriendsVC: UITableViewController {
     var friends: Results<User>!
     var token: NotificationToken?
     let leaveRequest = LeaveAccount()
+    let queue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .userInteractive
+        return queue
+    }()
     
     // MARK: - View controller life cycle
     
@@ -41,6 +46,14 @@ class FriendsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath) as! FriendsCell
         cell.configure(for: friends[indexPath.row])
+        
+        let getCacheImage = GetCacheImage(url: friends[indexPath.row].avatarURL)
+        getCacheImage.completionBlock = {
+            OperationQueue.main.addOperation {
+                cell.imageView?.image = getCacheImage.outputImage
+            }
+        }
+        queue.addOperation(getCacheImage)
         
         return cell
     }
