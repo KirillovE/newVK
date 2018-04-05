@@ -48,12 +48,10 @@ class FriendsVC: UITableViewController {
         cell.configure(for: friends[indexPath.row])
         
         let getCacheImage = GetCacheImage(url: friends[indexPath.row].avatarURL)
-        getCacheImage.completionBlock = {
-            OperationQueue.main.addOperation {
-                cell.imageView?.image = getCacheImage.outputImage
-            }
-        }
+        let setImageToRow = SetImageToRow(cell: cell, imageView: cell.imageView!, indexPath: indexPath, tableView: tableView)
+        setImageToRow.addDependency(getCacheImage)
         queue.addOperation(getCacheImage)
+        OperationQueue.main.addOperation(setImageToRow)
         
         return cell
     }
