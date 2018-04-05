@@ -15,6 +15,11 @@ class MyGroupsVC: UITableViewController {
     let groupsRequest = GroupsRequest()
     var groups: Results<Group>!
     var token: NotificationToken?
+    let queue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .userInteractive
+        return queue
+    }()
     
     // MARK: - View controller life cycle
  
@@ -40,6 +45,12 @@ class MyGroupsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myGroups", for: indexPath) as! MyGroupsCell
         cell.configure(for: groups[indexPath.row])
+        
+        let getCacheImage = GetCacheImage(url: groups[indexPath.row].photoURL)
+        let setImageToRow = SetImageToRow(cell: cell, imageView: cell.imageView!, indexPath: indexPath, tableView: tableView)
+        setImageToRow.addDependency(getCacheImage)
+        queue.addOperation(getCacheImage)
+        OperationQueue.main.addOperation(setImageToRow)
 
         return cell
     }
