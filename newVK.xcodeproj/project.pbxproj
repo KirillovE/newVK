@@ -185,7 +185,7 @@
 				3E618434203717DB00A68D16 /* Main.storyboard */,
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
 				3E61843C203717DB00A68D16 /* Info.plist */,
-				3E7D1217204ED1BE001E4D9C /* Data from VK */,
+				3E7D1217204ED1BE001E4D9C /* Models from VK */,
 				3E0FEF83204ACD41006DE640 /* Services */,
 				3E48210B204BFD11009639FC /* Login View controllers */,
 				3EC6D595206798A5009F92A2 /* View controllers for news */,
@@ -197,7 +197,7 @@
 			path = newVK;
 			sourceTree = "<group>";
 		};
-		3E7D1217204ED1BE001E4D9C /* Data from VK */ = {
+		3E7D1217204ED1BE001E4D9C /* Models from VK */ = {
 			isa = PBXGroup;
 			children = (
 				3E9987E1206D04C5003DF364 /* News.swift */,
@@ -205,7 +205,7 @@
 				3E7D1213204ED077001E4D9C /* Photo.swift */,
 				3E7D1215204ED147001E4D9C /* Group.swift */,
 			);
-			path = "Data from VK";
+			path = "Models from VK";
 			sourceTree = "<group>";
 		};
 		3EC6D595206798A5009F92A2 /* View controllers for news */ = {
