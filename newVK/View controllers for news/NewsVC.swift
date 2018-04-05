@@ -15,6 +15,11 @@ class NewsVC: UITableViewController {
     let newsRequest = NewsRequest()
     let requestFilter = "post"
     var news = [News]()
+    let queue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .userInteractive
+        return queue
+    }()
     
     // MARK: -
     
@@ -40,6 +45,13 @@ class NewsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsCell
         cell.configure(for: news[indexPath.row])
+        
+        let getCacheImage = GetCacheImage(url: news[indexPath.row].photoURL)
+        let setImageToRow = SetImageToRow(cell: cell, imageView: cell.avatar, indexPath: indexPath, tableView: tableView)
+        setImageToRow.addDependency(getCacheImage)
+        queue.addOperation(getCacheImage)
+        OperationQueue.main.addOperation(setImageToRow)
+        
         return cell
     }
     
