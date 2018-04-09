@@ -16,7 +16,6 @@ class OwnerPhotosCell: UICollectionViewCell {
         loadPhoto(from: photo.smallPhotoURL)
         
         ownerPhoto.layer.cornerRadius = frame.size.height / 10
-        ownerPhoto.clipsToBounds = true
     }
     
     func loadPhoto(from urlString: String) {

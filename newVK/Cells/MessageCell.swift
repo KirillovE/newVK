@@ -19,7 +19,6 @@ class MessageCell: UITableViewCell {
         avatar?.image = message.avatar
         
         avatar?.layer.cornerRadius = avatar.frame.size.height / 2
-        avatar?.clipsToBounds = true
     }
 
 }

@@ -16,7 +16,6 @@ class FriendPhotosCell: UICollectionViewCell {
         loadPhoto(from: photo.smallPhotoURL)
         
         friendImage.layer.cornerRadius = frame.size.height / 10
-        friendImage.clipsToBounds = true
     }
     
     func loadPhoto(from urlString: String) {

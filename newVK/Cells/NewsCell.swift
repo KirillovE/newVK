@@ -35,7 +35,6 @@ class NewsCell: UITableViewCell {
         
         loadPhoto(from: news.photoURL)
         avatar.layer.cornerRadius = avatar.frame.size.height / 2
-        avatar.clipsToBounds = true
         
         if let attachedImage = news.imageURLs.first {
             loadAttachedImage(from: attachedImage)
