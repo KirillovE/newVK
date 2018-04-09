@@ -21,6 +21,7 @@ class FriendsCell: UITableViewCell {
         
         imageView?.layer.cornerRadius = frame.size.height / 2
         imageView?.clipsToBounds = true
+        imageView?.backgroundColor = UIColor.white
     }
     
 }

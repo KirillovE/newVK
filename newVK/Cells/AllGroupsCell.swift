@@ -17,6 +17,7 @@ class AllGroupsCell: UITableViewCell {
         textLabel?.text = groupName
         imageView?.layer.cornerRadius = frame.size.height / 4
         imageView?.clipsToBounds = true
+        imageView?.backgroundColor = UIColor.white
     }
     
     func loadPhoto(from urlString: String) {

@@ -480,6 +480,7 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LJM-lm-FiR">
                                             <rect key="frame" x="0.0" y="0.0" width="154" height="151"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
                                     </subviews>
                                 </view>
@@ -788,6 +789,7 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X8f-pW-gGT" userLabel="Avatar">
                                             <rect key="frame" x="0.0" y="5" width="43" height="43.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="43" id="Mzg-TH-5Ek"/>
                                                 <constraint firstAttribute="height" constant="43" id="Vlv-JG-F3N"/>
