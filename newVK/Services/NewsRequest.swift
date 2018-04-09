@@ -16,7 +16,7 @@ class NewsRequest {
     
     private var sessionManager: SessionManager?
     private let method = "newsfeed.get"
-    private let resultsCount = 100
+    private let resultsCount = 30
     
     // MARK: - Methods
     
