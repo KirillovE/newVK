@@ -15,10 +15,23 @@ class NewsVC: UITableViewController {
     let newsRequest = NewsRequest()
     let requestFilter = "post"
     var news = [News]()
+    
     let queue: OperationQueue = {
         let queue = OperationQueue()
         queue.qualityOfService = .userInteractive
         return queue
+    }()
+    
+    let dateFormatterForDay: DateFormatter = {
+        let fmtr = DateFormatter()
+        fmtr.dateFormat = "dd.MM.yyyy"
+        return fmtr
+    }()
+    
+    let dateFormatterForTime: DateFormatter = {
+        let fmtr = DateFormatter()
+        fmtr.dateFormat = "HH.mm"
+        return fmtr
     }()
     
     // MARK: -
@@ -44,13 +57,10 @@ class NewsVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsCell
-        cell.configure(for: news[indexPath.row])
         
-        let getCacheImage = GetCacheImage(url: news[indexPath.row].photoURL)
-        let setImageToRow = SetImageToRow(cell: cell, imageView: cell.avatar, indexPath: indexPath, tableView: tableView)
-        setImageToRow.addDependency(getCacheImage)
-        queue.addOperation(getCacheImage)
-        OperationQueue.main.addOperation(setImageToRow)
+        formatDate(forNews: &news[indexPath.row])
+        setImageFromCache(cell: cell, indexPath: indexPath)
+        cell.configure(for: news[indexPath.row])
         
         return cell
     }
@@ -68,4 +78,28 @@ class NewsVC: UITableViewController {
         }
     }
 
+}
+
+// MARK: - Extensions
+
+extension NewsVC {
+    
+    func formatDate(forNews news: inout News) {
+        let numberDate = Date(timeIntervalSince1970: news.date)
+        news.day = dateFormatterForDay.string(from: numberDate)
+        news.time = dateFormatterForTime.string(from: numberDate)
+    }
+    
+}
+
+extension NewsVC {
+    
+    func setImageFromCache(cell: NewsCell, indexPath: IndexPath) {
+        let getCacheImage = GetCacheImage(url: news[indexPath.row].photoURL)
+        let setImageToRow = SetImageToRow(cell: cell, imageView: cell.avatar, indexPath: indexPath, tableView: tableView)
+        setImageToRow.addDependency(getCacheImage)
+        queue.addOperation(getCacheImage)
+        OperationQueue.main.addOperation(setImageToRow)
+    }
+    
 }
