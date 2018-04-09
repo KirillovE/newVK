@@ -194,7 +194,7 @@
 				3E0FEF83204ACD41006DE640 /* Services */,
 				3E48210B204BFD11009639FC /* Login View controllers */,
 				3EC6D595206798A5009F92A2 /* View controllers for news */,
-				3EC6D59820692C90009F92A2 /* View controllers fo messages */,
+				3EC6D59820692C90009F92A2 /* View controllers for messages */,
 				3E0FEF82204ACD2D006DE640 /* View controllers for users */,
 				3E0137C62059199500B47735 /* View controllers for groups */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
@@ -222,12 +222,12 @@
 			path = "View controllers for news";
 			sourceTree = "<group>";
 		};
-		3EC6D59820692C90009F92A2 /* View controllers fo messages */ = {
+		3EC6D59820692C90009F92A2 /* View controllers for messages */ = {
 			isa = PBXGroup;
 			children = (
 				3EC6D59620692C84009F92A2 /* MessagesVC.swift */,
 			);
-			path = "View controllers fo messages";
+			path = "View controllers for messages";
 			sourceTree = "<group>";
 		};
 		3EF9A4FF20764AED00CD574C /* Helper models */ = {
