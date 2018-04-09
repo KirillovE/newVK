@@ -16,6 +16,13 @@ class AllGroupsVC: UITableViewController {
     let searchRequest = GroupsSearchRequest()
     var groups = [Group]()
     let numberOfResultsToShow = 50
+
+    let formatter: NumberFormatter = {
+        let fmtr = NumberFormatter()
+        fmtr.usesGroupingSeparator = true
+        fmtr.numberStyle = .decimal
+        return fmtr
+    }()
     
     // MARK: -
     
@@ -32,13 +39,17 @@ class AllGroupsVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allGroups", for: indexPath) as! AllGroupsCell
+        
+        let membersCount = groups[indexPath.row].membersCount
+        cell.detailTextLabel?.text = "Подписчиков: " + formatInt(membersCount)
+        
         cell.configure(for: groups[indexPath.row])
 
         return cell
     }
 }
 
-// MARK: - Searching extension
+// MARK: - Extensions
 
 extension AllGroupsVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -62,6 +73,20 @@ extension AllGroupsVC: UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         groups.removeAll(keepingCapacity: false)
         self.tableView.reloadData()
+    }
+    
+}
+
+extension AllGroupsVC {
+    
+    func formatInt(_ number: Int) -> String {
+        let niceNumber = formatter.string(from: NSNumber(integerLiteral: number))
+        
+        if let niceString = niceNumber {
+            return niceString
+        } else {
+            return "нет данных"
+        }
     }
     
 }
