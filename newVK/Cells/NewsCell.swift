@@ -75,13 +75,13 @@ class NewsCell: UITableViewCell {
     }
     
     func configure(for news: News) {
-        authorName.text = news.name
-        newsText.text = news.text
-        numberOfViews.text = String(news.viewsCount)
-        numberOfReposts.text = String(news.reposts.count)
-        numberOfComments.text = String(news.comments.count)
-        numberOfLikes.text = String(news.likes.count)
-        date.text = "\(news.time) \(news.day)"
+        setAuthorName(news.name)
+        setNewsText(news.text)
+        setViews(news.viewsCount)
+        setReposts(news.reposts.count)
+        setComments(news.comments.count)
+        setLikes(news.likes.count)
+        setDate("\(news.time) \(news.day)")
         
         loadPhoto(from: news.photoURL)
         avatar.layer.cornerRadius = avatar.frame.size.height / 2
@@ -115,7 +115,7 @@ class NewsCell: UITableViewCell {
     
 }
 
-// MARK: - Расширение для ручной вёрстки ячейки
+// MARK: - Layout on frames, main views
 
 extension NewsCell {
     
@@ -155,6 +155,12 @@ extension NewsCell {
         attachedImage.frame = CGRect(origin: labelOrigin, size: imageSize)
     }
     
+}
+
+// MARK: - Frames for attributes
+
+extension NewsCell {
+    
     func likeImageFrame() {
         let labelOrigin = CGPoint(x: defaultOriginX, y: attributeOriginY)
         viewWithTag(1)?.frame = CGRect(origin: labelOrigin, size: attributeImageSize)
@@ -172,7 +178,7 @@ extension NewsCell {
         let labelOrigin = CGPoint(x: labelX, y: attributeOriginY)
         viewWithTag(2)?.frame = CGRect(origin: labelOrigin, size: attributeImageSize)
     }
-
+    
     func commentsCountFrame() {
         let labelSize = getLabelSize(text: numberOfComments.text!, font: numberOfComments.font)
         let labelX = (viewWithTag(2)?.frame.origin.x)! + (viewWithTag(2)?.frame.width)!
@@ -206,6 +212,12 @@ extension NewsCell {
         numberOfViews.frame = CGRect(origin: labelOrigin, size: labelSize)
     }
     
+}
+
+// MARK: - Getting size for labels
+
+extension NewsCell {
+    
     func getLabelSize(text: String, font: UIFont) -> CGSize {
         let maxWidth = bounds.width - inset * 2 - avatar.frame.width - insetBetweenObjects
         let textBlock = CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude)
@@ -215,6 +227,47 @@ extension NewsCell {
         let size = CGSize(width: ceil(width), height: ceil(height))
         
         return size
+    }
+    
+}
+
+// MARK: - Updating frames
+
+extension NewsCell {
+    
+    func setAuthorName(_ name: String) {
+        authorName.text = name
+        authorNameFrame()
+    }
+    
+    func setDate(_ timeDate: String) {
+        date.text = timeDate
+        dateFrame()
+    }
+    
+    func setNewsText(_ text: String) {
+        newsText.text = text
+        newsTextFrame()
+    }
+    
+    func setLikes(_ count: Int) {
+        numberOfLikes.text = String(count)
+        likeCountFrame()
+    }
+    
+    func setComments(_ count: Int) {
+        numberOfComments.text = String(count)
+        commentsCountFrame()
+    }
+    
+    func setReposts(_ count: Int) {
+        numberOfReposts.text = String(count)
+        repostsCountFrame()
+    }
+    
+    func setViews(_ count: Int) {
+        numberOfViews.text = String(count)
+        viewsCountFrame()
     }
     
 }
