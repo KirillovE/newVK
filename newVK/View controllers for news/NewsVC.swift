@@ -75,19 +75,6 @@ class NewsVC: UITableViewController {
         return height
     }
     
-    // MARK: -
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showExtendedNews" {
-            let cell = sender as! NewsCell
-            let newsIndex = self.tableView.indexPath(for: cell)?.row
-            let newsVC = segue.destination as! ExtendedNewsVC
-            newsVC.news = self.news[newsIndex!]
-            newsVC.imageForAvatar = cell.avatar.image
-            newsVC.imageToShow = cell.attachedImage.image
-        }
-    }
-    
     // MARK: - Other methods
     
     func update(cell: NewsCell, atIndex index: IndexPath?, withHeight height: CGFloat?) {
