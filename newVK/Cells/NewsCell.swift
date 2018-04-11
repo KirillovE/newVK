@@ -47,6 +47,7 @@ class NewsCell: UITableViewCell {
     var defaultOriginX: CGFloat = 0                 // отступ для всех элементов, кроме аватара и атрибутов
     let attributeImageSize = CGSize(width: 15, height: 15)
     var attributeOriginY: CGFloat = 0
+    var cellHeight: CGFloat?
     
     // MARK: - Methods
     
@@ -89,6 +90,8 @@ class NewsCell: UITableViewCell {
         if let attachedImage = news.imageURLs.first {
             loadAttachedImage(from: attachedImage)
         }
+        
+        getCellHeight()
     }
     
     private func loadPhoto(from urlString: String) {
@@ -111,6 +114,10 @@ class NewsCell: UITableViewCell {
                 self.attachedImage?.image = image
             }
         }
+    }
+    
+    private func getCellHeight() {
+        cellHeight = 2 * inset + 3 * insetBetweenObjects + avatar.frame.height + newsText.frame.height + attachedImage.frame.height + numberOfLikes.frame.height
     }
     
 }
