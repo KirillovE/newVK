@@ -39,7 +39,9 @@ class News {
     // свойства, неизвестные в момент инициализации
     var name = ""
     var photoURL = ""
-    var imageURLs = [String]()
+    var attachedImageURL = ""
+    var attachedImageWidth = 0.0
+    var attachedImageHeight = 0.0
     var day = ""
     var time = ""
     

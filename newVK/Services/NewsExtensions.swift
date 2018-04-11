@@ -34,16 +34,17 @@ extension NewsRequest {
             switch item["type"].stringValue {
             case "photo":
                 let photoURL = item["photo", "photo_604"].stringValue
-                news.imageURLs.append(photoURL)
-            case "posted_photo":
-                let photoURL = item["posted_photo", "photo_604"].stringValue
-                news.imageURLs.append(photoURL)
+                let photoWidth = item["photo", "width"].doubleValue
+                let photoHeight = item["photo", "height"].doubleValue
+                
+                news.attachedImageURL = photoURL
+                news.attachedImageWidth = photoWidth
+                news.attachedImageHeight = photoHeight
             case "video":
                 let photoURL = item["video", "photo_640"].stringValue
-                news.imageURLs.append(photoURL)
-            case "graffiti":
-                let photoURL = item["graffiti", "photo_604"].stringValue
-                news.imageURLs.append(photoURL)
+                news.attachedImageURL = photoURL
+                news.attachedImageWidth = 640.0
+                news.attachedImageHeight = 480.0
             default:
                 break
             }

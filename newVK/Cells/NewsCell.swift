@@ -47,6 +47,7 @@ class NewsCell: UITableViewCell {
     var defaultOriginX: CGFloat = 0                 // отступ для всех элементов, кроме аватара и атрибутов
     let attributeImageSize = CGSize(width: 15, height: 15)
     var attributeOriginY: CGFloat = 0
+    var attachedImageAspectRatio: Double?
     var cellHeight: CGFloat?
     
     // MARK: - Methods
@@ -54,7 +55,6 @@ class NewsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         defaultOriginX = inset + avatar.frame.width + insetBetweenObjects
-        attributeOriginY = attachedImage.frame.origin.y + attachedImage.frame.height + insetBetweenObjects
     }
     
     override func layoutSubviews() {
@@ -86,6 +86,9 @@ class NewsCell: UITableViewCell {
         getCellHeight()
         
         avatar.layer.cornerRadius = avatar.frame.size.height / 2
+        if news.attachedImageURL != "" {
+            attachedImageAspectRatio = news.attachedImageWidth / news.attachedImageHeight
+        }
     }
     
     private func getCellHeight() {
@@ -126,11 +129,15 @@ extension NewsCell {
     }
     
     func attachedImageFrame() {
-        let imageHeight: CGFloat = 165
-        let imageSize = CGSize(width: bounds.width, height: imageHeight)
+        guard let aspectRatio = attachedImageAspectRatio else { return }
+        let imageWidth = bounds.width
+        let imageHeight = imageWidth / CGFloat(aspectRatio)
+        let imageSize = CGSize(width: imageWidth, height: imageHeight)
         let labelY = newsText.frame.origin.y + newsText.frame.height + insetBetweenObjects
         let labelOrigin = CGPoint(x: 0, y: labelY)
         attachedImage.frame = CGRect(origin: labelOrigin, size: imageSize)
+        
+        attributeOriginY = attachedImage.frame.origin.y + attachedImage.frame.height + insetBetweenObjects
     }
     
 }

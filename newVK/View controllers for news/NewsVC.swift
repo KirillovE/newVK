@@ -114,7 +114,7 @@ extension NewsVC {
         queue.addOperation(getAvatarImage)
         OperationQueue.main.addOperation(setAvatarToRow)
         
-        guard let attachedImageURL = news[indexPath.row].imageURLs.first else { return }
+        let attachedImageURL = news[indexPath.row].attachedImageURL
         let getAttachedImage = GetCacheImage(url: attachedImageURL)
         let setAttachedToRow = SetImageToRow(cell: cell, imageView: cell.attachedImage, indexPath: indexPath, tableView: tableView)
         setAttachedToRow.addDependency(getAttachedImage)
