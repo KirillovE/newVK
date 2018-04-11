@@ -53,8 +53,8 @@ class NewsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        attributeOriginY = bounds.height - inset - attributeImageSize.height
         defaultOriginX = inset + avatar.frame.width + insetBetweenObjects
+        attributeOriginY = attachedImage.frame.origin.y + attachedImage.frame.height + insetBetweenObjects
     }
     
     override func layoutSubviews() {
@@ -127,10 +127,9 @@ extension NewsCell {
     
     func attachedImageFrame() {
         let imageHeight: CGFloat = 165
-        let imageWidth = bounds.width - inset * 2 - avatar.frame.width - insetBetweenObjects
-        let imageSize = CGSize(width: imageWidth, height: imageHeight)
+        let imageSize = CGSize(width: bounds.width, height: imageHeight)
         let labelY = newsText.frame.origin.y + newsText.frame.height + insetBetweenObjects
-        let labelOrigin = CGPoint(x: defaultOriginX, y: labelY)
+        let labelOrigin = CGPoint(x: 0, y: labelY)
         attachedImage.frame = CGRect(origin: labelOrigin, size: imageSize)
     }
     
