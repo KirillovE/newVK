@@ -44,7 +44,7 @@ class NewsCell: UITableViewCell {
     
     let inset: CGFloat = 10
     let insetBetweenObjects: CGFloat = 5
-    var defaultOriginX: CGFloat = 0                 // отступ для всех элементов, кроме аватара и атрибутов
+    var nameDateOriginX: CGFloat = 0
     let attributeImageSize = CGSize(width: 15, height: 15)
     var attributeOriginY: CGFloat = 0
     var attachedImageAspectRatio: Double?
@@ -54,7 +54,7 @@ class NewsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        defaultOriginX = inset + avatar.frame.width + insetBetweenObjects
+        nameDateOriginX = inset + avatar.frame.width + insetBetweenObjects
     }
     
     override func layoutSubviews() {
@@ -110,21 +110,21 @@ extension NewsCell {
     
     func authorNameFrame() {
         let labelSize = getLabelSize(text: authorName.text!, font: authorName.font)
-        let labelOrigin = CGPoint(x: defaultOriginX, y: inset)
+        let labelOrigin = CGPoint(x: nameDateOriginX, y: inset)
         authorName.frame = CGRect(origin: labelOrigin, size: labelSize)
     }
     
     func dateFrame() {
         let labelSize = getLabelSize(text: date.text!, font: date.font)
         let labelY = inset + avatar.frame.height - labelSize.height
-        let labelOrigin = CGPoint(x: defaultOriginX, y: labelY)
+        let labelOrigin = CGPoint(x: nameDateOriginX, y: labelY)
         date.frame = CGRect(origin: labelOrigin, size: labelSize)
     }
     
     func newsTextFrame() {
         let labelSize = getLabelSize(text: newsText.text!, font: newsText.font)
         let labelY = inset + avatar.frame.height + insetBetweenObjects
-        let labelOrigin = CGPoint(x: defaultOriginX, y: labelY)
+        let labelOrigin = CGPoint(x: inset, y: labelY)
         newsText.frame = CGRect(origin: labelOrigin, size: labelSize)
     }
     
@@ -147,7 +147,7 @@ extension NewsCell {
 extension NewsCell {
     
     func likeImageFrame() {
-        let labelOrigin = CGPoint(x: defaultOriginX, y: attributeOriginY)
+        let labelOrigin = CGPoint(x: inset, y: attributeOriginY)
         viewWithTag(1)?.frame = CGRect(origin: labelOrigin, size: attributeImageSize)
     }
     
