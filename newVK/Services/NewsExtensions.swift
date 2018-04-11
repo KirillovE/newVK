@@ -15,39 +15,17 @@ extension NewsRequest {
         var newsArray = [News]()
         
         for (_, item) in itemsArray {
-            let singlenews = News(json: item)
-            manageAtachments(from: item, to: singlenews)
-            if singlenews.sourceID >= 0 {
-                addProfileInfo(from: json, to: singlenews)
+            let singleNews = News(json: item)
+            manageAtachments(from: item, to: singleNews)
+            if singleNews.sourceID >= 0 {
+                addProfileInfo(from: json, to: singleNews)
             } else {
-                addGroupInfo(from: json, to: singlenews)
+                addGroupInfo(from: json, to: singleNews)
             }
-            newsArray.append(singlenews)
+            newsArray.append(singleNews)
         }
         
         return newsArray
-    }
-    
-    private func addProfileInfo(from json: JSON?, to news: News) {
-        let profilesArray = json!["response", "profiles"]
-        
-        for (_, item) in profilesArray {
-            if item["id"].intValue == news.sourceID {
-                news.name = item["first_name"].stringValue + " " + item["last_name"].stringValue
-                news.photoURL = item["photo_medium_rec"].stringValue
-            }
-        }
-    }
-    
-    private func addGroupInfo(from json: JSON?, to news: News) {
-        let groupsArray = json!["response", "groups"]
-        
-        for (_, item) in groupsArray {
-            if item["id"].intValue == -news.sourceID {
-                news.name = item["name"].stringValue
-                news.photoURL = item["photo_100"].stringValue
-            }
-        }
     }
     
     private func manageAtachments(from array: JSON, to news: News) {
@@ -68,6 +46,28 @@ extension NewsRequest {
                 news.imageURLs.append(photoURL)
             default:
                 break
+            }
+        }
+    }
+    
+    private func addProfileInfo(from json: JSON?, to news: News) {
+        let profilesArray = json!["response", "profiles"]
+        
+        for (_, item) in profilesArray {
+            if item["id"].intValue == news.sourceID {
+                news.name = item["first_name"].stringValue + " " + item["last_name"].stringValue
+                news.photoURL = item["photo_medium_rec"].stringValue
+            }
+        }
+    }
+    
+    private func addGroupInfo(from json: JSON?, to news: News) {
+        let groupsArray = json!["response", "groups"]
+        
+        for (_, item) in groupsArray {
+            if item["id"].intValue == -news.sourceID {
+                news.name = item["name"].stringValue
+                news.photoURL = item["photo_100"].stringValue
             }
         }
     }

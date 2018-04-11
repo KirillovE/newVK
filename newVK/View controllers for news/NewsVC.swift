@@ -121,11 +121,18 @@ extension NewsVC {
 extension NewsVC {
     
     func setImageFromCache(cell: NewsCell, indexPath: IndexPath) {
-        let getCacheImage = GetCacheImage(url: news[indexPath.row].photoURL)
-        let setImageToRow = SetImageToRow(cell: cell, imageView: cell.avatar, indexPath: indexPath, tableView: tableView)
-        setImageToRow.addDependency(getCacheImage)
-        queue.addOperation(getCacheImage)
-        OperationQueue.main.addOperation(setImageToRow)
+        let getAvatarImage = GetCacheImage(url: news[indexPath.row].photoURL)
+        let setAvatarToRow = SetImageToRow(cell: cell, imageView: cell.avatar, indexPath: indexPath, tableView: tableView)
+        setAvatarToRow.addDependency(getAvatarImage)
+        queue.addOperation(getAvatarImage)
+        OperationQueue.main.addOperation(setAvatarToRow)
+        
+        guard let attachedImageURL = news[indexPath.row].imageURLs.first else { return }
+        let getAttachedImage = GetCacheImage(url: attachedImageURL)
+        let setAttachedToRow = SetImageToRow(cell: cell, imageView: cell.attachedImage, indexPath: indexPath, tableView: tableView)
+        setAttachedToRow.addDependency(getAttachedImage)
+        queue.addOperation(getAttachedImage)
+        OperationQueue.main.addOperation(setAttachedToRow)
     }
     
 }
