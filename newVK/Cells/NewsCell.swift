@@ -83,37 +83,9 @@ class NewsCell: UITableViewCell {
         setComments(news.comments.count)
         setLikes(news.likes.count)
         setDate("\(news.time) \(news.day)")
-        
-        loadPhoto(from: news.photoURL)
-        avatar.layer.cornerRadius = avatar.frame.size.height / 2
-        
-        if let attachedImage = news.imageURLs.first {
-            loadAttachedImage(from: attachedImage)
-        }
-        
         getCellHeight()
-    }
-    
-    private func loadPhoto(from urlString: String) {
-        guard let url = URL(string: urlString) else { return }
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url) else { return }
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else { return }
-                self.avatar?.image = image
-            }
-        }
-    }
-    
-    private func loadAttachedImage(from urlString: String) {
-        guard let url = URL(string: urlString) else { return }
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url) else { return }
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else { return }
-                self.attachedImage?.image = image
-            }
-        }
+        
+        avatar.layer.cornerRadius = avatar.frame.size.height / 2
     }
     
     private func getCellHeight() {
