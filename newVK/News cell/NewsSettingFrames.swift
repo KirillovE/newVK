@@ -24,22 +24,22 @@ extension NewsCell {
     }
     
     func setLikes(_ count: Int) {
-        numberOfLikes.text = String(count)
+        numberOfLikes.text = formatter.formatInt(count)
         likeCountFrame()
     }
     
     func setComments(_ count: Int) {
-        numberOfComments.text = String(count)
+        numberOfComments.text = formatter.formatInt(count)
         commentsCountFrame()
     }
     
     func setReposts(_ count: Int) {
-        numberOfReposts.text = String(count)
+        numberOfReposts.text = formatter.formatInt(count)
         repostsCountFrame()
     }
     
     func setViews(_ count: Int) {
-        numberOfViews.text = String(count)
+        numberOfViews.text = formatter.formatInt(count)
         viewsCountFrame()
     }
     
