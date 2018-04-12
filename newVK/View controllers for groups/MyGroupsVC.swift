@@ -26,9 +26,7 @@ class MyGroupsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.global().async {
-            self.groupsRequest.getGroups()
-        }
+        self.groupsRequest.getGroups()
         pairTableAndRealm()
     }
     

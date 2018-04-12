@@ -23,12 +23,14 @@ class PhotosRequest {
                                       "v": apiVersion
         ]
         
-        sessionManager?.request(url! + method, parameters: parameters).responseJSON {[weak self] response in
-            guard let data = response.value else {return}
-            let json = JSON(data)
-            let photos = self?.appendPhotos(json: json)
-            let saving = SavingObjects()
-            saving.save(objectsArray: photos!)
+        sessionManager?.request(url! + method,
+                                parameters: parameters).responseJSON(queue: DispatchQueue.global())
+                                {[weak self] response in
+                                    guard let data = response.value else {return}
+                                    let json = JSON(data)
+                                    let photos = self?.appendPhotos(json: json)
+                                    let saving = SavingObjects()
+                                    saving.save(objectsArray: photos!)
         }
     }
     

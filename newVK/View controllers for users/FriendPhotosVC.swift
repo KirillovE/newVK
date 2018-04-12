@@ -22,9 +22,7 @@ class FriendPhotosVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.global().async {
-            self.photosRequest.makeRequest(for: self.ownerID)
-        }
+        self.photosRequest.makeRequest(for: self.ownerID)
         pairCollectionAndRealm()
     }
     

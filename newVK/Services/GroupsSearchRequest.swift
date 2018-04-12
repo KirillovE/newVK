@@ -34,11 +34,13 @@ class GroupsSearchRequest {
                                       "v": apiVersion
         ]
         
-        sessionManager?.request(url! + method, parameters: parameters).responseJSON {[weak self] response in
-            guard let data = response.value else {return}
-            let json = JSON(data)
-            guard let groups = self?.appendGroups(from: json) else { return }
-            completion(groups)
+        sessionManager?.request(url! + method,
+                                parameters: parameters).responseJSON(queue: DispatchQueue.global())
+                                {[weak self] response in
+                                    guard let data = response.value else {return}
+                                    let json = JSON(data)
+                                    guard let groups = self?.appendGroups(from: json) else { return }
+                                    completion(groups)
         }
     }
 

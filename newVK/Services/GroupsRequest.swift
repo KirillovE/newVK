@@ -28,12 +28,14 @@ class GroupsRequest {
                                       "v": apiVersion
         ]
         
-        sessionManager?.request(url! + method, parameters: parameters).responseJSON {[weak self] response in
-            guard let data = response.value else {return}
-            let json = JSON(data)
-            let groups = self?.appendGroups(json: json)
-            let saving = SavingObjects()
-            saving.save(objectsArray: groups!)
+        sessionManager?.request(url! + method,
+                                parameters: parameters).responseJSON(queue: DispatchQueue.global())
+                                {[weak self] response in
+                                    guard let data = response.value else {return}
+                                    let json = JSON(data)
+                                    let groups = self?.appendGroups(json: json)
+                                    let saving = SavingObjects()
+                                    saving.save(objectsArray: groups!)
         }
     }
     

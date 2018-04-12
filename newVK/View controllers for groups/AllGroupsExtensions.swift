@@ -17,12 +17,10 @@ extension AllGroupsVC: UISearchBarDelegate {
             return
         }
         
-        DispatchQueue.global().async {
-            self.searchRequest.makeRequest(groupToFind: searchText, numberOfResults: self.numberOfResultsToShow) { [weak self] groups in
-                self?.groups = groups
-            }
+        searchRequest.makeRequest(groupToFind: searchText, numberOfResults: self.numberOfResultsToShow) { [weak self] groups in
+            self?.groups = groups
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
         
