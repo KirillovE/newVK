@@ -49,8 +49,7 @@ class NewsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsCell
         
-        news[indexPath.row].day = formatter.formatDate(news[indexPath.row].date, outputFormat: .day)
-        news[indexPath.row].time = formatter.formatDate(news[indexPath.row].date, outputFormat: .time)
+        configureDate(forIndex: indexPath.row)
         setImageFromCache(cell: cell, indexPath: indexPath)
         cell.configure(for: news[indexPath.row])
         update(cell: cell, atIndex: indexPath, withHeight: cell.cellHeight)
@@ -100,6 +99,11 @@ extension NewsVC {
         setAttachedToRow.addDependency(getAttachedImage)
         queue.addOperation(getAttachedImage)
         OperationQueue.main.addOperation(setAttachedToRow)
+    }
+    
+    func configureDate(forIndex index: Int) {
+        news[index].day = formatter.formatDate(news[index].date, outputFormat: .day)
+        news[index].time = formatter.formatDate(news[index].date, outputFormat: .time)
     }
     
 }
