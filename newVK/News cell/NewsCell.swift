@@ -42,7 +42,7 @@ class NewsCell: UITableViewCell {
     
     // MARK: - Source data
     
-    let inset: CGFloat = 10
+    let inset: CGFloat = 15
     let insetBetweenObjects: CGFloat = 5
     var nameDateOriginX: CGFloat = 0
     let attributeImageSize = CGSize(width: 15, height: 15)
