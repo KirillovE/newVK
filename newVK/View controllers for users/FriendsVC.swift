@@ -27,9 +27,7 @@ class FriendsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.global().async {
-            self.friendsRequest.makeRequest()
-        }
+        self.friendsRequest.makeRequest()
         pairTableAndRealm()
     }
     

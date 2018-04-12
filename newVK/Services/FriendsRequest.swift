@@ -24,12 +24,14 @@ class FriendsRequest {
                                       "v": apiVersion
         ]
         
-        sessionManager?.request(url! + method, parameters: parameters).responseJSON {[weak self] response in
-            guard let data = response.value else {return}
-            let json = JSON(data)
-            let friends = self?.appendFriends(json: json)
-            let saving = SavingObjects()
-            saving.save(objectsArray: friends!)
+        sessionManager?.request(url! + method,
+                                parameters: parameters).responseJSON(queue: DispatchQueue.global())
+                                {[weak self] response in
+                                    guard let data = response.value else {return}
+                                    let json = JSON(data)
+                                    let friends = self?.appendFriends(json: json)
+                                    let saving = SavingObjects()
+                                    saving.save(objectsArray: friends!)
         }
     }
     
