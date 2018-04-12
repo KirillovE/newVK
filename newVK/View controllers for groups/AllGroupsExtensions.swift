@@ -9,6 +9,7 @@
 import UIKit
 
 extension AllGroupsVC: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
             groups.removeAll(keepingCapacity: false)
@@ -30,20 +31,6 @@ extension AllGroupsVC: UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         groups.removeAll(keepingCapacity: false)
         self.tableView.reloadData()
-    }
-    
-}
-
-extension AllGroupsVC {
-    
-    func formatInt(_ number: Int) -> String {
-        let niceNumber = formatter.string(from: NSNumber(integerLiteral: number))
-        
-        if let niceString = niceNumber {
-            return niceString
-        } else {
-            return "нет данных"
-        }
     }
     
 }

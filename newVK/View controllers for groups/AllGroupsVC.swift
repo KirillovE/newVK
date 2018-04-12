@@ -17,12 +17,7 @@ class AllGroupsVC: UITableViewController {
     var groups = [Group]()
     let numberOfResultsToShow = 50
 
-    let formatter: NumberFormatter = {
-        let fmtr = NumberFormatter()
-        fmtr.usesGroupingSeparator = true
-        fmtr.numberStyle = .decimal
-        return fmtr
-    }()
+    let formatter = IntFormatting()
     
     // MARK: -
     
@@ -41,7 +36,7 @@ class AllGroupsVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allGroups", for: indexPath) as! AllGroupsCell
         
         let membersCount = groups[indexPath.row].membersCount
-        cell.detailTextLabel?.text = "Подписчиков: " + formatInt(membersCount)
+        cell.detailTextLabel?.text = "Подписчиков: " + formatter.formatInt(membersCount)
         
         cell.configure(for: groups[indexPath.row])
 
