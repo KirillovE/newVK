@@ -49,7 +49,7 @@ class NewsCell: UITableViewCell {
     var attributeOriginY: CGFloat = 0
     var attachedImageAspectRatio: Double?
     var cellHeight: CGFloat?
-    let formatter = IntFormatting()
+    let formatter = Formatting()
     
     // MARK: - Methods
     

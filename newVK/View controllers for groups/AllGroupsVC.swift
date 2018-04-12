@@ -17,7 +17,7 @@ class AllGroupsVC: UITableViewController {
     var groups = [Group]()
     let numberOfResultsToShow = 50
 
-    let formatter = IntFormatting()
+    let formatter = Formatting()
     
     // MARK: -
     
