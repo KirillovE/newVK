@@ -86,7 +86,11 @@ class NewsCell: UITableViewCell {
         setDate("\(news.time) \(news.day)")
         getCellHeight()
         
-        avatar.layer.cornerRadius = avatar.frame.size.height / 2
+        if news.sourceID < 0 {
+            avatar.layer.cornerRadius = avatar.frame.size.height / 4
+        } else {
+            avatar.layer.cornerRadius = avatar.frame.size.height / 2
+        }
         
         if news.attachedImageURL != "" {
             attachedImageAspectRatio = news.attachedImageWidth / news.attachedImageHeight
