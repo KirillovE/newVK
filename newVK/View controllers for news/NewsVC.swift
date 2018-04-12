@@ -17,23 +17,12 @@ class NewsVC: UITableViewController {
     let newsRequest = NewsRequest()
     let requestFilter = "post"
     var news = [News]()
+    let formatter = Formatting()
     
     let queue: OperationQueue = {
         let queue = OperationQueue()
         queue.qualityOfService = .userInteractive
         return queue
-    }()
-    
-    let dateFormatterForDay: DateFormatter = {
-        let fmtr = DateFormatter()
-        fmtr.dateFormat = "dd.MM.yyyy"
-        return fmtr
-    }()
-    
-    let dateFormatterForTime: DateFormatter = {
-        let fmtr = DateFormatter()
-        fmtr.dateFormat = "HH.mm"
-        return fmtr
     }()
     
     // MARK: -
@@ -60,7 +49,8 @@ class NewsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsCell
         
-        formatDate(forNews: &news[indexPath.row])
+        news[indexPath.row].day = formatter.formatDate(news[indexPath.row].date, outputFormat: .day)
+        news[indexPath.row].time = formatter.formatDate(news[indexPath.row].date, outputFormat: .time)
         setImageFromCache(cell: cell, indexPath: indexPath)
         cell.configure(for: news[indexPath.row])
         update(cell: cell, atIndex: indexPath, withHeight: cell.cellHeight)
@@ -94,16 +84,6 @@ class NewsVC: UITableViewController {
 }
 
 // MARK: - Extensions
-
-extension NewsVC {
-    
-    func formatDate(forNews news: inout News) {
-        let numberDate = Date(timeIntervalSince1970: news.date)
-        news.day = dateFormatterForDay.string(from: numberDate)
-        news.time = dateFormatterForTime.string(from: numberDate)
-    }
-    
-}
 
 extension NewsVC {
     
