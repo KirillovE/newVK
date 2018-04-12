@@ -30,14 +30,14 @@ class NewsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.global().async {
-            self.newsRequest.makeRequest(filter: self.requestFilter) { [weak self] news in
-                self?.news = news
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
+        
+        newsRequest.makeRequest(filter: self.requestFilter) { [weak self] news in
+            self?.news = news
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
             }
         }
+        
     }
 
     // MARK: - Table view data source
