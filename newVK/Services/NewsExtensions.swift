@@ -15,6 +15,8 @@ extension NewsRequest {
         var newsArray = [News]()
         
         for (_, item) in itemsArray {
+            guard item["type"].stringValue == "post" else { continue }
+            
             let singleNews = News(json: item)
             manageAtachments(from: item, to: singleNews)
             if singleNews.sourceID >= 0 {
