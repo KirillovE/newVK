@@ -10,11 +10,6 @@ import Foundation
 
 class Formatting {
     
-    enum DateOutputFormat: String {
-        case day = "dd.MM.yyyy"
-        case time = "HH.mm"
-    }
-    
     private let intFormatter: NumberFormatter = {
         let fmtr = NumberFormatter()
         fmtr.usesGroupingSeparator = true
@@ -34,12 +29,25 @@ class Formatting {
         }
     }
     
-    func formatDate(_ date: Double, outputFormat: DateOutputFormat) -> String {
-        dateFormatter.dateFormat = outputFormat.rawValue
+    func formatDate(_ date: Double, outputFormat: String) -> String {
+        dateFormatter.dateFormat = outputFormat
         let numberDate = Date(timeIntervalSince1970: date)
         let formattedDate = dateFormatter.string(from: numberDate)
         
         return formattedDate
     }
     
+}
+
+extension Formatting {
+    
+    enum DateOutputFormat: String {
+        case day = "dd.MM.yyyy"
+        case time = "HH.mm"
+    }
+    
+    func formatDate(_ date: Double, outputFormat: DateOutputFormat) -> String {
+        return formatDate(date, outputFormat: outputFormat.rawValue)
+    }
+
 }
