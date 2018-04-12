@@ -16,8 +16,13 @@ class AllGroupsVC: UITableViewController {
     let searchRequest = GroupsSearchRequest()
     var groups = [Group]()
     let numberOfResultsToShow = 50
-
     let formatter = Formatting()
+    
+    let queue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .userInteractive
+        return queue
+    }()
     
     // MARK: -
     
@@ -39,6 +44,12 @@ class AllGroupsVC: UITableViewController {
         cell.detailTextLabel?.text = "Подписчиков: " + formatter.formatInt(membersCount)
         
         cell.configure(for: groups[indexPath.row])
+        
+        let getCacheImage = GetCacheImage(url: groups[indexPath.row].photoURL)
+        let setImageToRow = SetImageToRow(cell: cell, imageView: cell.imageView!, indexPath: indexPath, tableView: tableView)
+        setImageToRow.addDependency(getCacheImage)
+        queue.addOperation(getCacheImage)
+        OperationQueue.main.addOperation(setImageToRow)
 
         return cell
     }
