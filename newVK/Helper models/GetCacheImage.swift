@@ -8,9 +8,17 @@
 
 import UIKit
 
+enum ConvenientTimeInterval: TimeInterval {
+    case minute = 60
+    case hour = 3_600
+    case day = 86_400
+    case week = 604_800
+    case month = 2_592_000
+}
+
 class GetCacheImage: Operation {
     
-    private let cacheLifeTime: TimeInterval = 2_592_000
+    private let cacheLifeTime: ConvenientTimeInterval
     private static let pathName: String = {
         let pathName = "images"
         
@@ -39,8 +47,9 @@ class GetCacheImage: Operation {
         return cachesDirectory.appendingPathComponent(GetCacheImage.pathName + "/" + hashName).path
     }()
     
-    init(url: String) {
+    init(url: String, lifeTime: ConvenientTimeInterval) {
         self.url = url
+        self.cacheLifeTime = lifeTime
     }
     
     override func main() {
@@ -64,7 +73,7 @@ class GetCacheImage: Operation {
         
         let lifeTime = Date().timeIntervalSince(modificationDate)
         
-        guard lifeTime <= cacheLifeTime,
+        guard lifeTime <= cacheLifeTime.rawValue,
             let image = UIImage(contentsOfFile: fileName) else {
                 return false
         }

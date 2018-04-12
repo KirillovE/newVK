@@ -44,7 +44,7 @@ class MyGroupsVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myGroups", for: indexPath) as! MyGroupsCell
         cell.configure(for: groups[indexPath.row])
         
-        let getCacheImage = GetCacheImage(url: groups[indexPath.row].photoURL)
+        let getCacheImage = GetCacheImage(url: groups[indexPath.row].photoURL, lifeTime: .month)
         let setImageToRow = SetImageToRow(cell: cell, imageView: cell.imageView!, indexPath: indexPath, tableView: tableView)
         setImageToRow.addDependency(getCacheImage)
         queue.addOperation(getCacheImage)

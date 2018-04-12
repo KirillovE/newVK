@@ -45,7 +45,7 @@ class AllGroupsVC: UITableViewController {
         
         cell.configure(for: groups[indexPath.row])
         
-        let getCacheImage = GetCacheImage(url: groups[indexPath.row].photoURL)
+        let getCacheImage = GetCacheImage(url: groups[indexPath.row].photoURL, lifeTime: .minute)
         let setImageToRow = SetImageToRow(cell: cell, imageView: cell.imageView!, indexPath: indexPath, tableView: tableView)
         setImageToRow.addDependency(getCacheImage)
         queue.addOperation(getCacheImage)

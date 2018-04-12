@@ -87,14 +87,14 @@ class NewsVC: UITableViewController {
 extension NewsVC {
     
     func setImageFromCache(cell: NewsCell, indexPath: IndexPath) {
-        let getAvatarImage = GetCacheImage(url: news[indexPath.row].photoURL)
+        let getAvatarImage = GetCacheImage(url: news[indexPath.row].photoURL, lifeTime: .month)
         let setAvatarToRow = SetImageToRow(cell: cell, imageView: cell.avatar, indexPath: indexPath, tableView: tableView)
         setAvatarToRow.addDependency(getAvatarImage)
         queue.addOperation(getAvatarImage)
         OperationQueue.main.addOperation(setAvatarToRow)
         
         let attachedImageURL = news[indexPath.row].attachedImageURL
-        let getAttachedImage = GetCacheImage(url: attachedImageURL)
+        let getAttachedImage = GetCacheImage(url: attachedImageURL, lifeTime: .day)
         let setAttachedToRow = SetImageToRow(cell: cell, imageView: cell.attachedImage, indexPath: indexPath, tableView: tableView)
         setAttachedToRow.addDependency(getAttachedImage)
         queue.addOperation(getAttachedImage)
