@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>986680223832-3t0psk8ik74fmtc2nleu6hqqq7q6l884.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.986680223832-3t0psk8ik74fmtc2nleu6hqqq7q6l884</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAHupOh9edLWHtlfin9n1hK67On8B4nU_0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>986680223832</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Triad.newVK</string>
+	<key>PROJECT_ID</key>
+	<string>newvk-swift</string>
+	<key>STORAGE_BUCKET</key>
+	<string>newvk-swift.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:986680223832:ios:b71f0b77d61d8a7d</string>
+	<key>DATABASE_URL</key>
+	<string>https://newvk-swift.firebaseio.com</string>
+</dict>
+</plist>

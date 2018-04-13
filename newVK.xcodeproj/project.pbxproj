@@ -41,6 +41,7 @@
 		3EC6D5942067988F009F92A2 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D5932067988F009F92A2 /* NewsCell.swift */; };
 		3EC6D59720692C84009F92A2 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59620692C84009F92A2 /* MessagesVC.swift */; };
 		3EC6D59A20692D2E009F92A2 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59920692D2E009F92A2 /* MessageCell.swift */; };
+		3EF19F1C2080EDF0009B9BE5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EF19F1B2080EDEF009B9BE5 /* GoogleService-Info.plist */; };
 		3EF77F05207B8FE100963AE7 /* AllGroupsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF77F04207B8FE100963AE7 /* AllGroupsExtensions.swift */; };
 		3EF77F07207F2C9C00963AE7 /* NewsMainFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF77F06207F2C9C00963AE7 /* NewsMainFrames.swift */; };
 		3EF77F09207F2CDD00963AE7 /* NewsAttributesFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF77F08207F2CDD00963AE7 /* NewsAttributesFrames.swift */; };
@@ -88,6 +89,7 @@
 		3EC6D5932067988F009F92A2 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		3EC6D59620692C84009F92A2 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		3EC6D59920692D2E009F92A2 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		3EF19F1B2080EDEF009B9BE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3EF77F04207B8FE100963AE7 /* AllGroupsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsExtensions.swift; sourceTree = "<group>"; };
 		3EF77F06207F2C9C00963AE7 /* NewsMainFrames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsMainFrames.swift; sourceTree = "<group>"; };
 		3EF77F08207F2CDD00963AE7 /* NewsAttributesFrames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAttributesFrames.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				3E618434203717DB00A68D16 /* Main.storyboard */,
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
 				3E61843C203717DB00A68D16 /* Info.plist */,
+				3EF19F1B2080EDEF009B9BE5 /* GoogleService-Info.plist */,
 				3E7D1217204ED1BE001E4D9C /* Models from VK */,
 				3EF9A4FF20764AED00CD574C /* Helper models */,
 				3E0FEF83204ACD41006DE640 /* Services */,
@@ -291,7 +294,6 @@
 				3E61842A203717DB00A68D16 /* Frameworks */,
 				3E61842B203717DB00A68D16 /* Resources */,
 				324E27A980516C0F273EEC7F /* [CP] Embed Pods Frameworks */,
-				BF399176EB4CC287C2618045 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E61843B203717DB00A68D16 /* LaunchScreen.storyboard in Resources */,
+				3EF19F1C2080EDF0009B9BE5 /* GoogleService-Info.plist in Resources */,
 				3E618438203717DB00A68D16 /* Assets.xcassets in Resources */,
 				3E618436203717DB00A68D16 /* Main.storyboard in Resources */,
 			);
@@ -358,37 +361,26 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-newVK/Pods-newVK-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-newVK/Pods-newVK-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF399176EB4CC287C2618045 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-newVK/Pods-newVK-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D5A3EB05ED719DD168FF33CF /* [CP] Check Pods Manifest.lock */ = {
