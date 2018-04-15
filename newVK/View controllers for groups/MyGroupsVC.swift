@@ -82,7 +82,7 @@ class MyGroupsVC: UITableViewController {
                 do {
                     let realm = try Realm()
                     try realm.write {
-                        realm.add(groupToJoin)
+                        realm.add(groupToJoin, update: true)
                     }
                 } catch {
                     print(error)
