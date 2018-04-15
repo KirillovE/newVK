@@ -104,6 +104,7 @@ extension WebKitVC: WKNavigationDelegate {
 extension WebKitVC {
     
     func loadToFirebase(authorizedUser id: String?) {
+        let userDefaults = UserDefaults.standard
         guard let userID = id else { return }
         let ref = Database.database().reference()
         let dict = ["ID": userID]
@@ -117,11 +118,13 @@ extension WebKitVC {
                 for (index, user) in usersArray.enumerated() {
                     if userID == user["ID"].stringValue {
                         print("номер совпавшего элемента \(index)")
+                        userDefaults.set(index, forKey: "numberOfUserInFireBase")
                         return
                     }
                 }
                 let newIndex = String(usersArray.count)
                 ref.child("Users").updateChildValues([newIndex: dict])
+                userDefaults.set(newIndex, forKey: "numberOfUserInFireBase")
             }
         }
         
