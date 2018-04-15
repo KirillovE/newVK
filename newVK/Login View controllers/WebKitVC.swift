@@ -105,7 +105,7 @@ extension WebKitVC {
     func loadToFirebase(authorizedUser id: String?) {
         guard let userID = id else { return }
         let ref = Database.database().reference()
-        ref.child("User \(userID)").setValue(userID)
+        ref.child("Users/ \(userID)").setValue(userID)
     }
     
 }

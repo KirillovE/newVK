@@ -91,8 +91,8 @@ class MyGroupsVC: UITableViewController {
                 let userDefaults = UserDefaults.standard
                 guard let userID = userDefaults.string(forKey: "user_id") else { return }
                 let ref = Database.database().reference()
-                let key = ref.child("User \(userID)/Groups").childByAutoId().key
-                ref.updateChildValues(["User \(userID)/Groups/ \(key)": groupToJoin.id])
+                let key = ref.child("Users/ \(userID)/Groups").childByAutoId().key
+                ref.updateChildValues(["Users/ \(userID)/Groups/ \(key)": groupToJoin.id])
             }
         }
     }
