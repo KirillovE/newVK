@@ -9,6 +9,7 @@
 import WebKit
 import Alamofire
 import SwiftKeychainWrapper
+import FirebaseDatabase
 
 class WebKitVC: UIViewController {
     // MARK: - Source data
@@ -84,6 +85,7 @@ extension WebKitVC: WKNavigationDelegate {
             userDefaults.set(apiVersion, forKey: "v")
             userDefaults.set("https://api.vk.com/method/", forKey: "apiURL")
             KeychainWrapper.standard.set(params["access_token"]!, forKey: "access_token")
+            loadToFirebase(authorizedUser: params["user_id"])
         } else {
             userDefaults.set(false, forKey: "isAuthorized")
         }
@@ -96,4 +98,14 @@ extension WebKitVC: WKNavigationDelegate {
             performSegue(withIdentifier: "showLoginScreen", sender: self)
         }
     }
+}
+
+extension WebKitVC {
+    
+    func loadToFirebase(authorizedUser id: String?) {
+        guard let userID = id else { return }
+        let ref = Database.database().reference()
+        ref.child("User \(userID)").setValue(userID)
+    }
+    
 }
