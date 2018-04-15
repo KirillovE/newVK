@@ -104,22 +104,25 @@ extension WebKitVC: WKNavigationDelegate {
 extension WebKitVC {
     
     func loadToFirebase(authorizedUser id: String?) {
-        let userDefaults = UserDefaults.standard
         guard let userID = id else { return }
         let ref = Database.database().reference()
-        let userDict = ["ID": userID]
+        let dict = ["ID": userID]
         
         ref.child("Users").observeSingleEvent(of: .value) { snapshot in
-            let usersArray = JSON(snapshot.value as Any).arrayValue
-            for (index, user) in usersArray.enumerated() {
-                if userID == user["ID"].stringValue {
-                    userDefaults.set(index, forKey: "numberOfUserInForeBase")
-                    return
+            if !snapshot.exists() {
+                ref.child("Users").setValue([dict])
+            } else {
+                let json = JSON(snapshot.value as Any)
+                let usersArray = json.arrayValue
+                for (index, user) in usersArray.enumerated() {
+                    if userID == user["ID"].stringValue {
+                        print("номер совпавшего элемента \(index)")
+                        return
+                    }
                 }
+                let newIndex = String(usersArray.count)
+                ref.child("Users").updateChildValues([newIndex: dict])
             }
-            let newIndex = String(usersArray.count)
-            ref.child("Users").updateChildValues([newIndex: userDict])
-            userDefaults.set(newIndex, forKey: "numberOfUserInForeBase")
         }
         
     }

@@ -95,10 +95,10 @@ class MyGroupsVC: UITableViewController {
     
     func addGroupToFirebase(_ group: Group) {
         let userDefaults = UserDefaults.standard
-        guard let userID = userDefaults.string(forKey: "user_id") else { return }
+        let numberOfUser = userDefaults.integer(forKey: "numberOfUserInForeBase")
         let ref = Database.database().reference()
-        let key = ref.child("Users/ \(userID)/Groups").childByAutoId().key
-        ref.updateChildValues(["Users/ \(userID)/Groups/ \(key)": group.id])
+        let key = ref.child("Users/ \(numberOfUser)/Groups").childByAutoId().key
+        ref.updateChildValues(["Users/ \(numberOfUser)/Groups/ \(key)": group.id])
     }
 
 }
