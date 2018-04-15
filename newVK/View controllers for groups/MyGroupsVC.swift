@@ -7,6 +7,7 @@
 //
 
 import RealmSwift
+import FirebaseDatabase
 
 class MyGroupsVC: UITableViewController {
     
@@ -86,6 +87,11 @@ class MyGroupsVC: UITableViewController {
                 } catch {
                     print(error)
                 }
+                
+                let userDefaults = UserDefaults.standard
+                guard let userID = userDefaults.string(forKey: "user_id") else { return }
+                let ref = Database.database().reference()
+                ref.child("User \(userID)").setValue(groupToJoin.id)
             }
         }
     }
