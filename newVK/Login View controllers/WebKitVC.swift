@@ -10,6 +10,7 @@ import WebKit
 import Alamofire
 import SwiftKeychainWrapper
 import FirebaseDatabase
+import SwiftyJSON
 
 class WebKitVC: UIViewController {
     // MARK: - Source data
@@ -105,7 +106,20 @@ extension WebKitVC {
     func loadToFirebase(authorizedUser id: String?) {
         guard let userID = id else { return }
         let ref = Database.database().reference()
-        ref.child("Users/ \(userID)").setValue(userID)
+        let userDict = ["ID": userID]
+        
+        ref.child("Users").observeSingleEvent(of: .value) { snapshot in
+                let usersArray = JSON(snapshot.value as Any).arrayValue
+                for (index, user) in usersArray.enumerated() {
+                    if userID == user["ID"].stringValue {
+                        print("номер совпавшего элемента \(index)")
+                        return
+                    }
+                }
+                let newIndex = String(usersArray.count)
+                ref.child("Users").updateChildValues([newIndex: userDict])
+        }
+        
     }
     
 }
