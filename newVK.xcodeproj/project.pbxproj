@@ -130,12 +130,6 @@
 			children = (
 				3EEDFDEB20847EF90094A7DA /* WorkWithFirebase.swift */,
 				3EF77F0F207F3BEB00963AE7 /* Formatting.swift */,
-				3EAC58E12062D22100A2DE4A /* LeaveAccount.swift */,
-				3E21A025206D1CAE0011D287 /* NewsRequest.swift */,
-				3E0FEF7D204ABE4C006DE640 /* FriendsRequest.swift */,
-				3EAC58DB20624B2300A2DE4A /* PhotosRequest.swift */,
-				3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */,
-				3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */,
 				3EAC58D920619DF800A2DE4A /* SavingObjects.swift */,
 				3EB51CB42084DFF0005B7EF8 /* ImagesFromWeb.swift */,
 			);
@@ -188,6 +182,7 @@
 			children = (
 				3E618434203717DB00A68D16 /* Main.storyboard */,
 				3E7D1217204ED1BE001E4D9C /* Models from VK */,
+				3EB51CB62084E4CF005B7EF8 /* VK API Requests */,
 				3E0FEF83204ACD41006DE640 /* Services */,
 				3E48210B204BFD11009639FC /* Login View controllers */,
 				3EC6D595206798A5009F92A2 /* Other view controllers */,
@@ -212,6 +207,19 @@
 				3E7D1215204ED147001E4D9C /* Group.swift */,
 			);
 			path = "Models from VK";
+			sourceTree = "<group>";
+		};
+		3EB51CB62084E4CF005B7EF8 /* VK API Requests */ = {
+			isa = PBXGroup;
+			children = (
+				3EAC58E12062D22100A2DE4A /* LeaveAccount.swift */,
+				3E21A025206D1CAE0011D287 /* NewsRequest.swift */,
+				3E0FEF7D204ABE4C006DE640 /* FriendsRequest.swift */,
+				3EAC58DB20624B2300A2DE4A /* PhotosRequest.swift */,
+				3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */,
+				3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */,
+			);
+			path = "VK API Requests";
 			sourceTree = "<group>";
 		};
 		3EC6D595206798A5009F92A2 /* Other view controllers */ = {
