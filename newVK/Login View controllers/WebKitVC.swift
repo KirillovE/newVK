@@ -112,17 +112,25 @@ extension WebKitVC {
         ref.child("Users").observeSingleEvent(of: .value) { snapshot in
             let json = JSON(snapshot.value as Any)
             let usersArray = json.arrayValue
-            for (index, userDict) in usersArray.enumerated() {
-                if userID == userDict["ID"].stringValue {
-                    userDefaults.set(index, forKey: "numberOfUserInFireBase")
-                    return
-                }
+            
+            if let indexOfUser = self.indexOf(id: userID, in: usersArray) {
+                userDefaults.set(indexOfUser, forKey: "numberOfUserInFireBase")
+            } else {
+                let newIndex = String(usersArray.count)
+                ref.child("Users").updateChildValues([newIndex: dict])
+                userDefaults.set(newIndex, forKey: "numberOfUserInFireBase")
             }
-            let newIndex = String(usersArray.count)
-            ref.child("Users").updateChildValues([newIndex: dict])
-            userDefaults.set(newIndex, forKey: "numberOfUserInFireBase")
         }
         
+    }
+    
+    func indexOf(id: String, in array: [JSON]) -> String? {
+        for (index, userDict) in array.enumerated() {
+            if id == userDict["ID"].stringValue {
+                return String(index)
+            }
+        }
+        return nil
     }
     
 }
