@@ -7,6 +7,7 @@
 //
 
 import RealmSwift
+import AlamofireImage
 
 private let reuseIdentifier = "ownerPhotos"
 
@@ -17,6 +18,7 @@ class OwnerVC: UICollectionViewController {
     var photos: Results<Photo>!
     var token: NotificationToken?
     let leaveRequest = LeaveAccount()
+    let downloader = ImageDownloader()
     
     // MARK: - View Controller life cycle
     
@@ -42,6 +44,7 @@ class OwnerVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! OwnerPhotosCell
         cell.configure(for: photos[indexPath.row])
+        setImage(fromPath: photos[indexPath.row].smallPhotoURL, to: cell.ownerPhoto)
         
         return cell
     }
@@ -82,6 +85,20 @@ extension OwnerVC {
                 })
             case .error(let error):
                 print(error.localizedDescription)
+            }
+        }
+    }
+    
+}
+
+extension OwnerVC {
+    
+    func setImage(fromPath urlString: String, to imageView: UIImageView) {
+        guard let url = URL(string: urlString) else { return }
+        let urlRequest = URLRequest(url: url)
+        downloader.download(urlRequest) { response in
+            if let image = response.result.value {
+                imageView.image = image
             }
         }
     }
