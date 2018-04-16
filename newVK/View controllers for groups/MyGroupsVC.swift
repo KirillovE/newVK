@@ -27,7 +27,6 @@ class MyGroupsVC: UITableViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.groupsRequest.getGroups()
         pairTableAndRealm()
     }
@@ -70,8 +69,7 @@ class MyGroupsVC: UITableViewController {
         }
     }
 
-    
-    // MARK: - Navigation
+    // MARK: -
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
         if segue.identifier == "addGroup" {
@@ -89,31 +87,8 @@ class MyGroupsVC: UITableViewController {
                     print(error)
                 }
                 
-                addGroupToFirebase(groupToJoin)
-            }
-        }
-    }
-    
-    func addGroupToFirebase(_ group: Group) {
-        let groupID = String(group.id)
-        let userDefaults = UserDefaults.standard
-        let numberOfUser = userDefaults.integer(forKey: "numberOfUserInFireBase")
-        let ref = Database.database().reference()
-    
-        ref.child("Users/\(numberOfUser)/Groups").observeSingleEvent(of: .value) { snapshot in
-            if !snapshot.exists() {
-                ref.child("Users/\(numberOfUser)/Groups").setValue([groupID])
-            } else {
-                let json = JSON(snapshot.value as Any)
-                let groupsArray = json.arrayValue
-                for (index, group) in groupsArray.enumerated() {
-                    if groupID == group.stringValue {
-                        print("номер совпавшего элемента \(index)")
-                        return
-                    }
-                }
-                let newIndex = String(groupsArray.count)
-                ref.child("Users/\(numberOfUser)/Groups").updateChildValues([newIndex: groupID])
+                let fireBase = WorkWithFirebase()
+                fireBase.addGroup(groupToJoin)
             }
         }
     }
