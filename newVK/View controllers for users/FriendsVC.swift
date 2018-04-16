@@ -7,6 +7,7 @@
 //
 
 import RealmSwift
+import AlamofireImage
 
 class FriendsVC: UITableViewController {
     
@@ -16,11 +17,7 @@ class FriendsVC: UITableViewController {
     var friends: Results<User>!
     var token: NotificationToken?
     let leaveRequest = LeaveAccount()
-    let queue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.qualityOfService = .userInteractive
-        return queue
-    }()
+    let downloader = ImageDownloader()
     
     // MARK: - View controller life cycle
     
@@ -44,12 +41,7 @@ class FriendsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath) as! FriendsCell
         cell.configure(for: friends[indexPath.row])
-        
-        let getCacheImage = GetCacheImage(url: friends[indexPath.row].avatarURL, lifeTime: .month)
-        let setImageToRow = SetImageToRow(cell: cell, imageView: cell.imageView!, indexPath: indexPath, tableView: tableView)
-        setImageToRow.addDependency(getCacheImage)
-        queue.addOperation(getCacheImage)
-        OperationQueue.main.addOperation(setImageToRow)
+        setImage(fromPath: friends[indexPath.row].avatarURL, to: cell.imageView!)
         
         return cell
     }
@@ -88,6 +80,20 @@ extension FriendsVC {
                 tableView.endUpdates()
             case .error(let error):
                 print(error.localizedDescription)
+            }
+        }
+    }
+    
+}
+
+extension FriendsVC {
+    
+    func setImage(fromPath urlString: String, to imageView: UIImageView) {
+        guard let url = URL(string: urlString) else { return }
+        let urlRequest = URLRequest(url: url)
+        downloader.download(urlRequest) { response in
+            if let image = response.result.value {
+                imageView.image = image
             }
         }
     }
