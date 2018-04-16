@@ -12,33 +12,15 @@ class NewsCell: UITableViewCell {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var avatar: UIImageView! {
-        didSet { avatar.translatesAutoresizingMaskIntoConstraints = false }
-    }
-    @IBOutlet weak var authorName: UILabel! {
-        didSet { authorName.translatesAutoresizingMaskIntoConstraints = false }
-    }
-    @IBOutlet weak var newsText: UILabel! {
-        didSet { newsText.translatesAutoresizingMaskIntoConstraints = false }
-    }
-    @IBOutlet weak var numberOfViews: UILabel! {
-        didSet { numberOfViews.translatesAutoresizingMaskIntoConstraints = false }
-    }
-    @IBOutlet weak var numberOfReposts: UILabel! {
-        didSet { numberOfReposts.translatesAutoresizingMaskIntoConstraints = false }
-    }
-    @IBOutlet weak var numberOfComments: UILabel! {
-        didSet { numberOfComments.translatesAutoresizingMaskIntoConstraints = false }
-    }
-    @IBOutlet weak var numberOfLikes: UILabel! {
-        didSet { numberOfLikes.translatesAutoresizingMaskIntoConstraints = false }
-    }
-    @IBOutlet weak var date: UILabel! {
-        didSet { date.translatesAutoresizingMaskIntoConstraints = false }
-    }
-    @IBOutlet weak var attachedImage: UIImageView! {
-        didSet { attachedImage.translatesAutoresizingMaskIntoConstraints = false }
-    }
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var authorName: UILabel!
+    @IBOutlet weak var newsText: UILabel!
+    @IBOutlet weak var numberOfViews: UILabel!
+    @IBOutlet weak var numberOfReposts: UILabel!
+    @IBOutlet weak var numberOfComments: UILabel!
+    @IBOutlet weak var numberOfLikes: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var attachedImage: UIImageView!
     
     // MARK: - Source data
     
@@ -55,6 +37,8 @@ class NewsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        [avatar, authorName, newsText, numberOfViews, numberOfReposts, numberOfComments, numberOfLikes, date, attachedImage].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
         nameDateOriginX = inset + avatar.frame.width + insetBetweenObjects
     }
     
