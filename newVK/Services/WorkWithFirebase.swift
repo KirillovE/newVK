@@ -50,15 +50,20 @@ class WorkWithFirebase {
         ref.child("Users/\(numberOfUser)/Groups").observeSingleEvent(of: .value) { snapshot in
             let json = JSON(snapshot.value as Any)
             let groupsArray = json.arrayValue
-            for (index, id) in groupsArray.enumerated() {
-                if groupID == id.stringValue {
-                    print("номер совпавшего элемента \(index)")
-                    return
-                }
-            }
+            guard !self.alreadyHas(groupWithID: groupID, in: groupsArray) else { return }
+            
             let newIndex = String(groupsArray.count)
             ref.child("Users/\(numberOfUser)/Groups").updateChildValues([newIndex: groupID])
         }
+    }
+    
+    private func alreadyHas(groupWithID id: String, in array: [JSON]) -> Bool {
+        for item in array {
+            if id == item.stringValue {
+                return true
+            }
+        }
+        return false
     }
     
 }
