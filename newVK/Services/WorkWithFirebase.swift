@@ -18,16 +18,16 @@ class WorkWithFirebase {
         let ref = Database.database().reference()
         let dict = ["ID": userID]
         
-        ref.child("Users").observeSingleEvent(of: .value) { [weak self] snapshot in
+        ref.child("Users").observeSingleEvent(of: .value) { snapshot in
             let json = JSON(snapshot.value as Any)
             let usersArray = json.arrayValue
             
-            if let indexOfUser = self?.indexOf(id: userID, in: usersArray) {
-                self?.userDefaults.set(indexOfUser, forKey: "numberOfUserInFireBase")
+            if let indexOfUser = self.indexOf(id: userID, in: usersArray) {
+                self.userDefaults.set(indexOfUser, forKey: "numberOfUserInFirebase")
             } else {
                 let newIndex = String(usersArray.count)
                 ref.child("Users").updateChildValues([newIndex: dict])
-                self?.userDefaults.set(newIndex, forKey: "numberOfUserInFireBase")
+                self.userDefaults.set(newIndex, forKey: "numberOfUserInFirebase")
             }
         }
         
@@ -44,24 +44,24 @@ class WorkWithFirebase {
     
     func addGroup(_ group: Group) {
         let groupID = String(group.id)
-        let numberOfUser = userDefaults.integer(forKey: "numberOfUserInFireBase")
+        let numberOfUser = userDefaults.integer(forKey: "numberOfUserInFirebase")
         let ref = Database.database().reference()
         
         ref.child("Users/\(numberOfUser)/Groups").observeSingleEvent(of: .value) { snapshot in
-            if !snapshot.exists() {
-                ref.child("Users/\(numberOfUser)/Groups").setValue([groupID])
-            } else {
+//            if !snapshot.exists() {
+//                ref.child("Users/\(numberOfUser)/Groups").setValue([groupID])
+//            } else {
                 let json = JSON(snapshot.value as Any)
                 let groupsArray = json.arrayValue
-                for (index, group) in groupsArray.enumerated() {
-                    if groupID == group.stringValue {
+                for (index, id) in groupsArray.enumerated() {
+                    if groupID == id.stringValue {
                         print("номер совпавшего элемента \(index)")
                         return
                     }
                 }
                 let newIndex = String(groupsArray.count)
                 ref.child("Users/\(numberOfUser)/Groups").updateChildValues([newIndex: groupID])
-            }
+//            }
         }
     }
     
