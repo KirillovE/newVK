@@ -7,8 +7,6 @@
 //
 
 import RealmSwift
-import FirebaseDatabase
-import SwiftyJSON
 
 class MyGroupsVC: UITableViewController {
     
