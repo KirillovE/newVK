@@ -235,7 +235,7 @@
         <!--Фотоальбом-->
         <scene sceneID="uFd-bg-iLu">
             <objects>
-                <collectionViewController hidesBottomBarWhenPushed="YES" id="B9B-Mg-7AP" customClass="OwnerVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="B9B-Mg-7AP" customClass="OwnerVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="VBn-Nf-AL9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -292,7 +292,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYz-xQ-s5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NXG-Xk-eJU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3919" y="-839"/>
+            <point key="canvasLocation" x="3922" y="-547"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="EPZ-MO-kAw">
@@ -395,7 +395,7 @@
         <!--Все группы-->
         <scene sceneID="l6w-XL-eQs">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="PmN-Zr-pDk" customClass="AllGroupsVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="PmN-Zr-pDk" customClass="AllGroupsVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9jN-E5-bs9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -459,7 +459,7 @@
         <!--Фотоальбом-->
         <scene sceneID="rHf-jr-LBz">
             <objects>
-                <collectionViewController hidesBottomBarWhenPushed="YES" id="9b2-lI-NC9" customClass="FriendPhotosVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="9b2-lI-NC9" customClass="FriendPhotosVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aKr-dL-moY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -506,7 +506,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avt-RE-oIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3919" y="26"/>
+            <point key="canvasLocation" x="3922" y="151"/>
         </scene>
         <!--Manage PageVC-->
         <scene sceneID="shH-d5-HsU">
@@ -514,7 +514,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="hNb-dO-aCw" customClass="ManagePageVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nur-nE-MO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4733" y="-314"/>
+            <point key="canvasLocation" x="4719" y="-547"/>
         </scene>
         <!--Large PhotoVC-->
         <scene sceneID="NUx-WS-oCJ">
@@ -545,7 +545,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aV-wK-OpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4733" y="446"/>
+            <point key="canvasLocation" x="4718" y="151"/>
         </scene>
         <!--Сообщения-->
         <scene sceneID="nfC-lp-qVb">
