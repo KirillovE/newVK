@@ -48,20 +48,16 @@ class WorkWithFirebase {
         let ref = Database.database().reference()
         
         ref.child("Users/\(numberOfUser)/Groups").observeSingleEvent(of: .value) { snapshot in
-//            if !snapshot.exists() {
-//                ref.child("Users/\(numberOfUser)/Groups").setValue([groupID])
-//            } else {
-                let json = JSON(snapshot.value as Any)
-                let groupsArray = json.arrayValue
-                for (index, id) in groupsArray.enumerated() {
-                    if groupID == id.stringValue {
-                        print("номер совпавшего элемента \(index)")
-                        return
-                    }
+            let json = JSON(snapshot.value as Any)
+            let groupsArray = json.arrayValue
+            for (index, id) in groupsArray.enumerated() {
+                if groupID == id.stringValue {
+                    print("номер совпавшего элемента \(index)")
+                    return
                 }
-                let newIndex = String(groupsArray.count)
-                ref.child("Users/\(numberOfUser)/Groups").updateChildValues([newIndex: groupID])
-//            }
+            }
+            let newIndex = String(groupsArray.count)
+            ref.child("Users/\(numberOfUser)/Groups").updateChildValues([newIndex: groupID])
         }
     }
     
