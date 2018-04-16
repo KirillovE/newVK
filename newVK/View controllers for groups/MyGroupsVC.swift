@@ -7,6 +7,7 @@
 //
 
 import RealmSwift
+import AlamofireImage
 
 class MyGroupsVC: UITableViewController {
     
@@ -15,11 +16,7 @@ class MyGroupsVC: UITableViewController {
     let groupsRequest = GroupsRequest()
     var groups: Results<Group>!
     var token: NotificationToken?
-    let queue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.qualityOfService = .userInteractive
-        return queue
-    }()
+    let downloader = ImageDownloader()
     
     // MARK: - View controller life cycle
  
@@ -42,12 +39,7 @@ class MyGroupsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myGroups", for: indexPath) as! MyGroupsCell
         cell.configure(for: groups[indexPath.row])
-        
-        let getCacheImage = GetCacheImage(url: groups[indexPath.row].photoURL, lifeTime: .month)
-        let setImageToRow = SetImageToRow(cell: cell, imageView: cell.imageView!, indexPath: indexPath, tableView: tableView)
-        setImageToRow.addDependency(getCacheImage)
-        queue.addOperation(getCacheImage)
-        OperationQueue.main.addOperation(setImageToRow)
+        setImage(fromPath: groups[indexPath.row].photoURL, to: cell.imageView!)
 
         return cell
     }
@@ -113,6 +105,20 @@ extension MyGroupsVC {
                 tableView.endUpdates()
             case .error(let error):
                 print(error.localizedDescription)
+            }
+        }
+    }
+    
+}
+
+extension MyGroupsVC {
+    
+    func setImage(fromPath urlString: String, to imageView: UIImageView) {
+        guard let url = URL(string: urlString) else { return }
+        let urlRequest = URLRequest(url: url)
+        downloader.download(urlRequest) { response in
+            if let image = response.result.value {
+                imageView.image = image
             }
         }
     }
