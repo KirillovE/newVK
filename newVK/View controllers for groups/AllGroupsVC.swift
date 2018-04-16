@@ -17,12 +17,7 @@ class AllGroupsVC: UITableViewController {
     var groups = [Group]()
     let numberOfResultsToShow = 50
     let formatter = Formatting()
-    
-    let queue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.qualityOfService = .userInteractive
-        return queue
-    }()
+    let webImages = ImagesFromWeb()
     
     // MARK: -
     
@@ -44,12 +39,7 @@ class AllGroupsVC: UITableViewController {
         cell.detailTextLabel?.text = "Подписчиков: " + formatter.formatInt(membersCount)
         
         cell.configure(for: groups[indexPath.row])
-        
-        let getCacheImage = GetCacheImage(url: groups[indexPath.row].photoURL, lifeTime: .minute)
-        let setImageToRow = SetImageToRow(cell: cell, imageView: cell.imageView!, indexPath: indexPath, tableView: tableView)
-        setImageToRow.addDependency(getCacheImage)
-        queue.addOperation(getCacheImage)
-        OperationQueue.main.addOperation(setImageToRow)
+        webImages.setImage(fromPath: groups[indexPath.row].photoURL, to: cell.imageView!)
 
         return cell
     }
