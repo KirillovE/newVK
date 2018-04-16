@@ -12,10 +12,10 @@ import SwiftyJSON
 class WorkWithFirebase {
     
     let userDefaults = UserDefaults.standard
+    let ref = Database.database().reference()
     
     func saveIndexOfUser(authorizedUser id: String?) {
         guard let userID = id else { return }
-        let ref = Database.database().reference()
         let dict = ["ID": userID]
         
         ref.child("Users").observeSingleEvent(of: .value) { snapshot in
@@ -26,11 +26,24 @@ class WorkWithFirebase {
                 self.userDefaults.set(indexOfUser, forKey: "numberOfUserInFirebase")
             } else {
                 let newIndex = String(usersArray.count)
-                ref.child("Users").updateChildValues([newIndex: dict])
+                self.ref.child("Users").updateChildValues([newIndex: dict])
                 self.userDefaults.set(newIndex, forKey: "numberOfUserInFirebase")
             }
         }
+    }
+    
+    func addGroup(_ group: Group) {
+        let groupID = String(group.id)
+        let numberOfUser = userDefaults.integer(forKey: "numberOfUserInFirebase")
         
+        ref.child("Users/\(numberOfUser)/Groups").observeSingleEvent(of: .value) { snapshot in
+            let json = JSON(snapshot.value as Any)
+            let groupsArray = json.arrayValue
+            guard !self.alreadyHas(groupWithID: groupID, in: groupsArray) else { return }
+            
+            let newIndex = String(groupsArray.count)
+            self.ref.child("Users/\(numberOfUser)/Groups").updateChildValues([newIndex: groupID])
+        }
     }
     
     private func indexOf(id: String, in array: [JSON]) -> String? {
@@ -40,21 +53,6 @@ class WorkWithFirebase {
             }
         }
         return nil
-    }
-    
-    func addGroup(_ group: Group) {
-        let groupID = String(group.id)
-        let numberOfUser = userDefaults.integer(forKey: "numberOfUserInFirebase")
-        let ref = Database.database().reference()
-        
-        ref.child("Users/\(numberOfUser)/Groups").observeSingleEvent(of: .value) { snapshot in
-            let json = JSON(snapshot.value as Any)
-            let groupsArray = json.arrayValue
-            guard !self.alreadyHas(groupWithID: groupID, in: groupsArray) else { return }
-            
-            let newIndex = String(groupsArray.count)
-            ref.child("Users/\(numberOfUser)/Groups").updateChildValues([newIndex: groupID])
-        }
     }
     
     private func alreadyHas(groupWithID id: String, in array: [JSON]) -> Bool {
