@@ -7,7 +7,6 @@
 //
 
 import RealmSwift
-import AlamofireImage
 
 class FriendPhotosVC: UICollectionViewController {
     
@@ -17,7 +16,7 @@ class FriendPhotosVC: UICollectionViewController {
     let photosRequest = PhotosRequest()
     var photos: Results<Photo>!
     var token: NotificationToken?
-    let downloader = ImageDownloader()
+    let webImages = ImagesFromWeb()
 
     // MARK: - View Controller life cycle
     
@@ -41,7 +40,7 @@ class FriendPhotosVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendPhotosCell
         cell.configure(for: photos[indexPath.row])
-        setImage(fromPath: photos[indexPath.row].smallPhotoURL, to: cell.friendImage)
+        webImages.setImage(fromPath: photos[indexPath.row].smallPhotoURL, to: cell.friendImage!)
         
         return cell
     }
@@ -82,20 +81,6 @@ extension FriendPhotosVC {
                 })
             case .error(let error):
                 print(error.localizedDescription)
-            }
-        }
-    }
-    
-}
-
-extension FriendPhotosVC {
-    
-    func setImage(fromPath urlString: String, to imageView: UIImageView) {
-        guard let url = URL(string: urlString) else { return }
-        let urlRequest = URLRequest(url: url)
-        downloader.download(urlRequest) { response in
-            if let image = response.result.value {
-                imageView.image = image
             }
         }
     }
