@@ -110,22 +110,17 @@ extension WebKitVC {
         let dict = ["ID": userID]
         
         ref.child("Users").observeSingleEvent(of: .value) { snapshot in
-            if !snapshot.exists() {
-                ref.child("Users").setValue([dict])
-            } else {
-                let json = JSON(snapshot.value as Any)
-                let usersArray = json.arrayValue
-                for (index, user) in usersArray.enumerated() {
-                    if userID == user["ID"].stringValue {
-                        print("номер совпавшего элемента \(index)")
-                        userDefaults.set(index, forKey: "numberOfUserInFireBase")
-                        return
-                    }
+            let json = JSON(snapshot.value as Any)
+            let usersArray = json.arrayValue
+            for (index, userDict) in usersArray.enumerated() {
+                if userID == userDict["ID"].stringValue {
+                    userDefaults.set(index, forKey: "numberOfUserInFireBase")
+                    return
                 }
-                let newIndex = String(usersArray.count)
-                ref.child("Users").updateChildValues([newIndex: dict])
-                userDefaults.set(newIndex, forKey: "numberOfUserInFireBase")
             }
+            let newIndex = String(usersArray.count)
+            ref.child("Users").updateChildValues([newIndex: dict])
+            userDefaults.set(newIndex, forKey: "numberOfUserInFireBase")
         }
         
     }
