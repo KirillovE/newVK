@@ -18,18 +18,12 @@ class NewsVC: UITableViewController {
     let requestFilter = "post"
     var news = [News]()
     let formatter = Formatting()
-    
-    let queue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.qualityOfService = .userInteractive
-        return queue
-    }()
+    let webImages = ImagesFromWeb()
     
     // MARK: -
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         newsRequest.makeRequest(filter: self.requestFilter) { [weak self] news in
             self?.news = news
@@ -48,10 +42,12 @@ class NewsVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsCell
+        let currentNews = news[indexPath.row]
         
         configureDate(forIndex: indexPath.row)
-        setImageFromCache(cell: cell, indexPath: indexPath)
-        cell.configure(for: news[indexPath.row])
+        cell.configure(for: currentNews)
+        webImages.setImage(fromPath: currentNews.photoURL, to: cell.avatar)
+        webImages.setImage(fromPath: currentNews.attachedImageURL, to: cell.attachedImage)
         update(cell: cell, atIndex: indexPath, withHeight: cell.cellHeight)
         
         return cell
@@ -85,21 +81,6 @@ class NewsVC: UITableViewController {
 // MARK: - Extensions
 
 extension NewsVC {
-    
-    func setImageFromCache(cell: NewsCell, indexPath: IndexPath) {
-        let getAvatarImage = GetCacheImage(url: news[indexPath.row].photoURL, lifeTime: .month)
-        let setAvatarToRow = SetImageToRow(cell: cell, imageView: cell.avatar, indexPath: indexPath, tableView: tableView)
-        setAvatarToRow.addDependency(getAvatarImage)
-        queue.addOperation(getAvatarImage)
-        OperationQueue.main.addOperation(setAvatarToRow)
-        
-        let attachedImageURL = news[indexPath.row].attachedImageURL
-        let getAttachedImage = GetCacheImage(url: attachedImageURL, lifeTime: .day)
-        let setAttachedToRow = SetImageToRow(cell: cell, imageView: cell.attachedImage, indexPath: indexPath, tableView: tableView)
-        setAttachedToRow.addDependency(getAttachedImage)
-        queue.addOperation(getAttachedImage)
-        OperationQueue.main.addOperation(setAttachedToRow)
-    }
     
     func configureDate(forIndex index: Int) {
         news[index].day = formatter.formatDate(news[index].date, outputFormat: .day)
