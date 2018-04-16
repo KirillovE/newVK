@@ -6,13 +6,14 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-import UIKit
+import AlamofireImage
 
 class LargePhotoVC: UIViewController {
     
 // MARK: - Variables
     
     @IBOutlet weak var largePhoto: UIImageView!
+    let downloader = ImageDownloader()
     var photoIndex: Int!
     var photoURL = ""
     
@@ -21,19 +22,18 @@ class LargePhotoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadLargePhoto(from: photoURL)
+        setImage(fromPath: photoURL, to: largePhoto)
         
         let hideNavBar = UITapGestureRecognizer(target: self, action: #selector(switchNavBarVisible))
         view.addGestureRecognizer(hideNavBar)
     }
     
-    func loadLargePhoto(from urlString: String) {
-        let url = URL(string: urlString)
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url!) else { return }
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else { return }
-                self.largePhoto.image = image
+    func setImage(fromPath urlString: String, to imageView: UIImageView) {
+        guard let url = URL(string: urlString) else { return }
+        let urlRequest = URLRequest(url: url)
+        downloader.download(urlRequest) { response in
+            if let image = response.result.value {
+                imageView.image = image
             }
         }
     }
