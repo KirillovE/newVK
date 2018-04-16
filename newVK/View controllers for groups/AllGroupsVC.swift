@@ -53,4 +53,32 @@ class AllGroupsVC: UITableViewController {
 
         return cell
     }
+
+}
+
+// MARK: - SearchBar extension
+
+extension AllGroupsVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            groups.removeAll(keepingCapacity: false)
+            self.tableView.reloadData()
+            return
+        }
+        
+        searchRequest.makeRequest(groupToFind: searchText, numberOfResults: self.numberOfResultsToShow) { [weak self] groups in
+            self?.groups = groups
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+        
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        groups.removeAll(keepingCapacity: false)
+        self.tableView.reloadData()
+    }
+    
 }
