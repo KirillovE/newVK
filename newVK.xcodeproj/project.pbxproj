@@ -192,12 +192,7 @@
 		3E61842F203717DB00A68D16 /* newVK */ = {
 			isa = PBXGroup;
 			children = (
-				3E618430203717DB00A68D16 /* AppDelegate.swift */,
-				3E618439203717DB00A68D16 /* LaunchScreen.storyboard */,
 				3E618434203717DB00A68D16 /* Main.storyboard */,
-				3E618437203717DB00A68D16 /* Assets.xcassets */,
-				3E61843C203717DB00A68D16 /* Info.plist */,
-				3EF19F1B2080EDEF009B9BE5 /* GoogleService-Info.plist */,
 				3E7D1217204ED1BE001E4D9C /* Models from VK */,
 				3EF9A4FF20764AED00CD574C /* Helper models */,
 				3E0FEF83204ACD41006DE640 /* Web services */,
@@ -206,6 +201,11 @@
 				3E0FEF82204ACD2D006DE640 /* View controllers for users */,
 				3E0137C62059199500B47735 /* View controllers for groups */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
+				3E618430203717DB00A68D16 /* AppDelegate.swift */,
+				3E618439203717DB00A68D16 /* LaunchScreen.storyboard */,
+				3E618437203717DB00A68D16 /* Assets.xcassets */,
+				3E61843C203717DB00A68D16 /* Info.plist */,
+				3EF19F1B2080EDEF009B9BE5 /* GoogleService-Info.plist */,
 			);
 			path = newVK;
 			sourceTree = "<group>";
