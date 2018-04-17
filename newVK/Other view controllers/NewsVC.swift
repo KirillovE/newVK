@@ -70,6 +70,14 @@ class NewsVC: UITableViewController {
     }
     
     @IBAction func previousPressed(_ sender: UIBarButtonItem) {
+        let userDefaults = UserDefaults.standard
+        guard let startFrom = userDefaults.string(forKey: "start_from") else { return }
+        newsRequest.makeRequest(filter: self.requestFilter, startFrom: startFrom) { [weak self] news in
+            self?.news.append(contentsOf: news)
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
     
     

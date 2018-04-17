@@ -15,16 +15,18 @@ class NewsRequest {
     // MARK: - Source data
     
     private var sessionManager: SessionManager?
+    let userDefaults = UserDefaults.standard
     private let method = "newsfeed.get"
-    private let resultsCount = 30
+    private let resultsCount = 10
     
     // MARK: - Methods
     
-    func makeRequest(filter: String, completion: @escaping ([News]) -> Void) {
+    func makeRequest(filter: String, startFrom: String = "", completion: @escaping ([News]) -> Void) {
         let (accessToken, apiVersion, url) = configureRequest()
         
         let parameters: Parameters = ["count": resultsCount,
                                       "filter": filter,
+                                      "start_from": startFrom,
                                       "access_token": accessToken,
                                       "v": apiVersion
         ]
@@ -32,8 +34,10 @@ class NewsRequest {
         sessionManager?.request(url! + method,
                                 parameters: parameters).responseJSON(queue: DispatchQueue.global())
                                 {[weak self] response in
-                                    guard let data = response.value else {return}
+                                    guard let data = response.value else { return }
                                     let json = JSON(data)
+                                    let nextFrom = json["response", "next_from"].stringValue
+                                    self?.userDefaults.set(nextFrom, forKey: "start_from")
                                     guard let news = self?.appendNews(from: json) else { return }
                                     completion(news)
         }
@@ -45,7 +49,6 @@ class NewsRequest {
         sessionManager = SessionManager(configuration: config)
         
         let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
-        let userDefaults = UserDefaults.standard
         let apiVersion = userDefaults.double(forKey: "v")
         let url = userDefaults.string(forKey: "apiURL")
         
