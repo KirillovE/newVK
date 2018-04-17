@@ -19,7 +19,7 @@ class WebKitVC: UIViewController {
     let apiVersion = 5.73
     let clientID = 6356387
     let userDefaults = UserDefaults.standard
-    let scope = "offline, photos, groups, wall, friends"
+    let scope = "offline, photos, groups, wall, friends, messages"
     
     // MARK: - Methods
     
