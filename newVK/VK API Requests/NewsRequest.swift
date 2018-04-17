@@ -63,7 +63,8 @@ extension NewsRequest {
         var newsArray = [News]()
         
         for (_, item) in itemsArray {
-            guard item["type"].stringValue == "post" else { continue }
+            guard item["type"].stringValue == "post",
+                hasNeededAttachments(newsArray: item) else { continue }
             
             let singleNews = News(json: item)
             manageAtachments(from: item, to: singleNews)
@@ -76,6 +77,20 @@ extension NewsRequest {
         }
         
         return newsArray
+    }
+    
+    private func hasNeededAttachments(newsArray: JSON) -> Bool {
+        var hasAttachment = false
+        let attachments = newsArray["attachments"]
+        for (_, item) in attachments {
+            if item["type"].stringValue == "photo" || item["type"].stringValue == "video" {
+                hasAttachment = true
+                break
+            } else {
+                hasAttachment = false
+            }
+        }
+        return hasAttachment
     }
     
     private func manageAtachments(from array: JSON, to news: News) {
