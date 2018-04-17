@@ -156,10 +156,14 @@ extension NewsCell {
     }
     
     func attachedImageFrame() {
-        guard let aspectRatio = attachedImageAspectRatio else { return }
-        let imageWidth = bounds.width
-        let imageHeight = imageWidth / CGFloat(aspectRatio)
-        let imageSize = CGSize(width: imageWidth, height: imageHeight)
+        let imageSize: CGSize
+        if let aspectRatio = attachedImageAspectRatio {
+            let imageWidth = bounds.width
+            let imageHeight = imageWidth / CGFloat(aspectRatio)
+            imageSize = CGSize(width: imageWidth, height: imageHeight)
+        } else {
+            imageSize = CGSize.zero
+        }
         let labelY = newsText.frame.origin.y + newsText.frame.height + insetBetweenObjects
         let labelOrigin = CGPoint(x: 0, y: labelY)
         attachedImage.frame = CGRect(origin: labelOrigin, size: imageSize)
