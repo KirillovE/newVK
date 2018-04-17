@@ -9,7 +9,7 @@
 import UIKit
 
 class NewsVC: UITableViewController {
-
+    
     // MARK: - Source data
     
     var cellHeightsCache: [IndexPath: CGFloat] = [:]
@@ -59,6 +59,19 @@ class NewsVC: UITableViewController {
         }
         return height
     }
+    
+    @IBAction func refreshPressed(_ sender: UIBarButtonItem) {
+        newsRequest.makeRequest(filter: self.requestFilter) { [weak self] news in
+            self?.news = news
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    @IBAction func previousPressed(_ sender: UIBarButtonItem) {
+    }
+    
     
     // MARK: - Other methods
     
