@@ -21,7 +21,7 @@ class MyGroupsVC: UITableViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.groupsRequest.getGroups()
+        groupsRequest.getGroups()
         pairTableAndRealm()
     }
     
@@ -39,7 +39,7 @@ class MyGroupsVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myGroups", for: indexPath) as! MyGroupsCell
         cell.configure(for: groups[indexPath.row])
         webImages.setImage(fromPath: groups[indexPath.row].photoURL, to: cell.imageView!)
-
+        
         return cell
     }
     
@@ -57,6 +57,8 @@ class MyGroupsVC: UITableViewController {
             }
         }
     }
+    
+    
 
     // MARK: -
     
