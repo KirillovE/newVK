@@ -25,7 +25,7 @@ class NewsRequest {
         let (accessToken, apiVersion, url) = configureRequest()
         
         let parameters: Parameters = ["count": resultsCount,
-                                      "filter": filter,
+                                      "filters": filter,
                                       "start_from": startFrom,
                                       "access_token": accessToken,
                                       "v": apiVersion
@@ -66,8 +66,7 @@ extension NewsRequest {
         var newsArray = [News]()
         
         for (_, item) in itemsArray {
-            guard item["type"].stringValue == "post",
-                hasNeededAttachments(newsArray: item) else { continue }
+            guard hasNeededAttachments(newsArray: item) else { continue }
             
             let singleNews = News(json: item)
             manageAtachments(from: item, to: singleNews)
