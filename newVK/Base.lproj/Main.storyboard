@@ -231,7 +231,7 @@
                                 <action selector="refreshPressed:" destination="VJq-Vk-WX3" id="gMI-Wv-wpf"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="rewind" id="Jj3-FE-vQS">
+                        <barButtonItem key="rightBarButtonItem" title="старые новости" id="Jj3-FE-vQS">
                             <connections>
                                 <action selector="previousPressed:" destination="VJq-Vk-WX3" id="vga-13-Iwb"/>
                             </connections>
