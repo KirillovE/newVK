@@ -48,6 +48,12 @@ class NewsVC: UITableViewController {
         cell.configure(for: currentNews)
         webImages.setImage(fromPath: currentNews.photoURL, to: cell.avatar)
         webImages.setImage(fromPath: currentNews.attachedImageURL, to: cell.attachedImage)
+        
+        // пытался проверить indexPath, вобще картинки грузиться перестали
+//        if let newIndexPath = tableView.indexPath(for: cell), newIndexPath == indexPath {
+//            webImages.setImage(fromPath: currentNews.attachedImageURL, to: cell.attachedImage)
+//        }
+        
         update(cell: cell, atIndex: indexPath, withHeight: cell.cellHeight)
         
         return cell
