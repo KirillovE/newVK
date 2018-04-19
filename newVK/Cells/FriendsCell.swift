@@ -18,6 +18,7 @@ class FriendsCell: UITableViewCell {
         
         textLabel?.text = firstName + " " + lastName
         detailTextLabel?.text = nick
+        imageView?.image = #imageLiteral(resourceName: "заглушка")
         
         imageView?.layer.cornerRadius = frame.size.height / 2
         imageView?.clipsToBounds = true
