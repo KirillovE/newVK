@@ -12,6 +12,7 @@ class AllGroupsCell: UITableViewCell {
     
     func configure(for group: Group) {
         textLabel?.text = group.name
+        imageView?.image = #imageLiteral(resourceName: "заглушка")
         
         imageView?.layer.cornerRadius = frame.size.height / 4
         imageView?.clipsToBounds = true
