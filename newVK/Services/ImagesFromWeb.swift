@@ -13,13 +13,18 @@ class ImagesFromWeb {
     private let downloader = ImageDownloader()
     
     func setImage(fromPath urlString: String, to imageView: UIImageView) {
+        
         guard let url = URL(string: urlString) else { return }
         let urlRequest = URLRequest(url: url)
-        downloader.download(urlRequest) { response in
-            if let image = response.result.value {
-                imageView.image = image
+        DispatchQueue.global().async {
+            self.downloader.download(urlRequest) { response in
+                guard let image = response.result.value else { return }
+                DispatchQueue.main.async {
+                    imageView.image = image
+                }
             }
         }
+        
     }
     
 }
