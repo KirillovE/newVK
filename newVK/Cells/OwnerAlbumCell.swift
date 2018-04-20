@@ -1,5 +1,5 @@
 //
-//  OwnerPhotosCell.swift
+//  OwnerAlbumCell.swift
 //  newVK
 //
 //  Created by Евгений Кириллов on 21.03.2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OwnerPhotosCell: UICollectionViewCell {
+class OwnerAlbumCell: UICollectionViewCell {
     
     @IBOutlet weak var ownerPhoto: UIImageView!
     

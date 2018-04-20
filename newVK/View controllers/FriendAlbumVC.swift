@@ -1,5 +1,5 @@
 //
-//  FriendPhotosVC.swift
+//  FriendAlbumVC.swift
 //  newVK
 //
 //  Created by Евгений Кириллов on 23.02.2018.
@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class FriendPhotosVC: UICollectionViewController {
+class FriendAlbumVC: UICollectionViewController {
     
     // MARK: - Source data
     
@@ -38,7 +38,7 @@ class FriendPhotosVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendPhotosCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendAlbumCell
         cell.configure(for: photos[indexPath.row])
         webImages.setImage(fromPath: photos[indexPath.row].smallPhotoURL, to: cell.friendImage!)
         
@@ -54,7 +54,7 @@ class FriendPhotosVC: UICollectionViewController {
     }
 
     func getLargePhotoIndex(from sender: Any?) -> Int {
-        let selectedCell = sender as! FriendPhotosCell
+        let selectedCell = sender as! FriendAlbumCell
         let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
         return photoIndex!
     }
@@ -63,7 +63,7 @@ class FriendPhotosVC: UICollectionViewController {
 
 // MARK: -
 
-extension FriendPhotosVC {
+extension FriendAlbumVC {
     
     func pairCollectionAndRealm() {
         guard let realm = try? Realm() else { return }

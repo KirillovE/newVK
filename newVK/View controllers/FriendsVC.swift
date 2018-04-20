@@ -51,7 +51,7 @@ class FriendsVC: UITableViewController {
         if segue.identifier == "ShowFriendImages" {
             let cell = sender as! FriendsCell
             let imageIndex = self.tableView.indexPath(for: cell)?.row
-            let collectionVC = segue.destination as! FriendPhotosVC
+            let collectionVC = segue.destination as! FriendAlbumVC
             collectionVC.ownerID = friends[imageIndex!].id
             collectionVC.title = friends[imageIndex!].firstName
         }

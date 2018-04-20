@@ -1,5 +1,5 @@
 //
-//  FriendPhotosCell.swift
+//  FriendAlbumCell.swift
 //  newVK
 //
 //  Created by Евгений Кириллов on 23.02.2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendPhotosCell: UICollectionViewCell {
+class FriendAlbumCell: UICollectionViewCell {
     
     @IBOutlet weak var friendImage: UIImageView!
     

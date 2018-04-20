@@ -41,7 +41,7 @@ class OwnerVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! OwnerPhotosCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! OwnerAlbumCell
         cell.configure(for: photos[indexPath.row])
         webImages.setImage(fromPath: photos[indexPath.row].smallPhotoURL, to: cell.ownerPhoto)
         
@@ -57,7 +57,7 @@ class OwnerVC: UICollectionViewController {
     }
     
     func getLargePhotoIndex(from sender: Any?) -> Int {
-        let selectedCell = sender as! OwnerPhotosCell
+        let selectedCell = sender as! OwnerAlbumCell
         let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
         return photoIndex!
     }
