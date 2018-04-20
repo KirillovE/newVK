@@ -8,6 +8,8 @@
 
 import UIKit
 
-protocol CellHeightDelegate {
+protocol CellHeightDelegate: class {
+    
     func setHeight(_ height: CGFloat, to index: IndexPath)
+
 }
