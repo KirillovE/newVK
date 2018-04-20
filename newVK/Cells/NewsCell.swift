@@ -50,7 +50,6 @@ class NewsCell: UITableViewCell {
         authorNameFrame()
         dateFrame()
         newsTextFrame()
-        attachedImageFrame()
         likeImageFrame()
         likeCountFrame()
         commentsImageFrame()
@@ -70,6 +69,11 @@ class NewsCell: UITableViewCell {
         setLikes(news.likes.count)
         setDate("\(news.time) \(news.day)")
         
+        if news.attachedImageURL != "" {
+            attachedImageAspectRatio = news.attachedImageWidth / news.attachedImageHeight
+        }
+        attachedImageFrame()
+        
         guard let index = index,
             let height = getCellHeight(),
             bounds.height != height else { return }
@@ -79,10 +83,6 @@ class NewsCell: UITableViewCell {
             avatar.layer.cornerRadius = avatar.frame.size.height / 4
         } else {
             avatar.layer.cornerRadius = avatar.frame.size.height / 2
-        }
-        
-        if news.attachedImageURL != "" {
-            attachedImageAspectRatio = news.attachedImageWidth / news.attachedImageHeight
         }
     }
     
@@ -168,7 +168,7 @@ extension NewsCell {
         if let aspectRatio = attachedImageAspectRatio {
             let imageWidth = bounds.width
             let imageHeight = imageWidth / CGFloat(aspectRatio)
-            imageSize = CGSize(width: imageWidth, height: imageHeight)
+            imageSize = CGSize(width: imageWidth, height: ceil(imageHeight))
             attachedImage.frame = CGRect(origin: imageViewOrigin, size: imageSize)
             attributeOriginY = attachedImage.frame.origin.y + attachedImage.frame.height + insetBetweenObjects
         } else {
