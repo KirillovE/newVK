@@ -106,27 +106,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3E0137C62059199500B47735 /* View controllers for groups */ = {
-			isa = PBXGroup;
-			children = (
-				3E2BE8BD2042E9D9002A50CF /* MyGroupsVC.swift */,
-				3E2BE8BF2042EE36002A50CF /* AllGroupsVC.swift */,
-			);
-			path = "View controllers for groups";
-			sourceTree = "<group>";
-		};
-		3E0FEF82204ACD2D006DE640 /* View controllers for users */ = {
-			isa = PBXGroup;
-			children = (
-				3E167695203F6C0700287BB4 /* FriendsVC.swift */,
-				3E16769920400B5C00287BB4 /* FriendPhotosVC.swift */,
-				3EA87349204728930049C4F2 /* ManagePageVC.swift */,
-				3E78B69B20443228006E9397 /* LargePhotoVC.swift */,
-				3EAC58E32062DAF700A2DE4A /* OwnerVC.swift */,
-			);
-			path = "View controllers for users";
-			sourceTree = "<group>";
-		};
 		3E0FEF83204ACD41006DE640 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,13 +132,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		3E48210B204BFD11009639FC /* Login View controllers */ = {
+		3E48210B204BFD11009639FC /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
 				3E0FEF7F204ACD0D006DE640 /* VKloginVC.swift */,
 				3E0FEF85204AD47B006DE640 /* WebKitVC.swift */,
+				3EC6D59120679811009F92A2 /* NewsVC.swift */,
+				3EC6D59620692C84009F92A2 /* MessagesVC.swift */,
+				3E167695203F6C0700287BB4 /* FriendsVC.swift */,
+				3E16769920400B5C00287BB4 /* FriendPhotosVC.swift */,
+				3EA87349204728930049C4F2 /* ManagePageVC.swift */,
+				3E78B69B20443228006E9397 /* LargePhotoVC.swift */,
+				3EAC58E32062DAF700A2DE4A /* OwnerVC.swift */,
+				3E2BE8BD2042E9D9002A50CF /* MyGroupsVC.swift */,
+				3E2BE8BF2042EE36002A50CF /* AllGroupsVC.swift */,
 			);
-			path = "Login View controllers";
+			path = "View controllers";
 			sourceTree = "<group>";
 		};
 		3E618424203717DB00A68D16 = {
@@ -187,10 +175,7 @@
 				3E7D1217204ED1BE001E4D9C /* Models from VK */,
 				3EB51CB62084E4CF005B7EF8 /* VK API Requests */,
 				3E0FEF83204ACD41006DE640 /* Services */,
-				3E48210B204BFD11009639FC /* Login View controllers */,
-				3EC6D595206798A5009F92A2 /* Other view controllers */,
-				3E0FEF82204ACD2D006DE640 /* View controllers for users */,
-				3E0137C62059199500B47735 /* View controllers for groups */,
+				3E48210B204BFD11009639FC /* View controllers */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
 				3E618430203717DB00A68D16 /* AppDelegate.swift */,
 				3E618439203717DB00A68D16 /* LaunchScreen.storyboard */,
@@ -223,15 +208,6 @@
 				3EAC58DF206258A300A2DE4A /* GroupsSearchRequest.swift */,
 			);
 			path = "VK API Requests";
-			sourceTree = "<group>";
-		};
-		3EC6D595206798A5009F92A2 /* Other view controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3EC6D59120679811009F92A2 /* NewsVC.swift */,
-				3EC6D59620692C84009F92A2 /* MessagesVC.swift */,
-			);
-			path = "Other view controllers";
 			sourceTree = "<group>";
 		};
 		60CBD30DAFE58B1DF1A08ED8 /* Frameworks */ = {
