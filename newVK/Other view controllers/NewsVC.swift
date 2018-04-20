@@ -86,7 +86,6 @@ class NewsVC: UITableViewController {
         }
     }
     
-    
     // MARK: - Other methods
     
     func update(cell: NewsCell, atIndex index: IndexPath?, withHeight height: CGFloat?) {
