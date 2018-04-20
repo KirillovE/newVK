@@ -65,11 +65,12 @@ extension NewsRequest {
         let itemsArray = json!["response", "items"]
         var newsArray = [News]()
         
-        for (_, item) in itemsArray {
-            guard hasNeededAttachments(newsArray: item) else { continue }
-            
+        for (_, item) in itemsArray {            
             let singleNews = News(json: item)
-            manageAtachments(from: item, to: singleNews)
+            if hasNeededAttachments(newsArray: item) {
+                manageAtachments(from: item, to: singleNews)
+            }
+            
             if singleNews.sourceID >= 0 {
                 addProfileInfo(from: json, to: singleNews)
             } else {
