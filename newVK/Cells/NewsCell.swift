@@ -141,7 +141,9 @@ extension NewsCell {
     }
     
     private func authorNameFrame() {
-        let labelSize = getLabelSize(text: authorName.text!, font: authorName.font)
+        var labelSize = getLabelSize(text: authorName.text!, font: authorName.font)
+        labelSize.height = 20           // высота для данного конкретного случая, взята из storyboard,
+                                        // без этого длинные названия смещаются ниже, что портит общую картину
         let labelOrigin = CGPoint(x: nameDateOriginX, y: inset)
         authorName.frame = CGRect(origin: labelOrigin, size: labelSize)
     }
