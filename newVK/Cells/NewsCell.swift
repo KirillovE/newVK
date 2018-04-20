@@ -255,7 +255,13 @@ extension NewsCell {
     }
     
     private func getCellHeight() -> CGFloat? {
-        return 2 * inset + 3 * insetBetweenObjects + avatar.frame.height + newsText.frame.height + attachedImage.frame.height + numberOfLikes.frame.height
+        var heigth = 2 * inset + 2 * insetBetweenObjects + avatar.frame.height + newsText.frame.height + numberOfLikes.frame.height
+        let attachedImageHeight = attachedImage.frame.height
+        if attachedImageHeight != 0 {
+            heigth += attachedImageHeight + insetBetweenObjects
+        }
+        
+        return heigth
     }
     
 }
