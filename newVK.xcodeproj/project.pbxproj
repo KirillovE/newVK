@@ -172,11 +172,11 @@
 			isa = PBXGroup;
 			children = (
 				3E618434203717DB00A68D16 /* Main.storyboard */,
-				3E7D1217204ED1BE001E4D9C /* Models from VK */,
-				3EB51CB62084E4CF005B7EF8 /* VK API Requests */,
-				3E0FEF83204ACD41006DE640 /* Services */,
 				3E48210B204BFD11009639FC /* View controllers */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
+				3EB51CB62084E4CF005B7EF8 /* VK API Requests */,
+				3E0FEF83204ACD41006DE640 /* Services */,
+				3E7D1217204ED1BE001E4D9C /* Models from VK */,
 				3E618430203717DB00A68D16 /* AppDelegate.swift */,
 				3E618439203717DB00A68D16 /* LaunchScreen.storyboard */,
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
