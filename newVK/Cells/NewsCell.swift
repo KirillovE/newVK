@@ -30,8 +30,9 @@ class NewsCell: UITableViewCell {
     private let attributeImageSize = CGSize(width: 15, height: 15)
     private var attributeOriginY: CGFloat = 0
     private var attachedImageAspectRatio: Double?
-    var cellHeight: CGFloat?
     private let formatter = Formatting()
+    weak var heightDelegate: CellHeightDelegate?
+    var index: IndexPath?
     
     // MARK: - Methods
     
@@ -68,7 +69,11 @@ class NewsCell: UITableViewCell {
         setComments(news.comments.count)
         setLikes(news.likes.count)
         setDate("\(news.time) \(news.day)")
-        getCellHeight()
+        
+        guard let index = index,
+            let height = getCellHeight(),
+            bounds.height != height else { return }
+        heightDelegate?.setHeight(height, to: index)
         
         if news.sourceID < 0 {
             avatar.layer.cornerRadius = avatar.frame.size.height / 4
@@ -247,8 +252,8 @@ extension NewsCell {
         return size
     }
     
-    private func getCellHeight() {
-        cellHeight = 2 * inset + 3 * insetBetweenObjects + avatar.frame.height + newsText.frame.height + attachedImage.frame.height + numberOfLikes.frame.height
+    private func getCellHeight() -> CGFloat? {
+        return 2 * inset + 3 * insetBetweenObjects + avatar.frame.height + newsText.frame.height + attachedImage.frame.height + numberOfLikes.frame.height
     }
     
 }
