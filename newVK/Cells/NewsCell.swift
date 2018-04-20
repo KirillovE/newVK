@@ -12,7 +12,7 @@ class NewsCell: UITableViewCell {
     
     // MARK: - Outlets
     
-    @IBOutlet weak private var avatar: UIImageView!
+    @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak private var authorName: UILabel!
     @IBOutlet weak private var newsText: UILabel!
     @IBOutlet weak private var numberOfViews: UILabel!
@@ -20,7 +20,7 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak private var numberOfComments: UILabel!
     @IBOutlet weak private var numberOfLikes: UILabel!
     @IBOutlet weak private var date: UILabel!
-    @IBOutlet weak private var attachedImage: UIImageView!
+    @IBOutlet weak var attachedImage: UIImageView!
     
     // MARK: - Source data
     
