@@ -69,6 +69,7 @@ class NewsCell: UITableViewCell {
         setLikes(news.likes.count)
         setDate("\(news.time) \(news.day)")
         
+        attachedImageAspectRatio = nil
         if news.attachedImageURL != "" {
             attachedImageAspectRatio = news.attachedImageWidth / news.attachedImageHeight
         }
