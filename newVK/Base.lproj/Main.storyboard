@@ -225,13 +225,7 @@
                             <outlet property="delegate" destination="VJq-Vk-WX3" id="cZF-ed-eW5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Новости" id="G0D-QH-Ckn">
-                        <barButtonItem key="rightBarButtonItem" title="старые новости" id="Jj3-FE-vQS">
-                            <connections>
-                                <action selector="previousPressed:" destination="VJq-Vk-WX3" id="vga-13-Iwb"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Новости" id="G0D-QH-Ckn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzt-zi-GNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

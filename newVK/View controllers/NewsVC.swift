@@ -12,13 +12,14 @@ class NewsVC: UITableViewController {
     
     // MARK: - Source data
     
-    var cellHeightsCache: [IndexPath: CGFloat] = [:]
-    let defaultCellHeight: CGFloat = 20
+    let formatter = Formatting()
+    let webImages = ImagesFromWeb()
+    let userDefaults = UserDefaults.standard
     let newsRequest = NewsRequest()
     let requestFilter = "post"
     var news = [News]()
-    let formatter = Formatting()
-    let webImages = ImagesFromWeb()
+    var cellHeightsCache: [IndexPath: CGFloat] = [:]
+    let defaultCellHeight: CGFloat = 20
     
     // MARK: -
     
@@ -64,18 +65,20 @@ class NewsVC: UITableViewController {
         return height
     }
     
-    // MARK: - Getting other news
-    
-    @IBAction func previousPressed(_ sender: UIBarButtonItem) {
-        let userDefaults = UserDefaults.standard
-        guard let startFrom = userDefaults.string(forKey: "start_from") else { return }
-        newsRequest.makeRequest(filter: self.requestFilter, startFrom: startFrom) { [weak self] news in
-            self?.news.append(contentsOf: news)
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let newsBeforeLoadingPrevious = news.count - 7
+        if indexPath.row == newsBeforeLoadingPrevious {
+            guard let startFrom = userDefaults.string(forKey: "start_from") else { return }
+            newsRequest.makeRequest(filter: self.requestFilter, startFrom: startFrom) { [weak self] news in
+                self?.news.append(contentsOf: news)
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
             }
         }
     }
+    
+    // MARK: -
     
     @objc func refresher(_ control: UIRefreshControl) {
         newsRequest.makeRequest(filter: self.requestFilter) { [weak self] news in
