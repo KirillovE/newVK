@@ -32,6 +32,8 @@ class NewsVC: UITableViewController {
             }
         }
         
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refresher(_:)), for: .valueChanged)
     }
 
     // MARK: - Table view data source
@@ -64,21 +66,22 @@ class NewsVC: UITableViewController {
     
     // MARK: - Getting other news
     
-    @IBAction func refreshPressed(_ sender: UIBarButtonItem) {
-        newsRequest.makeRequest(filter: self.requestFilter) { [weak self] news in
-            self?.news = news
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
-    }
-    
     @IBAction func previousPressed(_ sender: UIBarButtonItem) {
         let userDefaults = UserDefaults.standard
         guard let startFrom = userDefaults.string(forKey: "start_from") else { return }
         newsRequest.makeRequest(filter: self.requestFilter, startFrom: startFrom) { [weak self] news in
             self?.news.append(contentsOf: news)
             DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    @objc func refresher(_ control: UIRefreshControl) {
+        newsRequest.makeRequest(filter: self.requestFilter) { [weak self] news in
+            self?.news = news
+            DispatchQueue.main.async {
+                self?.refreshControl?.endRefreshing()
                 self?.tableView.reloadData()
             }
         }

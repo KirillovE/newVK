@@ -226,11 +226,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Новости" id="G0D-QH-Ckn">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Uar-V1-JD8">
-                            <connections>
-                                <action selector="refreshPressed:" destination="VJq-Vk-WX3" id="gMI-Wv-wpf"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="старые новости" id="Jj3-FE-vQS">
                             <connections>
                                 <action selector="previousPressed:" destination="VJq-Vk-WX3" id="vga-13-Iwb"/>
