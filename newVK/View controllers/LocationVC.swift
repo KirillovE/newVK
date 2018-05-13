@@ -15,6 +15,8 @@ class LocationVC: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
+    var currentPlace: CLLocationCoordinate2D!
+    let regionDiameter = 2_000.0
     
     // MARK: - Methods
     
@@ -29,6 +31,9 @@ class LocationVC: UIViewController {
     }
 
     @IBAction func moveToMyLocation(_ sender: UIBarButtonItem) {
+        mapView.setCenter(currentPlace, animated: true)
+        let currentRegion = MKCoordinateRegionMakeWithDistance(currentPlace, regionDiameter, regionDiameter)
+        mapView.setRegion(currentRegion, animated: true)
     }
 }
 
@@ -57,6 +62,7 @@ extension LocationVC: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLocation = locations.last?.coordinate {
+            currentPlace = currentLocation
             let geoCoder = CLGeocoder()
             geoCoder.reverseGeocodeLocation(locations.last!) { myPlaces, _ in
                 if let place = myPlaces?.last {
@@ -66,8 +72,7 @@ extension LocationVC: CLLocationManagerDelegate {
                 }
             }
             
-            let currentRadius: CLLocationDistance = 1_000
-            let currentRegion = MKCoordinateRegionMakeWithDistance(currentLocation, currentRadius * 2, currentRadius * 2)
+            let currentRegion = MKCoordinateRegionMakeWithDistance(currentLocation, regionDiameter, regionDiameter)
             mapView.setRegion(currentRegion, animated: true)
             mapView.showsUserLocation = true
         }
