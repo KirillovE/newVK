@@ -307,7 +307,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="olB-QN-JsV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Выбрать на карте" id="s33-ps-kuE"/>
+                    <navigationItem key="navigationItem" title="Выбрать на карте" id="s33-ps-kuE">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="я" id="wz6-ZR-zDy" userLabel="я">
+                            <connections>
+                                <action selector="moveToMyLocation:" destination="sFz-hv-ss5" id="Wx1-lf-WQa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="zVb-RR-40N" id="LFk-jA-koO"/>
                     </connections>
@@ -798,6 +804,7 @@
         <image name="сообщения" width="30" height="30"/>
         <image name="хозяин" width="30" height="30"/>
         <image name="цитаты" width="30" height="30"/>
+        <image name="я" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iZ1-Ls-q3T"/>

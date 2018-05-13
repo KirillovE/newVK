@@ -23,4 +23,6 @@ class LocationVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func moveToMyLocation(_ sender: UIBarButtonItem) {
+    }
 }
