@@ -20,7 +20,7 @@ class PostVC: UIViewController {
     
     @IBAction func post(_ sender: UIBarButtonItem) {
         postText.resignFirstResponder()
-        let text = postText.text!
+        guard let text = postText.text else { return }
         postRequest.makeRequest(textToPost: text) { response in
             if response {
                 self.showMessage(title: "Успех", text: "Запись опубликована", buttonText: "Хорошо")
