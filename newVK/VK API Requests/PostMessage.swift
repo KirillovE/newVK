@@ -15,11 +15,11 @@ class PostMessage {
     // MARK: - Source data
     
     private var sessionManager: SessionManager?
-    private let method = "groups.search"
+    private let method = "wall.post"
     
     // MARK: - Methods
     
-    func makeRequest(textToPost message: String, completion: @escaping (String) -> Void) {
+    func makeRequest(textToPost message: String, completion: @escaping (Bool) -> Void) {
         let (accessToken, apiVersion, url) = configureRequest()
         
         let parameters: Parameters = ["message": message,
@@ -27,19 +27,20 @@ class PostMessage {
                                       "v": apiVersion
         ]
         
-        sessionManager?.request(url! + method, parameters: parameters).responseJSON(queue: DispatchQueue.global()) { response in
-            guard let data = response.value else { return }
-            let json = JSON(data)
-            let postID = json["response", "post_id"]
-            if postID != 0 {
-                completion("SUCCESS")
-            } else {
-                completion("FAILURE")
-            }
+        sessionManager?.request(url! + method,
+                                parameters: parameters)
+            .responseJSON(queue: DispatchQueue.global()) { response in
+                guard let data = response.value else { return }
+                let json = JSON(data)
+                if json["response", "post_id"].int != nil {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
         }
     }
     
-    func configureRequest() -> (String, Double, String?) {
+    private func configureRequest() -> (String, Double, String?) {
         let config = URLSessionConfiguration.default
         config.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         sessionManager = SessionManager(configuration: config)

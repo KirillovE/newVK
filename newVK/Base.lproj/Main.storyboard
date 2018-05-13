@@ -230,7 +230,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="ZhX-q8-FFo"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="BaM-ho-wBM">
                             <connections>
-                                <segue destination="6Dp-Ao-AHe" kind="show" id="vXm-6H-mTJ"/>
+                                <segue destination="6Dp-Ao-AHe" kind="show" identifier="messagePost" id="vXm-6H-mTJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

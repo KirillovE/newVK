@@ -11,18 +11,32 @@ import UIKit
 class PostVC: UIViewController {
 
     @IBOutlet weak var postText: UITextView!
+    let postRequest = PostMessage()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func post(_ sender: UIBarButtonItem) {
+        postText.resignFirstResponder()
+        let text = postText.text!
+        postRequest.makeRequest(textToPost: text) { response in
+            if response {
+                self.showMessage(title: "Успех", text: "Запись опубликована", buttonText: "Хорошо")
+                DispatchQueue.main.async {
+                    self.postText.text = ""
+                }
+            } else {
+                self.showMessage(title: "Ошибка", text: "Что-то пошло не так", buttonText: "Ясно")
+            }
+        }
     }
+
+}
+
+extension PostVC {
+    
+    func showMessage(title: String, text: String, buttonText: String) {
+        let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: buttonText, style: .default, handler: nil)
+        alert.addAction(alertAction)
+        present(alert, animated: true)
+    }
+    
 }
