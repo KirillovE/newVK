@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -225,11 +226,90 @@
                             <outlet property="delegate" destination="VJq-Vk-WX3" id="cZF-ed-eW5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Новости" id="G0D-QH-Ckn"/>
+                    <navigationItem key="navigationItem" title="Новости" id="G0D-QH-Ckn">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ZhX-q8-FFo"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="BaM-ho-wBM">
+                            <connections>
+                                <segue destination="6Dp-Ao-AHe" kind="show" id="vXm-6H-mTJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzt-zi-GNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3129" y="-1615"/>
+        </scene>
+        <!--Опубликовать-->
+        <scene sceneID="hMD-AN-xbL">
+            <objects>
+                <viewController id="6Dp-Ao-AHe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TBu-8B-txi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Текст Вашей публикации" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="paO-Xb-6AE">
+                                <rect key="frame" x="10" y="74" width="355" height="534"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bqZ-tw-pDL" firstAttribute="trailing" secondItem="paO-Xb-6AE" secondAttribute="trailing" constant="10" id="8me-0h-UA7"/>
+                            <constraint firstItem="paO-Xb-6AE" firstAttribute="top" secondItem="bqZ-tw-pDL" secondAttribute="top" constant="10" id="JOU-op-urc"/>
+                            <constraint firstItem="paO-Xb-6AE" firstAttribute="leading" secondItem="bqZ-tw-pDL" secondAttribute="leading" constant="10" id="VDj-YZ-S7G"/>
+                            <constraint firstItem="bqZ-tw-pDL" firstAttribute="bottom" secondItem="paO-Xb-6AE" secondAttribute="bottom" constant="10" id="vbf-7j-bd4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bqZ-tw-pDL"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Опубликовать" id="Oe4-tA-wBl">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="0Sk-WR-Wpo"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="карта" id="jqe-BM-6LS" userLabel="Карта">
+                                <connections>
+                                    <segue destination="sFz-hv-ss5" kind="show" id="bfr-HU-slq"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="опубликовать" id="XSt-CD-CH6" userLabel="Опубликовать"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RgJ-25-neI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3920.8000000000002" y="-1615.1424287856073"/>
+        </scene>
+        <!--Выбрать на карте-->
+        <scene sceneID="ArO-7T-jEO">
+            <objects>
+                <viewController id="sFz-hv-ss5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aQ1-Q5-EqR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGP-Hn-Pnf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="olB-QN-JsV" firstAttribute="bottom" secondItem="LGP-Hn-Pnf" secondAttribute="bottom" id="WBL-gq-Z2j"/>
+                            <constraint firstItem="LGP-Hn-Pnf" firstAttribute="leading" secondItem="olB-QN-JsV" secondAttribute="leading" id="r2n-RK-oCR"/>
+                            <constraint firstItem="olB-QN-JsV" firstAttribute="trailing" secondItem="LGP-Hn-Pnf" secondAttribute="trailing" id="vsw-Lu-JlJ"/>
+                            <constraint firstItem="LGP-Hn-Pnf" firstAttribute="top" secondItem="olB-QN-JsV" secondAttribute="top" id="xDU-dX-h9d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="olB-QN-JsV"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Выбрать на карте" id="s33-ps-kuE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QOv-Me-NiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4718" y="-1615"/>
         </scene>
         <!--Фотоальбом-->
         <scene sceneID="uFd-bg-iLu">
@@ -704,9 +784,11 @@
         <image name="vk logo" width="1204" height="906"/>
         <image name="группы" width="30" height="30"/>
         <image name="друзья" width="30" height="30"/>
+        <image name="карта" width="30" height="30"/>
         <image name="комментарии" width="30" height="30"/>
         <image name="новости" width="30" height="30"/>
         <image name="нравится" width="30" height="30"/>
+        <image name="опубликовать" width="30" height="30"/>
         <image name="просмотры" width="30" height="30"/>
         <image name="сообщения" width="30" height="30"/>
         <image name="хозяин" width="30" height="30"/>
