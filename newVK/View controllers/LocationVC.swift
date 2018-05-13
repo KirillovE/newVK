@@ -12,16 +12,16 @@ import CoreLocation
 class LocationVC: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        locationManager.delegate = self
         
-        let annotation = MKPointAnnotation()
-        annotation.title = "Дом"
-        annotation.subtitle = "Я здесь"
-        annotation.coordinate = CLLocationCoordinate2DMake(55, 51)
-        mapView.addAnnotation(annotation)
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
     @IBAction func moveToMyLocation(_ sender: UIBarButtonItem) {
@@ -41,6 +41,19 @@ extension LocationVC: MKMapViewDelegate {
         annotationView.rightCalloutAccessoryView = UIButton(type: .contactAdd)
         annotationView.annotation = annotation
         return annotationView
+    }
+    
+}
+
+extension LocationVC: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let currentLocation = locations.last?.coordinate {
+            let currentRadius: CLLocationDistance = 1_000
+            let currentRegion = MKCoordinateRegionMakeWithDistance(currentLocation, currentRadius * 2, currentRadius * 2)
+            mapView.setRegion(currentRegion, animated: true)
+            mapView.showsUserLocation = true
+        }
     }
     
 }
