@@ -13,8 +13,8 @@ class PostVC: UIViewController {
     @IBOutlet weak var postText: UITextView!
     let postRequest = PostMessage()
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         postText.selectAll(nil)
     }
     
