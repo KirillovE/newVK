@@ -242,7 +242,7 @@
         <!--Опубликовать-->
         <scene sceneID="hMD-AN-xbL">
             <objects>
-                <viewController id="6Dp-Ao-AHe" sceneMemberID="viewController">
+                <viewController id="6Dp-Ao-AHe" customClass="PostVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TBu-8B-txi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -271,9 +271,16 @@
                                     <segue destination="sFz-hv-ss5" kind="show" id="bfr-HU-slq"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="опубликовать" id="XSt-CD-CH6" userLabel="Опубликовать"/>
+                            <barButtonItem title="Item" image="опубликовать" id="XSt-CD-CH6" userLabel="Опубликовать">
+                                <connections>
+                                    <action selector="post:" destination="6Dp-Ao-AHe" id="JUQ-xA-uXv"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="postText" destination="paO-Xb-6AE" id="AnQ-7p-iun"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgJ-25-neI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,30 +289,28 @@
         <!--Выбрать на карте-->
         <scene sceneID="ArO-7T-jEO">
             <objects>
-                <viewController id="sFz-hv-ss5" sceneMemberID="viewController">
+                <viewController id="sFz-hv-ss5" customClass="LocationVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aQ1-Q5-EqR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGP-Hn-Pnf">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zVb-RR-40N">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="olB-QN-JsV" firstAttribute="bottom" secondItem="LGP-Hn-Pnf" secondAttribute="bottom" id="WBL-gq-Z2j"/>
-                            <constraint firstItem="LGP-Hn-Pnf" firstAttribute="leading" secondItem="olB-QN-JsV" secondAttribute="leading" id="r2n-RK-oCR"/>
-                            <constraint firstItem="olB-QN-JsV" firstAttribute="trailing" secondItem="LGP-Hn-Pnf" secondAttribute="trailing" id="vsw-Lu-JlJ"/>
-                            <constraint firstItem="LGP-Hn-Pnf" firstAttribute="top" secondItem="olB-QN-JsV" secondAttribute="top" id="xDU-dX-h9d"/>
+                            <constraint firstItem="olB-QN-JsV" firstAttribute="trailing" secondItem="zVb-RR-40N" secondAttribute="trailing" id="00i-a5-SMU"/>
+                            <constraint firstItem="zVb-RR-40N" firstAttribute="top" secondItem="olB-QN-JsV" secondAttribute="top" id="4Hw-8g-Zms"/>
+                            <constraint firstItem="zVb-RR-40N" firstAttribute="leading" secondItem="olB-QN-JsV" secondAttribute="leading" id="KYc-hm-EZy"/>
+                            <constraint firstItem="olB-QN-JsV" firstAttribute="bottom" secondItem="zVb-RR-40N" secondAttribute="bottom" id="gWy-gJ-vNp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="olB-QN-JsV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Выбрать на карте" id="s33-ps-kuE"/>
+                    <connections>
+                        <outlet property="mapView" destination="zVb-RR-40N" id="LFk-jA-koO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOv-Me-NiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
