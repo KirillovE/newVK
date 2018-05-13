@@ -51,7 +51,6 @@ class NewsVC: UITableViewController {
         
         configureDate(forIndex: indexPath.row)
         webImages.setImage(fromPath: currentNews.photoURL, to: cell.avatar)
-        cell.attachedImage.image = nil
         webImages.setImage(fromPath: currentNews.attachedImageURL, to: cell.attachedImage)
         cell.configure(for: currentNews)
         

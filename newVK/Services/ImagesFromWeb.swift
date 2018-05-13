@@ -14,6 +14,7 @@ class ImagesFromWeb {
     
     func setImage(fromPath urlString: String, to imageView: UIImageView) {
         
+        imageView.image = nil
         guard let url = URL(string: urlString) else { return }
         let urlRequest = URLRequest(url: url)
         DispatchQueue.global().async {
