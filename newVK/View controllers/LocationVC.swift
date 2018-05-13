@@ -16,7 +16,9 @@ class LocationVC: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var currentPlace: CLLocationCoordinate2D!
+    var currentAddress = ""
     let regionDiameter = 2_000.0
+    let addLocationButton = UIButton(type: .contactAdd)
     
     // MARK: - Methods
     
@@ -28,6 +30,8 @@ class LocationVC: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        addLocationButton.addTarget(self, action: #selector(addLocationPressed), for: .touchUpInside)
     }
 
     @IBAction func moveToMyLocation(_ sender: UIBarButtonItem) {
@@ -35,6 +39,21 @@ class LocationVC: UIViewController {
         let currentRegion = MKCoordinateRegionMakeWithDistance(currentPlace, regionDiameter, regionDiameter)
         mapView.setRegion(currentRegion, animated: true)
     }
+    
+    @objc func addLocationPressed() {
+        let geoCoder = CLGeocoder()
+        let coordinates = CLLocation(latitude: currentPlace.latitude, longitude: currentPlace.longitude)
+        geoCoder.reverseGeocodeLocation(coordinates) { [weak self] myPlaces, _ in
+            if let place = myPlaces?.last {
+                let country = place.country ?? ""
+                let city = place.locality ?? ""
+                let street = place.thoroughfare ?? ""
+                self?.currentAddress = "\n\(country), \(city), \(street)"
+                print(self?.currentAddress ?? "no address")
+            }
+        }
+    }
+
 }
 
 // MARK: - Showing annotation for pin
@@ -49,7 +68,7 @@ extension LocationVC: MKMapViewDelegate {
         let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "SomeIdentifier")
         annotationView.canShowCallout = true
         annotationView.calloutOffset = CGPoint(x: -5, y: 5)
-        annotationView.rightCalloutAccessoryView = UIButton(type: .contactAdd)
+        annotationView.leftCalloutAccessoryView = addLocationButton
         annotationView.annotation = annotation
         return annotationView
     }
@@ -63,14 +82,6 @@ extension LocationVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLocation = locations.last?.coordinate {
             currentPlace = currentLocation
-            let geoCoder = CLGeocoder()
-            geoCoder.reverseGeocodeLocation(locations.last!) { myPlaces, _ in
-                if let place = myPlaces?.last {
-                    print(place.country!)
-                    print(place.locality!)
-                    print(place.thoroughfare!)
-                }
-            }
             
             let currentRegion = MKCoordinateRegionMakeWithDistance(currentLocation, regionDiameter, regionDiameter)
             mapView.setRegion(currentRegion, animated: true)
