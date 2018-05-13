@@ -125,7 +125,7 @@ extension NewsRequest {
         for (_, item) in profilesArray {
             if item["id"].intValue == news.sourceID {
                 news.name = item["first_name"].stringValue + " " + item["last_name"].stringValue
-                news.photoURL = item["photo_medium_rec"].stringValue
+                news.photoURL = item["photo_100"].stringValue
             }
         }
     }
