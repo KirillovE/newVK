@@ -7,6 +7,7 @@
 //
 
 import MapKit
+import CoreLocation
 
 class LocationVC: UIViewController {
 
@@ -14,15 +15,32 @@ class LocationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        mapView.delegate = self
+        
+        let annotation = MKPointAnnotation()
+        annotation.title = "Дом"
+        annotation.subtitle = "Я здесь"
+        annotation.coordinate = CLLocationCoordinate2DMake(55, 51)
+        mapView.addAnnotation(annotation)
     }
 
     @IBAction func moveToMyLocation(_ sender: UIBarButtonItem) {
     }
+}
+
+extension LocationVC: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "SomeIdentifier") as? MKMarkerAnnotationView {
+            annotationView.annotation = annotation
+            return annotationView
+        }
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "SomeIdentifier")
+        annotationView.canShowCallout = true
+        annotationView.calloutOffset = CGPoint(x: -5, y: 5)
+        annotationView.rightCalloutAccessoryView = UIButton(type: .contactAdd)
+        annotationView.annotation = annotation
+        return annotationView
+    }
+    
 }
