@@ -57,6 +57,15 @@ extension LocationVC: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLocation = locations.last?.coordinate {
+            let geoCoder = CLGeocoder()
+            geoCoder.reverseGeocodeLocation(locations.last!) { myPlaces, _ in
+                if let place = myPlaces?.last {
+                    print(place.country!)
+                    print(place.locality!)
+                    print(place.thoroughfare!)
+                }
+            }
+            
             let currentRadius: CLLocationDistance = 1_000
             let currentRegion = MKCoordinateRegionMakeWithDistance(currentLocation, currentRadius * 2, currentRadius * 2)
             mapView.setRegion(currentRegion, animated: true)
