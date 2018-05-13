@@ -11,8 +11,12 @@ import CoreLocation
 
 class LocationVC: UIViewController {
 
+    // MARK: - Source data
+    
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
+    
+    // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,8 @@ class LocationVC: UIViewController {
     @IBAction func moveToMyLocation(_ sender: UIBarButtonItem) {
     }
 }
+
+// MARK: - Showing annotation for pin
 
 extension LocationVC: MKMapViewDelegate {
     
@@ -44,6 +50,8 @@ extension LocationVC: MKMapViewDelegate {
     }
     
 }
+
+// MARK: - Getting current location
 
 extension LocationVC: CLLocationManagerDelegate {
     
