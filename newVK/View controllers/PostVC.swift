@@ -12,10 +12,19 @@ class PostVC: UIViewController {
 
     @IBOutlet weak var postText: UITextView!
     let postRequest = PostMessage()
+    let userDefaults = UserDefaults.standard
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userDefaults.removeObject(forKey: "address")
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         postText.selectAll(nil)
+        if let address = userDefaults.string(forKey: "address") {
+            postText.text.append(contentsOf: "\n\(address)")
+        }
     }
     
     @IBAction func post(_ sender: UIBarButtonItem) {

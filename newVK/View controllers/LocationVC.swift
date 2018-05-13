@@ -16,6 +16,7 @@ class LocationVC: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var currentPlace: CLLocationCoordinate2D!
+    var coordinates = CLLocation()
     var currentAddress = ""
     let regionDiameter = 2_000.0
     let addLocationButton = UIButton(type: .contactAdd)
@@ -34,24 +35,16 @@ class LocationVC: UIViewController {
         addLocationButton.addTarget(self, action: #selector(addLocationPressed), for: .touchUpInside)
     }
 
-    @IBAction func moveToMyLocation(_ sender: UIBarButtonItem) {
+    @IBAction func moveToMe(_ sender: UIButton) {
         mapView.setCenter(currentPlace, animated: true)
         let currentRegion = MKCoordinateRegionMakeWithDistance(currentPlace, regionDiameter, regionDiameter)
         mapView.setRegion(currentRegion, animated: true)
     }
     
     @objc func addLocationPressed() {
-        let geoCoder = CLGeocoder()
-        let coordinates = CLLocation(latitude: currentPlace.latitude, longitude: currentPlace.longitude)
-        geoCoder.reverseGeocodeLocation(coordinates) { [weak self] myPlaces, _ in
-            if let place = myPlaces?.last {
-                let country = place.country ?? ""
-                let city = place.locality ?? ""
-                let street = place.thoroughfare ?? ""
-                self?.currentAddress = "\n\(country), \(city), \(street)"
-                print(self?.currentAddress ?? "no address")
-            }
-        }
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(currentAddress, forKey: "address")
+        dismiss(animated: true, completion: nil)
     }
 
 }
@@ -82,10 +75,25 @@ extension LocationVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLocation = locations.last?.coordinate {
             currentPlace = currentLocation
+            getAddress()
             
             let currentRegion = MKCoordinateRegionMakeWithDistance(currentLocation, regionDiameter, regionDiameter)
             mapView.setRegion(currentRegion, animated: true)
             mapView.showsUserLocation = true
+        }
+    }
+    
+    func getAddress() {
+        coordinates = CLLocation(latitude: currentPlace.latitude, longitude: currentPlace.longitude)
+        let geoCoder = CLGeocoder()
+        geoCoder.reverseGeocodeLocation(coordinates) { [weak self] myPlaces, _ in
+            if let place = myPlaces?.last {
+                let country = place.country ?? ""
+                let city = place.locality ?? ""
+                let street = place.thoroughfare ?? ""
+                self?.currentAddress = "\n\(country), \(city), \(street)"
+                print(self?.currentAddress ?? "no address")
+            }
         }
     }
     

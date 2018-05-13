@@ -268,7 +268,7 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="карта" id="jqe-BM-6LS" userLabel="Карта">
                                 <connections>
-                                    <segue destination="sFz-hv-ss5" kind="show" id="bfr-HU-slq"/>
+                                    <segue destination="sFz-hv-ss5" kind="presentation" id="bfr-HU-slq"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="опубликовать" id="XSt-CD-CH6" userLabel="Опубликовать">
@@ -295,14 +295,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zVb-RR-40N">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtV-vU-SDD">
+                                <rect key="frame" x="295" y="587" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="BHM-A5-dH7"/>
+                                    <constraint firstAttribute="height" constant="50" id="rG2-3R-OlZ"/>
+                                </constraints>
+                                <state key="normal" title="Я" image="я">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="moveToMe:" destination="sFz-hv-ss5" eventType="touchUpInside" id="PAn-17-Kbc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="olB-QN-JsV" firstAttribute="trailing" secondItem="zVb-RR-40N" secondAttribute="trailing" id="00i-a5-SMU"/>
                             <constraint firstItem="zVb-RR-40N" firstAttribute="top" secondItem="olB-QN-JsV" secondAttribute="top" id="4Hw-8g-Zms"/>
                             <constraint firstItem="zVb-RR-40N" firstAttribute="leading" secondItem="olB-QN-JsV" secondAttribute="leading" id="KYc-hm-EZy"/>
+                            <constraint firstItem="olB-QN-JsV" firstAttribute="trailing" secondItem="rtV-vU-SDD" secondAttribute="trailing" constant="30" id="Wgp-4A-Ls7"/>
+                            <constraint firstItem="olB-QN-JsV" firstAttribute="bottom" secondItem="rtV-vU-SDD" secondAttribute="bottom" constant="30" id="e0g-Su-jaJ"/>
                             <constraint firstItem="olB-QN-JsV" firstAttribute="bottom" secondItem="zVb-RR-40N" secondAttribute="bottom" id="gWy-gJ-vNp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="olB-QN-JsV"/>
