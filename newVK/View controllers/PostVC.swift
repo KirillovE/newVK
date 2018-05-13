@@ -13,6 +13,11 @@ class PostVC: UIViewController {
     @IBOutlet weak var postText: UITextView!
     let postRequest = PostMessage()
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        postText.selectAll(nil)
+    }
+    
     @IBAction func post(_ sender: UIBarButtonItem) {
         postText.resignFirstResponder()
         let text = postText.text!
