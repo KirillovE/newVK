@@ -228,6 +228,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Новости" id="G0D-QH-Ckn">
                         <barButtonItem key="backBarButtonItem" title=" " id="ZhX-q8-FFo"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="хозяин" id="b1J-Kv-aTQ">
+                            <connections>
+                                <segue destination="B9B-Mg-7AP" kind="show" id="evm-tX-VKi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="BaM-ho-wBM">
                             <connections>
                                 <segue destination="6Dp-Ao-AHe" kind="show" identifier="messagePost" id="vXm-6H-mTJ"/>
@@ -284,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgJ-25-neI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3920.8000000000002" y="-1615.1424287856073"/>
+            <point key="canvasLocation" x="4718" y="-1615"/>
         </scene>
         <!--Выбрать на карте-->
         <scene sceneID="ArO-7T-jEO">
@@ -351,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOv-Me-NiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4718" y="-1615"/>
+            <point key="canvasLocation" x="5514" y="-1615"/>
         </scene>
         <!--Фотоальбом-->
         <scene sceneID="uFd-bg-iLu">
@@ -413,7 +418,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYz-xQ-s5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NXG-Xk-eJU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3922" y="-547"/>
+            <point key="canvasLocation" x="4718" y="-564"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="EPZ-MO-kAw">
@@ -502,6 +507,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Мои группы" id="UgM-3x-lVT">
                         <barButtonItem key="backBarButtonItem" title=" " id="C6P-NO-L4q"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="хозяин" id="sNE-2i-eB3">
+                            <connections>
+                                <segue destination="B9B-Mg-7AP" kind="show" id="iqO-Aj-b0i"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="O9c-gq-15Z">
                             <connections>
                                 <segue destination="PmN-Zr-pDk" kind="show" identifier="showAllGroups" id="r1m-8V-K69"/>
@@ -575,7 +585,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3923" y="886"/>
+            <point key="canvasLocation" x="4718" y="886"/>
         </scene>
         <!--Фотоальбом-->
         <scene sceneID="rHf-jr-LBz">
@@ -627,7 +637,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avt-RE-oIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3922" y="151"/>
+            <point key="canvasLocation" x="4718" y="134"/>
         </scene>
         <!--Manage PageVC-->
         <scene sceneID="shH-d5-HsU">
@@ -635,7 +645,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="hNb-dO-aCw" customClass="ManagePageVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nur-nE-MO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4719" y="-547"/>
+            <point key="canvasLocation" x="5514" y="-564"/>
         </scene>
         <!--Large PhotoVC-->
         <scene sceneID="NUx-WS-oCJ">
@@ -666,7 +676,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aV-wK-OpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4718" y="151"/>
+            <point key="canvasLocation" x="5514" y="134"/>
         </scene>
         <!--Сообщения-->
         <scene sceneID="nfC-lp-qVb">
@@ -841,5 +851,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="iZ1-Ls-q3T"/>
         <segue reference="uqI-iU-T0X"/>
+        <segue reference="evm-tX-VKi"/>
     </inferredMetricsTieBreakers>
 </document>

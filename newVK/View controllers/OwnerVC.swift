@@ -11,6 +11,7 @@ import RealmSwift
 private let reuseIdentifier = "ownerPhotos"
 
 class OwnerVC: UICollectionViewController {
+    
     // MARK: - Source data
     
     let photosRequest = PhotosRequest()
