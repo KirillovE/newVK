@@ -22,7 +22,7 @@ class LocationVC: UIViewController {
     let regionDiameter = 2_000.0
     let addLocationButton = UIButton(type: .contactAdd)
     
-    // MARK: - View controller life cycle
+    // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,15 @@ class LocationVC: UIViewController {
         addLocationButton.addTarget(self, action: #selector(addLocationPressed), for: .touchUpInside)
     }
     
-    // MARK: - Methods
+    func addPin(forPlace place: CLLocationCoordinate2D, withAddress address: String) {
+        let annotation = MKPointAnnotation()
+        annotation.title = "Я здесь"
+        annotation.subtitle = address
+        annotation.coordinate = CLLocationCoordinate2DMake(place.latitude, place.longitude)
+        mapView.addAnnotation(annotation)
+    }
+    
+    // MARK: - Objective-C methods
 
     @IBAction func moveToMe(_ sender: UIButton) {
         mapView.setCenter(currentPlace, animated: true)
@@ -52,14 +60,6 @@ class LocationVC: UIViewController {
 
     @IBAction func cancelPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    func addPin(forPlace place: CLLocationCoordinate2D, withAddress address: String) {
-        let annotation = MKPointAnnotation()
-        annotation.title = "Я здесь"
-        annotation.subtitle = address
-        annotation.coordinate = CLLocationCoordinate2DMake(place.latitude, place.longitude)
-        mapView.addAnnotation(annotation)
     }
 
 }
