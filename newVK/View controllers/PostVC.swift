@@ -10,9 +10,13 @@ import UIKit
 
 class PostVC: UIViewController {
 
+    // MARK: - Source data
+    
     @IBOutlet weak var postText: UITextView!
     let postRequest = PostMessage()
     let userDefaults = UserDefaults.standard
+    
+    // MARK: - View controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,8 @@ class PostVC: UIViewController {
             postText.text.append(contentsOf: "\n\(address)")
         }
     }
+    
+    // MARK: -
     
     @IBAction func post(_ sender: UIBarButtonItem) {
         postText.resignFirstResponder()
@@ -43,6 +49,8 @@ class PostVC: UIViewController {
     }
 
 }
+
+// MARK: -
 
 extension PostVC {
     
