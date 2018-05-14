@@ -47,6 +47,9 @@ class LocationVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func cancelPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - Showing annotation for pin

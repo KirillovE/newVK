@@ -304,10 +304,23 @@
                                     <constraint firstAttribute="height" constant="50" id="rG2-3R-OlZ"/>
                                 </constraints>
                                 <state key="normal" title="Я" image="я">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="moveToMe:" destination="sFz-hv-ss5" eventType="touchUpInside" id="PAn-17-Kbc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTT-jW-xUT">
+                                <rect key="frame" x="30" y="587" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Iy8-91-QeZ"/>
+                                    <constraint firstAttribute="width" constant="100" id="m2O-hM-3At"/>
+                                </constraints>
+                                <state key="normal" title="Отмена" image="отмена">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="sFz-hv-ss5" eventType="touchUpInside" id="GTY-7q-5RI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -316,9 +329,11 @@
                             <constraint firstItem="olB-QN-JsV" firstAttribute="trailing" secondItem="zVb-RR-40N" secondAttribute="trailing" id="00i-a5-SMU"/>
                             <constraint firstItem="zVb-RR-40N" firstAttribute="top" secondItem="olB-QN-JsV" secondAttribute="top" id="4Hw-8g-Zms"/>
                             <constraint firstItem="zVb-RR-40N" firstAttribute="leading" secondItem="olB-QN-JsV" secondAttribute="leading" id="KYc-hm-EZy"/>
+                            <constraint firstItem="yTT-jW-xUT" firstAttribute="leading" secondItem="olB-QN-JsV" secondAttribute="leading" constant="30" id="T3e-78-jtV"/>
                             <constraint firstItem="olB-QN-JsV" firstAttribute="trailing" secondItem="rtV-vU-SDD" secondAttribute="trailing" constant="30" id="Wgp-4A-Ls7"/>
                             <constraint firstItem="olB-QN-JsV" firstAttribute="bottom" secondItem="rtV-vU-SDD" secondAttribute="bottom" constant="30" id="e0g-Su-jaJ"/>
                             <constraint firstItem="olB-QN-JsV" firstAttribute="bottom" secondItem="zVb-RR-40N" secondAttribute="bottom" id="gWy-gJ-vNp"/>
+                            <constraint firstItem="olB-QN-JsV" firstAttribute="bottom" secondItem="yTT-jW-xUT" secondAttribute="bottom" constant="30" id="z2I-IE-5zv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="olB-QN-JsV"/>
                     </view>
@@ -815,6 +830,7 @@
         <image name="новости" width="30" height="30"/>
         <image name="нравится" width="30" height="30"/>
         <image name="опубликовать" width="30" height="30"/>
+        <image name="отмена" width="30" height="30"/>
         <image name="просмотры" width="30" height="30"/>
         <image name="сообщения" width="30" height="30"/>
         <image name="хозяин" width="30" height="30"/>
