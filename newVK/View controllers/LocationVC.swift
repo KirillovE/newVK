@@ -36,11 +36,6 @@ class LocationVC: UIViewController {
         addLocationButton.addTarget(self, action: #selector(addLocationPressed), for: .touchUpInside)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        addPin(forPlace: currentPlace, withAddress: currentShortAddress)
-    }
-    
     // MARK: - Methods
 
     @IBAction func moveToMe(_ sender: UIButton) {
