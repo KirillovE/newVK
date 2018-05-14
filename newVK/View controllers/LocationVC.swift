@@ -18,10 +18,11 @@ class LocationVC: UIViewController {
     var currentPlace: CLLocationCoordinate2D!
     var coordinates = CLLocation()
     var currentAddress = ""
+    var currentShortAddress = ""
     let regionDiameter = 2_000.0
     let addLocationButton = UIButton(type: .contactAdd)
     
-    // MARK: - Methods
+    // MARK: - View controller life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,13 @@ class LocationVC: UIViewController {
         
         addLocationButton.addTarget(self, action: #selector(addLocationPressed), for: .touchUpInside)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        addPin(forPlace: currentPlace, withAddress: currentShortAddress)
+    }
+    
+    // MARK: - Methods
 
     @IBAction func moveToMe(_ sender: UIButton) {
         mapView.setCenter(currentPlace, animated: true)
@@ -50,6 +58,15 @@ class LocationVC: UIViewController {
     @IBAction func cancelPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    func addPin(forPlace place: CLLocationCoordinate2D, withAddress address: String) {
+        let annotation = MKPointAnnotation()
+        annotation.title = "Я здесь"
+        annotation.subtitle = address
+        annotation.coordinate = CLLocationCoordinate2DMake(place.latitude, place.longitude)
+        mapView.addAnnotation(annotation)
+    }
+
 }
 
 // MARK: - Showing annotation for pin
@@ -95,7 +112,9 @@ extension LocationVC: CLLocationManagerDelegate {
                 let city = place.locality ?? ""
                 let street = place.thoroughfare ?? ""
                 self?.currentAddress = "\n\(country), \(city), \(street)"
-                print(self?.currentAddress ?? "no address")
+                let shortAddress = place.thoroughfare ?? place.locality ?? place.country ?? ""
+                self?.currentShortAddress = shortAddress
+                self?.addPin(forPlace: (self?.currentPlace)!, withAddress: shortAddress)
             }
         }
     }

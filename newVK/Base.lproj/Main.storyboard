@@ -268,7 +268,7 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="карта" id="jqe-BM-6LS" userLabel="Карта">
                                 <connections>
-                                    <segue destination="sFz-hv-ss5" kind="presentation" id="bfr-HU-slq"/>
+                                    <segue destination="sFz-hv-ss5" kind="presentation" identifier="" id="bfr-HU-slq"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="опубликовать" id="XSt-CD-CH6" userLabel="Опубликовать">
@@ -311,10 +311,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTT-jW-xUT">
-                                <rect key="frame" x="30" y="587" width="100" height="50"/>
+                                <rect key="frame" x="30" y="587" width="96" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Iy8-91-QeZ"/>
-                                    <constraint firstAttribute="width" constant="100" id="m2O-hM-3At"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="m2O-hM-3At"/>
                                 </constraints>
                                 <state key="normal" title="Отмена" image="отмена">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -332,6 +332,7 @@
                             <constraint firstItem="yTT-jW-xUT" firstAttribute="leading" secondItem="olB-QN-JsV" secondAttribute="leading" constant="30" id="T3e-78-jtV"/>
                             <constraint firstItem="olB-QN-JsV" firstAttribute="trailing" secondItem="rtV-vU-SDD" secondAttribute="trailing" constant="30" id="Wgp-4A-Ls7"/>
                             <constraint firstItem="olB-QN-JsV" firstAttribute="bottom" secondItem="rtV-vU-SDD" secondAttribute="bottom" constant="30" id="e0g-Su-jaJ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yTT-jW-xUT" secondAttribute="trailing" constant="20" symbolic="YES" id="fbF-8d-897"/>
                             <constraint firstItem="olB-QN-JsV" firstAttribute="bottom" secondItem="zVb-RR-40N" secondAttribute="bottom" id="gWy-gJ-vNp"/>
                             <constraint firstItem="olB-QN-JsV" firstAttribute="bottom" secondItem="yTT-jW-xUT" secondAttribute="bottom" constant="30" id="z2I-IE-5zv"/>
                         </constraints>
