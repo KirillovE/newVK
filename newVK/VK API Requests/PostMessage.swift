@@ -19,12 +19,14 @@ class PostMessage {
     
     // MARK: - Methods
     
-    func makeRequest(textToPost message: String, completion: @escaping (Bool) -> Void) {
+    func makeRequest(textToPost message: String, latitude: Double = 0, longitude: Double = 0, completion: @escaping (Bool) -> Void) {
         let (accessToken, apiVersion, url) = configureRequest()
         
         let parameters: Parameters = ["message": message,
                                       "access_token": accessToken,
-                                      "v": apiVersion
+                                      "v": apiVersion,
+                                      "lat": latitude,
+                                      "long": longitude
         ]
         
         sessionManager?.request(url! + method,

@@ -55,6 +55,8 @@ class LocationVC: UIViewController {
     @objc func addLocationPressed() {
         let userDefaults = UserDefaults.standard
         userDefaults.set(currentAddress, forKey: "address")
+        userDefaults.set(currentPlace.latitude, forKey: "latitude")
+        userDefaults.set(currentPlace.longitude, forKey: "longitude")
         dismiss(animated: true, completion: nil)
     }
 
