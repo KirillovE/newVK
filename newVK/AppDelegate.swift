@@ -44,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Количество поступивших запросов: \(requestsCount)")
             if requestsCount != 0 {
                 print("Идентификаторы потенциальных друзей: \(potentialFriends)")
+                let saving = SavingObjects()
+                let pendingFrineds = potentialFriends.map { PendingFriends(id: $0) }
+                saving.save(objectsArray: pendingFrineds)
             }
             self.fetchFriendsRequestsGroup.leave()
         }
