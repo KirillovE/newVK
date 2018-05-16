@@ -8,6 +8,7 @@
 
 import RealmSwift
 import FirebaseCore
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,11 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let checkFriends = CheckNewFriendsRequest()
     let checkFriendsInterval = 900.0           //проверка каждые 15 минут
     let timeToHandleRequests = 10.0
+    let content = UNMutableNotificationContent()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
         Realm.Configuration.defaultConfiguration = config
         FirebaseApp.configure()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: .badge) { _, error in
+            if error != nil { print(error.debugDescription) }
+        }
         
         return true
     }
@@ -47,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let saving = SavingObjects()
                 let pendingFrineds = potentialFriends.map { PendingFriends(id: $0) }
                 saving.save(objectsArray: pendingFrineds)
+                self.content.badge = requestsCount as NSNumber
             }
             self.fetchFriendsRequestsGroup.leave()
         }
