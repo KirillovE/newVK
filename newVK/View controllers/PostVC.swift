@@ -52,9 +52,7 @@ class PostVC: UIViewController {
         postRequest.makeRequest(textToPost: text) { response in
             if response {
                 self.showMessage(title: "Успех", text: "Запись опубликована", buttonText: "Хорошо")
-                DispatchQueue.main.async {
-                    self.postText.text = ""
-                }
+                DispatchQueue.main.async { self.postText.text = "" }
             } else {
                 self.showMessage(title: "Ошибка", text: "Что-то пошло не так", buttonText: "Ясно")
             }
