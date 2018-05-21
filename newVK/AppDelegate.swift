@@ -54,9 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 saving.save(objectsArray: pendingFrineds)
                 DispatchQueue.main.async {
                     application.applicationIconBadgeNumber = requestsCount
+                    self.fetchFriendsRequestsGroup.leave()
                 }
             }
-            self.fetchFriendsRequestsGroup.leave()
         }
         
         fetchFriendsRequestsGroup.notify(queue: .main) {
