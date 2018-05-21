@@ -32,6 +32,10 @@ class PostVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if let address = userDefaults.string(forKey: "address") {
+            if postText.text == "Введите текст Вашей публикации" {
+                postText.text = nil
+                postText.textColor = .black
+            }
             postText.text.append(contentsOf: "\n\(address)")
         }
     }
