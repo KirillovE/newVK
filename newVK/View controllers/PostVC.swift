@@ -27,7 +27,6 @@ class PostVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        postText.selectAll(nil)
         if let address = userDefaults.string(forKey: "address") {
             postText.text.append(contentsOf: "\n\(address)")
         }
