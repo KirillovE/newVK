@@ -23,6 +23,10 @@ class PostVC: UIViewController {
         userDefaults.removeObject(forKey: "address")
         userDefaults.removeObject(forKey: "latitude")
         userDefaults.removeObject(forKey: "longitude")
+        
+        postText.delegate = self
+        postText.text = "Введите текст Вашей публикации"
+        postText.textColor = .lightGray
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +78,7 @@ class PostVC: UIViewController {
 
 }
 
-// MARK: -
+// MARK: - Extensions
 
 extension PostVC {
     
@@ -83,6 +87,24 @@ extension PostVC {
         let alertAction = UIAlertAction(title: buttonText, style: .default, handler: nil)
         alert.addAction(alertAction)
         present(alert, animated: true)
+    }
+    
+}
+
+extension PostVC: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Введите текст Вашей публикации"
+            textView.textColor = .lightGray
+        }
     }
     
 }
