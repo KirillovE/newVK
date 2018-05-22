@@ -10,6 +10,7 @@ import SwiftyJSON
 import RealmSwift
 
 class Photo: Object {
+    
     @objc dynamic var id = 0
     @objc dynamic var ownerId = 0
     @objc dynamic var smallPhotoURL = ""

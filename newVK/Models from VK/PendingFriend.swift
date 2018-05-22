@@ -9,6 +9,7 @@
 import RealmSwift
 
 class PendingFriends: Object {
+    
     @objc dynamic var id = 0
     
     convenience init(id: Int) {
@@ -17,4 +18,5 @@ class PendingFriends: Object {
     }
     
     @objc open override class func primaryKey() -> String? { return "id" }
+
 }

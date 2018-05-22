@@ -10,6 +10,7 @@ import SwiftyJSON
 import RealmSwift
 
 class Group: Object {
+    
     @objc dynamic var id = 0
     @objc dynamic var name = ""
     @objc dynamic var photoURL = ""

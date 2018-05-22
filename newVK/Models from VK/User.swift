@@ -10,6 +10,7 @@ import SwiftyJSON
 import RealmSwift
 
 class User: Object {
+    
     @objc dynamic var id = 0
     @objc dynamic var firstName = ""
     @objc dynamic var lastName = ""
@@ -27,4 +28,5 @@ class User: Object {
     }
     
     @objc open override class func primaryKey() -> String? { return "id" }
+
 }
