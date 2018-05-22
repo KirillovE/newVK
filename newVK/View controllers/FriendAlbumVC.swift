@@ -53,7 +53,7 @@ class FriendAlbumVC: UICollectionViewController {
         photoPages.photoIndex = getLargePhotoIndex(from: sender)
     }
 
-    func getLargePhotoIndex(from sender: Any?) -> Int {
+    private func getLargePhotoIndex(from sender: Any?) -> Int {
         let selectedCell = sender as! FriendAlbumCell
         let photoIndex = self.collectionView?.indexPath(for: selectedCell)?.row
         return photoIndex!
@@ -65,7 +65,7 @@ class FriendAlbumVC: UICollectionViewController {
 
 extension FriendAlbumVC {
     
-    func pairCollectionAndRealm() {
+    private func pairCollectionAndRealm() {
         guard let realm = try? Realm() else { return }
         photos = realm.objects(Photo.self)
         token = photos.observe { [weak self] changes in

@@ -11,7 +11,6 @@ import UIKit
 class FriendsCell: UITableViewCell {
     
     func configure(for friend: User) {
-        
         let firstName = friend.firstName
         let lastName = friend.lastName
         let nick = friend.nick

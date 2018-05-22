@@ -88,7 +88,7 @@ class MyGroupsVC: UITableViewController {
 
 extension MyGroupsVC {
     
-    func pairTableAndRealm() {
+    private func pairTableAndRealm() {
         guard let realm = try? Realm() else { return }
         groups = realm.objects(Group.self)
         token = groups.observe { [weak self] changes in

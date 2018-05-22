@@ -27,6 +27,7 @@ struct Reposts {
 }
 
 class News {
+    
     let newsType: String
     let sourceID: Int
     let date: Double
@@ -65,4 +66,5 @@ class News {
         
         viewsCount = json["views", "count"].intValue
     }
+    
 }

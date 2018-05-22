@@ -10,20 +10,19 @@ import UIKit
 
 class LargePhotoVC: UIViewController {
     
-// MARK: - Variables
+    // MARK: - Variables
     
     @IBOutlet weak var largePhoto: UIImageView!
     let webImages = ImagesFromWeb()
     var photoIndex: Int!
     var photoURL = ""
     
-// MARK: - Methods
+    // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         webImages.setImage(fromPath: photoURL, to: largePhoto)
-        
         let hideNavBar = UITapGestureRecognizer(target: self, action: #selector(switchNavBarVisible))
         view.addGestureRecognizer(hideNavBar)
     }
@@ -33,7 +32,7 @@ class LargePhotoVC: UIViewController {
 // MARK: -
 
 extension LargePhotoVC {
-   
+    
     @IBAction func switchNavBarVisible() {
         switch navigationController?.isNavigationBarHidden {
         case true?:

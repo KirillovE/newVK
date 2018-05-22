@@ -96,7 +96,7 @@ class NewsVC: UITableViewController {
 
 extension NewsVC {
     
-    func configureDate(forIndex index: Int) {
+    private func configureDate(forIndex index: Int) {
         news[index].day = formatter.formatDate(news[index].date, outputFormat: .day)
         news[index].time = formatter.formatDate(news[index].date, outputFormat: .time)
     }

@@ -36,7 +36,7 @@ class LocationVC: UIViewController {
         addLocationButton.addTarget(self, action: #selector(addLocationPressed), for: .touchUpInside)
     }
     
-    func addPin(forPlace place: CLLocationCoordinate2D, withAddress address: String) {
+    private func addPin(forPlace place: CLLocationCoordinate2D, withAddress address: String) {
         let annotation = MKPointAnnotation()
         annotation.title = "Я здесь"
         annotation.subtitle = address
@@ -100,7 +100,7 @@ extension LocationVC: CLLocationManagerDelegate {
         }
     }
     
-    func getAddress() {
+    private func getAddress() {
         coordinates = CLLocation(latitude: currentPlace.latitude, longitude: currentPlace.longitude)
         let geoCoder = CLGeocoder()
         geoCoder.reverseGeocodeLocation(coordinates) { [weak self] myPlaces, _ in

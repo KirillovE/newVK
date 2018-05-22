@@ -32,11 +32,11 @@ class FriendsVC: UITableViewController {
     }
     
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath) as! FriendsCell
         cell.configure(for: friends[indexPath.row])
@@ -44,8 +44,8 @@ class FriendsVC: UITableViewController {
         
         return cell
     }
-
-// MARK: - 
+    
+    // MARK: -
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowFriendImages" {
@@ -63,7 +63,7 @@ class FriendsVC: UITableViewController {
 
 extension FriendsVC {
     
-    func pairTableAndRealm() {
+    private func pairTableAndRealm() {
         guard let realm = try? Realm() else { return }
         friends = realm.objects(User.self)
         token = friends.observe { [weak self] changes in

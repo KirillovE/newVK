@@ -11,6 +11,7 @@ import Alamofire
 import SwiftKeychainWrapper
 
 class WebKitVC: UIViewController {
+    
     // MARK: - Source data
     
     @IBOutlet weak var webView: WKWebView!
@@ -29,7 +30,7 @@ class WebKitVC: UIViewController {
         webView.navigationDelegate = self
     }
     
-    func showVKloginScreen() {
+    private func showVKloginScreen() {
         let config = URLSessionConfiguration.default
         config.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         sessionManager = SessionManager(configuration: config)
@@ -58,6 +59,7 @@ class WebKitVC: UIViewController {
 // MARK: - Extensions
 
 extension WebKitVC: WKNavigationDelegate {
+    
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         
         guard let url = navigationResponse.response.url,
@@ -99,4 +101,5 @@ extension WebKitVC: WKNavigationDelegate {
             performSegue(withIdentifier: "showLoginScreen", sender: self)
         }
     }
+    
 }

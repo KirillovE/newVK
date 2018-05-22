@@ -56,7 +56,7 @@ class PostVC: UIViewController {
         }
     }
     
-    func postWithoutLocation(textToPost text: String) {
+    private func postWithoutLocation(textToPost text: String) {
         postRequest.makeRequest(textToPost: text) { response in
             if response {
                 self.showMessage(title: "Успех", text: "Запись опубликована", buttonText: "Хорошо")
@@ -67,7 +67,7 @@ class PostVC: UIViewController {
         }
     }
     
-    func postWithLocation(textToPost text: String, latitude: Double, longitude: Double) {
+    private func postWithLocation(textToPost text: String, latitude: Double, longitude: Double) {
         postRequest.makeRequest(textToPost: text, latitude: latitude, longitude: longitude) { response in
             if response {
                 self.showMessage(title: "Успех", text: "Запись опубликована", buttonText: "Хорошо")
@@ -86,7 +86,7 @@ class PostVC: UIViewController {
 
 extension PostVC {
     
-    func showMessage(title: String, text: String, buttonText: String) {
+    private func showMessage(title: String, text: String, buttonText: String) {
         let alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: buttonText, style: .default, handler: nil)
         alert.addAction(alertAction)

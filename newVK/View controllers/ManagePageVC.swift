@@ -19,13 +19,12 @@ class ManagePageVC: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataSource = self
         
         if let viewController = viewLargePhotoVC(photoIndex) {
             let viewControllers = [viewController]
             setViewControllers(viewControllers, direction: .forward, animated: false)
         }
-        
-        dataSource = self
     }
 
     func viewLargePhotoVC(_ index: Int) -> LargePhotoVC? {
