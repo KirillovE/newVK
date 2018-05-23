@@ -10,6 +10,13 @@ import UIKit
 
 class DialogsVC: UITableViewController {
     
-    
+    let dialogsRequest = DialogsRequest()
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dialogsRequest.makeRequest { dialogs in
+            dialogs.forEach { print($0.body) }
+        }
+    }
+    
 }

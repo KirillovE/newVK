@@ -49,8 +49,9 @@ class DialogsRequest {
         return (accessToken, apiVersion, url ?? "")
     }
     
-    private func appendDialogs(from json: JSON?) -> [Message] {
-        return []
+    private func appendDialogs(from json: JSON) -> [Message] {
+        let itemsArray = json["response", "items"].arrayValue
+        return itemsArray.map { Message(json: $0["message"]) }
     }
     
 }
