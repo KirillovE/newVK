@@ -24,6 +24,7 @@
 		3E4F900620B5651D00E8474F /* DialogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900520B5651D00E8474F /* DialogsVC.swift */; };
 		3E4F900820B56BFC00E8474F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900720B56BFC00E8474F /* Message.swift */; };
 		3E4F900A20B570FF00E8474F /* DialogsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900920B570FF00E8474F /* DialogsRequest.swift */; };
+		3E4F900E20B5ADC900E8474F /* UsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900D20B5ADC900E8474F /* UsersRequest.swift */; };
 		3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E618430203717DB00A68D16 /* AppDelegate.swift */; };
 		3E618436203717DB00A68D16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E618434203717DB00A68D16 /* Main.storyboard */; };
 		3E618438203717DB00A68D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E618437203717DB00A68D16 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		3E4F900520B5651D00E8474F /* DialogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsVC.swift; sourceTree = "<group>"; };
 		3E4F900720B56BFC00E8474F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3E4F900920B570FF00E8474F /* DialogsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsRequest.swift; sourceTree = "<group>"; };
+		3E4F900D20B5ADC900E8474F /* UsersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRequest.swift; sourceTree = "<group>"; };
 		3E61842D203717DB00A68D16 /* newVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E618430203717DB00A68D16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E618435203717DB00A68D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				3E21A025206D1CAE0011D287 /* NewsRequest.swift */,
 				3EA1B32920A8633D007B3808 /* PostMessage.swift */,
 				3E4F900920B570FF00E8474F /* DialogsRequest.swift */,
+				3E4F900D20B5ADC900E8474F /* UsersRequest.swift */,
 				3E0FEF7D204ABE4C006DE640 /* FriendsRequest.swift */,
 				3EAC58DB20624B2300A2DE4A /* PhotosRequest.swift */,
 				3EAC58DC20624B2300A2DE4A /* GroupsRequest.swift */,
@@ -419,6 +422,7 @@
 				3EA2D54E20ACADF000B588E4 /* PendingFriend.swift in Sources */,
 				3EC6D59220679811009F92A2 /* NewsVC.swift in Sources */,
 				3E2BE8BE2042E9D9002A50CF /* MyGroupsVC.swift in Sources */,
+				3E4F900E20B5ADC900E8474F /* UsersRequest.swift in Sources */,
 				3EA1B32820A84CD1007B3808 /* LocationVC.swift in Sources */,
 				3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */,
 				3E78B69C20443228006E9397 /* LargePhotoVC.swift in Sources */,
