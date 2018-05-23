@@ -10,6 +10,7 @@ import UIKit
 
 class DialogsVC: UITableViewController {
     
+    private let webImages = ImagesFromWeb()
     private let dialogsRequest = DialogsRequest()
     private let userRequest = UsersRequest()
     private var comleteDialogs = [Message]()
@@ -36,10 +37,10 @@ class DialogsVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dialogs", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dialogs", for: indexPath) as! DialogsCell
         let dialog = comleteDialogs[indexPath.row]
-        cell.textLabel?.text = dialog.firstName + " " + dialog.lastName
-        cell.detailTextLabel?.text = dialog.body
+        cell.configure(for: dialog)
+        webImages.setImage(fromPath: dialog.photoURL, to: cell.imageView!)
         
         return cell
     }
