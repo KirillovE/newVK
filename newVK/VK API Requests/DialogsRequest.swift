@@ -17,13 +17,15 @@ class DialogsRequest {
     private var sessionManager: SessionManager?
     private let userDefaults = UserDefaults.standard
     private let method = "messages.getDialogs"
+    private let previewLength = 30
     
     // MARK: - Methods
     
     func makeRequest(completion: @escaping ([Message]) -> Void) {
         let (accessToken, apiVersion, url) = configureRequest()
         
-        let parameters: Parameters = ["access_token": accessToken,
+        let parameters: Parameters = ["preview_length": previewLength,
+                                      "access_token": accessToken,
                                       "v": apiVersion
         ]
         
