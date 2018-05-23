@@ -6,7 +6,6 @@
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-import RealmSwift
 import SwiftyJSON
 
 struct Comments {
