@@ -21,6 +21,7 @@
 		3E25C84F2089DA3F005EC7DE /* CellHeightDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25C84E2089DA3F005EC7DE /* CellHeightDelegate.swift */; };
 		3E2BE8BE2042E9D9002A50CF /* MyGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BE8BD2042E9D9002A50CF /* MyGroupsVC.swift */; };
 		3E2BE8C02042EE36002A50CF /* AllGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BE8BF2042EE36002A50CF /* AllGroupsVC.swift */; };
+		3E4F900620B5651D00E8474F /* DialogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900520B5651D00E8474F /* DialogsVC.swift */; };
 		3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E618430203717DB00A68D16 /* AppDelegate.swift */; };
 		3E618436203717DB00A68D16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E618434203717DB00A68D16 /* Main.storyboard */; };
 		3E618438203717DB00A68D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E618437203717DB00A68D16 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		3E25C84E2089DA3F005EC7DE /* CellHeightDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeightDelegate.swift; sourceTree = "<group>"; };
 		3E2BE8BD2042E9D9002A50CF /* MyGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsVC.swift; sourceTree = "<group>"; };
 		3E2BE8BF2042EE36002A50CF /* AllGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsVC.swift; sourceTree = "<group>"; };
+		3E4F900520B5651D00E8474F /* DialogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsVC.swift; sourceTree = "<group>"; };
 		3E61842D203717DB00A68D16 /* newVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E618430203717DB00A68D16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E618435203717DB00A68D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				3EA1B32520A84CC5007B3808 /* PostVC.swift */,
 				3EA1B32720A84CD1007B3808 /* LocationVC.swift */,
 				3EC6D59620692C84009F92A2 /* MessagesVC.swift */,
+				3E4F900520B5651D00E8474F /* DialogsVC.swift */,
 				3E167695203F6C0700287BB4 /* FriendsVC.swift */,
 				3E16769920400B5C00287BB4 /* FriendAlbumVC.swift */,
 				3EA87349204728930049C4F2 /* ManagePageVC.swift */,
@@ -391,6 +394,7 @@
 				3E25C84F2089DA3F005EC7DE /* CellHeightDelegate.swift in Sources */,
 				3EAC58DE20624B2300A2DE4A /* GroupsRequest.swift in Sources */,
 				3E7D1212204ECF44001E4D9C /* User.swift in Sources */,
+				3E4F900620B5651D00E8474F /* DialogsVC.swift in Sources */,
 				3EAC58DA20619DF800A2DE4A /* SavingObjects.swift in Sources */,
 				3E21A026206D1CAE0011D287 /* NewsRequest.swift in Sources */,
 				3E0137CA205A6EAE00B47735 /* AllGroupsCell.swift in Sources */,

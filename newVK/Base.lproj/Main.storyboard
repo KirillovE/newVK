@@ -289,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgJ-25-neI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4134" y="-1615"/>
+            <point key="canvasLocation" x="4009" y="-1615"/>
         </scene>
         <!--Выбрать на карте-->
         <scene sceneID="ArO-7T-jEO">
@@ -356,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOv-Me-NiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4929" y="-1615"/>
+            <point key="canvasLocation" x="4804" y="-1615"/>
         </scene>
         <!--Фотоальбом-->
         <scene sceneID="uFd-bg-iLu">
@@ -418,7 +418,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYz-xQ-s5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NXG-Xk-eJU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4134" y="-564"/>
+            <point key="canvasLocation" x="4804" y="-759"/>
+        </scene>
+        <!--Диалоги-->
+        <scene sceneID="w31-SJ-xgD">
+            <objects>
+                <tableViewController id="F4n-pU-b2J" customClass="DialogsVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aLo-38-D8M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dialogs" id="dQi-5E-4kp">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dQi-5E-4kp" id="qU8-EE-TTa">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="jth-UR-ieb" kind="show" id="Jfg-I8-Vre"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="F4n-pU-b2J" id="hr4-Zn-sQG"/>
+                            <outlet property="delegate" destination="F4n-pU-b2J" id="3tM-6Q-aRS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Диалоги" id="okL-lE-giu"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fal-Yj-YO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3129" y="-758"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="EPZ-MO-kAw">
@@ -585,7 +617,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="4134" y="886"/>
+            <point key="canvasLocation" x="4009" y="912"/>
         </scene>
         <!--Фотоальбом-->
         <scene sceneID="rHf-jr-LBz">
@@ -637,7 +669,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avt-RE-oIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4134" y="134"/>
+            <point key="canvasLocation" x="4009" y="26"/>
         </scene>
         <!--Manage PageVC-->
         <scene sceneID="shH-d5-HsU">
@@ -645,7 +677,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="hNb-dO-aCw" customClass="ManagePageVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nur-nE-MO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4929" y="-564"/>
+            <point key="canvasLocation" x="4804" y="26"/>
         </scene>
         <!--Large PhotoVC-->
         <scene sceneID="NUx-WS-oCJ">
@@ -676,9 +708,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aV-wK-OpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4929" y="134"/>
+            <point key="canvasLocation" x="5559" y="26"/>
         </scene>
-        <!--Сообщения-->
+        <!--Имя собеседника-->
         <scene sceneID="nfC-lp-qVb">
             <objects>
                 <tableViewController id="jth-UR-ieb" customClass="MessagesVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
@@ -745,10 +777,11 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Сообщения" image="сообщения" id="ZHd-mJ-oMd"/>
+                    <navigationItem key="navigationItem" title="Имя собеседника" id="PaE-XJ-9aV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="so4-KG-NX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2332.5" y="-840"/>
+            <point key="canvasLocation" x="4009" y="-759"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="qO2-Eh-TlQ">
@@ -803,7 +836,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="yyr-KL-Ecy" kind="relationship" relationship="viewControllers" id="o53-F5-xdg"/>
-                        <segue destination="jth-UR-ieb" kind="relationship" relationship="viewControllers" id="aBS-6c-bnv"/>
+                        <segue destination="H6p-AH-87T" kind="relationship" relationship="viewControllers" id="SFg-Ug-q3v"/>
                         <segue destination="EUb-6n-yJL" kind="relationship" relationship="viewControllers" id="SML-cJ-0DO"/>
                         <segue destination="OJs-fd-uJx" kind="relationship" relationship="viewControllers" id="UsI-ml-OfS"/>
                     </connections>
@@ -831,6 +864,25 @@
             </objects>
             <point key="canvasLocation" x="2332" y="-1615.1424287856073"/>
         </scene>
+        <!--Сообщения-->
+        <scene sceneID="WTF-2c-R7W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H6p-AH-87T" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Сообщения" image="сообщения" id="sPJ-3Z-q2K"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="trw-cw-Pdh">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="F4n-pU-b2J" kind="relationship" relationship="rootViewController" id="SRp-fj-c46"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xoZ-Lf-NvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2332" y="-757.87106446776613"/>
+        </scene>
     </scenes>
     <resources>
         <image name="vk logo" width="1204" height="906"/>
@@ -850,7 +902,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iZ1-Ls-q3T"/>
-        <segue reference="uqI-iU-T0X"/>
-        <segue reference="evm-tX-VKi"/>
+        <segue reference="JaQ-t0-Mz0"/>
+        <segue reference="zaM-pT-YjB"/>
     </inferredMetricsTieBreakers>
 </document>
