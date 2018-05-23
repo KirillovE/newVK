@@ -28,8 +28,10 @@ class DialogsVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dialogs", for: indexPath) as! DialogsCell
-        cell.configure(for: dialogs[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dialogs", for: indexPath)
+        let dialog = dialogs[indexPath.row]
+        cell.textLabel?.text = String(dialog.userID)
+        cell.detailTextLabel?.text = dialog.body
         
         return cell
     }
