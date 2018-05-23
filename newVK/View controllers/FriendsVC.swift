@@ -15,7 +15,6 @@ class FriendsVC: UITableViewController {
     let friendsRequest = FriendsRequest()
     var friends: Results<User>!
     var token: NotificationToken?
-    let leaveRequest = LeaveAccount()
     let webImages = ImagesFromWeb()
     
     // MARK: - View controller life cycle
