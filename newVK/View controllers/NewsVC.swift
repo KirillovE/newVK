@@ -36,6 +36,11 @@ class NewsVC: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refresher(_:)), for: .valueChanged)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
