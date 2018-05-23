@@ -38,8 +38,9 @@ class FriendsVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath) as! FriendsCell
-        cell.configure(for: friends[indexPath.row])
-        webImages.setImage(fromPath: friends[indexPath.row].avatarURL, to: cell.imageView!)
+        let friend = friends[indexPath.row]
+        cell.configure(for: friend)
+        webImages.setImage(fromPath: friend.avatarURL, to: cell.imageView!)
         
         return cell
     }

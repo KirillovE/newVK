@@ -10,13 +10,9 @@ import UIKit
 
 class FriendsCell: UITableViewCell {
     
-    func configure(for friend: User) {
-        let firstName = friend.firstName
-        let lastName = friend.lastName
-        let nick = friend.nick
-        
-        textLabel?.text = firstName + " " + lastName
-        detailTextLabel?.text = nick
+    func configure(for friend: User) {        
+        textLabel?.text = friend.firstName + " " + friend.lastName
+        detailTextLabel?.text = friend.nick
         imageView?.image = #imageLiteral(resourceName: "заглушка")
         
         imageView?.layer.cornerRadius = frame.size.height / 2
