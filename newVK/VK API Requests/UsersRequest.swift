@@ -19,33 +19,36 @@ class UsersRequest {
     private let method = "users.get"
     private let fields = "photo_100"
     
-    typealias UserDictionary = [Int: [String]]
-    
     // MARK: - Methods
     
-    func makeRequest(arrayOfIDs ids: [Int], completion: @escaping (UserDictionary) -> Void) {
+    func makeRequest(arrayOfDialogs dialogs: [Message], completion: @escaping ([Message]) -> Void) {
         let (accessToken, apiVersion, url) = configureRequest()
-        let userIDs = ids.map { String($0) }.joined(separator: ", ")
-        
+        let userIDs = dialogs.map { String($0.userID) }.joined(separator: ", ")
         let parameters: Parameters = ["user_ids": userIDs,
                                       "fields": fields,
                                       "access_token": accessToken,
                                       "v": apiVersion
         ]
         
-        sessionManager?.request(url! + method,
-                                parameters: parameters).responseJSON(queue: DispatchQueue.global())
-                                {response in
-                                    var userInfo: UserDictionary = [:]
-                                    let json = JSON(response.value as Any)["response"].arrayValue
-                                    json.forEach {
-                                        let id = $0["id"].intValue
-                                        let firstName = $0["first_name"].stringValue
-                                        let lastName = $0["last_name"].stringValue
-                                        let photo = $0["photo_100"].stringValue
-                                        userInfo[id] = [firstName, lastName, photo]
-                                    }
-                                    completion(userInfo)
+        sessionManager?.request(url! + method, parameters: parameters)
+            .responseJSON(queue: DispatchQueue.global()) {response in
+                var completeDialogs = [Message]()
+                let json = JSON(response.value as Any)["response"].arrayValue
+                json.forEach {
+                    let id = $0["id"].intValue
+                    let firstName = $0["first_name"].stringValue
+                    let lastName = $0["last_name"].stringValue
+                    let photoURL = $0["photo_100"].stringValue
+                    completeDialogs = dialogs.map {
+                        if $0.userID == id {
+                            $0.firstName = firstName
+                            $0.lastName = lastName
+                            $0.photoURL = photoURL
+                        }
+                        return $0
+                    }
+                }
+                completion(completeDialogs)
         }
     }
     

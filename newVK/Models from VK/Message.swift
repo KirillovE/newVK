@@ -10,13 +10,16 @@ import SwiftyJSON
 
 class Message {
     
-    let id: Int
+    private let id: Int
     let body: String
     let userID: Int
     let date: Double
     let readState: Bool
     let out: Bool
-    
+    var firstName = ""
+    var lastName = ""
+    var photoURL = ""
+        
     init(json: JSON) {
         id = json["id"].intValue
         body = json["body"].stringValue

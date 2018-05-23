@@ -17,24 +17,22 @@ class DialogsRequest {
     private var sessionManager: SessionManager?
     private let userDefaults = UserDefaults.standard
     private let method = "messages.getDialogs"
-    private let previewLength = 30
+    private let previewLength = 50
     
     // MARK: - Methods
     
     func makeRequest(completion: @escaping ([Message]) -> Void) {
         let (accessToken, apiVersion, url) = configureRequest()
-        
         let parameters: Parameters = ["preview_length": previewLength,
                                       "access_token": accessToken,
                                       "v": apiVersion
         ]
         
-        sessionManager?.request(url! + method,
-                                parameters: parameters).responseJSON(queue: DispatchQueue.global())
-                                {response in
-                                    let json = JSON(response.value as Any)
-                                    let dialogs = json["response", "items"].arrayValue.map { Message(json: $0["message"]) }
-                                    completion(dialogs)
+        sessionManager?.request(url! + method, parameters: parameters)
+            .responseJSON(queue: DispatchQueue.global()) {response in
+                let json = JSON(response.value as Any)["response", "items"].arrayValue
+                let dialogs = json.map { Message(json: $0["message"]) }
+                completion(dialogs)
         }
     }
     
