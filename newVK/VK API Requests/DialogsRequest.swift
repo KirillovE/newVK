@@ -15,7 +15,7 @@ class DialogsRequest {
     // MARK: - Source data
     
     private var sessionManager: SessionManager?
-    let userDefaults = UserDefaults.standard
+    private let userDefaults = UserDefaults.standard
     private let method = "messages.getDialogs"
     
     // MARK: - Methods
@@ -29,10 +29,9 @@ class DialogsRequest {
         
         sessionManager?.request(url! + method,
                                 parameters: parameters).responseJSON(queue: DispatchQueue.global())
-                                {[weak self] response in
-                                    guard let data = response.value else { return }
-                                    let json = JSON(data)
-                                    guard let dialogs = self?.appendDialogs(from: json) else { return }
+                                {response in
+                                    let json = JSON(response.value as Any)
+                                    let dialogs = json["response", "items"].arrayValue.map { Message(json: $0["message"]) }
                                     completion(dialogs)
         }
     }
@@ -47,11 +46,6 @@ class DialogsRequest {
         let url = userDefaults.string(forKey: "apiURL")
         
         return (accessToken, apiVersion, url ?? "")
-    }
-    
-    private func appendDialogs(from json: JSON) -> [Message] {
-        let itemsArray = json["response", "items"].arrayValue
-        return itemsArray.map { Message(json: $0["message"]) }
     }
     
 }
