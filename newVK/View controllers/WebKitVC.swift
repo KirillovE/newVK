@@ -17,7 +17,7 @@ class WebKitVC: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     var sessionManager: SessionManager?
     let url = "https://oauth.vk.com/authorize"
-    let apiVersion = 5.74
+    let apiVersion = 5.76
     let clientID = 6356387
     let userDefaults = UserDefaults.standard
     let scope = "offline, photos, groups, wall, friends, messages"
