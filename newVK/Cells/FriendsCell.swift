@@ -12,7 +12,7 @@ class FriendsCell: UITableViewCell {
     
     func configure(for friend: User) {        
         textLabel?.text = friend.firstName + " " + friend.lastName
-        detailTextLabel?.text = friend.nick
+        detailTextLabel?.text = friend.isOnline ? "В сети" : "Не в сети"
         imageView?.image = #imageLiteral(resourceName: "заглушка")
         
         imageView?.layer.cornerRadius = frame.size.height / 2

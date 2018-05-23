@@ -14,7 +14,7 @@ class User: Object {
     @objc dynamic var id = 0
     @objc dynamic var firstName = ""
     @objc dynamic var lastName = ""
-    @objc dynamic var nick = ""
+    @objc dynamic var isOnline = false
     @objc dynamic var avatarURL = ""
     
     convenience init(json: JSON) {
@@ -23,7 +23,7 @@ class User: Object {
         id = json["id"].intValue
         firstName = json["first_name"].stringValue
         lastName = json["last_name"].stringValue
-        nick = json["nickname"].stringValue
+        isOnline = json["online"].boolValue
         avatarURL = json["photo_100"].stringValue
     }
     

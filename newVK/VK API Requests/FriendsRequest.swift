@@ -14,7 +14,7 @@ class FriendsRequest {
     
     private var sessionManager: SessionManager?
     private let method = "friends.get"
-    private let requestFields = "nickName,photo_100"
+    private let requestFields = "photo_100, online"
     
     func makeRequest() {
         let (accessToken, apiVersion, url) = configureRequest()
