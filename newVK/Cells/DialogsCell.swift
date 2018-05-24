@@ -15,7 +15,7 @@ class DialogsCell: UITableViewCell {
         detailTextLabel?.text = dialog.body
         imageView?.image = #imageLiteral(resourceName: "заглушка")
         
-        imageView?.layer.cornerRadius = frame.size.height / 2
+        imageView?.layer.cornerRadius = frame.height / 2
         imageView?.clipsToBounds = true
         imageView?.backgroundColor = UIColor.white
     }
