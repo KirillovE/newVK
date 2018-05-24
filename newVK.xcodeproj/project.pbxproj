@@ -53,7 +53,6 @@
 		3EAC58E22062D22100A2DE4A /* LeaveAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58E12062D22100A2DE4A /* LeaveAccount.swift */; };
 		3EAC58E42062DAF700A2DE4A /* OwnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58E32062DAF700A2DE4A /* OwnerVC.swift */; };
 		3EAC58E62062DD2500A2DE4A /* OwnerAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC58E52062DD2500A2DE4A /* OwnerAlbumCell.swift */; };
-		3EB51CB52084DFF0005B7EF8 /* ImagesFromWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB51CB42084DFF0005B7EF8 /* ImagesFromWeb.swift */; };
 		3EC6D59220679811009F92A2 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59120679811009F92A2 /* NewsVC.swift */; };
 		3EC6D5942067988F009F92A2 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D5932067988F009F92A2 /* NewsCell.swift */; };
 		3EC6D59720692C84009F92A2 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59620692C84009F92A2 /* MessagesVC.swift */; };
@@ -111,7 +110,6 @@
 		3EAC58E12062D22100A2DE4A /* LeaveAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveAccount.swift; sourceTree = "<group>"; };
 		3EAC58E32062DAF700A2DE4A /* OwnerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerVC.swift; sourceTree = "<group>"; };
 		3EAC58E52062DD2500A2DE4A /* OwnerAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerAlbumCell.swift; sourceTree = "<group>"; };
-		3EB51CB42084DFF0005B7EF8 /* ImagesFromWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesFromWeb.swift; sourceTree = "<group>"; };
 		3EC6D59120679811009F92A2 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		3EC6D5932067988F009F92A2 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		3EC6D59620692C84009F92A2 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				3E4F901920B679E700E8474F /* SetPictureToTableCell.swift */,
 				3E4F901F20B6BE6300E8474F /* SetPictureToCollectionCell.swift */,
 				3EAC58D920619DF800A2DE4A /* SavingObjects.swift */,
-				3EB51CB42084DFF0005B7EF8 /* ImagesFromWeb.swift */,
 				3E25C84E2089DA3F005EC7DE /* CellHeightDelegate.swift */,
 			);
 			path = Services;
@@ -356,7 +353,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-newVK/Pods-newVK-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -368,7 +364,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -453,7 +448,6 @@
 				3EC6D5942067988F009F92A2 /* NewsCell.swift in Sources */,
 				3E4F902020B6BE6300E8474F /* SetPictureToCollectionCell.swift in Sources */,
 				3EAC58E22062D22100A2DE4A /* LeaveAccount.swift in Sources */,
-				3EB51CB52084DFF0005B7EF8 /* ImagesFromWeb.swift in Sources */,
 				3EA2D54C20AC161600B588E4 /* CheckNewFriendsRequest.swift in Sources */,
 				3E4F901020B5E90500E8474F /* DialogsCell.swift in Sources */,
 			);
