@@ -15,10 +15,10 @@ class MyGroupsVC: UITableViewController {
     let groupsRequest = GroupsRequest()
     var groups: Results<Group>!
     var token: NotificationToken?
-    let webImages = ImagesFromWeb()
+    let settingPicture = SetPictureToTableCell()
     
     // MARK: - View controller life cycle
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         groupsRequest.getGroups()
@@ -28,17 +28,17 @@ class MyGroupsVC: UITableViewController {
     deinit {
         token?.invalidate()
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myGroups", for: indexPath) as! MyGroupsCell
         cell.configure(for: groups[indexPath.row])
-        webImages.setImage(fromPath: groups[indexPath.row].photoURL, to: cell.imageView!)
+        settingPicture.setPicture(url: groups[indexPath.row].photoURL, cacheLifeTime: .month, cell: cell, imageView: cell.imageView!, indexPath: indexPath, table: tableView)
         
         return cell
     }
@@ -57,7 +57,7 @@ class MyGroupsVC: UITableViewController {
             }
         }
     }
-
+    
     // MARK: -
     
     @IBAction func addGroup(segue: UIStoryboardSegue) {
@@ -81,7 +81,7 @@ class MyGroupsVC: UITableViewController {
             }
         }
     }
-
+    
 }
 
 // MARK: -
