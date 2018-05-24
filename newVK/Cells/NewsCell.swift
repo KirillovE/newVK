@@ -73,6 +73,7 @@ class NewsCell: UITableViewCell {
         if news.attachedImageURL != "" {
             attachedImageAspectRatio = news.attachedImageWidth / news.attachedImageHeight
         }
+        attachedImage.image = #imageLiteral(resourceName: "заглушка")
         attachedImageFrame()
         
         guard let index = index,
@@ -80,6 +81,7 @@ class NewsCell: UITableViewCell {
             bounds.height != height else { return }
         heightDelegate?.setHeight(height, to: index)
         
+        avatar.image = #imageLiteral(resourceName: "заглушка")
         if news.sourceID < 0 {
             avatar.layer.cornerRadius = avatar.frame.size.height / 4
         } else {

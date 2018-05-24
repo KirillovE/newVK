@@ -55,11 +55,9 @@ class NewsVC: UITableViewController {
         cell.heightDelegate = self
         
         configureDate(forIndex: indexPath.row)
-        settingPicture.setPicture(url: currentNews.photoURL, cacheLifeTime: .month, cell: cell, imageView: cell.avatar, indexPath: indexPath, table: tableView)
-        cell.attachedImage.image = nil
-        settingPicture.setPicture(url: currentNews.attachedImageURL, cacheLifeTime: .hour, cell: cell, imageView: cell.attachedImage, indexPath: indexPath, table: tableView)
-        
         cell.configure(for: currentNews)
+        settingPicture.setPicture(url: currentNews.photoURL, cacheLifeTime: .month, cell: cell, imageView: cell.avatar, indexPath: indexPath, table: tableView)
+        settingPicture.setPicture(url: currentNews.attachedImageURL, cacheLifeTime: .hour, cell: cell, imageView: cell.attachedImage, indexPath: indexPath, table: tableView)
         
         return cell
     }
