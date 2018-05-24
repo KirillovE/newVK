@@ -13,7 +13,6 @@ class LargePhotoVC: UIViewController {
     // MARK: - Variables
     
     @IBOutlet weak var largePhoto: UIImageView!
-    let webImages = ImagesFromWeb()
     var photoIndex: Int!
     var photoURL = ""
     
@@ -22,9 +21,21 @@ class LargePhotoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webImages.setImage(fromPath: photoURL, to: largePhoto)
+        loadLargePhoto(from: photoURL)
         let hideNavBar = UITapGestureRecognizer(target: self, action: #selector(switchNavBarVisible))
         view.addGestureRecognizer(hideNavBar)
+    }
+    
+    func loadLargePhoto(from urlString: String) {
+        largePhoto.image = nil
+        let url = URL(string: urlString)
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: url!) else { return }
+            DispatchQueue.main.async {
+                guard let image = UIImage(data: data) else { return }
+                self.largePhoto.image = image
+            }
+        }
     }
     
 }
