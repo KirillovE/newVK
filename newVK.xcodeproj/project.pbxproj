@@ -26,6 +26,9 @@
 		3E4F900A20B570FF00E8474F /* DialogsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900920B570FF00E8474F /* DialogsRequest.swift */; };
 		3E4F900E20B5ADC900E8474F /* UsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900D20B5ADC900E8474F /* UsersRequest.swift */; };
 		3E4F901020B5E90500E8474F /* DialogsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900F20B5E90500E8474F /* DialogsCell.swift */; };
+		3E4F901A20B679E700E8474F /* GetCacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F901720B679E700E8474F /* GetCacheImage.swift */; };
+		3E4F901B20B679E700E8474F /* SetImageToRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F901820B679E700E8474F /* SetImageToRow.swift */; };
+		3E4F901C20B679E700E8474F /* SetPictureToTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F901920B679E700E8474F /* SetPictureToTableCell.swift */; };
 		3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E618430203717DB00A68D16 /* AppDelegate.swift */; };
 		3E618436203717DB00A68D16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E618434203717DB00A68D16 /* Main.storyboard */; };
 		3E618438203717DB00A68D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E618437203717DB00A68D16 /* Assets.xcassets */; };
@@ -77,6 +80,9 @@
 		3E4F900920B570FF00E8474F /* DialogsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsRequest.swift; sourceTree = "<group>"; };
 		3E4F900D20B5ADC900E8474F /* UsersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRequest.swift; sourceTree = "<group>"; };
 		3E4F900F20B5E90500E8474F /* DialogsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsCell.swift; sourceTree = "<group>"; };
+		3E4F901720B679E700E8474F /* GetCacheImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCacheImage.swift; sourceTree = "<group>"; };
+		3E4F901820B679E700E8474F /* SetImageToRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetImageToRow.swift; sourceTree = "<group>"; };
+		3E4F901920B679E700E8474F /* SetPictureToTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPictureToTableCell.swift; sourceTree = "<group>"; };
 		3E61842D203717DB00A68D16 /* newVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E618430203717DB00A68D16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E618435203717DB00A68D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +137,9 @@
 			children = (
 				3EEDFDEB20847EF90094A7DA /* WorkWithFirebase.swift */,
 				3EF77F0F207F3BEB00963AE7 /* Formatting.swift */,
+				3E4F901720B679E700E8474F /* GetCacheImage.swift */,
+				3E4F901820B679E700E8474F /* SetImageToRow.swift */,
+				3E4F901920B679E700E8474F /* SetPictureToTableCell.swift */,
 				3EAC58D920619DF800A2DE4A /* SavingObjects.swift */,
 				3EB51CB42084DFF0005B7EF8 /* ImagesFromWeb.swift */,
 				3E25C84E2089DA3F005EC7DE /* CellHeightDelegate.swift */,
@@ -396,11 +405,13 @@
 				3E4F900A20B570FF00E8474F /* DialogsRequest.swift in Sources */,
 				3E0FEF86204AD47B006DE640 /* WebKitVC.swift in Sources */,
 				3E0FEF7E204ABE4C006DE640 /* FriendsRequest.swift in Sources */,
+				3E4F901B20B679E700E8474F /* SetImageToRow.swift in Sources */,
 				3EAC58E42062DAF700A2DE4A /* OwnerVC.swift in Sources */,
 				3EA1B32620A84CC5007B3808 /* PostVC.swift in Sources */,
 				3E0FEF80204ACD0D006DE640 /* VKloginVC.swift in Sources */,
 				3EEDFDEC20847EF90094A7DA /* WorkWithFirebase.swift in Sources */,
 				3E7D1216204ED147001E4D9C /* Group.swift in Sources */,
+				3E4F901C20B679E700E8474F /* SetPictureToTableCell.swift in Sources */,
 				3E0137CC205A701A00B47735 /* MyGroupsCell.swift in Sources */,
 				3EA8734A204728930049C4F2 /* ManagePageVC.swift in Sources */,
 				3E167696203F6C0700287BB4 /* FriendsVC.swift in Sources */,
@@ -411,6 +422,7 @@
 				3EAC58DA20619DF800A2DE4A /* SavingObjects.swift in Sources */,
 				3E21A026206D1CAE0011D287 /* NewsRequest.swift in Sources */,
 				3E0137CA205A6EAE00B47735 /* AllGroupsCell.swift in Sources */,
+				3E4F901A20B679E700E8474F /* GetCacheImage.swift in Sources */,
 				3EC6D59A20692D2E009F92A2 /* MessageCell.swift in Sources */,
 				3E4F900820B56BFC00E8474F /* Message.swift in Sources */,
 				3E2BE8C02042EE36002A50CF /* AllGroupsVC.swift in Sources */,
