@@ -18,7 +18,7 @@ class OwnerVC: UICollectionViewController {
     var photos: Results<Photo>!
     var token: NotificationToken?
     let leaveRequest = LeaveAccount()
-    let webImages = ImagesFromWeb()
+    let settingPicture = SetPictureToCollectionCell()
     
     // MARK: - View Controller life cycle
     
@@ -44,7 +44,7 @@ class OwnerVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! OwnerAlbumCell
         cell.configure(for: photos[indexPath.row])
-        webImages.setImage(fromPath: photos[indexPath.row].smallPhotoURL, to: cell.ownerPhoto)
+        settingPicture.setPicture(url: photos[indexPath.row].smallPhotoURL, cacheLifeTime: .month, cell: cell, imageView: cell.ownerPhoto, indexPath: indexPath, collection: collectionView)
         
         return cell
     }

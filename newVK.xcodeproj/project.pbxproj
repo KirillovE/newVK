@@ -29,6 +29,8 @@
 		3E4F901A20B679E700E8474F /* GetCacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F901720B679E700E8474F /* GetCacheImage.swift */; };
 		3E4F901B20B679E700E8474F /* SetImageToRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F901820B679E700E8474F /* SetImageToRow.swift */; };
 		3E4F901C20B679E700E8474F /* SetPictureToTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F901920B679E700E8474F /* SetPictureToTableCell.swift */; };
+		3E4F901E20B6BCB600E8474F /* SetImageToItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F901D20B6BCB600E8474F /* SetImageToItem.swift */; };
+		3E4F902020B6BE6300E8474F /* SetPictureToCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F901F20B6BE6300E8474F /* SetPictureToCollectionCell.swift */; };
 		3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E618430203717DB00A68D16 /* AppDelegate.swift */; };
 		3E618436203717DB00A68D16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E618434203717DB00A68D16 /* Main.storyboard */; };
 		3E618438203717DB00A68D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E618437203717DB00A68D16 /* Assets.xcassets */; };
@@ -83,6 +85,8 @@
 		3E4F901720B679E700E8474F /* GetCacheImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCacheImage.swift; sourceTree = "<group>"; };
 		3E4F901820B679E700E8474F /* SetImageToRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetImageToRow.swift; sourceTree = "<group>"; };
 		3E4F901920B679E700E8474F /* SetPictureToTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPictureToTableCell.swift; sourceTree = "<group>"; };
+		3E4F901D20B6BCB600E8474F /* SetImageToItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImageToItem.swift; sourceTree = "<group>"; };
+		3E4F901F20B6BE6300E8474F /* SetPictureToCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPictureToCollectionCell.swift; sourceTree = "<group>"; };
 		3E61842D203717DB00A68D16 /* newVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E618430203717DB00A68D16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E618435203717DB00A68D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -139,7 +143,9 @@
 				3EF77F0F207F3BEB00963AE7 /* Formatting.swift */,
 				3E4F901720B679E700E8474F /* GetCacheImage.swift */,
 				3E4F901820B679E700E8474F /* SetImageToRow.swift */,
+				3E4F901D20B6BCB600E8474F /* SetImageToItem.swift */,
 				3E4F901920B679E700E8474F /* SetPictureToTableCell.swift */,
+				3E4F901F20B6BE6300E8474F /* SetPictureToCollectionCell.swift */,
 				3EAC58D920619DF800A2DE4A /* SavingObjects.swift */,
 				3EB51CB42084DFF0005B7EF8 /* ImagesFromWeb.swift */,
 				3E25C84E2089DA3F005EC7DE /* CellHeightDelegate.swift */,
@@ -433,6 +439,7 @@
 				3EC6D59720692C84009F92A2 /* MessagesVC.swift in Sources */,
 				3EF77F10207F3BEB00963AE7 /* Formatting.swift in Sources */,
 				3E16769C20400F6200287BB4 /* FriendAlbumCell.swift in Sources */,
+				3E4F901E20B6BCB600E8474F /* SetImageToItem.swift in Sources */,
 				3E9987E2206D04C5003DF364 /* News.swift in Sources */,
 				3EA2D54E20ACADF000B588E4 /* PendingFriend.swift in Sources */,
 				3EC6D59220679811009F92A2 /* NewsVC.swift in Sources */,
@@ -444,6 +451,7 @@
 				3E16769A20400B5C00287BB4 /* FriendAlbumVC.swift in Sources */,
 				3EA1B32A20A8633D007B3808 /* PostMessage.swift in Sources */,
 				3EC6D5942067988F009F92A2 /* NewsCell.swift in Sources */,
+				3E4F902020B6BE6300E8474F /* SetPictureToCollectionCell.swift in Sources */,
 				3EAC58E22062D22100A2DE4A /* LeaveAccount.swift in Sources */,
 				3EB51CB52084DFF0005B7EF8 /* ImagesFromWeb.swift in Sources */,
 				3EA2D54C20AC161600B588E4 /* CheckNewFriendsRequest.swift in Sources */,

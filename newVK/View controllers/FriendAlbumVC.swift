@@ -16,7 +16,7 @@ class FriendAlbumVC: UICollectionViewController {
     let photosRequest = PhotosRequest()
     var photos: Results<Photo>!
     var token: NotificationToken?
-    let webImages = ImagesFromWeb()
+    let settingPicture = SetPictureToCollectionCell()
 
     // MARK: - View Controller life cycle
     
@@ -40,7 +40,7 @@ class FriendAlbumVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendImage", for: indexPath) as! FriendAlbumCell
         cell.configure(for: photos[indexPath.row])
-        webImages.setImage(fromPath: photos[indexPath.row].smallPhotoURL, to: cell.friendImage!)
+        settingPicture.setPicture(url: photos[indexPath.row].smallPhotoURL, cacheLifeTime: .month, cell: cell, imageView: cell.friendImage, indexPath: indexPath, collection: collectionView)
         
         return cell
     }
