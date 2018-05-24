@@ -15,7 +15,7 @@ class FriendsVC: UITableViewController {
     let friendsRequest = FriendsRequest()
     var friends: Results<User>!
     var token: NotificationToken?
-    let webImages = ImagesFromWeb()
+    let settingPicture = SetPictureToTableCell()
     
     // MARK: - View controller life cycle
     
@@ -40,7 +40,7 @@ class FriendsVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath) as! FriendsCell
         let friend = friends[indexPath.row]
         cell.configure(for: friend)
-        webImages.setImage(fromPath: friend.avatarURL, to: cell.imageView!)
+        settingPicture.setPicture(url: friend.avatarURL, cacheLifeTime: .month, cell: cell, imageView: cell.imageView!, indexPath: indexPath, table: tableView)
         
         return cell
     }

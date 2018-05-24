@@ -17,7 +17,7 @@ class AllGroupsVC: UITableViewController {
     var groups = [Group]()
     let numberOfResultsToShow = 50
     let formatter = Formatting()
-    let webImages = ImagesFromWeb()
+    let settingPicture = SetPictureToTableCell()
     
     // MARK: -
     
@@ -39,7 +39,7 @@ class AllGroupsVC: UITableViewController {
         cell.detailTextLabel?.text = "Подписчиков: " + formatter.formatInt(membersCount)
         
         cell.configure(for: groups[indexPath.row])
-        webImages.setImage(fromPath: groups[indexPath.row].photoURL, to: cell.imageView!)
+        settingPicture.setPicture(url: groups[indexPath.row].photoURL, cacheLifeTime: .month, cell: cell, imageView: cell.imageView!, indexPath: indexPath, table: tableView)
 
         return cell
     }

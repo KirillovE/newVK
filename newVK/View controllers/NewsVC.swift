@@ -13,7 +13,7 @@ class NewsVC: UITableViewController {
     // MARK: - Source data
     
     let formatter = Formatting()
-    let webImages = ImagesFromWeb()
+    let settingPicture = SetPictureToTableCell()
     let userDefaults = UserDefaults.standard
     let newsRequest = NewsRequest()
     let requestFilter = "post"
@@ -55,9 +55,10 @@ class NewsVC: UITableViewController {
         cell.heightDelegate = self
         
         configureDate(forIndex: indexPath.row)
-        webImages.setImage(fromPath: currentNews.photoURL, to: cell.avatar)
+        settingPicture.setPicture(url: currentNews.photoURL, cacheLifeTime: .month, cell: cell, imageView: cell.avatar, indexPath: indexPath, table: tableView)
         cell.attachedImage.image = nil
-        webImages.setImage(fromPath: currentNews.attachedImageURL, to: cell.attachedImage)
+        settingPicture.setPicture(url: currentNews.attachedImageURL, cacheLifeTime: .hour, cell: cell, imageView: cell.attachedImage, indexPath: indexPath, table: tableView)
+        
         cell.configure(for: currentNews)
         
         return cell

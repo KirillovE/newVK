@@ -12,7 +12,7 @@ class DialogsVC: UITableViewController {
     
     // MARK: - Source data
     
-    private let webImages = ImagesFromWeb()
+    let settingPicture = SetPictureToTableCell()
     private let dialogsRequest = DialogsRequest()
     private let userRequest = UsersRequest()
     private var comleteDialogs = [Message]()
@@ -43,7 +43,7 @@ class DialogsVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dialogs", for: indexPath) as! DialogsCell
         let dialog = comleteDialogs[indexPath.row]
         cell.configure(for: dialog)
-        webImages.setImage(fromPath: dialog.photoURL, to: cell.imageView!)
+        settingPicture.setPicture(url: dialog.photoURL, cacheLifeTime: .month, cell: cell, imageView: cell.imageView!, indexPath: indexPath, table: tableView)
         
         return cell
     }
