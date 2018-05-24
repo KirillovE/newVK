@@ -13,6 +13,7 @@ class FriendAlbumCell: UICollectionViewCell {
     @IBOutlet weak var friendImage: UIImageView!
     
     func configure(for photo: Photo) {        
+        friendImage.image = #imageLiteral(resourceName: "заглушка")
         friendImage.layer.cornerRadius = frame.size.height / 10
     }
     

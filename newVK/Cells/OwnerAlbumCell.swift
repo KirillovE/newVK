@@ -12,7 +12,8 @@ class OwnerAlbumCell: UICollectionViewCell {
     
     @IBOutlet weak var ownerPhoto: UIImageView!
     
-    func configure(for photo: Photo) {    
+    func configure(for photo: Photo) {
+        ownerPhoto.image = #imageLiteral(resourceName: "заглушка")
         ownerPhoto.layer.cornerRadius = frame.size.height / 10
     }
     
