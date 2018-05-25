@@ -31,6 +31,10 @@
 		3E4F901C20B679E700E8474F /* SetPictureToTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F901920B679E700E8474F /* SetPictureToTableCell.swift */; };
 		3E4F901E20B6BCB600E8474F /* SetImageToItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F901D20B6BCB600E8474F /* SetImageToItem.swift */; };
 		3E4F902020B6BE6300E8474F /* SetPictureToCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F901F20B6BE6300E8474F /* SetPictureToCollectionCell.swift */; };
+		3E58676D20B833A100E78BDB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E58676C20B833A100E78BDB /* NotificationCenter.framework */; };
+		3E58677020B833A100E78BDB /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E58676F20B833A100E78BDB /* TodayViewController.swift */; };
+		3E58677320B833A100E78BDB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E58677120B833A100E78BDB /* MainInterface.storyboard */; };
+		3E58677720B833A100E78BDB /* newVK TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3E58676B20B833A100E78BDB /* newVK TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3E618431203717DB00A68D16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E618430203717DB00A68D16 /* AppDelegate.swift */; };
 		3E618436203717DB00A68D16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E618434203717DB00A68D16 /* Main.storyboard */; };
 		3E618438203717DB00A68D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E618437203717DB00A68D16 /* Assets.xcassets */; };
@@ -62,6 +66,30 @@
 		3EF77F10207F3BEB00963AE7 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF77F0F207F3BEB00963AE7 /* Formatting.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3E58677520B833A100E78BDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E618425203717DB00A68D16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E58676A20B833A100E78BDB;
+			remoteInfo = "newVK TodayExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3E58677B20B833A100E78BDB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3E58677720B833A100E78BDB /* newVK TodayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3E0137C7205A6BAB00B47735 /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
 		3E0137C9205A6EAE00B47735 /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
@@ -86,6 +114,13 @@
 		3E4F901920B679E700E8474F /* SetPictureToTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPictureToTableCell.swift; sourceTree = "<group>"; };
 		3E4F901D20B6BCB600E8474F /* SetImageToItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImageToItem.swift; sourceTree = "<group>"; };
 		3E4F901F20B6BE6300E8474F /* SetPictureToCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPictureToCollectionCell.swift; sourceTree = "<group>"; };
+		3E58676B20B833A100E78BDB /* newVK TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "newVK TodayExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E58676C20B833A100E78BDB /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		3E58676F20B833A100E78BDB /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		3E58677220B833A100E78BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		3E58677420B833A100E78BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E58677C20B8340A00E78BDB /* newVK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = newVK.entitlements; sourceTree = "<group>"; };
+		3E58677D20B8343C00E78BDB /* newVK TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "newVK TodayExtension.entitlements"; sourceTree = "<group>"; };
 		3E61842D203717DB00A68D16 /* newVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E618430203717DB00A68D16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E618435203717DB00A68D16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +158,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3E58676820B833A100E78BDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E58676D20B833A100E78BDB /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E61842A203717DB00A68D16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,10 +229,22 @@
 			path = "View controllers";
 			sourceTree = "<group>";
 		};
+		3E58676E20B833A100E78BDB /* newVK TodayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				3E58677D20B8343C00E78BDB /* newVK TodayExtension.entitlements */,
+				3E58676F20B833A100E78BDB /* TodayViewController.swift */,
+				3E58677120B833A100E78BDB /* MainInterface.storyboard */,
+				3E58677420B833A100E78BDB /* Info.plist */,
+			);
+			path = "newVK TodayExtension";
+			sourceTree = "<group>";
+		};
 		3E618424203717DB00A68D16 = {
 			isa = PBXGroup;
 			children = (
 				3E61842F203717DB00A68D16 /* newVK */,
+				3E58676E20B833A100E78BDB /* newVK TodayExtension */,
 				3E61842E203717DB00A68D16 /* Products */,
 				BFE592A696C8EC6F222A4300 /* Pods */,
 				60CBD30DAFE58B1DF1A08ED8 /* Frameworks */,
@@ -200,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				3E61842D203717DB00A68D16 /* newVK.app */,
+				3E58676B20B833A100E78BDB /* newVK TodayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,6 +263,7 @@
 		3E61842F203717DB00A68D16 /* newVK */ = {
 			isa = PBXGroup;
 			children = (
+				3E58677C20B8340A00E78BDB /* newVK.entitlements */,
 				3E618434203717DB00A68D16 /* Main.storyboard */,
 				3E48210B204BFD11009639FC /* View controllers */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
@@ -256,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				5F53533A50A997494316304F /* Pods_newVK.framework */,
+				3E58676C20B833A100E78BDB /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -272,6 +330,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3E58676A20B833A100E78BDB /* newVK TodayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E58677A20B833A100E78BDB /* Build configuration list for PBXNativeTarget "newVK TodayExtension" */;
+			buildPhases = (
+				3E58676720B833A100E78BDB /* Sources */,
+				3E58676820B833A100E78BDB /* Frameworks */,
+				3E58676920B833A100E78BDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "newVK TodayExtension";
+			productName = "newVK TodayExtension";
+			productReference = 3E58676B20B833A100E78BDB /* newVK TodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		3E61842C203717DB00A68D16 /* newVK */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E61843F203717DB00A68D16 /* Build configuration list for PBXNativeTarget "newVK" */;
@@ -281,10 +356,12 @@
 				3E61842A203717DB00A68D16 /* Frameworks */,
 				3E61842B203717DB00A68D16 /* Resources */,
 				324E27A980516C0F273EEC7F /* [CP] Embed Pods Frameworks */,
+				3E58677B20B833A100E78BDB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3E58677620B833A100E78BDB /* PBXTargetDependency */,
 			);
 			name = newVK;
 			productName = newVK;
@@ -297,14 +374,26 @@
 		3E618425203717DB00A68D16 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Триада";
 				TargetAttributes = {
+					3E58676A20B833A100E78BDB = {
+						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					3E61842C203717DB00A68D16 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -326,11 +415,20 @@
 			projectRoot = "";
 			targets = (
 				3E61842C203717DB00A68D16 /* newVK */,
+				3E58676A20B833A100E78BDB /* newVK TodayExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3E58676920B833A100E78BDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E58677320B833A100E78BDB /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E61842B203717DB00A68D16 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,6 +496,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3E58676720B833A100E78BDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E58677020B833A100E78BDB /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3E618429203717DB00A68D16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -455,7 +561,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3E58677620B833A100E78BDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E58676A20B833A100E78BDB /* newVK TodayExtension */;
+			targetProxy = 3E58677520B833A100E78BDB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		3E58677120B833A100E78BDB /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E58677220B833A100E78BDB /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		3E618434203717DB00A68D16 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -475,6 +597,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3E58677820B833A100E78BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "newVK TodayExtension/newVK TodayExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8HPH483Z2C;
+				INFOPLIST_FILE = "newVK TodayExtension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Triad.newVK.newVK-TodayExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3E58677920B833A100E78BDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "newVK TodayExtension/newVK TodayExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8HPH483Z2C;
+				INFOPLIST_FILE = "newVK TodayExtension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Triad.newVK.newVK-TodayExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		3E61843D203717DB00A68D16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -590,7 +748,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CA4BC402A95B54E8DF352A78 /* Pods-newVK.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = newVK/newVK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8HPH483Z2C;
 				INFOPLIST_FILE = newVK/Info.plist;
@@ -606,7 +766,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A7C94D3D006DBA0B60806BE9 /* Pods-newVK.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = newVK/newVK.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8HPH483Z2C;
 				INFOPLIST_FILE = newVK/Info.plist;
@@ -621,6 +783,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3E58677A20B833A100E78BDB /* Build configuration list for PBXNativeTarget "newVK TodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E58677820B833A100E78BDB /* Debug */,
+				3E58677920B833A100E78BDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3E618428203717DB00A68D16 /* Build configuration list for PBXProject "newVK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
