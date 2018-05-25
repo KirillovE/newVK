@@ -10,15 +10,15 @@ import UIKit
 import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-        
+    @IBOutlet weak var newsText: UILabel!
+    let newsRequest = NewsRequest()
+    let newsFilter = "post"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        newsRequest.makeRequest(filter: newsFilter) { [weak self] news in
+            self?.newsText.text = news.first?.text
+        }
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
