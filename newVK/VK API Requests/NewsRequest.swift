@@ -17,11 +17,10 @@ class NewsRequest {
     private var sessionManager: SessionManager?
     let userDefaults = UserDefaults(suiteName: "group.newVK")
     private let method = "newsfeed.get"
-    private let resultsCount = 60
     
     // MARK: - Methods
     
-    func makeRequest(filter: String, startFrom: String = "", completion: @escaping ([News]) -> Void) {
+    func makeRequest(filter: String, resultsCount: Int = 60, startFrom: String = "", completion: @escaping ([News]) -> Void) {
         let (accessToken, apiVersion, url) = configureRequest()
         
         let parameters: Parameters = ["count": resultsCount,
