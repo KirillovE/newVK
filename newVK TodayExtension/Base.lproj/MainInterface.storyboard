@@ -18,17 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Новости из ВК" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
                                 <rect key="frame" x="10" y="5" width="300" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvk-nm-XDW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                                <connections>
+                                    <action selector="openAppPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="7xE-I6-oED"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="5" id="0Q0-KW-PJ6"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="gvk-nm-XDW" secondAttribute="bottom" id="1i4-zJ-Lai"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="10" id="6Vq-gs-PHe"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="10" id="L8K-9R-egU"/>
+                            <constraint firstItem="gvk-nm-XDW" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="VXV-6c-vDV"/>
+                            <constraint firstItem="gvk-nm-XDW" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="VsD-3H-PtU"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="gvk-nm-XDW" secondAttribute="trailing" id="YyS-Uv-029"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="5" id="mYS-Cv-VNx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>

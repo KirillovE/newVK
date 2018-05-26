@@ -31,4 +31,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
+    @IBAction func openAppPressed(_ sender: UIButton) {
+        extensionContext?.open(URL(string: "RunFromWidget://")!)
+    }
 }
