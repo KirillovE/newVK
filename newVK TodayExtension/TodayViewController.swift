@@ -17,8 +17,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         newsRequest.makeRequest(filter: newsFilter, resultsCount: 20) { [weak self] news in
-            let newsTexts = news.map { $0.text }
-                .filter { $0 != "" }
+            let newsTexts = news
+                .filter { $0.text != "" }
+                .map { $0.text.padding(toLength: 30, withPad: " ", startingAt: 0) }
                 .reduce("🗞 ", { $0 + $1 + "\n\n🗞 " })
             DispatchQueue.main.async {
                 self?.newsText.text = newsTexts
