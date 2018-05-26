@@ -17,7 +17,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         newsRequest.makeRequest(filter: newsFilter) { [weak self] news in
-            self?.newsText.text = news.first?.text
+            DispatchQueue.main.async {
+                self?.newsText.text = news.first?.text
+            }
         }
     }
     
