@@ -16,20 +16,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsRequest.makeRequest(filter: newsFilter) { [weak self] news in
+        newsRequest.makeRequest(filter: newsFilter, resultsCount: 20) { [weak self] news in
+            let newsTexts = news.map { $0.text }
+                .filter { $0 != "" }
+                .reduce("", { $0 + "\n" + $1 })
             DispatchQueue.main.async {
-                self?.newsText.text = news.first?.text
+                self?.newsText.text = newsTexts
             }
         }
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
         completionHandler(NCUpdateResult.newData)
     }
     
