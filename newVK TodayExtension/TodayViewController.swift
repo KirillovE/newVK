@@ -19,7 +19,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         newsRequest.makeRequest(filter: newsFilter, resultsCount: 20) { [weak self] news in
             let newsTexts = news.map { $0.text }
                 .filter { $0 != "" }
-                .reduce("", { $0 + "\n" + $1 })
+                .reduce("🗞 ", { $0 + $1 + "\n\n🗞 " })
             DispatchQueue.main.async {
                 self?.newsText.text = newsTexts
             }
