@@ -46,10 +46,8 @@ class PostVC: UIViewController {
         postText.resignFirstResponder()
         guard let text = postText.text else { return }
         postWithoutLocation(textToPost: text)
-        if let _ = userDefaults.object(forKey: "latitude"),
-            let _ = userDefaults.object(forKey: "longitude") {
-            let lat = userDefaults.double(forKey: "latitude")
-            let long = userDefaults.double(forKey: "longitude")
+        if let lat = userDefaults.object(forKey: "latitude") as? Double,
+            let long = userDefaults.object(forKey: "longitude") as? Double {            
             postWithLocation(textToPost: text, latitude: lat, longitude: long)
         } else {
             postWithoutLocation(textToPost: text)
