@@ -15,7 +15,7 @@ class UsersRequest {
     // MARK: - Source data
     
     private var sessionManager: SessionManager?
-    private let userDefaults = UserDefaults.standard
+    let userDefaults = UserDefaults(suiteName: "group.newVK")
     private let method = "users.get"
     private let fields = "photo_100"
     
@@ -57,9 +57,10 @@ class UsersRequest {
         config.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         sessionManager = SessionManager(configuration: config)
         
-        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
-        let apiVersion = userDefaults.double(forKey: "v")
-        let url = userDefaults.string(forKey: "apiURL")
+        let sharedWrapper = KeychainWrapper(serviceName: "sharedGroup", accessGroup: "group.newVK")
+        let accessToken = sharedWrapper.string(forKey: "access_token") ?? ""
+        let apiVersion = userDefaults?.double(forKey: "v") ?? 0
+        let url = userDefaults?.string(forKey: "apiURL")
         
         return (accessToken, apiVersion, url ?? "")
     }

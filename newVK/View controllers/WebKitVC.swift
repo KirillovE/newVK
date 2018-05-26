@@ -19,7 +19,7 @@ class WebKitVC: UIViewController {
     let url = "https://oauth.vk.com/authorize"
     let apiVersion = 5.76
     let clientID = 6356387
-    let userDefaults = UserDefaults.standard
+    let userDefaults = UserDefaults(suiteName: "group.newVK")
     let scope = "offline, photos, groups, wall, friends, messages"
     
     // MARK: - Methods
@@ -81,21 +81,22 @@ extension WebKitVC: WKNavigationDelegate {
         }
         
         if params["access_token"] != nil {
-            userDefaults.set(true, forKey: "isAuthorized")
-            userDefaults.set(params["user_id"], forKey: "user_id")
-            userDefaults.set(apiVersion, forKey: "v")
-            userDefaults.set("https://api.vk.com/method/", forKey: "apiURL")
-            KeychainWrapper.standard.set(params["access_token"]!, forKey: "access_token")
+            userDefaults?.set(true, forKey: "isAuthorized")
+            userDefaults?.set(params["user_id"], forKey: "user_id")
+            userDefaults?.set(apiVersion, forKey: "v")
+            userDefaults?.set("https://api.vk.com/method/", forKey: "apiURL")
+            let sharedWrapper = KeychainWrapper(serviceName: "sharedGroup", accessGroup: "group.newVK")
+            sharedWrapper.set(params["access_token"]!, forKey: "access_token")
             
             let firebase = WorkWithFirebase()
             firebase.saveIndexOfUser(authorizedUser: params["user_id"])
         } else {
-            userDefaults.set(false, forKey: "isAuthorized")
+            userDefaults?.set(false, forKey: "isAuthorized")
         }
         
         decisionHandler(.allow)
         
-        if userDefaults.bool(forKey: "isAuthorized") {
+        if let isAuthirized = userDefaults?.bool(forKey: "isAuthorized"), isAuthirized {
             performSegue(withIdentifier: "startWork", sender: self)
         } else {
             performSegue(withIdentifier: "showLoginScreen", sender: self)

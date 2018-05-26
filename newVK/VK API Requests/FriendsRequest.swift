@@ -15,6 +15,7 @@ class FriendsRequest {
     private var sessionManager: SessionManager?
     private let method = "friends.get"
     private let requestFields = "photo_100, online"
+    let userDefaults = UserDefaults(suiteName: "group.newVK")
     
     func makeRequest() {
         let (accessToken, apiVersion, url) = configureRequest()
@@ -40,19 +41,18 @@ class FriendsRequest {
         config.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         sessionManager = SessionManager(configuration: config)
         
-        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
-        let userDefaults = UserDefaults.standard
-        let apiVersion = userDefaults.double(forKey: "v")
-        let url = userDefaults.string(forKey: "apiURL")
+        let sharedWrapper = KeychainWrapper(serviceName: "sharedGroup", accessGroup: "group.newVK")
+        let accessToken = sharedWrapper.string(forKey: "access_token") ?? ""
+        let apiVersion = userDefaults?.double(forKey: "v") ?? 0
+        let url = userDefaults?.string(forKey: "apiURL")
         
         return (accessToken, apiVersion, url ?? "")
     }
     
     private func appendFriends(json: JSON) -> [User] {
         guard json["error", "error_code"] != 5 else {
-            print("не подошёл access_token ", json["error", "error_msg"])
-            let userDefaults = UserDefaults.standard
-            userDefaults.set(false, forKey: "isAuthorized")
+            print("не подошёл access_token ", json["error", "error_msg"])            
+            userDefaults?.set(false, forKey: "isAuthorized")
             return [User]()
         }
         

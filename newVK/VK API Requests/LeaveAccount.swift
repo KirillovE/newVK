@@ -32,12 +32,13 @@ class LeaveAccount {
     }
     
     private func clearDefaults() {
-        KeychainWrapper.standard.removeObject(forKey: "access_token")
-        let userDefaults = UserDefaults.standard
-        userDefaults.removeObject(forKey: "isAuthorized")
-        userDefaults.removeObject(forKey: "user_id")
-        userDefaults.removeObject(forKey: "v")
-        userDefaults.removeObject(forKey: "apiURL")
+        let sharedWrapper = KeychainWrapper(serviceName: "sharedGroup", accessGroup: "group.newVK")
+        sharedWrapper.removeObject(forKey: "access_token")
+        let userDefaults = UserDefaults(suiteName: "group.newVK")
+        userDefaults?.removeObject(forKey: "isAuthorized")
+        userDefaults?.removeObject(forKey: "user_id")
+        userDefaults?.removeObject(forKey: "v")
+        userDefaults?.removeObject(forKey: "apiURL")
     }
     
     private func clearDataBase() {

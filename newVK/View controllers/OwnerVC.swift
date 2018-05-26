@@ -25,8 +25,8 @@ class OwnerVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let userDefaults = UserDefaults.standard
-        let ownerID = userDefaults.integer(forKey: "user_id")
+        let userDefaults = UserDefaults(suiteName: "group.newVK")
+        let ownerID = userDefaults?.integer(forKey: "user_id") ?? 0
         self.photosRequest.makeRequest(for: ownerID)
         pairCollectionAndRealm()
     }

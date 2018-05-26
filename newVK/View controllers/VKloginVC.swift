@@ -24,8 +24,8 @@ class VKloginVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        let userDefaults = UserDefaults.standard
-        if userDefaults.bool(forKey: "isAuthorized") {
+        let userDefaults = UserDefaults(suiteName: "group.newVK")
+        if let isAuthorized = userDefaults?.bool(forKey: "isAuthorized"), isAuthorized {
             performSegue(withIdentifier: "quickStart", sender: self)
         }
     }

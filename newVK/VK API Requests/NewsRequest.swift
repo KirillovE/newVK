@@ -15,7 +15,7 @@ class NewsRequest {
     // MARK: - Source data
     
     private var sessionManager: SessionManager?
-    let userDefaults = UserDefaults.standard
+    let userDefaults = UserDefaults(suiteName: "group.newVK")
     private let method = "newsfeed.get"
     private let resultsCount = 60
     
@@ -37,7 +37,7 @@ class NewsRequest {
                                     guard let data = response.value else { return }
                                     let json = JSON(data)
                                     let nextFrom = json["response", "next_from"].stringValue
-                                    self?.userDefaults.set(nextFrom, forKey: "start_from")
+                                    self?.userDefaults?.set(nextFrom, forKey: "start_from")
                                     guard let news = self?.appendNews(from: json) else { return }
                                     completion(news)
         }
@@ -48,9 +48,10 @@ class NewsRequest {
         config.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
         sessionManager = SessionManager(configuration: config)
         
-        let accessToken = KeychainWrapper.standard.string(forKey: "access_token")!
-        let apiVersion = userDefaults.double(forKey: "v")
-        let url = userDefaults.string(forKey: "apiURL")
+        let sharedWrapper = KeychainWrapper(serviceName: "sharedGroup", accessGroup: "group.newVK")
+        let accessToken = sharedWrapper.string(forKey: "access_token") ?? ""
+        let apiVersion = userDefaults?.double(forKey: "v") ?? 0
+        let url = userDefaults?.string(forKey: "apiURL")
         
         return (accessToken, apiVersion, url ?? "")
     }
