@@ -11,3 +11,12 @@ target 'newVK' do
     pod 'FirebaseDatabase', '~> 4.1'
     
 end
+
+target 'newVK TodayExtension' do
+    
+    use_frameworks!
+    pod 'Alamofire', '~> 4.7'
+    pod 'SwiftyJSON', '~> 4.0'
+    pod 'SwiftKeychainWrapper', '~> 3.0'
+    
+end
