@@ -45,6 +45,7 @@
 		3E7D1212204ECF44001E4D9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1211204ECF44001E4D9C /* User.swift */; };
 		3E7D1214204ED077001E4D9C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1213204ED077001E4D9C /* Photo.swift */; };
 		3E7D1216204ED147001E4D9C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D1215204ED147001E4D9C /* Group.swift */; };
+		3E7F2EEB20B9735E00E74AF9 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9987E1206D04C5003DF364 /* News.swift */; };
 		3E9987E2206D04C5003DF364 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9987E1206D04C5003DF364 /* News.swift */; };
 		3EA1B32620A84CC5007B3808 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1B32520A84CC5007B3808 /* PostVC.swift */; };
 		3EA1B32820A84CD1007B3808 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1B32720A84CD1007B3808 /* LocationVC.swift */; };
@@ -66,6 +67,7 @@
 		3EEDFDEC20847EF90094A7DA /* WorkWithFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDFDEB20847EF90094A7DA /* WorkWithFirebase.swift */; };
 		3EF19F1C2080EDF0009B9BE5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EF19F1B2080EDEF009B9BE5 /* GoogleService-Info.plist */; };
 		3EF77F10207F3BEB00963AE7 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF77F0F207F3BEB00963AE7 /* Formatting.swift */; };
+		6EC993C85B2A8951C47AB4FB /* Pods_newVK_TodayExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9C15B5AE629085E2FFFF85 /* Pods_newVK_TodayExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,8 +156,11 @@
 		3EEDFDEB20847EF90094A7DA /* WorkWithFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkWithFirebase.swift; sourceTree = "<group>"; };
 		3EF19F1B2080EDEF009B9BE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3EF77F0F207F3BEB00963AE7 /* Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatting.swift; sourceTree = "<group>"; };
+		5A65D2CF404B6407986A000B /* Pods-newVK TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK TodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newVK TodayExtension/Pods-newVK TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		5F53533A50A997494316304F /* Pods_newVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C94D3D006DBA0B60806BE9 /* Pods-newVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.release.xcconfig"; sourceTree = "<group>"; };
+		BF9C15B5AE629085E2FFFF85 /* Pods_newVK_TodayExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newVK_TodayExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4F10E7C9362206D9ECFDF6D /* Pods-newVK TodayExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK TodayExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-newVK TodayExtension/Pods-newVK TodayExtension.release.xcconfig"; sourceTree = "<group>"; };
 		CA4BC402A95B54E8DF352A78 /* Pods-newVK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E58676D20B833A100E78BDB /* NotificationCenter.framework in Frameworks */,
+				6EC993C85B2A8951C47AB4FB /* Pods_newVK_TodayExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +322,7 @@
 			children = (
 				5F53533A50A997494316304F /* Pods_newVK.framework */,
 				3E58676C20B833A100E78BDB /* NotificationCenter.framework */,
+				BF9C15B5AE629085E2FFFF85 /* Pods_newVK_TodayExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -325,6 +332,8 @@
 			children = (
 				CA4BC402A95B54E8DF352A78 /* Pods-newVK.debug.xcconfig */,
 				A7C94D3D006DBA0B60806BE9 /* Pods-newVK.release.xcconfig */,
+				5A65D2CF404B6407986A000B /* Pods-newVK TodayExtension.debug.xcconfig */,
+				C4F10E7C9362206D9ECFDF6D /* Pods-newVK TodayExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -336,6 +345,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E58677A20B833A100E78BDB /* Build configuration list for PBXNativeTarget "newVK TodayExtension" */;
 			buildPhases = (
+				D13B257830016E1988B08087 /* [CP] Check Pods Manifest.lock */,
 				3E58676720B833A100E78BDB /* Sources */,
 				3E58676820B833A100E78BDB /* Frameworks */,
 				3E58676920B833A100E78BDB /* Resources */,
@@ -477,6 +487,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-newVK/Pods-newVK-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D13B257830016E1988B08087 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-newVK TodayExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D5A3EB05ED719DD168FF33CF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E7F2EEB20B9735E00E74AF9 /* News.swift in Sources */,
 				3E58677E20B8474C00E78BDB /* NewsRequest.swift in Sources */,
 				3E58677020B833A100E78BDB /* TodayViewController.swift in Sources */,
 			);
@@ -603,6 +632,7 @@
 /* Begin XCBuildConfiguration section */
 		3E58677820B833A100E78BDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A65D2CF404B6407986A000B /* Pods-newVK TodayExtension.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = "newVK TodayExtension/newVK TodayExtension.entitlements";
@@ -621,6 +651,7 @@
 		};
 		3E58677920B833A100E78BDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4F10E7C9362206D9ECFDF6D /* Pods-newVK TodayExtension.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = "newVK TodayExtension/newVK TodayExtension.entitlements";
@@ -640,6 +671,7 @@
 		3E61843D203717DB00A68D16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -699,6 +731,7 @@
 		3E61843E203717DB00A68D16 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
