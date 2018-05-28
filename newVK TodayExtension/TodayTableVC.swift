@@ -28,10 +28,6 @@ class TodayTableVC: UITableViewController {
             self?.tableView.reloadData()
         }
     }
-    
-    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        completionHandler(NCUpdateResult.newData)
-    }
 
     // MARK: - Table view data source
 
@@ -51,6 +47,8 @@ class TodayTableVC: UITableViewController {
 
 }
 
+// MARK: - Widget methods
+
 extension TodayTableVC: NCWidgetProviding {
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
@@ -61,6 +59,10 @@ extension TodayTableVC: NCWidgetProviding {
             preferredContentSize.height = 10
             // не понял, зачем вообще указывать размер для режима ".compact", но без этого не работает
         }
+    }
+    
+    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
+        completionHandler(NCUpdateResult.newData)
     }
     
 }
