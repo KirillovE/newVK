@@ -23,7 +23,7 @@ class TodayTableVC: UITableViewController {
         super.viewDidLoad()
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
-        newsRequest.makeRequest(filter: newsFilter, resultsCount: 20) { [weak self] news in
+        newsRequest.makeRequest(resultsCount: 20) { [weak self] news in
             self?.newsArray = news
             self?.tableView.reloadData()
         }

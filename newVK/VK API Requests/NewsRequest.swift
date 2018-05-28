@@ -20,7 +20,7 @@ class NewsRequest {
     
     // MARK: - Methods
     
-    func makeRequest(filter: String, resultsCount: Int = 60, startFrom: String = "", completion: @escaping ([News]) -> Void) {
+    func makeRequest(filter: String = "post", resultsCount: Int = 60, startFrom: String = "", completion: @escaping ([News]) -> Void) {
         let (accessToken, apiVersion, url) = configureRequest()
         
         let parameters: Parameters = ["count": resultsCount,

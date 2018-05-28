@@ -26,7 +26,7 @@ class NewsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        newsRequest.makeRequest(filter: self.requestFilter) { [weak self] news in
+        newsRequest.makeRequest() { [weak self] news in
             self?.news = news
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -73,7 +73,7 @@ class NewsVC: UITableViewController {
         let newsBeforeLoadingPrevious = news.count - 7
         if indexPath.row == newsBeforeLoadingPrevious {
             guard let startFrom = userDefaults.string(forKey: "start_from") else { return }
-            newsRequest.makeRequest(filter: self.requestFilter, startFrom: startFrom) { [weak self] news in
+            newsRequest.makeRequest(startFrom: startFrom) { [weak self] news in
                 self?.news.append(contentsOf: news)
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
@@ -85,7 +85,7 @@ class NewsVC: UITableViewController {
     // MARK: -
     
     @objc func refresher(_ control: UIRefreshControl) {
-        newsRequest.makeRequest(filter: self.requestFilter) { [weak self] news in
+        newsRequest.makeRequest() { [weak self] news in
             self?.news = news
             DispatchQueue.main.async {
                 self?.refreshControl?.endRefreshing()
