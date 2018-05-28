@@ -12,7 +12,7 @@ class FriendsCell: UITableViewCell {
     
     func configure(for friend: User) {        
         textLabel?.text = friend.firstName + " " + friend.lastName
-        imageView?.image = #imageLiteral(resourceName: "заглушка")
+        
         if friend.isOnline {
             detailTextLabel?.text = "В сети"
             detailTextLabel?.textColor = .blue
@@ -21,6 +21,7 @@ class FriendsCell: UITableViewCell {
             detailTextLabel?.textColor = .lightGray
         }
         
+        imageView?.image = #imageLiteral(resourceName: "заглушка")
         imageView?.layer.cornerRadius = frame.size.height / 2
         imageView?.clipsToBounds = true
         imageView?.backgroundColor = UIColor.white
