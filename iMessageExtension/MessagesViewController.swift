@@ -11,16 +11,19 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
     
+    // MARK: - Source data
+    
     @IBOutlet weak var newsTableView: UITableView!
     let newsRequest = NewsRequest()
     var newsArray = [News]()
+    
+    // MARK: -
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         newsTableView.dataSource = self
         newsTableView.delegate = self
-//        newsTableView.register(MessagesCell.self, forCellReuseIdentifier: "MessageCell")
         
         newsRequest.makeRequest(resultsCount: 10) { [weak self] news in
             self?.newsArray = news
@@ -30,7 +33,9 @@ class MessagesViewController: MSMessagesAppViewController {
 
 }
 
-extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
+// MARK: - Table view data source
+
+extension MessagesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsArray.count
@@ -59,6 +64,24 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             cell.imageView?.image = #imageLiteral(resourceName: "картинка")
         }
+    }
+    
+}
+
+// MARK: - Table view delegate
+
+extension MessagesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let layout = MSMessageTemplateLayout()
+        let specificNews = newsArray[indexPath.row]
+        layout.caption = specificNews.name
+        layout.trailingCaption = specificNews.day + " " + specificNews.time
+        layout.subcaption = specificNews.text
+        layout.image = #imageLiteral(resourceName: "картинка")
+        let message = MSMessage()
+        message.layout = layout
+        activeConversation?.insert(message)
     }
     
 }
