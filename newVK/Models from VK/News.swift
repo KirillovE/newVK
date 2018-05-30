@@ -27,6 +27,8 @@ struct Reposts {
 
 class News {
     
+    private let formatting = Formatting()
+    
     let newsType: String
     let sourceID: Int
     let date: Double
@@ -48,9 +50,11 @@ class News {
     init(json: JSON) {
         newsType = json["type"].stringValue
         sourceID = json["source_id"].intValue
-        
-        date = json["date"].doubleValue        
         text = json["text"].stringValue
+        
+        date = json["date"].doubleValue
+        day = formatting.formatDate(date, outputFormat: .day)
+        time = formatting.formatDate(date, outputFormat: .time)
         
         comments.count = json["comments", "count"].intValue
         comments.canPost = json["comments", "can_post"].boolValue

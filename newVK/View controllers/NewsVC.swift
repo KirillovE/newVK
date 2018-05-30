@@ -12,7 +12,6 @@ class NewsVC: UITableViewController {
     
     // MARK: - Source data
     
-    let formatter = Formatting()
     let settingPicture = SetPictureToTableCell()
     let userDefaults = UserDefaults(suiteName: "group.newVK")
     let newsRequest = NewsRequest()
@@ -54,7 +53,6 @@ class NewsVC: UITableViewController {
         cell.index = indexPath
         cell.heightDelegate = self
         
-        configureDate(forIndex: indexPath.row)
         cell.configure(for: currentNews)
         settingPicture.setPicture(url: currentNews.photoURL, cacheLifeTime: .month, cell: cell, imageView: cell.avatar, indexPath: indexPath, table: tableView)
         settingPicture.setPicture(url: currentNews.attachedImageURL, cacheLifeTime: .hour, cell: cell, imageView: cell.attachedImage, indexPath: indexPath, table: tableView)
@@ -96,16 +94,7 @@ class NewsVC: UITableViewController {
 
 }
 
-// MARK: - Extensions
-
-extension NewsVC {
-    
-    private func configureDate(forIndex index: Int) {
-        news[index].day = formatter.formatDate(news[index].date, outputFormat: .day)
-        news[index].time = formatter.formatDate(news[index].date, outputFormat: .time)
-    }
-    
-}
+// MARK: -
 
 extension NewsVC: CellHeightDelegate {
     

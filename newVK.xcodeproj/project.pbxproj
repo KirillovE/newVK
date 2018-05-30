@@ -54,6 +54,8 @@
 		3E85C78520BE9AA000C288F6 /* iMessageExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3E85C77720BE9AA000C288F6 /* iMessageExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3E85C79020BED5FC00C288F6 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9987E1206D04C5003DF364 /* News.swift */; };
 		3E85C79120BED60400C288F6 /* NewsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E21A025206D1CAE0011D287 /* NewsRequest.swift */; };
+		3E903BC120BF0E8A00038295 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF77F0F207F3BEB00963AE7 /* Formatting.swift */; };
+		3E903BC220BF14B700038295 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF77F0F207F3BEB00963AE7 /* Formatting.swift */; };
 		3E9987E2206D04C5003DF364 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9987E1206D04C5003DF364 /* News.swift */; };
 		3EA1B32620A84CC5007B3808 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1B32520A84CC5007B3808 /* PostVC.swift */; };
 		3EA1B32820A84CD1007B3808 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1B32720A84CD1007B3808 /* LocationVC.swift */; };
@@ -643,6 +645,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E903BC220BF14B700038295 /* Formatting.swift in Sources */,
 				3E7F2EEB20B9735E00E74AF9 /* News.swift in Sources */,
 				3E58677E20B8474C00E78BDB /* NewsRequest.swift in Sources */,
 				3E7F2EED20BC563800E74AF9 /* TodayTableVC.swift in Sources */,
@@ -711,6 +714,7 @@
 			files = (
 				3E85C79120BED60400C288F6 /* NewsRequest.swift in Sources */,
 				3E85C79020BED5FC00C288F6 /* News.swift in Sources */,
+				3E903BC120BF0E8A00038295 /* Formatting.swift in Sources */,
 				3E85C77C20BE9AA000C288F6 /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
