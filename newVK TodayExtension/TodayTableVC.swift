@@ -14,7 +14,6 @@ class TodayTableVC: UITableViewController {
     // MARK: - Source data
     
     let newsRequest = NewsRequest()
-    let newsFilter = "post"
     var newsArray = [News]()
     
     // MARK: - Methods
