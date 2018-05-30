@@ -76,9 +76,10 @@ extension MessagesViewController: UITableViewDelegate {
         let layout = MSMessageTemplateLayout()
         let specificNews = newsArray[indexPath.row]
         layout.caption = specificNews.name
-        layout.trailingCaption = specificNews.day + " " + specificNews.time
         layout.subcaption = specificNews.text
         layout.image = #imageLiteral(resourceName: "картинка")
+        layout.imageTitle = specificNews.day
+        layout.imageSubtitle = specificNews.time
         let message = MSMessage()
         message.layout = layout
         activeConversation?.insert(message)
