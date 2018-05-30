@@ -29,7 +29,7 @@ class MessagesViewController: MSMessagesAppViewController {
         
         newsRequest.makeRequest(resultsCount: newsCount) { [weak self] news in
             self?.newsArray = news
-            self?.newsTableView.reloadData()
+            DispatchQueue.main.async { self?.newsTableView.reloadData() }
         }
         
         newsTableView.refreshControl = UIRefreshControl()
@@ -72,9 +72,21 @@ extension MessagesViewController: UITableViewDataSource {
 
 extension MessagesViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let newsBeforeLoadingPrevious = newsArray.count - 2
+        guard indexPath.row == newsBeforeLoadingPrevious,
+            let startFrom = userDefaults?.string(forKey: "start_from") else { return }
+        
+        newsRequest.makeRequest(resultsCount: newsCount, startFrom: startFrom) { [weak self] news in
+            self?.newsArray.append(contentsOf: news)
+            DispatchQueue.main.async { self?.newsTableView.reloadData() }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let layout = MSMessageTemplateLayout()
         let specificNews = newsArray[indexPath.row]
+        
+        let layout = MSMessageTemplateLayout()
         layout.caption = specificNews.name
         layout.subcaption = specificNews.text
         layout.imageTitle = specificNews.day
@@ -92,19 +104,6 @@ extension MessagesViewController: UITableViewDelegate {
             let message = MSMessage()
             message.layout = layout
             activeConversation?.insert(message)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let newsBeforeLoadingPrevious = newsArray.count - 2
-        if indexPath.row == newsBeforeLoadingPrevious {
-            guard let startFrom = userDefaults?.string(forKey: "start_from") else { return }
-            newsRequest.makeRequest(resultsCount: newsCount, startFrom: startFrom) { [weak self] news in
-                self?.newsArray.append(contentsOf: news)
-                DispatchQueue.main.async {
-                    self?.newsTableView.reloadData()
-                }
-            }
         }
     }
     
