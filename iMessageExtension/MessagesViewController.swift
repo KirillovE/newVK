@@ -15,7 +15,9 @@ class MessagesViewController: MSMessagesAppViewController {
     
     @IBOutlet weak var newsTableView: UITableView!
     let newsRequest = NewsRequest()
+    let userDefaults = UserDefaults(suiteName: "group.newVK")
     var newsArray = [News]()
+    let newsCount = 10
     
     // MARK: -
     
@@ -25,10 +27,13 @@ class MessagesViewController: MSMessagesAppViewController {
         newsTableView.dataSource = self
         newsTableView.delegate = self
         
-        newsRequest.makeRequest(resultsCount: 10) { [weak self] news in
+        newsRequest.makeRequest(resultsCount: newsCount) { [weak self] news in
             self?.newsArray = news
             self?.newsTableView.reloadData()
         }
+        
+        newsTableView.refreshControl = UIRefreshControl()
+        newsTableView.refreshControl?.addTarget(self, action: #selector(refresher(_:)), for: .valueChanged)
     }
 
 }
@@ -83,6 +88,33 @@ extension MessagesViewController: UITableViewDelegate {
         let message = MSMessage()
         message.layout = layout
         activeConversation?.insert(message)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let newsBeforeLoadingPrevious = newsArray.count - 2
+        if indexPath.row == newsBeforeLoadingPrevious {
+            guard let startFrom = userDefaults?.string(forKey: "start_from") else { return }
+            newsRequest.makeRequest(resultsCount: newsCount, startFrom: startFrom) { [weak self] news in
+                self?.newsArray.append(contentsOf: news)
+                DispatchQueue.main.async {
+                    self?.newsTableView.reloadData()
+                }
+            }
+        }
+    }
+    
+}
+
+extension MessagesViewController {
+    
+    @objc func refresher(_ control: UIRefreshControl) {
+        newsRequest.makeRequest(resultsCount: 10) { [weak self] news in
+            self?.newsArray = news
+            DispatchQueue.main.async {
+                self?.newsTableView.refreshControl?.endRefreshing()
+                self?.newsTableView.reloadData()
+            }
+        }
     }
     
 }
