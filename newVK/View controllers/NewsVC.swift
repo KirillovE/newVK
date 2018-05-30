@@ -80,18 +80,6 @@ class NewsVC: UITableViewController {
         }
     }
     
-    // MARK: -
-    
-    @objc func refresher(_ control: UIRefreshControl) {
-        newsRequest.makeRequest() { [weak self] news in
-            self?.news = news
-            DispatchQueue.main.async {
-                self?.refreshControl?.endRefreshing()
-                self?.tableView.reloadData()
-            }
-        }
-    }
-
 }
 
 // MARK: -
@@ -103,6 +91,16 @@ extension NewsVC: CellHeightDelegate {
         tableView.beginUpdates()
         tableView.reloadRows(at: [index], with: .automatic)
         tableView.endUpdates()
+    }
+    
+    @objc func refresher(_ control: UIRefreshControl) {
+        newsRequest.makeRequest() { [weak self] news in
+            self?.news = news
+            DispatchQueue.main.async {
+                self?.refreshControl?.endRefreshing()
+                self?.tableView.reloadData()
+            }
+        }
     }
     
 }
