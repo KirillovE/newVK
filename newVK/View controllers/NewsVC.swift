@@ -14,7 +14,7 @@ class NewsVC: UITableViewController {
     
     let formatter = Formatting()
     let settingPicture = SetPictureToTableCell()
-    let userDefaults = UserDefaults.standard
+    let userDefaults = UserDefaults(suiteName: "group.newVK")
     let newsRequest = NewsRequest()
     let requestFilter = "post"
     var news = [News]()
@@ -70,9 +70,9 @@ class NewsVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let newsBeforeLoadingPrevious = news.count - 7
+        let newsBeforeLoadingPrevious = news.count - 5
         if indexPath.row == newsBeforeLoadingPrevious {
-            guard let startFrom = userDefaults.string(forKey: "start_from") else { return }
+            guard let startFrom = userDefaults?.string(forKey: "start_from") else { return }
             newsRequest.makeRequest(startFrom: startFrom) { [weak self] news in
                 self?.news.append(contentsOf: news)
                 DispatchQueue.main.async {
