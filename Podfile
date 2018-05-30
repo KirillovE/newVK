@@ -20,3 +20,12 @@ target 'newVK TodayExtension' do
     pod 'SwiftKeychainWrapper', '~> 3.0'
     
 end
+
+target 'iMessageExtension' do
+    
+    use_frameworks!
+    pod 'Alamofire', '~> 4.7'
+    pod 'SwiftyJSON', '~> 4.0'
+    pod 'SwiftKeychainWrapper', '~> 3.0'
+    
+end
