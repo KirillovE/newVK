@@ -54,6 +54,7 @@ extension MessagesViewController: UITableViewDataSource {
     
     func configure(cell: UITableViewCell, withNews news: News) {
         cell.textLabel?.text = news.name
+        cell.imageView?.image = (news.attachedImageURL != "") ? #imageLiteral(resourceName: "картинка") : #imageLiteral(resourceName: "новости")
         
         cell.detailTextLabel?.numberOfLines = 3
         if news.text != "" {
@@ -62,12 +63,6 @@ extension MessagesViewController: UITableViewDataSource {
         } else {
             cell.detailTextLabel?.text = "только вложение"
             cell.detailTextLabel?.textColor = .lightGray
-        }
-        
-        if news.photoURL == "" {
-            cell.imageView?.image = #imageLiteral(resourceName: "новости")
-        } else {
-            cell.imageView?.image = #imageLiteral(resourceName: "картинка")
         }
     }
     
@@ -82,12 +77,22 @@ extension MessagesViewController: UITableViewDelegate {
         let specificNews = newsArray[indexPath.row]
         layout.caption = specificNews.name
         layout.subcaption = specificNews.text
-        layout.image = #imageLiteral(resourceName: "картинка")
         layout.imageTitle = specificNews.day
         layout.imageSubtitle = specificNews.time
-        let message = MSMessage()
-        message.layout = layout
-        activeConversation?.insert(message)
+        
+        if specificNews.attachedImageURL != "" {
+            getImage(fromURL: specificNews.attachedImageURL) { [weak self] image in
+                layout.image = image
+                let message = MSMessage()
+                message.layout = layout
+                self?.activeConversation?.insert(message)
+            }
+        } else {
+            layout.image = #imageLiteral(resourceName: "газета")
+            let message = MSMessage()
+            message.layout = layout
+            activeConversation?.insert(message)
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -105,6 +110,8 @@ extension MessagesViewController: UITableViewDelegate {
     
 }
 
+// MARK: - Other methods
+
 extension MessagesViewController {
     
     @objc func refresher(_ control: UIRefreshControl) {
@@ -114,6 +121,15 @@ extension MessagesViewController {
                 self?.newsTableView.refreshControl?.endRefreshing()
                 self?.newsTableView.reloadData()
             }
+        }
+    }
+    
+    func getImage(fromURL url: String, completion: @escaping (UIImage) -> Void) {
+        guard let url = URL(string: url) else { return }
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: url),
+                let image = UIImage(data: data) else { return }
+            completion(image)
         }
     }
     
