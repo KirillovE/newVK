@@ -15,7 +15,7 @@ class NewsRequest {
     // MARK: - Source data
     
     private var sessionManager: SessionManager?
-    let userDefaults = UserDefaults(suiteName: "group.newVK")
+    private let userDefaults = UserDefaults(suiteName: "group.newVK")
     private let method = "newsfeed.get"
     
     // MARK: - Methods
