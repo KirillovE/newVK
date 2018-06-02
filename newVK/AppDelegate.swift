@@ -9,11 +9,20 @@
 import RealmSwift
 import FirebaseCore
 import UserNotifications
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    // MARK: - Data for Watch app
+    
+    var session: WCSession?
+    let newsRequest = NewsRequest()
+    
+    // MARK: - Data for fetching new friends
+    
     let fetchFriendsRequestsGroup = DispatchGroup()
     var timer: DispatchSourceTimer?
     var lastUpdate: Date? {
@@ -21,16 +30,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         set { UserDefaults.standard.setValue(newValue, forKey: "lastUpdate") }
     }
     let checkFriends = CheckNewFriendsRequest()
-    let checkFriendsInterval = 900.0           //проверка каждые 15 минут
+    let checkFriendsInterval = 900.0
     let timeToHandleRequests = 10.0
 
+    // MARK: - Methods
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
-        Realm.Configuration.defaultConfiguration = config
+        
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+        
         FirebaseApp.configure()
         
         UNUserNotificationCenter.current().requestAuthorization(options: .badge) { _, error in
             if error != nil { print(error.debugDescription) }
+        }
+        
+        if WCSession.isSupported() {
+            session = WCSession.default
+            session?.delegate = self
+            session?.activate()
         }
         
         return true
@@ -79,4 +97,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 
+}
+
+// MARK: - Watch extension
+
+extension AppDelegate: WCSessionDelegate {
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+    func sessionDidBecomeInactive(_ session: WCSession) {}
+    func sessionDidDeactivate(_ session: WCSession) {}
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        guard message["request"] as? String == "News" else { return }
+        newsRequest.makeRequest(resultsCount: 20) { news in
+            replyHandler(["newsFeed": news])
+        }
+    }
+    
 }
