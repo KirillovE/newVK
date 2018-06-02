@@ -9,64 +9,75 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--new VK-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchExtension" customModuleProvider="target">
+                <controller identifier="NewsFeed" title="new VK" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchExtension" customModuleProvider="target">
                     <items>
                         <table alignment="left" id="nqN-nB-lae">
                             <items>
-                                <tableRow identifier="WatchTable" id="TAL-Qc-5Zt">
-                                    <group key="rootItem" width="1" alignment="left" id="K02-7Z-gfy"/>
+                                <tableRow identifier="WatchTable" id="TAL-Qc-5Zt" customClass="NewsRowController" customModule="WatchExtension_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="K02-7Z-gfy">
+                                        <items>
+                                            <label alignment="left" text="News author" id="4jJ-5F-bvF">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <label alignment="left" verticalAlignment="bottom" text="News text" numberOfLines="2" id="xC0-dZ-NOM"/>
+                                        </items>
+                                    </group>
                                     <connections>
-                                        <segue destination="7uO-be-BNQ" kind="push" id="Mt1-qb-AHu"/>
+                                        <outlet property="newsAuthor" destination="4jJ-5F-bvF" id="MHF-Ch-0Za"/>
+                                        <outlet property="newsText" destination="xC0-dZ-NOM" id="m91-On-QeY"/>
+                                        <segue destination="7uO-be-BNQ" kind="modal" id="Mt1-qb-AHu"/>
                                     </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="newsTable" destination="nqN-nB-lae" id="GxJ-z2-YcW"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Interface Controller-->
+        <!--NewsText-->
         <scene sceneID="9Jm-Na-bZU">
             <objects>
-                <controller id="7uO-be-BNQ">
+                <controller identifier="NewsText" id="7uO-be-BNQ" customClass="NewsTextInterfaceController" customModule="WatchExtension_Extension">
                     <items>
                         <imageView width="50" height="50" alignment="center" id="9vj-dL-94e" userLabel="Avatar"/>
                         <label alignment="center" text="Author name" textAlignment="center" id="Naf-SO-EtC" userLabel="Name">
-                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <label alignment="left" text="News text" numberOfLines="0" id="QWh-5x-EFF" userLabel="Text"/>
-                        <imageView alignment="left" id="ql5-LY-pqA" userLabel="Attached Image"/>
                     </items>
+                    <connections>
+                        <outlet property="authorName" destination="Naf-SO-EtC" id="2DA-fd-PWS"/>
+                        <outlet property="avatar" destination="9vj-dL-94e" id="xfi-Ng-OdN"/>
+                        <outlet property="newsText" destination="QWh-5x-EFF" id="jor-OE-Hzh"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
+        <!--NewsImage-->
+        <scene sceneID="vK4-jR-d9f">
             <objects>
-                <notificationController id="YCC-NB-fut">
+                <controller identifier="NewsImage" id="dNU-GV-pNJ" customClass="NewsImageInterfaceController" customModule="WatchExtension_Extension">
                     <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                        <label alignment="center" text="News Author" textAlignment="center" id="yAO-TT-2Dn">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <imageView alignment="left" id="47u-qt-lEH" userLabel="Attached Image"/>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
-                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <outlet property="attachedImage" destination="47u-qt-lEH" id="SN9-30-nYC"/>
+                        <outlet property="authorName" destination="yAO-TT-2Dn" id="2yC-Ne-Npt"/>
                     </connections>
-                </notificationController>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
-            <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WatchExtension" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="703" y="345"/>
         </scene>
     </scenes>
 </document>
