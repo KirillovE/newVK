@@ -57,7 +57,10 @@ extension InterfaceController: WCSessionDelegate {
                 NewsStruct(author: $0["author"] ?? "",
                            text: $0["text"] ?? "",
                            avatar: $0["avatar"] ?? "",
-                           image: $0["image"] ?? "")
+                           image: $0["image"] ?? "",
+                           day: $0["day"] ?? "",
+                           time: $0["time"] ?? ""
+                )
             }
             
             self.fillTable()

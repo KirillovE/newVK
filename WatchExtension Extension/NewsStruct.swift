@@ -9,5 +9,5 @@
 import Foundation
 
 struct NewsStruct {
-    let author, text, avatar, image: String
+    let author, text, avatar, image, day, time: String
 }

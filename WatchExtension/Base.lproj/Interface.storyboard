@@ -47,9 +47,9 @@
                     <items>
                         <group width="1" alignment="left" spacing="5" id="XKt-wl-YLX">
                             <items>
-                                <group width="70" alignment="left" radius="15" id="BV3-5U-UxJ">
+                                <group width="65" alignment="left" radius="15" id="BV3-5U-UxJ">
                                     <items>
-                                        <imageView width="70" height="70" alignment="left" id="9vj-dL-94e" userLabel="Avatar"/>
+                                        <imageView width="65" height="65" alignment="left" id="9vj-dL-94e" userLabel="Avatar"/>
                                     </items>
                                 </group>
                                 <group width="1" alignment="left" layout="vertical" id="P2g-2n-ddW">
@@ -72,7 +72,9 @@
                     <connections>
                         <outlet property="authorName" destination="Naf-SO-EtC" id="2DA-fd-PWS"/>
                         <outlet property="avatar" destination="9vj-dL-94e" id="xfi-Ng-OdN"/>
+                        <outlet property="day" destination="h1W-gx-gE4" id="uAe-5m-MjV"/>
                         <outlet property="newsText" destination="QWh-5x-EFF" id="jor-OE-Hzh"/>
+                        <outlet property="time" destination="X91-rd-k5b" id="ObV-uw-T3r"/>
                     </connections>
                 </controller>
             </objects>

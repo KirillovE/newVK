@@ -12,17 +12,25 @@ import Foundation
 
 class NewsTextInterfaceController: WKInterfaceController {
     
+    // MARK: - Source data
+    
     @IBOutlet var avatar: WKInterfaceImage!
     @IBOutlet var authorName: WKInterfaceLabel!
     @IBOutlet var newsText: WKInterfaceLabel!
+    @IBOutlet var day: WKInterfaceLabel!
+    @IBOutlet var time: WKInterfaceLabel!
     
     var news: NewsStruct? {
         didSet {
             authorName.setText(news?.author)
             newsText.setText(news?.text)
+            day.setText(news?.day)
+            time.setText(news?.time)
             setPicture(fromURL: news?.avatar)
         }
     }
+
+    // MARK: - Methods
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)

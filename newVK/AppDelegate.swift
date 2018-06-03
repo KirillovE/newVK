@@ -114,7 +114,9 @@ extension AppDelegate: WCSessionDelegate {
                 ["author": $0.name,
                  "text": $0.text,
                  "avatar": $0.photoURL,
-                 "image": $0.attachedImageURL
+                 "image": $0.attachedImageURL,
+                 "day": $0.day,
+                 "time": $0.time
                 ]
             }
             
