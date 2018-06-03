@@ -8,6 +8,6 @@
 
 import WatchKit
 
-class NewsRefreshController: NSObject {
+class RefreshRowController: NSObject {
 
 }

@@ -16,7 +16,7 @@
                     <items>
                         <table alignment="left" id="nqN-nB-lae">
                             <items>
-                                <tableRow identifier="Refresh" id="pS5-us-wfh" customClass="NewsRefreshController" customModule="WatchExtension_Extension">
+                                <tableRow identifier="Refresh" id="pS5-us-wfh" customClass="RefreshRowController" customModule="WatchExtension_Extension">
                                     <group key="rootItem" width="1" alignment="left" spacing="5" id="unv-ez-pSw">
                                         <items>
                                             <imageView alignment="left" verticalAlignment="center" image="обновить" id="7zf-b2-CIs">
@@ -44,7 +44,7 @@
                                         <outlet property="newsText" destination="xC0-dZ-NOM" id="m91-On-QeY"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="LoadMore" id="hwC-Jb-kq4" customClass="NewsMoreController" customModule="WatchExtension_Extension">
+                                <tableRow identifier="LoadMore" id="hwC-Jb-kq4" customClass="MoreRowController" customModule="WatchExtension_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="pRU-L9-Scy">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="Загрузить ещё" id="wqa-JZ-111">
@@ -68,7 +68,7 @@
         <!--NewsText-->
         <scene sceneID="9Jm-Na-bZU">
             <objects>
-                <controller identifier="NewsText" id="7uO-be-BNQ" customClass="NewsTextInterfaceController" customModule="WatchExtension_Extension">
+                <controller identifier="NewsText" id="7uO-be-BNQ" customClass="TextInterfaceController" customModule="WatchExtension_Extension">
                     <items>
                         <group width="1" alignment="left" spacing="5" id="XKt-wl-YLX">
                             <items>
@@ -108,7 +108,7 @@
         <!--NewsImage-->
         <scene sceneID="vK4-jR-d9f">
             <objects>
-                <controller identifier="NewsImage" id="dNU-GV-pNJ" customClass="NewsImageInterfaceController" customModule="WatchExtension_Extension">
+                <controller identifier="NewsImage" id="dNU-GV-pNJ" customClass="ImageInterfaceController" customModule="WatchExtension_Extension">
                     <items>
                         <label alignment="center" text="News Author" textAlignment="center" numberOfLines="2" id="yAO-TT-2Dn">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>

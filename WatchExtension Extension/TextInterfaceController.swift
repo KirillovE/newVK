@@ -1,5 +1,5 @@
 //
-//  NewsImageInterfaceController.swift
+//  NewsTextInterfaceController.swift
 //  WatchExtension Extension
 //
 //  Created by Евгений Кириллов on 02.06.2018.
@@ -10,20 +10,28 @@ import WatchKit
 import Foundation
 
 
-class NewsImageInterfaceController: WKInterfaceController {
+class TextInterfaceController: WKInterfaceController {
     
-    @IBOutlet var attachedImage: WKInterfaceImage!
+    // MARK: - Source data
+    
+    @IBOutlet var avatar: WKInterfaceImage!
     @IBOutlet var authorName: WKInterfaceLabel!
-
+    @IBOutlet var newsText: WKInterfaceLabel!
+    @IBOutlet var day: WKInterfaceLabel!
+    @IBOutlet var time: WKInterfaceLabel!
+    
     var news: NewsStruct? {
         didSet {
             authorName.setText(news?.author)
-            setPicture(fromURL: news?.image)
+            newsText.setText(news?.text)
+            day.setText(news?.day)
+            time.setText(news?.time)
+            setPicture(fromURL: news?.avatar)
         }
     }
-    
+
     // MARK: - Methods
-    
+
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         if let news = context as? NewsStruct {
@@ -36,7 +44,8 @@ class NewsImageInterfaceController: WKInterfaceController {
             let url = URL(string: urlString) else { return }
         DispatchQueue.global().async {
             guard let data = try? Data(contentsOf: url) else { return }
-            self.attachedImage.setImageData(data)
+            self.avatar.setImageData(data)
         }
     }
+    
 }

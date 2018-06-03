@@ -8,6 +8,6 @@
 
 import WatchKit
 
-class NewsMoreController: NSObject {
+class MoreRowController: NSObject {
 
 }

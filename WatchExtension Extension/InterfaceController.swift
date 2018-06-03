@@ -33,6 +33,19 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        switch table.rowController(at: rowIndex) {
+        case let controller where controller is NewsRowController:
+            showDetails(rowIndex - 1)
+        case let controller where controller is RefreshRowController:
+            refreshNews()
+        case let controller where controller is MoreRowController:
+            break
+        // загрузить старые новости
+        default: break
+        }
+    }
+    
     fileprivate func showDetails(_ rowIndex: Int) {
         let news = newsStructs[rowIndex]
         if news.image != "" {
@@ -43,18 +56,24 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        switch table.rowController(at: rowIndex) {
-        case let controller where controller is NewsRowController:
-            showDetails(rowIndex - 1)
-        case let controller where controller is NewsRefreshController:
-            break
-        // вызвать обновление таблицы
-        case let controller where controller is NewsMoreController:
-            break
-        // загрузить старые новости
-        default: break
-        }
+    private func refreshNews() {
+        session?.sendMessage(["request": "News"], replyHandler: { reply in
+            guard let news = reply["newsFeed"] as? [[String: String]] else { return }
+            
+            self.newsStructs = news.map {
+                NewsStruct(author: $0["author"] ?? "",
+                           text: $0["text"] ?? "",
+                           avatar: $0["avatar"] ?? "",
+                           image: $0["image"] ?? "",
+                           day: $0["day"] ?? "",
+                           time: $0["time"] ?? ""
+                )
+            }
+            
+            self.fillTable()
+        }, errorHandler: { error in
+            print(error.localizedDescription)
+        })
     }
     
 }
