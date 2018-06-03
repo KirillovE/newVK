@@ -85,7 +85,7 @@
             <objects>
                 <controller identifier="NewsImage" id="dNU-GV-pNJ" customClass="NewsImageInterfaceController" customModule="WatchExtension_Extension">
                     <items>
-                        <label alignment="center" text="News Author" textAlignment="center" id="yAO-TT-2Dn">
+                        <label alignment="center" text="News Author" textAlignment="center" numberOfLines="2" id="yAO-TT-2Dn">
                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                         </label>
                         <imageView alignment="left" id="47u-qt-lEH" userLabel="Attached Image"/>

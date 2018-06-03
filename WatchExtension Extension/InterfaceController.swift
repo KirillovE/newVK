@@ -35,7 +35,12 @@ class InterfaceController: WKInterfaceController {
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         let news = newsStructs[rowIndex]
-        presentController(withName: "NewsText", context: news)
+        if news.image != "" {
+            let controllers = ["NewsText", "NewsImage"]
+            presentController(withNames: controllers, contexts: [news, news])
+        } else {
+            presentController(withName: "NewsText", context: news)
+        }
     }
     
 }
