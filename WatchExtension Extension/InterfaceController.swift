@@ -18,7 +18,7 @@ class InterfaceController: WKInterfaceController {
     var session: WCSession?
     var newsStructs = [NewsStruct]()
     
-    // MARK: - Methods
+    // MARK: - Base settings
     
     override func willActivate() {
         super.willActivate()
@@ -32,6 +32,8 @@ class InterfaceController: WKInterfaceController {
             session?.activate()
         }
     }
+    
+    // MARK: - Working with table
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
         switch table.rowController(at: rowIndex) {
@@ -98,7 +100,7 @@ class InterfaceController: WKInterfaceController {
     
 }
 
-//MARK: - Session delegate
+// MARK: - Session delegate
 
 extension InterfaceController: WCSessionDelegate {
     
