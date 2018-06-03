@@ -33,13 +33,27 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+    fileprivate func showDetails(_ rowIndex: Int) {
         let news = newsStructs[rowIndex]
         if news.image != "" {
             let controllers = ["NewsText", "NewsImage"]
             presentController(withNames: controllers, contexts: [news, news])
         } else {
             presentController(withName: "NewsText", context: news)
+        }
+    }
+    
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        switch table.rowController(at: rowIndex) {
+        case let controller where controller is NewsRowController:
+            showDetails(rowIndex - 1)
+        case let controller where controller is NewsRefreshController:
+            break
+        // вызвать обновление таблицы
+        case let controller where controller is NewsMoreController:
+            break
+        // загрузить старые новости
+        default: break
         }
     }
     
@@ -76,10 +90,13 @@ extension InterfaceController: WCSessionDelegate {
     }
     
     fileprivate func fillTable() {
-        newsTable.setNumberOfRows(newsStructs.count, withRowType: "WatchTable")
+        let newsRowTypes = Array(repeating: "WatchTable", count: newsStructs.count)
+        let rowTypes = ["Refresh"] + newsRowTypes + ["LoadMore"]
+        newsTable.setRowTypes(rowTypes)
+        
         for index in 0..<newsTable.numberOfRows {
             guard let controller = newsTable.rowController(at: index) as? NewsRowController else { continue }
-            controller.news = newsStructs[index]
+            controller.news = newsStructs[index - 1]
         }
     }
     

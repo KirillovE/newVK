@@ -16,6 +16,20 @@
                     <items>
                         <table alignment="left" id="nqN-nB-lae">
                             <items>
+                                <tableRow identifier="Refresh" id="pS5-us-wfh" customClass="NewsRefreshController" customModule="WatchExtension_Extension">
+                                    <group key="rootItem" width="1" alignment="left" spacing="5" id="unv-ez-pSw">
+                                        <items>
+                                            <imageView alignment="left" verticalAlignment="center" image="обновить" id="7zf-b2-CIs">
+                                                <color key="tintColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <label alignment="left" verticalAlignment="center" text="Обновить" id="KOY-sG-U5a">
+                                                <color key="textColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.050991783928038201" green="0.054380994219637421" blue="0.059783470812182715" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </group>
+                                </tableRow>
                                 <tableRow identifier="WatchTable" id="TAL-Qc-5Zt" customClass="NewsRowController" customModule="WatchExtension_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="K02-7Z-gfy">
                                         <items>
@@ -29,6 +43,17 @@
                                         <outlet property="newsAuthor" destination="4jJ-5F-bvF" id="MHF-Ch-0Za"/>
                                         <outlet property="newsText" destination="xC0-dZ-NOM" id="m91-On-QeY"/>
                                     </connections>
+                                </tableRow>
+                                <tableRow identifier="LoadMore" id="hwC-Jb-kq4" customClass="NewsMoreController" customModule="WatchExtension_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="pRU-L9-Scy">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Загрузить ещё" id="wqa-JZ-111">
+                                                <color key="textColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.050991783929999999" green="0.054380994219999999" blue="0.059783470810000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </group>
                                 </tableRow>
                             </items>
                         </table>
