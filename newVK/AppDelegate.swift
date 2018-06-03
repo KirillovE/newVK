@@ -108,19 +108,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        guard message["request"] as? String == "News" else { return }
-        newsRequest.makeRequest(resultsCount: 20) { news in
-            let newsStrings = news.map {
-                ["author": $0.name,
-                 "text": $0.text,
-                 "avatar": $0.photoURL,
-                 "image": $0.attachedImageURL,
-                 "day": $0.day,
-                 "time": $0.time
-                ]
+        if message["request"] as? String == "News" {
+            newsRequest.makeRequest(resultsCount: 20) { news in
+                let newsStrings = news.map {
+                    ["author": $0.name,
+                     "text": $0.text,
+                     "avatar": $0.photoURL,
+                     "image": $0.attachedImageURL,
+                     "day": $0.day,
+                     "time": $0.time
+                    ]
+                }
+                
+                replyHandler(["newsFeed": newsStrings])
             }
-            
-            replyHandler(["newsFeed": newsStrings])
+        } else {
+            let userDefaults = UserDefaults(suiteName: "group.newVK")
+            guard let startFrom = userDefaults?.string(forKey: "start_from") else { return }
+            newsRequest.makeRequest(resultsCount: 20, startFrom: startFrom) { news in
+                let newsStrings = news.map {
+                    ["author": $0.name,
+                     "text": $0.text,
+                     "avatar": $0.photoURL,
+                     "image": $0.attachedImageURL,
+                     "day": $0.day,
+                     "time": $0.time
+                    ]
+                }
+                
+                replyHandler(["newsFeed": newsStrings])
+            }
         }
     }
     

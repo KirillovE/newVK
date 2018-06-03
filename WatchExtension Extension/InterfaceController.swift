@@ -40,9 +40,9 @@ class InterfaceController: WKInterfaceController {
         case let controller where controller is RefreshRowController:
             refreshNews()
         case let controller where controller is MoreRowController:
+            loadMore()
+        default:
             break
-        // загрузить старые новости
-        default: break
         }
     }
     
@@ -61,6 +61,26 @@ class InterfaceController: WKInterfaceController {
             guard let news = reply["newsFeed"] as? [[String: String]] else { return }
             
             self.newsStructs = news.map {
+                NewsStruct(author: $0["author"] ?? "",
+                           text: $0["text"] ?? "",
+                           avatar: $0["avatar"] ?? "",
+                           image: $0["image"] ?? "",
+                           day: $0["day"] ?? "",
+                           time: $0["time"] ?? ""
+                )
+            }
+            
+            self.fillTable()
+        }, errorHandler: { error in
+            print(error.localizedDescription)
+        })
+    }
+    
+    private func loadMore() {
+        session?.sendMessage(["request": "OldNews"], replyHandler: { reply in
+            guard let news = reply["newsFeed"] as? [[String: String]] else { return }
+            
+            self.newsStructs += news.map {
                 NewsStruct(author: $0["author"] ?? "",
                            text: $0["text"] ?? "",
                            avatar: $0["avatar"] ?? "",
