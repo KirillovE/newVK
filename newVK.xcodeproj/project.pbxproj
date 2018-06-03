@@ -91,7 +91,6 @@
 		3EF19F1C2080EDF0009B9BE5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EF19F1B2080EDEF009B9BE5 /* GoogleService-Info.plist */; };
 		3EF77F10207F3BEB00963AE7 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF77F0F207F3BEB00963AE7 /* Formatting.swift */; };
 		6EC993C85B2A8951C47AB4FB /* Pods_newVK_TodayExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9C15B5AE629085E2FFFF85 /* Pods_newVK_TodayExtension.framework */; };
-		9C7E0050D7F53A1B267AF5C2 /* Pods_WatchExtension_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0FF9DCE1509E8DCD2D46FF /* Pods_WatchExtension_Extension.framework */; };
 		F9C47E5A61BD1266D45E3D41 /* Pods_iMessageExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5FF9A82D6D79365ADE397E /* Pods_iMessageExtension.framework */; };
 /* End PBXBuildFile section */
 
@@ -252,10 +251,8 @@
 		3EEDFDEB20847EF90094A7DA /* WorkWithFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkWithFirebase.swift; sourceTree = "<group>"; };
 		3EF19F1B2080EDEF009B9BE5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3EF77F0F207F3BEB00963AE7 /* Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatting.swift; sourceTree = "<group>"; };
-		4AE2ADB379BD716E82747F60 /* Pods-WatchExtension Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchExtension Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchExtension Extension/Pods-WatchExtension Extension.release.xcconfig"; sourceTree = "<group>"; };
 		5A65D2CF404B6407986A000B /* Pods-newVK TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK TodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newVK TodayExtension/Pods-newVK TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		5F53533A50A997494316304F /* Pods_newVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		797394792966D06272265CA1 /* Pods-WatchExtension Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchExtension Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchExtension Extension/Pods-WatchExtension Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		A7C94D3D006DBA0B60806BE9 /* Pods-newVK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK.release.xcconfig"; path = "Pods/Target Support Files/Pods-newVK/Pods-newVK.release.xcconfig"; sourceTree = "<group>"; };
 		BF9C15B5AE629085E2FFFF85 /* Pods_newVK_TodayExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newVK_TodayExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F10E7C9362206D9ECFDF6D /* Pods-newVK TodayExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK TodayExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-newVK TodayExtension/Pods-newVK TodayExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -295,7 +292,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C7E0050D7F53A1B267AF5C2 /* Pods_WatchExtension_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,8 +507,6 @@
 				C4F10E7C9362206D9ECFDF6D /* Pods-newVK TodayExtension.release.xcconfig */,
 				D0E4E09FCFC246930DDF2963 /* Pods-iMessageExtension.debug.xcconfig */,
 				2C9D13D67E0C1EF72D3974CD /* Pods-iMessageExtension.release.xcconfig */,
-				797394792966D06272265CA1 /* Pods-WatchExtension Extension.debug.xcconfig */,
-				4AE2ADB379BD716E82747F60 /* Pods-WatchExtension Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -602,11 +596,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E903BEA20C28C1000038295 /* Build configuration list for PBXNativeTarget "WatchExtension Extension" */;
 			buildPhases = (
-				6F411E0161E83F024E1ACCCC /* [CP] Check Pods Manifest.lock */,
 				3E903BD020C28C1000038295 /* Sources */,
 				3E903BD120C28C1000038295 /* Frameworks */,
 				3E903BD220C28C1000038295 /* Resources */,
-				C0A3CF98EEC73B2C5734B08A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -761,7 +753,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -797,42 +789,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6F411E0161E83F024E1ACCCC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WatchExtension Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C0A3CF98EEC73B2C5734B08A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WatchExtension Extension/Pods-WatchExtension Extension-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-watchOS/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatchExtension Extension/Pods-WatchExtension Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D13B257830016E1988B08087 /* [CP] Check Pods Manifest.lock */ = {
@@ -1303,7 +1259,6 @@
 		};
 		3E903BE820C28C1000038295 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 797394792966D06272265CA1 /* Pods-WatchExtension Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1324,7 +1279,6 @@
 		};
 		3E903BE920C28C1000038295 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4AE2ADB379BD716E82747F60 /* Pods-WatchExtension Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ENABLE_OBJC_WEAK = YES;
