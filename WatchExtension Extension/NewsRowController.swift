@@ -13,4 +13,12 @@ class NewsRowController: NSObject {
     @IBOutlet var newsAuthor: WKInterfaceLabel!
     @IBOutlet var newsText: WKInterfaceLabel!
     
+    var news: NewsStruct? {
+        didSet {
+            guard let news = news else { return }
+            newsAuthor.setText(news.author)
+            newsText.setText(news.text)
+        }
+    }
+    
 }

@@ -45,11 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if error != nil { print(error.debugDescription) }
         }
         
-        if WCSession.isSupported() {
-            session = WCSession.default
-            session?.delegate = self
-            session?.activate()
-        }
+        setSession()
         
         return true
     }
@@ -96,6 +92,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         timer?.resume()
         
     }
+    
+    private func setSession() {
+        if WCSession.isSupported() {
+            session = WCSession.default
+            session?.delegate = self
+            session?.activate()
+        }
+    }
 
 }
 
@@ -103,15 +107,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: WCSessionDelegate {
     
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
-    func sessionDidBecomeInactive(_ session: WCSession) {}
-    func sessionDidDeactivate(_ session: WCSession) {}
-    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         guard message["request"] as? String == "News" else { return }
         newsRequest.makeRequest(resultsCount: 20) { news in
-            replyHandler(["newsFeed": news])
+            let newsStrings = news.map {
+                ["author": $0.name,
+                 "text": $0.text,
+                 "avatar": $0.photoURL,
+                 "image": $0.attachedImageURL
+                ]
+            }
+            
+            replyHandler(["newsFeed": newsStrings])
         }
     }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+    func sessionDidBecomeInactive(_ session: WCSession) {}
+    func sessionDidDeactivate(_ session: WCSession) {}
     
 }
