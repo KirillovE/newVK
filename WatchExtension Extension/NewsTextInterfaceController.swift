@@ -20,6 +20,7 @@ class NewsTextInterfaceController: WKInterfaceController {
         didSet {
             authorName.setText(news?.author)
             newsText.setText(news?.text)
+            setPicture(fromURL: news?.avatar)
         }
     }
 
@@ -27,6 +28,15 @@ class NewsTextInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         if let news = context as? NewsStruct {
             self.news = news
+        }
+    }
+    
+    private func setPicture(fromURL urlString: String?) {
+        guard let urlString = urlString,
+            let url = URL(string: urlString) else { return }
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: url) else { return }
+            self.avatar.setImageData(data)
         }
     }
     
