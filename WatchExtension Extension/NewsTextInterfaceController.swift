@@ -16,10 +16,18 @@ class NewsTextInterfaceController: WKInterfaceController {
     @IBOutlet var authorName: WKInterfaceLabel!
     @IBOutlet var newsText: WKInterfaceLabel!
     
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        
-        // Configure interface objects here.
+    var news: NewsStruct? {
+        didSet {
+            authorName.setText(news?.author)
+            newsText.setText(news?.text)
+        }
     }
 
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+        if let news = context as? NewsStruct {
+            self.news = news
+        }
+    }
+    
 }

@@ -12,9 +12,13 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController {
     
+    // MARK: - Source data
+    
     @IBOutlet var newsTable: WKInterfaceTable!
     var session: WCSession?
     var newsStructs = [NewsStruct]()
+    
+    // MARK: - Methods
     
     override func willActivate() {
         super.willActivate()
@@ -29,7 +33,14 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        let news = newsStructs[rowIndex]
+        presentController(withName: "NewsText", context: news)
+    }
+    
 }
+
+//MARK: - Session delegate
 
 extension InterfaceController: WCSessionDelegate {
     

@@ -22,13 +22,12 @@
                                             <label alignment="left" text="News author" id="4jJ-5F-bvF">
                                                 <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                             </label>
-                                            <label alignment="left" verticalAlignment="bottom" text="News text" numberOfLines="2" id="xC0-dZ-NOM"/>
+                                            <label alignment="left" verticalAlignment="bottom" text="News text" id="xC0-dZ-NOM"/>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="newsAuthor" destination="4jJ-5F-bvF" id="MHF-Ch-0Za"/>
                                         <outlet property="newsText" destination="xC0-dZ-NOM" id="m91-On-QeY"/>
-                                        <segue destination="7uO-be-BNQ" kind="modal" id="Mt1-qb-AHu"/>
                                     </connections>
                                 </tableRow>
                             </items>

@@ -14,11 +14,5 @@ class NewsImageInterfaceController: WKInterfaceController {
     
     @IBOutlet var attachedImage: WKInterfaceImage!
     @IBOutlet var authorName: WKInterfaceLabel!
-    
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        
-        // Configure interface objects here.
-    }
 
 }

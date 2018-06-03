@@ -454,10 +454,10 @@
 			children = (
 				3E903BD920C28C1000038295 /* InterfaceController.swift */,
 				3E903BF220C321B500038295 /* NewsRowController.swift */,
-				3E903BF720C3DC0200038295 /* NewsStruct.swift */,
 				3E903BEE20C3212600038295 /* NewsTextInterfaceController.swift */,
 				3E903BF020C3213C00038295 /* NewsImageInterfaceController.swift */,
 				3E903BDB20C28C1000038295 /* ExtensionDelegate.swift */,
+				3E903BF720C3DC0200038295 /* NewsStruct.swift */,
 				3E903BDF20C28C1000038295 /* Assets.xcassets */,
 				3E903BE120C28C1000038295 /* Info.plist */,
 				3E903BE220C28C1000038295 /* PushNotificationPayload.apns */,
