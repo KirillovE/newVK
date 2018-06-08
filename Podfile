@@ -9,6 +9,7 @@ target 'newVK' do
     pod 'SwiftKeychainWrapper', '~> 3.0'
     pod 'FirebaseCore', '~> 4.0'
     pod 'FirebaseDatabase', '~> 4.1'
+    pod 'Firebase/AdMob'
     
 end
 

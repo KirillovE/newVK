@@ -8,6 +8,7 @@
 
 import RealmSwift
 import FirebaseCore
+import Firebase
 import UserNotifications
 import WatchConnectivity
 
@@ -40,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
         
         FirebaseApp.configure()
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-3560512891299358~6951954806")
         
         UNUserNotificationCenter.current().requestAuthorization(options: .badge) { _, error in
             if error != nil { print(error.debugDescription) }
