@@ -62,13 +62,15 @@ class InterfaceController: WKInterfaceController {
         session?.sendMessage(["request": "News"], replyHandler: { reply in
             guard let news = reply["newsFeed"] as? [[String: String]] else { return }
             
-            self.newsStructs = news.map {
-                NewsStruct(author: $0["author"] ?? "",
-                           text: $0["text"] ?? "",
-                           avatar: $0["avatar"] ?? "",
-                           image: $0["image"] ?? "",
-                           day: $0["day"] ?? "",
-                           time: $0["time"] ?? ""
+            self.newsStructs = news.compactMap {
+                guard $0["author"] != nil, $0["text"] != nil || $0["image"] != nil else { return nil }
+                
+                return NewsStruct(author: $0["author"]!,
+                                  text: $0["text"] ?? "",
+                                  avatar: $0["avatar"] ?? "",
+                                  image: $0["image"] ?? "",
+                                  day: $0["day"] ?? "",
+                                  time: $0["time"] ?? ""
                 )
             }
             
