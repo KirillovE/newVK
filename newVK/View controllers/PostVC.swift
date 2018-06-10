@@ -22,6 +22,7 @@ class PostVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         userDefaults.removeObject(forKey: "address")
         userDefaults.removeObject(forKey: "latitude")
         userDefaults.removeObject(forKey: "longitude")
@@ -33,6 +34,7 @@ class PostVC: UIViewController {
         bannerView.adUnitID = "ca-app-pub-3560512891299358/2521878916" // моя реклама
 //        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716" // тестовая реклама
         bannerView.rootViewController = self
+        bannerView.delegate = self
         bannerView.load(GADRequest())
     }
     
@@ -114,6 +116,18 @@ extension PostVC: UITextViewDelegate {
             textView.text = "Введите текст Вашей публикации"
             textView.textColor = .lightGray
         }
+    }
+    
+}
+
+extension PostVC: GADBannerViewDelegate {
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("adViewDidReceiveAd")
+    }
+    
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print(error.localizedDescription)
     }
     
 }
