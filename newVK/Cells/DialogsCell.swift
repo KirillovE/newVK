@@ -11,6 +11,14 @@ import UIKit
 class DialogsCell: UITableViewCell {
 
     func configure(for dialog: Message) {
+        if dialog.readState {
+            textLabel?.font = UIFont.systemFont(ofSize: (textLabel?.font.pointSize)!, weight: .regular)
+            detailTextLabel?.font = UIFont.systemFont(ofSize: (detailTextLabel?.font.pointSize)!, weight: .regular)
+        } else {
+            textLabel?.font = UIFont.systemFont(ofSize: (textLabel?.font.pointSize)!, weight: .bold)
+            detailTextLabel?.font = UIFont.systemFont(ofSize: (detailTextLabel?.font.pointSize)!, weight: .bold)
+        }
+        
         textLabel?.text = dialog.firstName + " " + dialog.lastName
         detailTextLabel?.text = dialog.body
         imageView?.image = #imageLiteral(resourceName: "заглушка")
