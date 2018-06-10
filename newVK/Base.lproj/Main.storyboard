@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tke-9i-Pwd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tke-9i-Pwd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -253,18 +253,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="paO-Xb-6AE">
-                                <rect key="frame" x="10" y="74" width="355" height="534"/>
+                                <rect key="frame" x="10" y="74" width="355" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VaW-XD-IaP" userLabel="Ad view" customClass="GADBannerView">
+                                <rect key="frame" x="27.5" y="568" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BS5-dt-ltl"/>
+                                    <constraint firstAttribute="width" constant="320" id="WEB-4E-hWf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bqZ-tw-pDL" firstAttribute="trailing" secondItem="paO-Xb-6AE" secondAttribute="trailing" constant="10" id="8me-0h-UA7"/>
                             <constraint firstItem="paO-Xb-6AE" firstAttribute="top" secondItem="bqZ-tw-pDL" secondAttribute="top" constant="10" id="JOU-op-urc"/>
                             <constraint firstItem="paO-Xb-6AE" firstAttribute="leading" secondItem="bqZ-tw-pDL" secondAttribute="leading" constant="10" id="VDj-YZ-S7G"/>
-                            <constraint firstItem="bqZ-tw-pDL" firstAttribute="bottom" secondItem="paO-Xb-6AE" secondAttribute="bottom" constant="10" id="vbf-7j-bd4"/>
+                            <constraint firstItem="VaW-XD-IaP" firstAttribute="centerX" secondItem="TBu-8B-txi" secondAttribute="centerX" id="ZvZ-az-iMd"/>
+                            <constraint firstItem="bqZ-tw-pDL" firstAttribute="bottom" secondItem="VaW-XD-IaP" secondAttribute="bottom" id="ihE-tQ-h01"/>
+                            <constraint firstItem="VaW-XD-IaP" firstAttribute="top" secondItem="paO-Xb-6AE" secondAttribute="bottom" constant="10" id="vbf-7j-bd4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bqZ-tw-pDL"/>
                     </view>
@@ -284,6 +294,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="VaW-XD-IaP" id="tmI-PT-mAj"/>
                         <outlet property="postText" destination="paO-Xb-6AE" id="AnQ-7p-iun"/>
                     </connections>
                 </viewController>

@@ -41,7 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
         
         FirebaseApp.configure()
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-3560512891299358~6951954806")
+//        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544/2934735716") // тестовая реклама
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-3560512891299358/2521878916") // моя реклама
         
         UNUserNotificationCenter.current().requestAuthorization(options: .badge) { _, error in
             if error != nil { print(error.debugDescription) }

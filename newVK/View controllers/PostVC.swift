@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class PostVC: UIViewController {
 
     // MARK: - Source data
     
     @IBOutlet weak var postText: UITextView!
+    @IBOutlet weak var bannerView: GADBannerView!
     let postRequest = PostMessage()
     let userDefaults = UserDefaults.standard
     
@@ -27,6 +29,11 @@ class PostVC: UIViewController {
         postText.delegate = self
         postText.text = "Введите текст Вашей публикации"
         postText.textColor = .lightGray
+        
+        bannerView.adUnitID = "ca-app-pub-3560512891299358/2521878916" // моя реклама
+//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716" // тестовая реклама
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
     override func viewWillAppear(_ animated: Bool) {
