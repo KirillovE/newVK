@@ -425,7 +425,6 @@
 		3E61842F203717DB00A68D16 /* newVK */ = {
 			isa = PBXGroup;
 			children = (
-				3E58677C20B8340A00E78BDB /* newVK.entitlements */,
 				3E33523720CE849500F4AB7E /* Storyboards */,
 				3E48210B204BFD11009639FC /* View controllers */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
@@ -436,6 +435,7 @@
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
 				3E61843C203717DB00A68D16 /* Info.plist */,
 				3E6E9F9A20CD42B700716986 /* GoogleService-Info.plist */,
+				3E58677C20B8340A00E78BDB /* newVK.entitlements */,
 			);
 			path = newVK;
 			sourceTree = "<group>";
