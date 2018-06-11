@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tke-9i-Pwd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--VKloginVC-->
+        <scene sceneID="gBa-Et-vM7">
+            <objects>
+                <viewController id="tke-9i-Pwd" userLabel="VKloginVC" customClass="VKloginVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="htt-LA-lhH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vk logo" translatesAutoresizingMaskIntoConstraints="NO" id="ei8-M1-iqZ" userLabel="логотип">
+                                <rect key="frame" x="67.5" y="70" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="4st-vT-20t"/>
+                                    <constraint firstAttribute="width" constant="240" id="jzZ-KM-h7x"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d92-Oq-8w8">
+                                <rect key="frame" x="67.5" y="555" width="240" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="25"/>
+                                <state key="normal" title="Войти через ВК">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qiJ-x6-NxP" kind="presentation" id="dmL-lv-3L6"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не удалось войти" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do1-mb-mmk">
+                                <rect key="frame" x="116.5" y="464" width="142.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Do1-mb-mmk" firstAttribute="centerX" secondItem="htt-LA-lhH" secondAttribute="centerX" id="9KI-Vn-CiM"/>
+                            <constraint firstItem="d92-Oq-8w8" firstAttribute="width" secondItem="ei8-M1-iqZ" secondAttribute="width" id="X2Y-va-Fuf"/>
+                            <constraint firstItem="ei8-M1-iqZ" firstAttribute="centerX" secondItem="htt-LA-lhH" secondAttribute="centerX" id="b1m-0v-Uf5"/>
+                            <constraint firstItem="Odk-Yz-bGV" firstAttribute="bottom" secondItem="d92-Oq-8w8" secondAttribute="bottom" constant="70" id="cSU-Td-eEu"/>
+                            <constraint firstItem="d92-Oq-8w8" firstAttribute="centerX" secondItem="htt-LA-lhH" secondAttribute="centerX" id="y4c-2o-NWK"/>
+                            <constraint firstItem="d92-Oq-8w8" firstAttribute="top" secondItem="Do1-mb-mmk" secondAttribute="bottom" constant="70" id="yXN-0I-VDg"/>
+                            <constraint firstItem="ei8-M1-iqZ" firstAttribute="top" secondItem="Odk-Yz-bGV" secondAttribute="top" constant="50" id="yt3-tM-vqM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Odk-Yz-bGV"/>
+                    </view>
+                    <connections>
+                        <outlet property="authorizationFailureLabel" destination="Do1-mb-mmk" id="pAZ-HD-Rsi"/>
+                        <outlet property="loginButton" destination="d92-Oq-8w8" id="8Zm-Q7-Zii"/>
+                        <segue destination="Qn5-SM-v2N" kind="show" identifier="quickStart" id="iZ1-Ls-q3T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Byr-qu-Txv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-264" y="-215"/>
+        </scene>
+        <!--Web KitVC-->
+        <scene sceneID="LHL-Cd-pkl">
+            <objects>
+                <viewController id="qiJ-x6-NxP" customClass="WebKitVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AhY-aF-R2y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFV-pk-7nP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HFV-pk-7nP" firstAttribute="leading" secondItem="AhY-aF-R2y" secondAttribute="leading" id="HH6-NM-ZaX"/>
+                            <constraint firstItem="HFV-pk-7nP" firstAttribute="top" secondItem="Uhg-PC-jKs" secondAttribute="top" id="Jve-9V-tm0"/>
+                            <constraint firstAttribute="trailing" secondItem="HFV-pk-7nP" secondAttribute="trailing" id="WRV-c4-EVF"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="HFV-pk-7nP" secondAttribute="bottom" id="xba-wt-kLg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uhg-PC-jKs"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="HFV-pk-7nP" id="nXs-ma-0a8"/>
+                        <segue destination="g4O-l7-yGG" kind="unwind" identifier="showLoginScreen" unwindAction="athorizationFailureWithSegue:" id="MR8-Md-YBL"/>
+                        <segue destination="Qn5-SM-v2N" kind="show" identifier="startWork" id="GS0-Tm-C0d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Jb-gp-WcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="g4O-l7-yGG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="161"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="k21-8a-WqP">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Qn5-SM-v2N" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4KP-ti-uVk">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="EfW-ou-lE3" kind="relationship" relationship="viewControllers" id="o53-F5-xdg"/>
+                        <segue destination="ydi-8Q-e0g" kind="relationship" relationship="viewControllers" id="SFg-Ug-q3v"/>
+                        <segue destination="T2D-5y-il0" kind="relationship" relationship="viewControllers" id="SML-cJ-0DO"/>
+                        <segue destination="709-XW-JOj" kind="relationship" relationship="viewControllers" id="UsI-ml-OfS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f1g-p4-Hnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1415" y="-215"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="pr8-rf-tsc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Messages" id="ydi-8Q-e0g" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="U6e-Tq-w09"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9q2-a0-ZUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2106" y="-253"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="0gP-mH-QUc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="News" id="EfW-ou-lE3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="AAh-A6-ZYY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VOX-97-lE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2085" y="-322"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="z9X-au-0Uk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Friends" id="T2D-5y-il0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="asW-bK-0be"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a8o-Yb-xre" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2094" y="-169"/>
+        </scene>
+        <!--Groups-->
+        <scene sceneID="jVm-aG-ugt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Groups" id="709-XW-JOj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="A5Z-6N-181"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAT-Je-k2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2093" y="-102"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="vk logo" width="1204" height="906"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="GS0-Tm-C0d"/>
+    </inferredMetricsTieBreakers>
+</document>

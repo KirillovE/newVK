@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hNb-dO-aCw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Manage PageVC-->
+        <scene sceneID="shH-d5-HsU">
+            <objects>
+                <pageViewController storyboardIdentifier="UIPageViewController-hNb-dO-aCw" autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" pageSpacing="10" navigationOrientation="horizontal" spineLocation="none" id="hNb-dO-aCw" customClass="ManagePageVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nur-nE-MO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4804" y="26"/>
+        </scene>
+        <!--Large PhotoVC-->
+        <scene sceneID="NUx-WS-oCJ">
+            <objects>
+                <viewController storyboardIdentifier="LargePhotoVC" hidesBottomBarWhenPushed="YES" id="e0k-4A-nYR" customClass="LargePhotoVC" customModule="newVK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ubj-ei-UEt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IQw-da-Crz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="width" secondItem="Ubj-ei-UEt" secondAttribute="width" id="6wd-XX-jPQ"/>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="centerX" secondItem="Ubj-ei-UEt" secondAttribute="centerX" id="ZXs-O1-IOo"/>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="height" secondItem="Ubj-ei-UEt" secondAttribute="height" id="bL3-fz-uep"/>
+                            <constraint firstItem="IQw-da-Crz" firstAttribute="centerY" secondItem="Ubj-ei-UEt" secondAttribute="centerY" id="tuZ-HI-j8u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GiI-uZ-hND"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cA4-se-IO6"/>
+                    <connections>
+                        <outlet property="largePhoto" destination="IQw-da-Crz" id="1ju-0w-acc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2aV-wK-OpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5559" y="26"/>
+        </scene>
+    </scenes>
+</document>

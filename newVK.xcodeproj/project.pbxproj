@@ -21,6 +21,12 @@
 		3E25C84F2089DA3F005EC7DE /* CellHeightDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25C84E2089DA3F005EC7DE /* CellHeightDelegate.swift */; };
 		3E2BE8BE2042E9D9002A50CF /* MyGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BE8BD2042E9D9002A50CF /* MyGroupsVC.swift */; };
 		3E2BE8C02042EE36002A50CF /* AllGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2BE8BF2042EE36002A50CF /* AllGroupsVC.swift */; };
+		3E33523920CE84BF00F4AB7E /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E33523820CE84BF00F4AB7E /* Messages.storyboard */; };
+		3E33523B20CE8AF200F4AB7E /* LargePhotos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E33523A20CE8AF200F4AB7E /* LargePhotos.storyboard */; };
+		3E33523D20CE8B8200F4AB7E /* MyPhotos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E33523C20CE8B8200F4AB7E /* MyPhotos.storyboard */; };
+		3E33523F20CE8BCC00F4AB7E /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E33523E20CE8BCC00F4AB7E /* News.storyboard */; };
+		3E33524120CE8C0100F4AB7E /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E33524020CE8C0100F4AB7E /* Friends.storyboard */; };
+		3E33524320CE8C3F00F4AB7E /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E33524220CE8C3F00F4AB7E /* Groups.storyboard */; };
 		3E4F900620B5651D00E8474F /* DialogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900520B5651D00E8474F /* DialogsVC.swift */; };
 		3E4F900820B56BFC00E8474F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900720B56BFC00E8474F /* Message.swift */; };
 		3E4F900A20B570FF00E8474F /* DialogsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900920B570FF00E8474F /* DialogsRequest.swift */; };
@@ -178,6 +184,12 @@
 		3E25C84E2089DA3F005EC7DE /* CellHeightDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellHeightDelegate.swift; sourceTree = "<group>"; };
 		3E2BE8BD2042E9D9002A50CF /* MyGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsVC.swift; sourceTree = "<group>"; };
 		3E2BE8BF2042EE36002A50CF /* AllGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsVC.swift; sourceTree = "<group>"; };
+		3E33523820CE84BF00F4AB7E /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
+		3E33523A20CE8AF200F4AB7E /* LargePhotos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LargePhotos.storyboard; sourceTree = "<group>"; };
+		3E33523C20CE8B8200F4AB7E /* MyPhotos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPhotos.storyboard; sourceTree = "<group>"; };
+		3E33523E20CE8BCC00F4AB7E /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		3E33524020CE8C0100F4AB7E /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		3E33524220CE8C3F00F4AB7E /* Groups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		3E4F900520B5651D00E8474F /* DialogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsVC.swift; sourceTree = "<group>"; };
 		3E4F900720B56BFC00E8474F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3E4F900920B570FF00E8474F /* DialogsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsRequest.swift; sourceTree = "<group>"; };
@@ -336,6 +348,21 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		3E33523720CE849500F4AB7E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3E618439203717DB00A68D16 /* LaunchScreen.storyboard */,
+				3E618434203717DB00A68D16 /* Main.storyboard */,
+				3E33523E20CE8BCC00F4AB7E /* News.storyboard */,
+				3E33523820CE84BF00F4AB7E /* Messages.storyboard */,
+				3E33524020CE8C0100F4AB7E /* Friends.storyboard */,
+				3E33524220CE8C3F00F4AB7E /* Groups.storyboard */,
+				3E33523A20CE8AF200F4AB7E /* LargePhotos.storyboard */,
+				3E33523C20CE8B8200F4AB7E /* MyPhotos.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		3E48210B204BFD11009639FC /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,14 +426,13 @@
 			isa = PBXGroup;
 			children = (
 				3E58677C20B8340A00E78BDB /* newVK.entitlements */,
-				3E618434203717DB00A68D16 /* Main.storyboard */,
+				3E33523720CE849500F4AB7E /* Storyboards */,
 				3E48210B204BFD11009639FC /* View controllers */,
 				3E0FEF84204ACD4B006DE640 /* Cells */,
 				3EB51CB62084E4CF005B7EF8 /* VK API Requests */,
 				3E0FEF83204ACD41006DE640 /* Services */,
 				3E7D1217204ED1BE001E4D9C /* Models from VK */,
 				3E618430203717DB00A68D16 /* AppDelegate.swift */,
-				3E618439203717DB00A68D16 /* LaunchScreen.storyboard */,
 				3E618437203717DB00A68D16 /* Assets.xcassets */,
 				3E61843C203717DB00A68D16 /* Info.plist */,
 				3E6E9F9A20CD42B700716986 /* GoogleService-Info.plist */,
@@ -705,9 +731,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E33524320CE8C3F00F4AB7E /* Groups.storyboard in Resources */,
 				3E61843B203717DB00A68D16 /* LaunchScreen.storyboard in Resources */,
 				3E6E9F9B20CD42B700716986 /* GoogleService-Info.plist in Resources */,
+				3E33523D20CE8B8200F4AB7E /* MyPhotos.storyboard in Resources */,
+				3E33523F20CE8BCC00F4AB7E /* News.storyboard in Resources */,
 				3E618438203717DB00A68D16 /* Assets.xcassets in Resources */,
+				3E33523B20CE8AF200F4AB7E /* LargePhotos.storyboard in Resources */,
+				3E33524120CE8C0100F4AB7E /* Friends.storyboard in Resources */,
+				3E33523920CE84BF00F4AB7E /* Messages.storyboard in Resources */,
 				3E618436203717DB00A68D16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
