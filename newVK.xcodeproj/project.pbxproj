@@ -28,6 +28,7 @@
 		3E33524120CE8C0100F4AB7E /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E33524020CE8C0100F4AB7E /* Friends.storyboard */; };
 		3E33524320CE8C3F00F4AB7E /* Groups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E33524220CE8C3F00F4AB7E /* Groups.storyboard */; };
 		3E33524620CFE77400F4AB7E /* MessagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E33524520CFE77400F4AB7E /* MessagesRequest.swift */; };
+		3E33524820D0288900F4AB7E /* InterlocutorMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E33524720D0288900F4AB7E /* InterlocutorMessageCell.swift */; };
 		3E4F900620B5651D00E8474F /* DialogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900520B5651D00E8474F /* DialogsVC.swift */; };
 		3E4F900820B56BFC00E8474F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900720B56BFC00E8474F /* Message.swift */; };
 		3E4F900A20B570FF00E8474F /* DialogsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4F900920B570FF00E8474F /* DialogsRequest.swift */; };
@@ -94,7 +95,7 @@
 		3EC6D59220679811009F92A2 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59120679811009F92A2 /* NewsVC.swift */; };
 		3EC6D5942067988F009F92A2 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D5932067988F009F92A2 /* NewsCell.swift */; };
 		3EC6D59720692C84009F92A2 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59620692C84009F92A2 /* MessagesVC.swift */; };
-		3EC6D59A20692D2E009F92A2 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59920692D2E009F92A2 /* MessageCell.swift */; };
+		3EC6D59A20692D2E009F92A2 /* MyMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6D59920692D2E009F92A2 /* MyMessageCell.swift */; };
 		3EEDFDEC20847EF90094A7DA /* WorkWithFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEDFDEB20847EF90094A7DA /* WorkWithFirebase.swift */; };
 		3EF77F10207F3BEB00963AE7 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF77F0F207F3BEB00963AE7 /* Formatting.swift */; };
 		6EC993C85B2A8951C47AB4FB /* Pods_newVK_TodayExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF9C15B5AE629085E2FFFF85 /* Pods_newVK_TodayExtension.framework */; };
@@ -192,6 +193,7 @@
 		3E33524020CE8C0100F4AB7E /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		3E33524220CE8C3F00F4AB7E /* Groups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Groups.storyboard; sourceTree = "<group>"; };
 		3E33524520CFE77400F4AB7E /* MessagesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRequest.swift; sourceTree = "<group>"; };
+		3E33524720D0288900F4AB7E /* InterlocutorMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterlocutorMessageCell.swift; sourceTree = "<group>"; };
 		3E4F900520B5651D00E8474F /* DialogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsVC.swift; sourceTree = "<group>"; };
 		3E4F900720B56BFC00E8474F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3E4F900920B570FF00E8474F /* DialogsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsRequest.swift; sourceTree = "<group>"; };
@@ -262,7 +264,7 @@
 		3EC6D59120679811009F92A2 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		3EC6D5932067988F009F92A2 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		3EC6D59620692C84009F92A2 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
-		3EC6D59920692D2E009F92A2 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		3EC6D59920692D2E009F92A2 /* MyMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessageCell.swift; sourceTree = "<group>"; };
 		3EEDFDEB20847EF90094A7DA /* WorkWithFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkWithFirebase.swift; sourceTree = "<group>"; };
 		3EF77F0F207F3BEB00963AE7 /* Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatting.swift; sourceTree = "<group>"; };
 		5A65D2CF404B6407986A000B /* Pods-newVK TodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newVK TodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newVK TodayExtension/Pods-newVK TodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -340,7 +342,8 @@
 			children = (
 				3EC6D5932067988F009F92A2 /* NewsCell.swift */,
 				3E4F900F20B5E90500E8474F /* DialogsCell.swift */,
-				3EC6D59920692D2E009F92A2 /* MessageCell.swift */,
+				3EC6D59920692D2E009F92A2 /* MyMessageCell.swift */,
+				3E33524720D0288900F4AB7E /* InterlocutorMessageCell.swift */,
 				3E0137C7205A6BAB00B47735 /* FriendsCell.swift */,
 				3E16769B20400F6200287BB4 /* FriendAlbumCell.swift */,
 				3EAC58E52062DD2500A2DE4A /* OwnerAlbumCell.swift */,
@@ -904,8 +907,9 @@
 				3E0137CA205A6EAE00B47735 /* AllGroupsCell.swift in Sources */,
 				3E33524620CFE77400F4AB7E /* MessagesRequest.swift in Sources */,
 				3E4F901A20B679E700E8474F /* GetCacheImage.swift in Sources */,
-				3EC6D59A20692D2E009F92A2 /* MessageCell.swift in Sources */,
+				3EC6D59A20692D2E009F92A2 /* MyMessageCell.swift in Sources */,
 				3E4F900820B56BFC00E8474F /* Message.swift in Sources */,
+				3E33524820D0288900F4AB7E /* InterlocutorMessageCell.swift in Sources */,
 				3E2BE8C02042EE36002A50CF /* AllGroupsVC.swift in Sources */,
 				3EAC58DD20624B2300A2DE4A /* PhotosRequest.swift in Sources */,
 				3E0137C8205A6BAB00B47735 /* FriendsCell.swift in Sources */,

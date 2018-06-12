@@ -13,9 +13,9 @@ class MessagesVC: UITableViewController {
     // MARK: - Source data
     
     var messages = [Message]()
-    var interlocutorAvatar: UIImage?
     var interlocutorID: Int?
     let messagesRequest = MessagesRequest()
+    var interlocutorName: String?
     
     // MARK: -
     
@@ -40,13 +40,13 @@ class MessagesVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messages[indexPath.row]
         if message.out {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MessageCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MyMessageCell
             cell.configure(for: message)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "InterlocutorMessageCell", for: indexPath) as! MessageCell
-            cell.avatar.image = interlocutorAvatar
-            cell.configure(for: message)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "InterlocutorMessageCell", for: indexPath) as! InterlocutorMessageCell
+            
+            cell.configure(forMessage: message, with: interlocutorName!)
             return cell
         }
     }

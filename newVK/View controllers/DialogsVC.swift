@@ -39,8 +39,8 @@ class DialogsVC: UITableViewController {
             let interlocutorID = self.tableView.indexPath(for: cell)?.row
             let messagesVC = segue.destination as! MessagesVC
             messagesVC.interlocutorID = comleteDialogs[interlocutorID!].userID
-            messagesVC.interlocutorAvatar = cell.imageView?.image
             messagesVC.title = comleteDialogs[interlocutorID!].firstName
+            messagesVC.interlocutorName = comleteDialogs[interlocutorID!].firstName + " " + comleteDialogs[interlocutorID!].lastName
         }
     }
     

@@ -66,77 +66,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InterlocutorMessageCell" id="dVP-aP-dsg" customClass="MessageCell" customModule="newVK" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InterlocutorMessageCell" textLabel="DOf-MQ-DUB" detailTextLabel="nlq-yp-KH0" style="IBUITableViewCellStyleSubtitle" id="dVP-aP-dsg" customClass="InterlocutorMessageCell" customModule="newVK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dVP-aP-dsg" id="s8x-gA-RVj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X8f-pW-gGT" userLabel="Avatar">
-                                            <rect key="frame" x="15" y="5" width="43" height="43.5"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="43" id="Mzg-TH-5Ek"/>
-                                                <constraint firstAttribute="height" constant="43" id="Vlv-JG-F3N"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnt-fd-SWx" userLabel="MessageText">
-                                            <rect key="frame" x="68" y="5" width="237" height="20.5"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DOf-MQ-DUB">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nlq-yp-KH0">
+                                            <rect key="frame" x="16" y="25.5" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Cnt-fd-SWx" secondAttribute="trailing" constant="70" id="O7U-A8-19y"/>
-                                        <constraint firstItem="Cnt-fd-SWx" firstAttribute="leading" secondItem="X8f-pW-gGT" secondAttribute="trailing" constant="10" id="ccX-53-sir"/>
-                                        <constraint firstItem="Cnt-fd-SWx" firstAttribute="top" secondItem="s8x-gA-RVj" secondAttribute="top" constant="5" id="dE1-b0-jJy"/>
-                                        <constraint firstItem="X8f-pW-gGT" firstAttribute="top" secondItem="s8x-gA-RVj" secondAttribute="top" constant="5" id="nMw-Wh-orV"/>
-                                        <constraint firstItem="X8f-pW-gGT" firstAttribute="leading" secondItem="s8x-gA-RVj" secondAttribute="leading" constant="15" id="zAY-KA-gvG"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="avatar" destination="X8f-pW-gGT" id="vie-rM-u76"/>
-                                    <outlet property="messageText" destination="Cnt-fd-SWx" id="daU-xb-Kph"/>
-                                </connections>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="0.072907748287671229" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyMessageCell" id="aU3-kG-KNs" customClass="MessageCell" customModule="newVK" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="right" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyMessageCell" textLabel="TEg-xM-eFs" detailTextLabel="VA6-0H-sGc" style="IBUITableViewCellStyleSubtitle" id="aU3-kG-KNs" customClass="MyMessageCell" customModule="newVK" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aU3-kG-KNs" id="v3U-QU-Ff8">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ta-3O-oi4" userLabel="Avatar">
-                                            <rect key="frame" x="317" y="5" width="43" height="43.5"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="43" id="YXe-S6-dOW"/>
-                                                <constraint firstAttribute="height" constant="43" id="tzG-8T-bNJ"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILr-7p-YsR" userLabel="MessageText">
-                                            <rect key="frame" x="70" y="5" width="237" height="20.5"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TEg-xM-eFs">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VA6-0H-sGc">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="8Ta-3O-oi4" secondAttribute="trailing" constant="15" id="0KH-FB-1Yu"/>
-                                        <constraint firstItem="8Ta-3O-oi4" firstAttribute="top" secondItem="v3U-QU-Ff8" secondAttribute="top" constant="5" id="9wp-yS-48V"/>
-                                        <constraint firstItem="ILr-7p-YsR" firstAttribute="top" secondItem="v3U-QU-Ff8" secondAttribute="top" constant="5" id="CkM-p9-7tF"/>
-                                        <constraint firstItem="8Ta-3O-oi4" firstAttribute="leading" secondItem="ILr-7p-YsR" secondAttribute="trailing" constant="10" id="VUL-aY-ftL"/>
-                                        <constraint firstItem="ILr-7p-YsR" firstAttribute="leading" secondItem="v3U-QU-Ff8" secondAttribute="leading" constant="70" id="Vzo-uQ-6RL"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="avatar" destination="8Ta-3O-oi4" id="a7t-cC-mS9"/>
-                                    <outlet property="messageText" destination="ILr-7p-YsR" id="66U-JQ-w42"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
