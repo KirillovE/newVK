@@ -10,37 +10,25 @@ import UIKit
 
 class MessagesVC: UITableViewController {
 
-    // MARK: - Demo data
+    // MARK: - Source data
     
-    struct Message {
-        let name, text: String
-        let avatar: UIImage
-    }
-    
-    let firstMessage = Message(name: "Дарт Вейдер",
-                               text: "Если бы ты знал могущество тёмной стороны! \nОби-Ван не сказал, что случилось с твоим отцом?",
-                               avatar: #imageLiteral(resourceName: "Вейдер"))
-    let secondMessage = Message(name: "Люк Скайуокер",
-                               text: "Он сказал достаточно",
-                               avatar: #imageLiteral(resourceName: "Люк"))
-    let thirdMessage = Message(name: "Люк Скайуокер",
-                               text: "Он сказал, что это ты убил моего отца",
-                               avatar: #imageLiteral(resourceName: "Люк"))
-    let fourthMessage = Message(name: "Дарт Вейдер",
-                                text: "Нет. Это я – твой отец",
-                                avatar: #imageLiteral(resourceName: "Вейдер"))
-    let fifthMessage = Message(name: "Люк Скайуокер",
-                               text: "Нет. Нет. Это неправда. Это НЕВОЗМОЖНО!",
-                               avatar: #imageLiteral(resourceName: "Люк"))
     var messages = [Message]()
+    var interlocutorAvatar: UIImage?
+    var interlocutorID: Int?
+    let messagesRequest = MessagesRequest()
     
     // MARK: -
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        messages = [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage]
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 50
+        
+        guard let id = interlocutorID else { return }
+        messagesRequest.makeRequest(dialogWith: id) { [weak self] dialog in
+            self?.messages = dialog
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source

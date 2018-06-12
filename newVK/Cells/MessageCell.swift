@@ -13,10 +13,9 @@ class MessageCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var messageText: UILabel!
     
-    func configure(for message: MessagesVC.Message) {
-        name?.text = message.name
-        messageText?.text = message.text
-        avatar?.image = message.avatar
+    func configure(for message: Message) {
+        name?.text = message.firstName
+        messageText?.text = message.body
         
         avatar?.layer.cornerRadius = avatar.frame.size.height / 2
     }

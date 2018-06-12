@@ -24,12 +24,23 @@ class DialogsVC: UITableViewController {
         }
     }
 
-    // MARK: -
+    // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dialogsRequest.makeRequest { [weak self] chats in
             self?.dialogs = chats
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowChat",
+            let cell = sender as? DialogsCell {
+            let interlocutorID = self.tableView.indexPath(for: cell)?.row
+            let messagesVC = segue.destination as! MessagesVC
+            messagesVC.interlocutorID = comleteDialogs[interlocutorID!].userID
+            messagesVC.interlocutorAvatar = cell.imageView?.image
+            messagesVC.title = comleteDialogs[interlocutorID!].firstName
         }
     }
     

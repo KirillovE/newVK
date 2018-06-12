@@ -15,7 +15,7 @@ class MessagesRequest {
     // MARK: - Source data
     
     private var sessionManager: SessionManager?
-    let userDefaults = UserDefaults(suiteName: "group.newVK")
+    private let userDefaults = UserDefaults(suiteName: "group.newVK")
     private let method = "messages.getHistory"
     
     // MARK: - Methods
@@ -30,7 +30,7 @@ class MessagesRequest {
         sessionManager?.request(url! + method, parameters: parameters)
             .responseJSON(queue: DispatchQueue.global()) { response in
                 let json = JSON(response.value as Any)["response", "items"].arrayValue
-                let dialogs = json.map { Message(json: $0["message"]) }
+                let dialogs = json.map { Message(json: $0) }
                 completion(dialogs)
         }
     }
