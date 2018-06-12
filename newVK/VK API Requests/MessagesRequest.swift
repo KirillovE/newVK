@@ -1,8 +1,8 @@
 //
-//  DialogsRequest.swift
+//  MessagesRequest.swift
 //  newVK
 //
-//  Created by Евгений Кириллов on 23.05.2018.
+//  Created by Евгений Кириллов on 12.06.2018.
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
@@ -10,20 +10,19 @@ import SwiftKeychainWrapper
 import Alamofire
 import SwiftyJSON
 
-class DialogsRequest {
+class MessagesRequest {
     
     // MARK: - Source data
     
     private var sessionManager: SessionManager?
     let userDefaults = UserDefaults(suiteName: "group.newVK")
-    private let method = "messages.getDialogs"
-    private let previewLength = 50
+    private let method = "messages.getHistory"
     
     // MARK: - Methods
     
-    func makeRequest(completion: @escaping ([Message]) -> Void) {
+    func makeRequest(dialogWith interlocutor: Int, completion: @escaping ([Message]) -> Void) {
         let (accessToken, apiVersion, url) = configureRequest()
-        let parameters: Parameters = ["preview_length": previewLength,
+        let parameters: Parameters = ["user_id": interlocutor,
                                       "access_token": accessToken,
                                       "v": apiVersion
         ]
