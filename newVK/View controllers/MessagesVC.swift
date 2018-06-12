@@ -38,11 +38,17 @@ class MessagesVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageCell
-
-        cell.configure(for: messages[indexPath.row])
-
-        return cell
+        let message = messages[indexPath.row]
+        if message.out {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MessageCell
+            cell.configure(for: message)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "InterlocutorMessageCell", for: indexPath) as! MessageCell
+            cell.avatar.image = interlocutorAvatar
+            cell.configure(for: message)
+            return cell
+        }
     }
 
  }

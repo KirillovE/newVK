@@ -17,12 +17,14 @@ class MessagesRequest {
     private var sessionManager: SessionManager?
     private let userDefaults = UserDefaults(suiteName: "group.newVK")
     private let method = "messages.getHistory"
+    private let rev = 1
     
     // MARK: - Methods
     
     func makeRequest(dialogWith interlocutor: Int, completion: @escaping ([Message]) -> Void) {
         let (accessToken, apiVersion, url) = configureRequest()
         let parameters: Parameters = ["user_id": interlocutor,
+                                      "rev": rev,
                                       "access_token": accessToken,
                                       "v": apiVersion
         ]
